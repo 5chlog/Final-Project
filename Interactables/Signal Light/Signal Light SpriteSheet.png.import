@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Signal Light SpriteSheet.png-bcf1ae99908643204fc3e1a44af93caa.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Interactables/Signal Light/Signal Light SpriteSheet.png"
+dest_files=[ "res://.import/Signal Light SpriteSheet.png-bcf1ae99908643204fc3e1a44af93caa.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
