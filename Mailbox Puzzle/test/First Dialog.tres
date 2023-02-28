@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Mailbox Puzzle/test/Dialog Resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+dialogs = [ "This is the first line", "This is the next line", "Last line. I swear." ]
+button1 = false
+button1text = "Button 1"
+button2 = false
+button2text = "Button 2"

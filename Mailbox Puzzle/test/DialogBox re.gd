@@ -1,0 +1,2 @@
+extends CanvasLayer
+class_name DialogBox_re

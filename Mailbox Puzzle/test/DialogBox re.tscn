@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Mailbox Puzzle/test/DialogBox re.gd" type="Script" id=1]
+[ext_resource path="res://Mailbox Puzzle/test/DialogBox Container.gd" type="Script" id=2]
+
+[node name="DialogBox re" type="CanvasLayer"]
+visible = false
+script = ExtResource( 1 )
+
+[node name="DialogBox Container" type="ColorRect" parent="."]
+margin_left = 82.0
+margin_top = 135.0
+margin_right = 279.0
+margin_bottom = 179.0
+focus_mode = 2
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="DialogBox Container"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 385.0
+margin_bottom = 79.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Hey! Hello. This is a test sentence used to check scaling 
+in text."
+
+[node name="Button 1" type="Button" parent="DialogBox Container"]
+visible = false
+margin_left = 5.0
+margin_top = 20.0
+margin_right = 100.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.5, 0.5 )
+button_mask = 0
+text = "Button 1"
+
+[node name="Button 2" type="Button" parent="DialogBox Container"]
+visible = false
+margin_left = 5.0
+margin_top = 31.0
+margin_right = 100.0
+margin_bottom = 51.0
+rect_scale = Vector2( 0.5, 0.5 )
+button_mask = 0
+text = "Button 2 hello hellegel sgs "
