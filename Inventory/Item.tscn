@@ -12,3 +12,11 @@ margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="TextureRect"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 26.0
+margin_bottom = 24.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "99"

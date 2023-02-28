@@ -2,7 +2,11 @@
 	"Tree Branch": {
 		"StackSize": 99,
 		"Description": "Just a fucking tree branch."
-	}
+	},
+	"Slime Potion": {
+		"StackSize": 99,
+		"Description": "Slime to do nasty shit hehe."
+	},
 	"Iron Sword": {
 		"StackSize": 1,
 		"Description": "A lame sword to stab fragile shit for cunts."

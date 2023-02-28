@@ -1,16 +1,19 @@
 extends Node
 
+var item_data: Dictionary
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
+# Parse and store JSON file data in a dictionary
 func _ready():
-	pass # Replace with function body.
+	item_data = load_data("res://Inventory/ItemData.json")
+	
+func load_data(path):
+	var json_data
+	var file_ptr = File.new()
+	
+	file_ptr.open(path,File.READ)
+	json_data = JSON.parse(file_ptr.get_as_text())
+	file_ptr.close()
+	return json_data.result
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
