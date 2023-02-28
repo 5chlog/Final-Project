@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Concrete Bricked TileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Mailbox Puzzle/Mailbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mailbox Puzzle/Mailman.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Mailbox Puzzle/Mailboxes.gd" type="Script" id=5]
 
 [node name="Mailbox Level 1" type="Node2D"]
 
@@ -12,6 +13,7 @@ tile_data = PoolIntArray( -524299, 0, 0, -524298, 0, 1, -524297, 0, 1, -524296, 
 
 [node name="Mailboxes" type="Node2D" parent="."]
 position = Vector2( 328, 48 )
+script = ExtResource( 5 )
 
 [node name="Mailbox" parent="Mailboxes" instance=ExtResource( 3 )]
 position = Vector2( -168, 0 )
@@ -27,10 +29,9 @@ targetmailslot = 2
 
 [node name="Mailbox5" parent="Mailboxes" instance=ExtResource( 3 )]
 position = Vector2( 56, 0 )
-targetmailslot = 2
 
 [node name="Mailman" parent="." instance=ExtResource( 4 )]
 position = Vector2( 44, 48 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 456, 48 )
+position = Vector2( 119, 48 )

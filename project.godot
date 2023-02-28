@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "CanvasLayer",
+"class": "DialogBox_re",
+"language": "GDScript",
+"path": "res://Mailbox Puzzle/test/DialogBox re.gd"
+}, {
+"base": "Resource",
+"class": "DialogResource",
+"language": "GDScript",
+"path": "res://Mailbox Puzzle/test/Dialog Resource.gd"
+}, {
 "base": "Area2D",
 "class": "InteractableArea",
 "language": "GDScript",
@@ -18,6 +28,21 @@ _global_script_classes=[ {
 "class": "Ladder",
 "language": "GDScript",
 "path": "res://Scripts/Ladder.gd"
+}, {
+"base": "Area2D",
+"class": "Mailbox",
+"language": "GDScript",
+"path": "res://Scripts/Mailbox.gd"
+}, {
+"base": "Node2D",
+"class": "Mailboxes",
+"language": "GDScript",
+"path": "res://Mailbox Puzzle/Mailboxes.gd"
+}, {
+"base": "Node2D",
+"class": "NPC_re",
+"language": "GDScript",
+"path": "res://Mailbox Puzzle/test/NPC re.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -30,8 +55,13 @@ _global_script_classes=[ {
 "path": "res://Scripts/PlayerConstants.gd"
 } ]
 _global_script_class_icons={
+"DialogBox_re": "",
+"DialogResource": "",
 "InteractableArea": "",
 "Ladder": "",
+"Mailbox": "",
+"Mailboxes": "",
+"NPC_re": "",
 "Player": "",
 "PlayerConstants": ""
 }
