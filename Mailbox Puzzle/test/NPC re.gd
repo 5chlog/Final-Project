@@ -3,8 +3,10 @@ class_name NPC_re
 
 # const DIALOGBOX = preload("res://Mailbox Puzzle/test/DialogBox.tscn")
 # var dialogbox = DIALOGBOX.instance()
-onready var dialogbox = get_node("/root/Mailbox test Vivek/DialogBox re") as DialogBox_re
+onready var dialogbox: DialogBox_re = get_node("/root/Mailbox test Vivek/DialogBox re") as DialogBox_re
 onready var dialogboxcontainer = dialogbox.get_child(0)
+
+var dialogresources: Array = []
 
 func interact():
 	print("Interacted")

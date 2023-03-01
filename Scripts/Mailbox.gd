@@ -25,7 +25,6 @@ func interact():
 	var parent: Mailboxes = get_parent()
 	var selectedmailbox = parent.selectedmailbox
 	
-	print("selectedmailbox old: ", selectedmailbox)
 	match selectedmailbox:
 		-1:
 			$OutlineSprite.visible = true
@@ -39,4 +38,3 @@ func interact():
 			parent.selectedmailbox = mailboxindex
 
 	$InteractableArea.player.toggleHold()
-	print(mailboxindex, "\nselectedmailbox new: ", parent.selectedmailbox)
