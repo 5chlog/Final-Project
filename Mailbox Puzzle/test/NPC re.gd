@@ -9,6 +9,21 @@ export(Array, Resource) var dialog_resources = []
 
 func interact():
 	print("Interacted")
-	$InteractableArea.player.toggleHold()
 	dialogbox.player = $InteractableArea.player
-	dialogbox.prepare_dialog_box(dialog_resources[0], self)
+	dialogbox.enable_dialog_box(dialog_resources[0], self, $InteractableArea.player)
+	$InteractableArea.active = false
+
+
+func button_TL_function():
+	print("Next Dialog clicked")
+	dialogbox.enable_dialog_box(dialog_resources[1], self, $InteractableArea.player)
+
+
+func button_TR_function():
+	print("Close Dialog clicked")
+	dialogbox.disable_dialog_box()
+	$InteractableArea.active = true
+
+
+func _on_dialogbox_closed():
+	$InteractableArea.active = true
