@@ -8,6 +8,7 @@ func _ready():
 		if mailboxes.get_child(i).targetmailslot in [1, 2, 3]:
 			solution_index_mailbox = i
 
+
 func interact():
 	if mailboxes.selectedmailbox == solution_index_mailbox:
 		$AnswerSprite.frame = 1

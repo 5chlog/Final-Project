@@ -1,18 +1,14 @@
-extends Node2D
+extends StaticBody2D
 class_name NPC_re
 
-# const DIALOGBOX = preload("res://Mailbox Puzzle/test/DialogBox.tscn")
-# var dialogbox = DIALOGBOX.instance()
+# Change to AutoLoad later
 onready var dialogbox: DialogBox_re = get_node("/root/Mailbox test Vivek/DialogBox re") as DialogBox_re
-onready var dialogboxcontainer = dialogbox.get_child(0)
 
-var dialogresources: Array = []
+# Use Resouces of type DialogResource as elements
+export(Array, Resource) var dialog_resources = []
 
 func interact():
 	print("Interacted")
 	$InteractableArea.player.toggleHold()
-	dialogboxcontainer.player = $InteractableArea.player
-	dialogbox.visible = true
-	dialogboxcontainer.grab_focus()
-	# get_parent().add_child(dialogbox)
-	pass
+	dialogbox.player = $InteractableArea.player
+	dialogbox.prepare_dialog_box(dialog_resources[0], self)

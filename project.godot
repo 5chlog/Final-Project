@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Button",
+"class": "DialogBoxButton",
+"language": "GDScript",
+"path": "res://Mailbox Puzzle/test/DialogBoxButton.gd"
+}, {
+"base": "Label",
+"class": "DialogBoxLabel",
+"language": "GDScript",
+"path": "res://Mailbox Puzzle/test/DialogBoxLabel.gd"
+}, {
 "base": "CanvasLayer",
 "class": "DialogBox_re",
 "language": "GDScript",
@@ -37,9 +47,9 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Mailboxes",
 "language": "GDScript",
-"path": "res://Mailbox Puzzle/Mailboxes.gd"
+"path": "res://Scripts/Mailboxes.gd"
 }, {
-"base": "Node2D",
+"base": "StaticBody2D",
 "class": "NPC_re",
 "language": "GDScript",
 "path": "res://Mailbox Puzzle/test/NPC re.gd"
@@ -55,6 +65,8 @@ _global_script_classes=[ {
 "path": "res://Scripts/PlayerConstants.gd"
 } ]
 _global_script_class_icons={
+"DialogBoxButton": "",
+"DialogBoxLabel": "",
 "DialogBox_re": "",
 "DialogResource": "",
 "InteractableArea": "",

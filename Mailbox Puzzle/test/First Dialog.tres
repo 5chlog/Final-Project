@@ -5,7 +5,12 @@
 [resource]
 script = ExtResource( 1 )
 dialogs = [ "This is the first line", "This is the next line", "Last line. I swear." ]
-button1 = false
-button1text = "Button 1"
-button2 = false
-button2text = "Button 2"
+button_flag = 0
+button_1_text = "Option 1"
+button_1_function = "button1_function"
+button_2_text = "Option 2"
+button_2_function = "button2_function"
+button_3_text = "Option 3"
+button_3_function = "button3_function"
+button_4_text = "Option 4"
+button_4_function = "button4_function"
