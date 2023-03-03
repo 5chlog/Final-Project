@@ -14,10 +14,7 @@ func prepare_button(var caller, var button_flag: int, var button_filter: int,
 		connect("pressed", caller, button_function)
 		disabled = false
 	else:
-		text = ""
-		function_name = ""
-		caller = null
-		disabled = true
+		clear_button()
 
 
 func clear_button():
@@ -25,9 +22,11 @@ func clear_button():
 		return
 	
 	text = ""
-	disconnect("button_down", caller, function_name)
+	if caller != null and is_connected("pressed", caller, function_name):
+		disconnect("pressed", caller, function_name)
 	function_name = ""
 	caller = null
+	visible = false
 	disabled = true
 
 

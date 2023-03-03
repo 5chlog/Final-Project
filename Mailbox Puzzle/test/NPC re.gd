@@ -27,3 +27,4 @@ func button_TR_function():
 
 func _on_dialogbox_closed():
 	$InteractableArea.active = true
+	dialogbox.disconnect("dialogbox_closed", self, "_on_dialogbox_closed")
