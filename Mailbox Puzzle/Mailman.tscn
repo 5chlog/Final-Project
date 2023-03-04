@@ -23,9 +23,10 @@ position = Vector2( -1, 1 )
 shape = SubResource( 1 )
 
 [node name="InteractableArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
-position = Vector2( -1, 1 )
+position = Vector2( -1, -9 )
 shape = SubResource( 2 )
 
 [node name="AnswerSprite" type="Sprite" parent="."]
