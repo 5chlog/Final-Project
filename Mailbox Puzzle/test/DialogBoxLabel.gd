@@ -5,26 +5,39 @@ var lineno: int = -1
 var lines: Array = []
 var show_last_line_alone: bool = false
 var has_buttons: bool = false
+var dialog_completed = true
 
 
 # Function to prepare the Label in DialogBox when a dialog starts
-func prepare_label(var lines: Array, var lineno: int, var show_last_line_with_buttons: bool = true,
+func prepare_label(var lines: Array, var show_last_line_with_buttons: bool = true,
 		var has_buttons: bool = false):
-	if lineno >= lines.size():
+	if lines.size() == 0:
+		clear_label()
+		if has_buttons:
+			dialog_completed = true
+			# print("dialog completed")
+			get_parent().show_buttons()
 		return
 	
-	self.lineno = lineno
+	dialog_completed = false
 	self.lines = lines
 	show_last_line_alone = !show_last_line_with_buttons
 	self.has_buttons = has_buttons
-	text = ""
+	text = lines[0]
+	lineno = 1
 	visible = true
+	grab_focus()
+	if self.lineno == lines.size() and has_buttons and show_last_line_with_buttons:
+		dialog_completed = true
+		# print("dialog completed")
+		get_parent().show_buttons()
 
 
 func clear_label():
 	if !visible:
 		return
 	
+	dialog_completed = true
 	self.lineno = -1
 	self.lines = []
 	show_last_line_alone = false
@@ -38,15 +51,16 @@ func _physics_process(delta):
 		if lineno < lines.size():
 			text = lines[lineno]
 			lineno += 1
-			print("lineno: ", lineno, " _input")
 			
+			# If last line and has buttons to show alone with the line
 			if lineno == lines.size() and has_buttons and !show_last_line_alone:
 				get_parent().show_buttons()
-				visible = false
-				print("dialog lines completed")
-		else:
-			clear_label()
-			print("dialog lines completed")
+				dialog_completed = true
+				# print("dialog lines completed")
+		elif !dialog_completed:
+			dialog_completed = true
+			# print("dialog lines completed")
+			text = ""
 			if show_last_line_alone and has_buttons:
 				get_parent().show_buttons()
 			else:

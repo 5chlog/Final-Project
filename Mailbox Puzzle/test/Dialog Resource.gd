@@ -6,8 +6,7 @@ const BUTTON_2_FLAG = 4
 const BUTTON_3_FLAG = 2
 const BUTTON_4_FLAG = 8
 
-export(Array, String, MULTILINE) var dialogs = [""]
-export(int) var starting_line_no = 0
+export(Array, String, MULTILINE) var dialogs = []
 export(int, FLAGS, "Button TL", "Button TR", "Button BL", "Button BR") var button_flag = 0
 export(String) var button_tl_text = "Option 1"
 export(String) var button_tl_function = "button_TL_function" # Name of function in caller npc to be 
@@ -27,3 +26,5 @@ export(bool) var send_dialogbox_closed_signal = true # If true, the dislogbox_cl
 		# DialogBox will be connected to the function named in dialogbox_close_function
 export(String) var dialogbox_close_function = "_on_dialogbox_closed" # Name of the function to be
 		# connected to the dialogbox_closed signal
+
+# Remember to disconnect the signal after use

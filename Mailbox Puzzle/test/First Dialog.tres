@@ -4,8 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-dialogs = [ "This is the first line.", "This is the next line.", "Last line. I swear." ]
-starting_line_no = 0
+dialogs = [ "This is the first line.", "This is the second line.", "This is the last line. I swear." ]
 button_flag = 3
 button_tl_text = "Next Dialog"
 button_tl_function = "button_TL_function"
