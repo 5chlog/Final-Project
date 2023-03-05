@@ -1,8 +1,8 @@
 extends StaticBody2D
 
 var solution_index_mailbox:int = -1
-onready var mailboxes:Mailboxes = get_parent().get_node("Mailboxes")
-onready var door = get_parent().get_node("Door")
+onready var mailboxes: Mailboxes = get_parent().get_node("Mailboxes")
+onready var door = get_parent().get_node("Door 2-3")
 
 onready var dialog_box: DialogBox_re = $"../DialogBox re"
 
@@ -21,19 +21,22 @@ func interact():
 		first_interact = false
 		$InteractableArea.active = false
 		return
+
+	dialog_box.enable_dialog_box( dialog_resource[0], self, $InteractableArea.player)
+	$InteractableArea.active = false
 		
 	if mailboxes.selectedmailbox == solution_index_mailbox:
-		dialog_box.enable_dialog_box( dialog_resource[2], self, $InteractableArea.player)
+		dialog_box.enable_dialog_box( dialog_resource[1], self, $InteractableArea.player)
 		door.collision_layer = 0
 		door.get_node("Sprite").frame = 1
 #		$AnswerSprite.frame = 1
 	else:
-		dialog_box.enable_dialog_box( dialog_resource[3], self, $InteractableArea.player)
+		dialog_box.enable_dialog_box( dialog_resource[2], self, $InteractableArea.player)
 #		$AnswerSprite.frame = 2
 	$InteractableArea.active = false
 
-func sure_button():
-	dialog_box.enable_dialog_box( dialog_resource[1], self, $InteractableArea.player)
+#func sure_button():
+#	dialog_box.enable_dialog_box( dialog_resource[1], self, $InteractableArea.player)
 
 func _on_dialogbox_closed():
 	dialog_box.disconnect("dialogbox_closed", self, "_on_dialogbox_closed")

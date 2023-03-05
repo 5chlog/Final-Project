@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-dialogs = [ "Thanks player." ]
+dialogs = [ "Thanks player", "Lets move on to the other room " ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"
