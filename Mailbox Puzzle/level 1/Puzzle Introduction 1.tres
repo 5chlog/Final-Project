@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource( 1 )
 dialogs = [ "Hi player ,
-Im the mailman resposible for post office and  
+I'm the mailman resposible for post office and  
 all the mails in the area", "Lately we have been shorthanded here and would be 
-gratefull if you lend a hand" ]
+grateful if you lend a hand" ]
 button_flag = 1
 button_tl_text = "Sure"
 button_tl_function = "sure_button"
@@ -18,5 +18,5 @@ button_bl_function = "button_BL_function"
 button_br_text = "Option 4"
 button_br_function = "button_BR_function"
 show_buttons_with_last_line = true
-send_dialogbox_closed_signal = true
+send_dialogbox_closed_signal = false
 dialogbox_close_function = "_on_dialogbox_closed"

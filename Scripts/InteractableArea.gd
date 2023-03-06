@@ -9,7 +9,7 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if active and Input.is_action_just_pressed("ui_accept"):
 		player.toggleHold()
 		get_parent().interact()

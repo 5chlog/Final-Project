@@ -40,7 +40,7 @@ targetmailslot = 2
 position = Vector2( 64, 0 )
 
 [node name="Mailman" parent="." instance=ExtResource( 6 )]
-position = Vector2( 52, 48 )
+position = Vector2( 87, 49 )
 dialog_resource = [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ]
 
 [node name="Door" parent="." instance=ExtResource( 11 )]
@@ -48,4 +48,4 @@ position = Vector2( 471, 32 )
 target_level_path = "res://Mailbox Puzzle/Mailbox Level 2.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 119, 48 )
+position = Vector2( 57, 49 )

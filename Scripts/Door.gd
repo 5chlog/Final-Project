@@ -6,4 +6,4 @@ func _on_Area2D_body_entered(body):
 	if target_level_path.empty() : return
 	
 	if body is Player:
-		get_tree().change_scene(target_level_path)
+		return get_tree().change_scene(target_level_path)
