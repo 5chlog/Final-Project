@@ -11,8 +11,8 @@
 [ext_resource path="res://Scripts/Mailman level 2.gd" type="Script" id=9]
 [ext_resource path="res://Mailbox Puzzle/level 1/Success message.tres" type="Resource" id=10]
 [ext_resource path="res://Mailbox Puzzle/level 1/Failure message.tres" type="Resource" id=11]
-[ext_resource path="res://Mailbox Puzzle/test/Dialog Resource.gd" type="Script" id=12]
-[ext_resource path="res://Mailbox Puzzle/test/DialogBox re.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=12]
+[ext_resource path="res://Dialog Box/DialogBox.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 12 )
@@ -28,8 +28,6 @@ button_bl_function = "button_BL_function"
 button_br_text = "Option 4"
 button_br_function = "button_BR_function"
 show_buttons_with_last_line = true
-send_dialogbox_closed_signal = true
-dialogbox_close_function = "_on_dialogbox_closed"
 
 [node name="Mailbox level 2" type="Node2D"]
 

@@ -12,22 +12,17 @@ _global_script_classes=[ {
 "base": "Button",
 "class": "DialogBoxButton",
 "language": "GDScript",
-"path": "res://Mailbox Puzzle/test/DialogBoxButton.gd"
+"path": "res://Dialog Box/dialogboxbutton.gd"
 }, {
 "base": "Label",
 "class": "DialogBoxLabel",
 "language": "GDScript",
-"path": "res://Mailbox Puzzle/test/DialogBoxLabel.gd"
-}, {
-"base": "CanvasLayer",
-"class": "DialogBox_re",
-"language": "GDScript",
-"path": "res://Mailbox Puzzle/test/DialogBox re.gd"
+"path": "res://Dialog Box/dialogboxlabel.gd"
 }, {
 "base": "Resource",
 "class": "DialogResource",
 "language": "GDScript",
-"path": "res://Mailbox Puzzle/test/Dialog Resource.gd"
+"path": "res://Dialog Box/Dialog Resource.gd"
 }, {
 "base": "Area2D",
 "class": "InteractableArea",
@@ -49,11 +44,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Mailboxes.gd"
 }, {
-"base": "StaticBody2D",
-"class": "NPC_re",
-"language": "GDScript",
-"path": "res://Mailbox Puzzle/test/NPC re.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -67,13 +57,11 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "DialogBoxButton": "",
 "DialogBoxLabel": "",
-"DialogBox_re": "",
 "DialogResource": "",
 "InteractableArea": "",
 "Ladder": "",
 "Mailbox": "",
 "Mailboxes": "",
-"NPC_re": "",
 "Player": "",
 "PlayerConstants": ""
 }
@@ -83,6 +71,10 @@ _global_script_class_icons={
 config/name="Test Side-Scroller 1"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+DialogBox="*res://Dialog Box/DialogBox.tscn"
 
 [display]
 

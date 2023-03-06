@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
-	if active and Input.is_action_just_pressed("ui_accept"):
+	if active and not DialogBox.visible and Input.is_action_just_pressed("ui_accept"):
 		player.toggleHold()
 		get_parent().interact()
 

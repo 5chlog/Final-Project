@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://Mailbox Puzzle/test/Dialog Resource.gd" type="Script" id=1]
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
@@ -16,5 +16,3 @@ button_bl_function = "button_BL_function"
 button_br_text = "Option 4"
 button_br_function = "button_BR_function"
 show_buttons_with_last_line = true
-send_dialogbox_closed_signal = true
-dialogbox_close_function = "_on_dialogbox_closed"
