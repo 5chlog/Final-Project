@@ -6,6 +6,8 @@ var lines: Array = []
 var show_last_line_alone: bool = false
 var has_buttons: bool = false
 var dialog_completed = true
+var text_speed: float = 1.0
+onready var animationplayer = $AnimationPlayer
 
 
 # Function to prepare the Label in DialogBox when a dialog starts
@@ -25,6 +27,9 @@ func prepare_label(var lines: Array, var show_last_line_with_buttons: bool = tru
 	self.has_buttons = has_buttons
 	text = lines[0]
 	lineno = 1
+	percent_visible = 0
+	text_speed = 50.0/text.length()
+	animationplayer.play("Show Text", -1, text_speed)
 	visible = true
 	grab_focus()
 	if self.lineno == lines.size() and has_buttons and show_last_line_with_buttons:
@@ -48,20 +53,32 @@ func clear_label():
 
 func _physics_process(delta):
 	if visible and Input.is_action_just_pressed("ui_accept"):
-		if lineno < lines.size():
-			text = lines[lineno]
-			lineno += 1
-			
-			# If last line and has buttons to show alone with the line
+		if animationplayer.is_playing():
+			animationplayer.stop()
+			percent_visible = 1
 			if lineno == lines.size() and has_buttons and !show_last_line_alone:
 				get_parent()._show_buttons()
 				dialog_completed = true
 				# print("dialog lines completed")
-		elif !dialog_completed:
-			dialog_completed = true
-			# print("dialog lines completed")
-			text = ""
-			if show_last_line_alone and has_buttons:
-				get_parent()._show_buttons()
-			else:
-				get_parent().disable_dialog_box()
+		else:
+			if lineno < lines.size():
+				text = lines[lineno]
+				text_speed = 50.0/text.length()
+				percent_visible = 0
+				animationplayer.play("Show Text", -1, text_speed)
+				lineno += 1
+			elif !dialog_completed:
+				dialog_completed = true
+				# print("dialog lines completed")
+				text = ""
+				if show_last_line_alone and has_buttons:
+					get_parent()._show_buttons()
+				else:
+					get_parent().disable_dialog_box()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if lineno == lines.size() and has_buttons and !show_last_line_alone:
+		get_parent()._show_buttons()
+		dialog_completed = true
+		# print("dialog lines completed")

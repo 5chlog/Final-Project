@@ -1,9 +1,40 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Dialog Box/dialogbox.gd" type="Script" id=1]
 [ext_resource path="res://Dialog Box/dialogboxbutton.gd" type="Script" id=2]
 [ext_resource path="res://Dialog Box/Dialog Option Arrow.png" type="Texture" id=3]
 [ext_resource path="res://Dialog Box/dialogboxlabel.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Show Text"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
 
 [node name="DialogBox" type="CanvasLayer"]
 visible = false
@@ -18,10 +49,10 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
-margin_left = 84.0
-margin_top = 138.0
-margin_right = 508.0
-margin_bottom = 222.0
+margin_left = 87.0
+margin_top = 141.0
+margin_right = 498.0
+margin_bottom = 212.0
 rect_scale = Vector2( 0.45, 0.45 )
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath(".")
@@ -30,9 +61,14 @@ focus_neighbour_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
 focus_mode = 2
-text = "Hey! Hello. This is a test sentence used to check scaling in text.
-New line of text."
+text = "0123456789012345678901234567890123456789001234567899"
+autowrap = true
+percent_visible = 0.0
 script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+anims/RESET = SubResource( 1 )
+"anims/Show Text" = SubResource( 2 )
 
 [node name="Button1" type="Button" parent="."]
 visible = false
@@ -142,6 +178,7 @@ margin_bottom = 68.0
 rect_scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 3 )
 
+[connection signal="animation_finished" from="Label/AnimationPlayer" to="Label" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="focus_entered" from="Button1" to="Button1" method="_on_Button_focus_entered"]
 [connection signal="focus_exited" from="Button1" to="Button1" method="_on_Button_focus_exited"]
 [connection signal="focus_entered" from="Button2" to="Button2" method="_on_Button_focus_entered"]
