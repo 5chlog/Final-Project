@@ -7,6 +7,13 @@ var has_item = null
 func _ready():
 	for inventory_slot in slots.get_children():
 		inventory_slot.connect("gui_input",self,"slot_gui_input",[inventory_slot])
+	initialize_inventory()
+
+func initialize_inventory():
+	var inv_slots = slots.get_children()
+	for i in range(inv_slots.size()):
+		if PlayerInventory.inventory.has(i):
+			inv_slots[i].initialize_item(PlayerInventory.inventory[i][0], PlayerInventory.inventory[i])
 
 func slot_gui_input(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton:
