@@ -14,6 +14,7 @@ onready var button_1: Button = $Button1
 onready var button_2: Button = $Button2
 onready var button_3: Button = $Button3
 onready var button_4: Button = $Button4
+onready var facecontainer = $FaceContainer
 
 func _physics_process(delta):
 	if enable:
@@ -46,7 +47,7 @@ func _show_buttons():
 	
 	if focused_button != null:
 		focused_button.grab_focus()
-		print("focused on button ", focused_button.text, "? ", focused_button.has_focus())
+		# print("focused on button ", focused_button.text, "? ", focused_button.has_focus())
 
 
 # Function to initiate a dialog in DialogBox
@@ -66,6 +67,8 @@ func enable_dialog_box(var dialog_resource: DialogResource, var caller, var play
 
 # Function to prepare the DialogBox and its children when a dialog begin
 func _prepare_dialog_box():
+	facecontainer.images = dialog_resource.face_images
+	facecontainer.names = dialog_resource.names
 	button_1.prepare_button(caller, dialog_resource.button_flag, dialog_resource.BUTTON_1_FLAG, 
 			dialog_resource.button_tl_text, dialog_resource.button_tl_function)
 	button_2.prepare_button(caller, dialog_resource.button_flag, dialog_resource.BUTTON_2_FLAG, 
@@ -74,16 +77,17 @@ func _prepare_dialog_box():
 			dialog_resource.button_tr_text, dialog_resource.button_tr_function)
 	button_4.prepare_button(caller, dialog_resource.button_flag, dialog_resource.BUTTON_4_FLAG, 
 			dialog_resource.button_br_text, dialog_resource.button_br_function)
-	label.prepare_label(dialog_resource.dialogs, dialog_resource.show_buttons_with_last_line, 
-			dialog_resource.button_flag)
+	label.prepare_label(dialog_resource.dialogs, dialog_resource.name_face_indices, 
+			dialog_resource.show_buttons_with_last_line, dialog_resource.button_flag)
+	
+	dialog_resource = null
 	
 	visible = true
 
 
 # Function to disable the DialogBox
 func disable_dialog_box():
-	self.caller = null
-	self.dialog_resource = null
+	caller = null
 	disable = true
 
 
@@ -94,5 +98,6 @@ func _close_dialog_box():
 	button_2.clear_button()
 	button_3.clear_button()
 	button_4.clear_button()
+	facecontainer.visible = false
 	
 	visible = false
