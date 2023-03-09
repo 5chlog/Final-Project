@@ -5,6 +5,7 @@ var player = null
 onready var animatedPlayer = $InteractableArea/AnimatedSprite
 
 func interact():
+	player = $InteractableArea.player
 	animatedPlayer.play("TurningOn")
 # Declare member variables here. Examples:
 # var a = 2
@@ -24,4 +25,4 @@ func interact():
 func _on_AnimatedSprite_animation_finished():
 	animatedPlayer.animation = "On"
 	animatedPlayer.playing = false
-	get_node("/root/World/Player").toggleHold()
+	player.toggleHold()

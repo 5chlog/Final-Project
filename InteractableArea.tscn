@@ -9,7 +9,7 @@ script = ExtResource( 1 )
 
 [node name="InteractSprite" type="Sprite" parent="."]
 visible = false
-position = Vector2( 0, -24 )
+position = Vector2( 0, -40 )
 texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_InteractableArea_body_entered"]
