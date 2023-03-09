@@ -2,6 +2,7 @@ extends Node2D
 
 const UNIT_HEIGHT = 32
 const UNIT_TIME = 0.5
+const SHRINK_FACTOR = 0.75
 export(int) var panel_count = 0
 var bottom_panel = null
 var off: bool = true
@@ -51,7 +52,8 @@ func _ready():
 				Animation.INTERPOLATION_CUBIC)
 		shrink_animation.track_set_path(shrink_scale_trackno, "./Sprite:scale")
 		shrink_animation.track_insert_key(shrink_scale_trackno, 0.0, Vector2(1.0, 1.0))
-		shrink_animation.track_insert_key(shrink_scale_trackno, UNIT_TIME, Vector2(0.75, 0.75))
+		shrink_animation.track_insert_key(shrink_scale_trackno, UNIT_TIME, 
+				Vector2(SHRINK_FACTOR, SHRINK_FACTOR))
 		panel.animationplayer.add_animation("Shrink", shrink_animation)
 		
 		var expand_animation = Animation.new()
@@ -60,7 +62,8 @@ func _ready():
 		expand_animation.track_set_interpolation_type(expand_scale_trackno, 
 				Animation.INTERPOLATION_CUBIC)
 		expand_animation.track_set_path(expand_scale_trackno, "./Sprite:scale")
-		expand_animation.track_insert_key(expand_scale_trackno, 0.0, Vector2(0.75, 0.75))
+		expand_animation.track_insert_key(expand_scale_trackno, 0.0, 
+				Vector2(SHRINK_FACTOR, SHRINK_FACTOR))
 		expand_animation.track_insert_key(expand_scale_trackno, UNIT_TIME, Vector2(1.0, 1.0))
 		panel.animationplayer.add_animation("Expand", expand_animation)
 	
