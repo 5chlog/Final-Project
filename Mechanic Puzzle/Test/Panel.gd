@@ -38,5 +38,3 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			-UNIT_HEIGHT * index)
 	comedown_animation.track_set_key_value(comedown_pos_y_trackno, comedown_key_1, 
 			-UNIT_HEIGHT * (index - 1))
-	# print(self, " animation: ", anim_name)
-	# print(self, " position: ", position, "\n*************\n")

@@ -5,6 +5,7 @@ export(int) var panel_count = 0
 var bottom_panel = null
 
 func _ready():
+	panel_count = get_child_count()
 	for i in panel_count:
 		var panel = get_child(i)
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Mechanic Puzzle/Test/Sprites/Panel Sprite.png" type="Texture" id=1]
 [ext_resource path="res://Mechanic Puzzle/Test/Conveyor.gd" type="Script" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Mechanic Puzzle/Test/Panel.gd" type="Script" id=4]
 [ext_resource path="res://Mechanic Puzzle/Test/Sprites/Panel Sprite 1.png" type="Texture" id=5]
 [ext_resource path="res://Mechanic Puzzle/Test/Sprites/Panel Sprite 2.png" type="Texture" id=6]
-[ext_resource path="res://Mechanic Puzzle/Test/Sprites/Panel Sprite 3.png" type="Texture" id=7]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,7 +15,7 @@ tile_data = PoolIntArray( -65521, 1, 4, -65520, 1, 196609, -65519, 1, 7, 65535, 
 [node name="Conveyor" type="Node2D" parent="."]
 position = Vector2( 265, 111 )
 script = ExtResource( 2 )
-panel_count = 4
+panel_count = 3
 
 [node name="Panel 1" type="Position2D" parent="Conveyor"]
 z_index = 1
@@ -46,13 +45,3 @@ script = ExtResource( 4 )
 texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 3"]
-
-[node name="Panel 4" type="Position2D" parent="Conveyor"]
-position = Vector2( 0, -96 )
-z_index = 1
-script = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="Conveyor/Panel 4"]
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 4"]
