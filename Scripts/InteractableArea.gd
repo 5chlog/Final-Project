@@ -9,26 +9,21 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	if active and Input.is_action_just_pressed("ui_accept"):
-		if player == null:
-			player = get_node("/root/World/Player")
+func _physics_process(_delta):
+	if active and not DialogBox.visible and Input.is_action_just_pressed("ui_accept"):
 		player.toggleHold()
 		get_parent().interact()
-	pass
-
 
 func _on_InteractableArea_body_entered(body):
 	if body is Player:
 		print(get_parent())
 		active = true
 		$InteractSprite.visible = true
-	pass # Replace with function body.
-
+		if player == null:
+			player = body
 
 func _on_InteractableArea_body_exited(body):
 	if body is Player:
 		active = false
 		$InteractSprite.visible = false
-	pass # Replace with function body.
 	

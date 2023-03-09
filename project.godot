@@ -9,6 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Button",
+"class": "DialogBoxButton",
+"language": "GDScript",
+"path": "res://Dialog Box/dialogboxbutton.gd"
+}, {
+"base": "Label",
+"class": "DialogBoxLabel",
+"language": "GDScript",
+"path": "res://Dialog Box/dialogboxlabel.gd"
+}, {
+"base": "Resource",
+"class": "DialogResource",
+"language": "GDScript",
+"path": "res://Dialog Box/Dialog Resource.gd"
+}, {
 "base": "Area2D",
 "class": "InteractableArea",
 "language": "GDScript",
@@ -18,6 +33,16 @@ _global_script_classes=[ {
 "class": "Ladder",
 "language": "GDScript",
 "path": "res://Scripts/Ladder.gd"
+}, {
+"base": "Area2D",
+"class": "Mailbox",
+"language": "GDScript",
+"path": "res://Scripts/Mailbox.gd"
+}, {
+"base": "Node2D",
+"class": "Mailboxes",
+"language": "GDScript",
+"path": "res://Scripts/Mailboxes.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -30,8 +55,13 @@ _global_script_classes=[ {
 "path": "res://Scripts/PlayerConstants.gd"
 } ]
 _global_script_class_icons={
+"DialogBoxButton": "",
+"DialogBoxLabel": "",
+"DialogResource": "",
 "InteractableArea": "",
 "Ladder": "",
+"Mailbox": "",
+"Mailboxes": "",
 "Player": "",
 "PlayerConstants": ""
 }
@@ -41,6 +71,10 @@ _global_script_class_icons={
 config/name="Test Side-Scroller 1"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+DialogBox="*res://Dialog Box/DialogBox.tscn"
 
 [display]
 

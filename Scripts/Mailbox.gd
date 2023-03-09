@@ -1,12 +1,8 @@
 extends Area2D
+class_name Mailbox
 
 export(int) var targetmailslot = 0
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	match targetmailslot:
 		1:
@@ -15,20 +11,30 @@ func _ready():
 			$Node2D/Mail2.frame = 1
 		3:
 			$Node2D/Mail3.frame = 1
-		
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 
 func _on_Mailbox_body_entered(body):
 	if body is Player:
 		$Node2D.visible = true
 
-
 func _on_Mailbox_body_exited(body):
 	if body is Player:
 		$Node2D.visible = false
+
+func interact():
+	var mailboxindex = get_index()
+	var parent: Mailboxes = get_parent()
+	var selectedmailbox = parent.selectedmailbox
+	
+	match selectedmailbox:
+		-1:
+			$OutlineSprite.visible = true
+			parent.selectedmailbox = mailboxindex
+		mailboxindex:
+			parent.selectedmailbox = -1
+			$OutlineSprite.visible = false
+		_:
+			parent.get_child(selectedmailbox).get_node("OutlineSprite").visible = false
+			$OutlineSprite.visible = true
+			parent.selectedmailbox = mailboxindex
+
+	$InteractableArea.player.toggleHold()
