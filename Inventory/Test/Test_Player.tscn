@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://images/player_spritesheet.png" type="Texture" id=1]
-[ext_resource path="res://Inventory/Test_Player.gd" type="Script" id=2]
-[ext_resource path="res://Inventory/PickupZone.gd" type="Script" id=3]
+[ext_resource path="res://Inventory/Test/Test_Player.gd" type="Script" id=2]
+[ext_resource path="res://Inventory/Test/PickupZone.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"

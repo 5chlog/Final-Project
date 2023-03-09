@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://HubWorld/World Map.png" type="Texture" id=1]
+[ext_resource path="res://images/Hubworld Labelled.png" type="Texture" id=1]
 [ext_resource path="res://HubWorld/Map_Player.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -21,10 +21,10 @@ texture = ExtResource( 1 )
 polygon = PoolVector2Array( 0, 326, 515, -1, 515, -1, 1, 1, 1, 1 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="WorldMap"]
-polygon = PoolVector2Array( 1, 325, 298, 542, 298, 718, -2, 720 )
+polygon = PoolVector2Array( 1, 325, 252, 504, 256, 712, -2, 720 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="WorldMap"]
-polygon = PoolVector2Array( 395, 612, 400, 718, 1282, 722, 1284, 614 )
+polygon = PoolVector2Array( 376, 600, 336, 708, 1282, 722, 1284, 614 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="WorldMap"]
 polygon = PoolVector2Array( 889, 396, 992, 472, 1064, 460, 1148, 480, 1188, 520, 1180, 564, 1132, 592, 1089, 607, 1039, 610, 976, 588, 948, 560, 935, 530, 828, 480, 744, 608, 1088, 612, 1282, 614, 1281, -2, 1147, 1 )

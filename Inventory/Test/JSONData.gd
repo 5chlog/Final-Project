@@ -4,7 +4,7 @@ var item_data: Dictionary
 
 # Parse and store JSON file data in a dictionary
 func _ready():
-	item_data = load_data("res://Inventory/ItemData.json")
+	item_data = load_data("res://Inventory/Test/ItemData.json")
 	
 func load_data(path):
 	var json_data

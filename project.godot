@@ -44,8 +44,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-JsonData="*res://Inventory/JSONData.gd"
-PlayerInventory="*res://Inventory/PlayerInventory.gd"
+JsonData="*res://Inventory/Test/JSONData.gd"
+PlayerInventory="*res://Inventory/Test/PlayerInventory.gd"
 
 [display]
 

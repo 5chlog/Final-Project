@@ -9,8 +9,9 @@ var default_style: StyleBoxTexture = null
 var empty_style: StyleBoxTexture = null
 
 # Preload item
-var itemClass = preload("res://Inventory/Item.tscn")
+var itemClass = preload("res://Inventory/Test/Item.tscn")
 var item = null
+var slot_index
 
 func _ready():
 	default_style = StyleBoxTexture.new()
