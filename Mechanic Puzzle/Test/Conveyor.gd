@@ -4,6 +4,9 @@ const UNIT_HEIGHT = 32
 const UNIT_TIME = 0.5
 export(int) var panel_count = 0
 var bottom_panel = null
+var off: bool = true
+var player: Player = null
+var switch = null
 
 func _ready():
 	panel_count = get_child_count()
@@ -52,7 +55,7 @@ func _ready():
 		panel.animationplayer.add_animation("Shrink", shrink_animation)
 		
 		var expand_animation = Animation.new()
-		expand_animation.length = UNIT_TIME
+		expand_animation.length = UNIT_TIME + 0.1
 		var expand_scale_trackno = expand_animation.add_track(Animation.TYPE_VALUE)
 		expand_animation.track_set_interpolation_type(expand_scale_trackno, 
 				Animation.INTERPOLATION_CUBIC)
@@ -62,3 +65,11 @@ func _ready():
 		panel.animationplayer.add_animation("Expand", expand_animation)
 	
 	# print("***********\n")
+
+
+func activate():
+	if not off:
+		return
+	
+	for panel in get_children():
+		panel._activate()

@@ -17,12 +17,18 @@ func _ready():
 
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		if index > 0:
-			animationplayer.play("Come Down")
-		else:
-			z_index = 0
-			animationplayer.play("Shrink")
+	# if Input.is_action_just_pressed("ui_accept"):
+	# 	_activate()
+	pass
+
+
+func _activate():
+	if index > 0:
+		animationplayer.play("Come Down")
+	else:
+		z_index = 0
+		animationplayer.play("Shrink")
+	pass
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -35,6 +41,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		animationplayer.play("Expand")
 	elif anim_name == "Come Down":
 		index = index - 1
+	elif anim_name == "Expand":
+		var parent = get_parent()
+		parent.off = true
+		parent.player.toggleHold()
+		parent.switch.get_node("InteractableArea").enable()
+		parent.switch.frame = 0
 	
 	comedown_animation.track_set_key_value(comedown_pos_y_trackno, comedown_key_0, 
 			-UNIT_HEIGHT * index)
