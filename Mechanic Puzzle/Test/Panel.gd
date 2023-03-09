@@ -22,15 +22,17 @@ func _physics_process(delta):
 			animationplayer.play("Come Down")
 		else:
 			z_index = 0
-			$Sprite.scale = Vector2(0.75, 0.75)
-			animationplayer.play("Go Up")
+			animationplayer.play("Shrink")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "Go Up":
+	if anim_name == "Shrink":
+		animationplayer.play("Go Up")
+		return
+	elif anim_name == "Go Up":
 		index = get_parent().panel_count - 1
 		z_index = 1
-		$Sprite.scale = Vector2(1, 1)
+		animationplayer.play("Expand")
 	elif anim_name == "Come Down":
 		index = index - 1
 	
