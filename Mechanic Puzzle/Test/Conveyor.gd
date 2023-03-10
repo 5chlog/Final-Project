@@ -47,25 +47,37 @@ func _ready():
 		
 		var shrink_animation = Animation.new()
 		shrink_animation.length = UNIT_TIME
-		var shrink_scale_trackno = shrink_animation.add_track(Animation.TYPE_VALUE)
-		shrink_animation.track_set_interpolation_type(shrink_scale_trackno, 
+		# var shrink_scale_trackno = shrink_animation.add_track(Animation.TYPE_VALUE)
+		# shrink_animation.track_set_interpolation_type(shrink_scale_trackno, 
+		# 		Animation.INTERPOLATION_CUBIC)
+		# shrink_animation.track_set_path(shrink_scale_trackno, "./Sprite:scale")
+		# shrink_animation.track_insert_key(shrink_scale_trackno, 0.0, Vector2(1.0, 1.0))
+		# shrink_animation.track_insert_key(shrink_scale_trackno, UNIT_TIME, 
+		# 		Vector2(SHRINK_FACTOR, SHRINK_FACTOR))
+		var shrink_modulate_a_trackno = shrink_animation.add_track(Animation.TYPE_VALUE)
+		shrink_animation.track_set_interpolation_type(shrink_modulate_a_trackno, 
 				Animation.INTERPOLATION_CUBIC)
-		shrink_animation.track_set_path(shrink_scale_trackno, "./Sprite:scale")
-		shrink_animation.track_insert_key(shrink_scale_trackno, 0.0, Vector2(1.0, 1.0))
-		shrink_animation.track_insert_key(shrink_scale_trackno, UNIT_TIME, 
-				Vector2(SHRINK_FACTOR, SHRINK_FACTOR))
-		panel.animationplayer.add_animation("Shrink", shrink_animation)
+		shrink_animation.track_set_path(shrink_modulate_a_trackno, ".:modulate:a")
+		shrink_animation.track_insert_key(shrink_modulate_a_trackno, 0, 1)
+		shrink_animation.track_insert_key(shrink_modulate_a_trackno, UNIT_TIME, 0.2)
+		panel.animationplayer.add_animation("Go In", shrink_animation)
 		
 		var expand_animation = Animation.new()
 		expand_animation.length = UNIT_TIME + 0.1
-		var expand_scale_trackno = expand_animation.add_track(Animation.TYPE_VALUE)
-		expand_animation.track_set_interpolation_type(expand_scale_trackno, 
+		# var expand_scale_trackno = expand_animation.add_track(Animation.TYPE_VALUE)
+		# expand_animation.track_set_interpolation_type(expand_scale_trackno, 
+		# 		Animation.INTERPOLATION_CUBIC)
+		# expand_animation.track_set_path(expand_scale_trackno, "./Sprite:scale")
+		# expand_animation.track_insert_key(expand_scale_trackno, 0.0, 
+		# 		Vector2(SHRINK_FACTOR, SHRINK_FACTOR))
+		# expand_animation.track_insert_key(expand_scale_trackno, UNIT_TIME, Vector2(1.0, 1.0))
+		var expand_modulate_a_trackno = expand_animation.add_track(Animation.TYPE_VALUE)
+		shrink_animation.track_set_interpolation_type(expand_modulate_a_trackno, 
 				Animation.INTERPOLATION_CUBIC)
-		expand_animation.track_set_path(expand_scale_trackno, "./Sprite:scale")
-		expand_animation.track_insert_key(expand_scale_trackno, 0.0, 
-				Vector2(SHRINK_FACTOR, SHRINK_FACTOR))
-		expand_animation.track_insert_key(expand_scale_trackno, UNIT_TIME, Vector2(1.0, 1.0))
-		panel.animationplayer.add_animation("Expand", expand_animation)
+		expand_animation.track_set_path(expand_modulate_a_trackno, ".:modulate:a")
+		expand_animation.track_insert_key(expand_modulate_a_trackno, 0, 0.2)
+		expand_animation.track_insert_key(expand_modulate_a_trackno, UNIT_TIME, 1)
+		panel.animationplayer.add_animation("Come Out", expand_animation)
 	
 	# print("***********\n")
 

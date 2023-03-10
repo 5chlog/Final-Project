@@ -27,21 +27,21 @@ func _activate():
 		animationplayer.play("Come Down")
 	else:
 		z_index = 0
-		animationplayer.play("Shrink")
+		animationplayer.play("Go In")
 	pass
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "Shrink":
+	if anim_name == "Go In":
 		animationplayer.play("Go Up")
 		return
 	elif anim_name == "Go Up":
 		index = get_parent().panel_count - 1
 		z_index = 1
-		animationplayer.play("Expand")
+		animationplayer.play("Come Out")
 	elif anim_name == "Come Down":
 		index = index - 1
-	elif anim_name == "Expand":
+	elif anim_name == "Come Out":
 		var parent = get_parent()
 		parent.off = true
 		parent.player.toggleHold()
