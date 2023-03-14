@@ -16,8 +16,11 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 12 )
+face_images = [  ]
+names = [  ]
 dialogs = [ "Would you check to see if there is a Golden Mail in any 
 of the mailboxes ? ", "Come back to me after finding the Golden Mail" ]
+name_face_indices = [  ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"
