@@ -26,6 +26,7 @@ offset = Vector2( 0, 10 )
 current = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+z_index = 10
 frames = SubResource( 2 )
 animation = "Idle"
 

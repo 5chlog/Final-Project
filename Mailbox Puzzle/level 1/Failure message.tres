@@ -4,8 +4,11 @@
 
 [resource]
 script = ExtResource( 1 )
+face_images = [  ]
+names = [  ]
 dialogs = [ "This isnt the Golden Mail 
 Try again!" ]
+name_face_indices = [  ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"
@@ -16,5 +19,3 @@ button_bl_function = "button_BL_function"
 button_br_text = "Option 4"
 button_br_function = "button_BR_function"
 show_buttons_with_last_line = true
-send_dialogbox_closed_signal = true
-dialogbox_close_function = "_on_dialogbox_closed"
