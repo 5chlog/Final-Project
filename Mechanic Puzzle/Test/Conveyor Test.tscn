@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Mechanic Puzzle/Test/Sprites/Panel Sprite.png" type="Texture" id=1]
 [ext_resource path="res://Mechanic Puzzle/Test/Conveyor.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Mechanic Puzzle/Test/Sprites/Robo Face.png" type="Texture" id=7]
 [ext_resource path="res://Mechanic Puzzle/Test/ConveyorSwitch.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Mechanic Puzzle/Test/Parts_Display.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Mechanic Puzzle/Test/Scanner.tscn" type="PackedScene" id=11]
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,6 +22,9 @@ tile_data = PoolIntArray( -393186, 1, 0, -393185, 1, 1, -393184, 1, 1, -393183, 
 collision_layer = 0
 collision_mask = 0
 tile_data = PoolIntArray( -1048564, 0, 3, -1048555, 0, 3, -983028, 0, 65539, -983019, 0, 65539, -917492, 0, 65539, -917483, 0, 65539, -851956, 0, 65539, -851947, 0, 65539, -786420, 0, 65539, -786411, 0, 65539, -720884, 0, 65539, -720875, 0, 65539, -655348, 0, 65539, -655339, 0, 65539, -589812, 0, 65539, -589803, 0, 65539, -524276, 0, 65539, -524267, 0, 65539, -458740, 0, 65539, -458731, 0, 65539, -393204, 0, 65539, -393195, 0, 65539, -327668, 0, 65539, -327659, 0, 65539, -262132, 0, 65539, -262123, 0, 65539, -196596, 0, 65539, -196587, 0, 65539, -131060, 0, 131075, -131051, 0, 131075 )
+
+[node name="Display" parent="." instance=ExtResource( 10 )]
+position = Vector2( 51, -99 )
 
 [node name="Conveyor" type="Node2D" parent="."]
 position = Vector2( 232, -56 )
@@ -48,8 +53,6 @@ texture = ExtResource( 6 )
 position = Vector2( 51, 1 )
 texture = ExtResource( 6 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 1"]
-
 [node name="Robo face" type="Sprite" parent="Conveyor/Panel 1"]
 position = Vector2( -27, 1 )
 texture = ExtResource( 7 )
@@ -57,6 +60,8 @@ texture = ExtResource( 7 )
 [node name="Robo face2" type="Sprite" parent="Conveyor/Panel 1"]
 position = Vector2( 25, 1 )
 texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 1"]
 
 [node name="Panel 2" type="Position2D" parent="Conveyor"]
 position = Vector2( 41, -42 )
@@ -80,8 +85,6 @@ texture = ExtResource( 6 )
 position = Vector2( 51, 1 )
 texture = ExtResource( 6 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 2"]
-
 [node name="Robo face" type="Sprite" parent="Conveyor/Panel 2"]
 position = Vector2( -27, 1 )
 texture = ExtResource( 7 )
@@ -89,6 +92,8 @@ texture = ExtResource( 7 )
 [node name="Robo face2" type="Sprite" parent="Conveyor/Panel 2"]
 position = Vector2( 25, 1 )
 texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 2"]
 
 [node name="Panel 3" type="Position2D" parent="Conveyor"]
 position = Vector2( 41, -84 )
@@ -112,8 +117,6 @@ texture = ExtResource( 6 )
 position = Vector2( 51, 1 )
 texture = ExtResource( 6 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 3"]
-
 [node name="Robo face" type="Sprite" parent="Conveyor/Panel 3"]
 position = Vector2( -27, 1 )
 texture = ExtResource( 7 )
@@ -121,6 +124,8 @@ texture = ExtResource( 7 )
 [node name="Robo face2" type="Sprite" parent="Conveyor/Panel 3"]
 position = Vector2( 25, 1 )
 texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 3"]
 
 [node name="Panel 4" type="Position2D" parent="Conveyor"]
 position = Vector2( 41, -126 )
@@ -144,8 +149,6 @@ texture = ExtResource( 6 )
 position = Vector2( 51, 1 )
 texture = ExtResource( 6 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 4"]
-
 [node name="Robo face" type="Sprite" parent="Conveyor/Panel 4"]
 position = Vector2( -27, 1 )
 texture = ExtResource( 7 )
@@ -154,7 +157,11 @@ texture = ExtResource( 7 )
 position = Vector2( 25, 1 )
 texture = ExtResource( 7 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 4"]
+
+[node name="Scanner" parent="." instance=ExtResource( 11 )]
+
 [node name="ConveyorSwitch" parent="." instance=ExtResource( 8 )]
-position = Vector2( 138, -19 )
+position = Vector2( 130, -26 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
