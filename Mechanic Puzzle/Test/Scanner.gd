@@ -3,6 +3,7 @@ extends CanvasLayer
 onready var screen: Sprite = get_child(0)
 onready var display = get_node("../Display")
 var parts_on_screen: int  = 0
+var calling_node = null
 
 var temp = 0 # Remove along with _physics_process
 
@@ -17,11 +18,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		if temp == 0:
 			equip()
-		elif temp == 1:
-			show_parts([display.partNames.SCREW, display.partNames.BATTERY])
-		elif temp == 2:
-			clear_parts()
-		temp += 1
+		elif temp == 3:
+			unequip()
+		
+		if temp < 3:
+			temp += 1
 
 
 func equip():
@@ -34,11 +35,12 @@ func unequip():
 	pass
 
 
-func show_parts(var parts: Array):
+func show_parts(var parts: Array, var caller):
+	calling_node = caller
 	parts_on_screen = 0
 	for part in parts:
 		var cell = screen.get_child(parts_on_screen)
-		# if display.partsDictionary[part][0]:
+		# if part in display.parts_used:
 		# Indent from here
 		cell.get_child(0).texture = display.partsDictionary[part][1]
 		cell.visible = true
@@ -49,8 +51,8 @@ func show_parts(var parts: Array):
 		screen.frame = 0
 
 
-func clear_parts():
-	if parts_on_screen == 0:
+func clear_parts(var caller):
+	if parts_on_screen == 0 or calling_node != caller:
 		return
 	for i in parts_on_screen:
 		var cell = screen.get_child(i)

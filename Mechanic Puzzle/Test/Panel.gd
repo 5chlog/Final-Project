@@ -1,4 +1,4 @@
-extends Position2D
+extends Sprite
 
 var index: int = 0
 var UNIT_HEIGHT = 0

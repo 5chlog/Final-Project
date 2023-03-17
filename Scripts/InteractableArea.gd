@@ -6,6 +6,11 @@ var player = null
 export(bool) var enabled = true
 
 
+func _ready():
+	if not enabled:
+		disable()
+
+
 func _physics_process(_delta):
 	if active and enabled and not DialogBox.visible and Input.is_action_just_pressed("ui_accept"):
 		player.toggleHold()
