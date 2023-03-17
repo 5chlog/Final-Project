@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+const CELL_COUNT = 16
+
 onready var screen: Sprite = get_child(0)
 onready var display = get_node("../Display")
 var parts_on_screen: int  = 0
@@ -18,8 +20,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		if temp == 0:
 			equip()
-		elif temp == 3:
-			unequip()
+		# elif temp == 3:
+		# 	unequip()
 		
 		if temp < 3:
 			temp += 1
@@ -37,6 +39,11 @@ func unequip():
 
 func show_parts(var parts: Array, var caller):
 	calling_node = caller
+	
+	for i in CELL_COUNT:
+		var cell = screen.get_child(i)
+		cell.visible = false
+	
 	parts_on_screen = 0
 	for part in parts:
 		var cell = screen.get_child(parts_on_screen)
@@ -52,9 +59,9 @@ func show_parts(var parts: Array, var caller):
 
 
 func clear_parts(var caller):
-	if parts_on_screen == 0 or calling_node != caller:
+	if calling_node != caller:
 		return
-	for i in parts_on_screen:
+	for i in CELL_COUNT:
 		var cell = screen.get_child(i)
 		cell.visible = false
 	screen.frame = 1

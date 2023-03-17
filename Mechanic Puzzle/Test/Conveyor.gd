@@ -21,8 +21,13 @@ func _ready():
 			for child in bottom_panel.get_children():
 				if child is MachineObject:
 					child.get_node("InteractableArea").enable()
+		else:
+			for child in panel.get_children():
+				if child is MachineObject:
+					child.get_node("InteractableArea").disable()
 		
 		panel.UNIT_HEIGHT = UNIT_HEIGHT
+		panel.position.y = -UNIT_HEIGHT * i
 		# print(panel, " index: ", panel.index)
 		
 		var goup_animation = Animation.new()

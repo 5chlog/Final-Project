@@ -4,11 +4,13 @@ class_name InteractableArea
 var active: bool = false
 var player = null
 export(bool) var enabled = true
+export(Vector2) var popup_offset = Vector2.ZERO
 
 
 func _ready():
 	if not enabled:
 		disable()
+	$InteractSprite.position += popup_offset
 
 
 func _physics_process(_delta):

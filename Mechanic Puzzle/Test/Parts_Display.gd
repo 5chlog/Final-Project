@@ -1,4 +1,5 @@
 extends Node2D
+class_name PartsDisplay
 
 enum partNames { GEAR, BOLT, SCREW, BATTERY }
 export(Array, partNames) var parts_used

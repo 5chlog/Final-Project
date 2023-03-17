@@ -28,6 +28,9 @@ func _activate():
 	else:
 		z_index = 0
 		animationplayer.play("Go In")
+		for child in get_children():
+			if child is MachineObject:
+				child.get_child(0).disable()
 	pass
 
 
@@ -41,6 +44,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		animationplayer.play("Come Out")
 	elif anim_name == "Come Down":
 		index = index - 1
+		if index == 0:
+			for child in get_children():
+				if child is MachineObject:
+					child.get_child(0).enable()
 	elif anim_name == "Come Out":
 		var parent = get_parent()
 		parent.off = true

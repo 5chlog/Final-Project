@@ -16,23 +16,23 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="RectangleShape2D" id=2]
-
-[sub_resource type="RectangleShape2D" id=3]
-
 [sub_resource type="RectangleShape2D" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
 
 [sub_resource type="RectangleShape2D" id=5]
 
+[sub_resource type="RectangleShape2D" id=3]
+
 [sub_resource type="RectangleShape2D" id=6]
-
-[sub_resource type="RectangleShape2D" id=7]
-
-[sub_resource type="RectangleShape2D" id=8]
 
 [sub_resource type="RectangleShape2D" id=9]
 
+[sub_resource type="RectangleShape2D" id=7]
+
 [sub_resource type="RectangleShape2D" id=10]
+
+[sub_resource type="RectangleShape2D" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -49,188 +49,294 @@ tile_data = PoolIntArray( -1048564, 0, 3, -1048555, 0, 3, -983028, 0, 65539, -98
 position = Vector2( 51, -99 )
 
 [node name="Conveyor" type="Node2D" parent="."]
-position = Vector2( 232, -42 )
+position = Vector2( 272, -42 )
 script = ExtResource( 2 )
 panel_count = 4
 
 [node name="Panel 1" type="Sprite" parent="Conveyor"]
-position = Vector2( 40.5, 0 )
 scale = Vector2( 1.07237, 1 )
 z_index = 1
 texture = ExtResource( 1 )
 script = ExtResource( 4 )
 
-[node name="Drill machine" type="Sprite" parent="Conveyor/Panel 1"]
+[node name="Machine Object 1" type="Sprite" parent="Conveyor/Panel 1"]
 position = Vector2( -48, 1 )
 texture = ExtResource( 6 )
 script = ExtResource( 12 )
+parts = [ 0, 1 ]
 
-[node name="InteractableArea" parent="Conveyor/Panel 1/Drill machine" instance=ExtResource( 13 )]
+[node name="InteractableArea" parent="Conveyor/Panel 1/Machine Object 1" instance=ExtResource( 13 )]
+popup_offset = Vector2( 0, 24 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Drill machine/InteractableArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Machine Object 1/InteractableArea"]
 shape = SubResource( 1 )
 
-[node name="Drill machine2" type="Sprite" parent="Conveyor/Panel 1"]
-position = Vector2( 0, 1 )
-texture = ExtResource( 6 )
-script = ExtResource( 12 )
-
-[node name="InteractableArea" parent="Conveyor/Panel 1/Drill machine2" instance=ExtResource( 13 )]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Drill machine2/InteractableArea"]
-shape = SubResource( 2 )
-
-[node name="Drill machine3" type="Sprite" parent="Conveyor/Panel 1"]
-position = Vector2( 48, 1 )
-texture = ExtResource( 6 )
-script = ExtResource( 12 )
-
-[node name="InteractableArea" parent="Conveyor/Panel 1/Drill machine3" instance=ExtResource( 13 )]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Drill machine3/InteractableArea"]
-shape = SubResource( 3 )
-
-[node name="Robo face" type="Sprite" parent="Conveyor/Panel 1"]
+[node name="Machine Object 2" type="Sprite" parent="Conveyor/Panel 1"]
 position = Vector2( -24, 1 )
 texture = ExtResource( 7 )
 script = ExtResource( 12 )
+parts = [ 1, 0 ]
 
-[node name="InteractableArea" parent="Conveyor/Panel 1/Robo face" instance=ExtResource( 13 )]
+[node name="InteractableArea" parent="Conveyor/Panel 1/Machine Object 2" instance=ExtResource( 13 )]
+popup_offset = Vector2( 0, 24 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Robo face/InteractableArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Machine Object 2/InteractableArea"]
 shape = SubResource( 4 )
 
-[node name="Robo face2" type="Sprite" parent="Conveyor/Panel 1"]
+[node name="Machine Object 3" type="Sprite" parent="Conveyor/Panel 1"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 6 )
+script = ExtResource( 12 )
+parts = [ 1, 0 ]
+
+[node name="InteractableArea" parent="Conveyor/Panel 1/Machine Object 3" instance=ExtResource( 13 )]
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Machine Object 3/InteractableArea"]
+shape = SubResource( 2 )
+
+[node name="Machine Object 4" type="Sprite" parent="Conveyor/Panel 1"]
 position = Vector2( 24, 1 )
 texture = ExtResource( 7 )
 script = ExtResource( 12 )
+parts = [ 1, 2 ]
 
-[node name="InteractableArea" parent="Conveyor/Panel 1/Robo face2" instance=ExtResource( 13 )]
+[node name="InteractableArea" parent="Conveyor/Panel 1/Machine Object 4" instance=ExtResource( 13 )]
+popup_offset = Vector2( 0, 24 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Robo face2/InteractableArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Machine Object 4/InteractableArea"]
 shape = SubResource( 5 )
+
+[node name="Machine Object 5" type="Sprite" parent="Conveyor/Panel 1"]
+position = Vector2( 48, 1 )
+texture = ExtResource( 6 )
+script = ExtResource( 12 )
+parts = [ 2, 3 ]
+
+[node name="InteractableArea" parent="Conveyor/Panel 1/Machine Object 5" instance=ExtResource( 13 )]
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 1/Machine Object 5/InteractableArea"]
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 1"]
 
 [node name="Panel 2" type="Sprite" parent="Conveyor"]
-position = Vector2( 40.5, -42 )
+position = Vector2( 0, -42 )
 scale = Vector2( 1.07237, 1 )
 z_index = 1
 texture = ExtResource( 1 )
 script = ExtResource( 4 )
 
-[node name="Drill machine" type="Sprite" parent="Conveyor/Panel 2"]
+[node name="Machine Object 1" type="Sprite" parent="Conveyor/Panel 2"]
 position = Vector2( -48, 1 )
 texture = ExtResource( 6 )
 script = ExtResource( 12 )
+parts = [ 2, 3 ]
 
-[node name="InteractableArea" parent="Conveyor/Panel 2/Drill machine" instance=ExtResource( 13 )]
+[node name="InteractableArea" parent="Conveyor/Panel 2/Machine Object 1" instance=ExtResource( 13 )]
 enabled = false
+popup_offset = Vector2( 0, 24 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Drill machine/InteractableArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Machine Object 1/InteractableArea"]
 shape = SubResource( 6 )
 
-[node name="Drill machine2" type="Sprite" parent="Conveyor/Panel 2"]
+[node name="Machine Object 2" type="Sprite" parent="Conveyor/Panel 2"]
+position = Vector2( -24, 1 )
+texture = ExtResource( 7 )
+script = ExtResource( 12 )
+parts = [ 0, 3 ]
+
+[node name="InteractableArea" parent="Conveyor/Panel 2/Machine Object 2" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Machine Object 2/InteractableArea"]
+shape = SubResource( 9 )
+
+[node name="Machine Object 3" type="Sprite" parent="Conveyor/Panel 2"]
 position = Vector2( 0, 1 )
 texture = ExtResource( 6 )
 script = ExtResource( 12 )
 
-[node name="InteractableArea" parent="Conveyor/Panel 2/Drill machine2" instance=ExtResource( 13 )]
+[node name="InteractableArea" parent="Conveyor/Panel 2/Machine Object 3" instance=ExtResource( 13 )]
 enabled = false
+popup_offset = Vector2( 0, 24 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Drill machine2/InteractableArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Machine Object 3/InteractableArea"]
 shape = SubResource( 7 )
 
-[node name="Drill machine3" type="Sprite" parent="Conveyor/Panel 2"]
-position = Vector2( 48, 1 )
-texture = ExtResource( 6 )
-script = ExtResource( 12 )
-
-[node name="InteractableArea" parent="Conveyor/Panel 2/Drill machine3" instance=ExtResource( 13 )]
-enabled = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Drill machine3/InteractableArea"]
-shape = SubResource( 8 )
-
-[node name="Robo face" type="Sprite" parent="Conveyor/Panel 2"]
-position = Vector2( -24, 1 )
-texture = ExtResource( 7 )
-script = ExtResource( 12 )
-
-[node name="InteractableArea" parent="Conveyor/Panel 2/Robo face" instance=ExtResource( 13 )]
-enabled = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Robo face/InteractableArea"]
-shape = SubResource( 9 )
-
-[node name="Robo face2" type="Sprite" parent="Conveyor/Panel 2"]
+[node name="Machine Object 4" type="Sprite" parent="Conveyor/Panel 2"]
 position = Vector2( 24, 1 )
 texture = ExtResource( 7 )
 script = ExtResource( 12 )
+parts = [ 3, 1 ]
 
-[node name="InteractableArea" parent="Conveyor/Panel 2/Robo face2" instance=ExtResource( 13 )]
+[node name="InteractableArea" parent="Conveyor/Panel 2/Machine Object 4" instance=ExtResource( 13 )]
 enabled = false
+popup_offset = Vector2( 0, 24 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Robo face2/InteractableArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Machine Object 4/InteractableArea"]
 shape = SubResource( 10 )
+
+[node name="Machine Object 5" type="Sprite" parent="Conveyor/Panel 2"]
+position = Vector2( 48, 1 )
+texture = ExtResource( 6 )
+script = ExtResource( 12 )
+parts = [ 3, 0 ]
+
+[node name="InteractableArea" parent="Conveyor/Panel 2/Machine Object 5" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 2/Machine Object 5/InteractableArea"]
+shape = SubResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 2"]
 
 [node name="Panel 3" type="Sprite" parent="Conveyor"]
-position = Vector2( 40.5, -84 )
+position = Vector2( 0, -84 )
 scale = Vector2( 1.07237, 1 )
 z_index = 1
 texture = ExtResource( 1 )
 script = ExtResource( 4 )
 
-[node name="Drill machine" type="Sprite" parent="Conveyor/Panel 3"]
+[node name="Machine Object 1" type="Sprite" parent="Conveyor/Panel 3"]
 position = Vector2( -48, 1 )
 texture = ExtResource( 6 )
+script = ExtResource( 12 )
+parts = [ 0 ]
 
-[node name="Drill machine2" type="Sprite" parent="Conveyor/Panel 3"]
-position = Vector2( 0, 1 )
-texture = ExtResource( 6 )
+[node name="InteractableArea" parent="Conveyor/Panel 3/Machine Object 1" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
 
-[node name="Drill machine3" type="Sprite" parent="Conveyor/Panel 3"]
-position = Vector2( 48, 1 )
-texture = ExtResource( 6 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 3/Machine Object 1/InteractableArea"]
+shape = SubResource( 6 )
 
-[node name="Robo face" type="Sprite" parent="Conveyor/Panel 3"]
+[node name="Machine Object 2" type="Sprite" parent="Conveyor/Panel 3"]
 position = Vector2( -24, 1 )
 texture = ExtResource( 7 )
+script = ExtResource( 12 )
+parts = [ 3 ]
 
-[node name="Robo face2" type="Sprite" parent="Conveyor/Panel 3"]
+[node name="InteractableArea" parent="Conveyor/Panel 3/Machine Object 2" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 3/Machine Object 2/InteractableArea"]
+shape = SubResource( 9 )
+
+[node name="Machine Object 3" type="Sprite" parent="Conveyor/Panel 3"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 6 )
+script = ExtResource( 12 )
+parts = [ 1 ]
+
+[node name="InteractableArea" parent="Conveyor/Panel 3/Machine Object 3" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 3/Machine Object 3/InteractableArea"]
+shape = SubResource( 7 )
+
+[node name="Machine Object 4" type="Sprite" parent="Conveyor/Panel 3"]
 position = Vector2( 24, 1 )
 texture = ExtResource( 7 )
+script = ExtResource( 12 )
+parts = [ 1, 3 ]
+
+[node name="InteractableArea" parent="Conveyor/Panel 3/Machine Object 4" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 3/Machine Object 4/InteractableArea"]
+shape = SubResource( 10 )
+
+[node name="Machine Object 5" type="Sprite" parent="Conveyor/Panel 3"]
+position = Vector2( 48, 1 )
+texture = ExtResource( 6 )
+script = ExtResource( 12 )
+parts = [ 2 ]
+
+[node name="InteractableArea" parent="Conveyor/Panel 3/Machine Object 5" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 3/Machine Object 5/InteractableArea"]
+shape = SubResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 3"]
 
 [node name="Panel 4" type="Sprite" parent="Conveyor"]
-position = Vector2( 40.5, -126 )
+position = Vector2( 0, -126 )
 scale = Vector2( 1.07237, 1 )
 z_index = 1
 texture = ExtResource( 1 )
 script = ExtResource( 4 )
 
-[node name="Drill machine" type="Sprite" parent="Conveyor/Panel 4"]
+[node name="Machine Object 1" type="Sprite" parent="Conveyor/Panel 4"]
 position = Vector2( -48, 1 )
 texture = ExtResource( 6 )
+script = ExtResource( 12 )
 
-[node name="Drill machine2" type="Sprite" parent="Conveyor/Panel 4"]
-position = Vector2( 0, 1 )
-texture = ExtResource( 6 )
+[node name="InteractableArea" parent="Conveyor/Panel 4/Machine Object 1" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
 
-[node name="Drill machine3" type="Sprite" parent="Conveyor/Panel 4"]
-position = Vector2( 48, 1 )
-texture = ExtResource( 6 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 4/Machine Object 1/InteractableArea"]
+shape = SubResource( 6 )
 
-[node name="Robo face" type="Sprite" parent="Conveyor/Panel 4"]
+[node name="Machine Object 2" type="Sprite" parent="Conveyor/Panel 4"]
 position = Vector2( -24, 1 )
 texture = ExtResource( 7 )
+script = ExtResource( 12 )
+parts = [ 1, 0, 2 ]
 
-[node name="Robo face2" type="Sprite" parent="Conveyor/Panel 4"]
+[node name="InteractableArea" parent="Conveyor/Panel 4/Machine Object 2" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 4/Machine Object 2/InteractableArea"]
+shape = SubResource( 9 )
+
+[node name="Machine Object 3" type="Sprite" parent="Conveyor/Panel 4"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 6 )
+script = ExtResource( 12 )
+
+[node name="InteractableArea" parent="Conveyor/Panel 4/Machine Object 3" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 4/Machine Object 3/InteractableArea"]
+shape = SubResource( 7 )
+
+[node name="Machine Object 4" type="Sprite" parent="Conveyor/Panel 4"]
 position = Vector2( 24, 1 )
 texture = ExtResource( 7 )
+script = ExtResource( 12 )
+parts = [ 2, 0, 3 ]
+
+[node name="InteractableArea" parent="Conveyor/Panel 4/Machine Object 4" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 4/Machine Object 4/InteractableArea"]
+shape = SubResource( 10 )
+
+[node name="Machine Object 5" type="Sprite" parent="Conveyor/Panel 4"]
+position = Vector2( 48, 1 )
+texture = ExtResource( 6 )
+script = ExtResource( 12 )
+parts = [ 0, 1, 2 ]
+
+[node name="InteractableArea" parent="Conveyor/Panel 4/Machine Object 5" instance=ExtResource( 13 )]
+enabled = false
+popup_offset = Vector2( 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Panel 4/Machine Object 5/InteractableArea"]
+shape = SubResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 4"]
 
