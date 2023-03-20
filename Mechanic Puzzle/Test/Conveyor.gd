@@ -18,13 +18,15 @@ func _ready():
 		if i == 0:
 			panel.z_index = 0
 			bottom_panel = panel
-			for child in bottom_panel.get_children():
-				if child is MachineObject:
-					child.get_node("InteractableArea").enable()
-		else:
-			for child in panel.get_children():
-				if child is MachineObject:
-					child.get_node("InteractableArea").disable()
+			# for child in bottom_panel.get_children():
+			# 	if child is MachineObject:
+			# 		child.get_node("InteractableArea").enable()
+		# else:
+		#
+		for child in panel.get_children():
+			if child is MachineObject:
+				child.get_node("InteractableArea").disable()
+		#
 		
 		panel.UNIT_HEIGHT = UNIT_HEIGHT
 		panel.position.y = -UNIT_HEIGHT * i

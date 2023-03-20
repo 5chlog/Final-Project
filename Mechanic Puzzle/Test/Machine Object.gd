@@ -2,6 +2,7 @@ extends Sprite
 class_name MachineObject
 
 onready var display = get_node("../../../Display")
+onready var conveyor = get_node("../..")
 export(Array, PartsDisplay.partNames) var parts
 
 
@@ -17,12 +18,12 @@ func interact():
 
 
 func _Player_entered_area(var body):
-	if body is Player:
+	if body is Player and get_parent() == conveyor.bottom_panel:
 		var scanner = get_node("../../../Scanner")
 		scanner.show_parts(parts, self)
 
 
 func _Player_exited_area(var body):
-	if body is Player:
+	if body is Player and get_parent() == conveyor.bottom_panel:
 		var scanner = get_node("../../../Scanner")
 		scanner.clear_parts(self)

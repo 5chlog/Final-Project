@@ -7,24 +7,10 @@ onready var display = get_node("../Display")
 var parts_on_screen: int  = 0
 var calling_node = null
 
-var temp = 0 # Remove along with _physics_process
-
 
 func _ready():
 	screen.frame = 1
 	visible = false
-
-
-# Remove _physics_process after objects are completed in Conveyor Test.tscn
-func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		if temp == 0:
-			equip()
-		# elif temp == 3:
-		# 	unequip()
-		
-		if temp < 3:
-			temp += 1
 
 
 func equip():
