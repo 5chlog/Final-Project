@@ -2,7 +2,8 @@ extends CanvasLayer
 
 const CELL_COUNT = 16
 
-onready var screen: Sprite = get_child(0)
+onready var screen: Sprite = get_node("Screen Sprite")
+onready var animationplayer: AnimationPlayer = get_node("AnimationPlayer")
 onready var display = get_node("../Display")
 var parts_on_screen: int  = 0
 var calling_node = null
@@ -14,12 +15,12 @@ func _ready():
 
 
 func equip():
-	visible = true
+	animationplayer.play("Slide In")
 	pass
 
 
 func unequip():
-	visible = false
+	animationplayer.play("Slide Out")
 	pass
 
 
