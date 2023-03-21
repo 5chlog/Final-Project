@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Mechanic Puzzle/Test/Scanner.gd" type="Script" id=1]
 [ext_resource path="res://Mechanic Puzzle/Test/Scanner Sprites/Scanner Sprite Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Mechanic Puzzle/Test/Scanner Sprites/Cell Border.png" type="Texture" id=3]
+[ext_resource path="res://Mechanic Puzzle/Test/Scanner Sprites/Part Scanner - Empty Msg.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -256,6 +257,11 @@ centered = false
 [node name="Sprite" type="Sprite" parent="Screen Sprite/Cell 16"]
 position = Vector2( 3, 3 )
 centered = false
+
+[node name="EmptyMsg" type="Sprite" parent="Screen Sprite"]
+visible = false
+position = Vector2( 50, 56 )
+texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )

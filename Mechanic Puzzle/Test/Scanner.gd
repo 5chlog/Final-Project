@@ -30,6 +30,7 @@ func show_parts(var parts: Array, var caller):
 	for i in CELL_COUNT:
 		var cell = screen.get_child(i)
 		cell.visible = false
+	get_node("Screen Sprite/EmptyMsg").visible = false
 	
 	parts_on_screen = 0
 	for part in parts:
@@ -39,10 +40,13 @@ func show_parts(var parts: Array, var caller):
 		cell.get_child(0).texture = display.partsDictionary[part][1]
 		cell.visible = true
 		parts_on_screen += 1
+		if parts_on_screen >= CELL_COUNT:
+			break
 		# Indent till here
 	
-	if parts_on_screen > 0:
-		screen.frame = 0
+	screen.frame = 0
+	if parts_on_screen == 0:
+		get_node("Screen Sprite/EmptyMsg").visible = true
 
 
 func clear_parts(var caller):
@@ -51,5 +55,6 @@ func clear_parts(var caller):
 	for i in CELL_COUNT:
 		var cell = screen.get_child(i)
 		cell.visible = false
+	get_node("Screen Sprite/EmptyMsg").visible = false
 	screen.frame = 1
 	parts_on_screen = 0
