@@ -6,6 +6,7 @@ const SHRINK_FACTOR = 0.75
 
 export(int) var selectable_object_count = 1
 var selected_object_count: int = 0
+var panel_count: int = 0
 
 var bottom_panel = null
 var off: bool = true
@@ -13,7 +14,7 @@ var player: Player = null
 var switch = null
 
 func _ready():
-	var panel_count = get_child_count()
+	panel_count = get_child_count()
 	for i in panel_count:
 		var panel = get_child(i)
 		

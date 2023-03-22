@@ -115,7 +115,7 @@ vframes = 2
 [node name="Conveyor" type="Node2D" parent="."]
 position = Vector2( 272, -42 )
 script = ExtResource( 2 )
-selectable_object_count = 2
+selectable_object_count = 4
 
 [node name="Panel 1" type="Sprite" parent="Conveyor"]
 scale = Vector2( 1.07237, 1 )
@@ -151,7 +151,7 @@ shape = SubResource( 4 )
 position = Vector2( 0, 2 )
 texture = ExtResource( 6 )
 script = ExtResource( 12 )
-parts = [ 1, 0 ]
+parts = [ 2, 3, 5 ]
 
 [node name="InteractableArea" parent="Conveyor/Panel 1/Machine Object 3" instance=ExtResource( 13 )]
 popup_offset = Vector2( 0, 24 )
@@ -163,7 +163,7 @@ shape = SubResource( 2 )
 position = Vector2( 32.3926, 2 )
 texture = ExtResource( 7 )
 script = ExtResource( 12 )
-parts = [ 1, 2 ]
+parts = [ 4, 6, 7, 3 ]
 
 [node name="InteractableArea" parent="Conveyor/Panel 1/Machine Object 4" instance=ExtResource( 13 )]
 popup_offset = Vector2( 0, 24 )
