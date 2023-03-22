@@ -16,12 +16,10 @@ func _ready():
 
 func equip():
 	animationplayer.play("Slide In")
-	pass
 
 
 func unequip():
 	animationplayer.play("Slide Out")
-	pass
 
 
 func show_parts(var parts: Array, var caller):
@@ -35,14 +33,11 @@ func show_parts(var parts: Array, var caller):
 	parts_on_screen = 0
 	for part in parts:
 		var cell = screen.get_child(parts_on_screen)
-		# if part in display.parts_used:
-		# Indent from here
 		cell.get_child(0).texture = display.partsDictionary[part][1]
 		cell.visible = true
 		parts_on_screen += 1
 		if parts_on_screen >= CELL_COUNT:
 			break
-		# Indent till here
 	
 	screen.frame = 0
 	if parts_on_screen == 0:

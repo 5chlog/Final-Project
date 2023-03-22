@@ -1,76 +1,117 @@
 extends Node2D
 class_name PartsDisplay
 
-enum partNames { GEAR, BOLT, SCREW, BATTERY, MOTOR, BLADES, FUEL, METAL}
-export(Array, partNames) var parts_used
 
+enum partNames { GEAR, BATTERY, BOLT, SCREW, MOTOR, SPRING, FUEL, TRANSFORMER, CAPACITOR, RESISTOR, 
+		SWITCH, BALLBEARING, LIGHT, TENSILECABLE, PISTON, TNUT}
+export(Array, partNames) var parts_used
 
 onready var partsDictionary:Dictionary = {
 	partNames.GEAR : 
 		[
-			false,
+			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Gear.png")
 		],
 	partNames.BATTERY : 
 		[
-			true,
+			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Battery.png")
 		],
 	partNames.BOLT : 
 		[
-			false,
+			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Bolt.png")
 		],
 	partNames.SCREW : 
 		[
-			false,
+			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
 		],
 	partNames.MOTOR : 
 		[
-			false,
+			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
 		],
-	partNames.BLADES : 
+	partNames.SPRING : 
 		[
-			false,
+			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
 		],
 	partNames.FUEL : 
 		[
-			false,
+			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
 		],
-	partNames.METAL : 
+	partNames.TRANSFORMER : 
 		[
-			false,
+			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
 		],
+	partNames.CAPACITOR :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+		],
+	partNames.RESISTOR :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+		],
+	partNames.SWITCH :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+		],
+	partNames.BALLBEARING :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+		],
+	partNames.LIGHT :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+		],
+	partNames.TENSILECABLE :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png") 
+		],
+	partNames.PISTON :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+		],
+	partNames.TNUT :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+		]
 }
 
 
 func _ready():
-	var i:int = 0 
-	var n:int = get_child_count()
+	var n = get_child_count()
+	if parts_used.size() > n:
+		parts_used.resize(n)
 	
-	checker()
-	
+	var i = 0 
 	for part in parts_used:
-		if i<n:
-			var child = get_child(i)
-			print(child.get_child(0))
-			child.get_child(0).texture = partsDictionary[part][1]
-			i+=1
-	pass
-	
-func checker():
-	var i:int = 0 
-	var n:int = get_child_count()
-	
-	for part in parts_used:
-		if i<n:
-			if partsDictionary[part][0]:
-				get_child(i).frame = 1
-			i+=1
-		
-	pass
+		var cell = get_child(i)
+		# print(cell.get_child(0))
+		cell.get_child(0).texture = partsDictionary[part][1]
+		i += 1
+
+
+func add_parts(var parts_selected: Array):
+	for part in parts_selected:
+		if partsDictionary[part][0] == 0:
+			get_child(parts_used.find(part)).frame = 1
+		partsDictionary[part][0] += 1
+
+
+func remove_parts(var parts_selected: Array):
+	for part in parts_selected:
+		if partsDictionary[part][0] == 1:
+			get_child(parts_used.find(part)).frame = 0
+		partsDictionary[part][0] -= 1
