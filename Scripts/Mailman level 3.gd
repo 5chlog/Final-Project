@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var solution_index_mailbox:int = -1
 onready var mailboxes: Mailboxes = get_parent().get_node("Mailboxes")
-onready var door = get_parent().get_node("Door 3-conclusion")
+onready var door: Door = get_parent().get_node("Door 3-conclusion")
 
 export(Array, Resource) var dialog_resource
 
@@ -21,8 +21,7 @@ func interact():
 		
 	if mailboxes.selectedmailbox == solution_index_mailbox:
 		DialogBox.enable_dialog_box( dialog_resource[1], self, $InteractableArea.player)
-		door.collision_layer = 0
-		door.get_node("Sprite").frame = 1
+		door.open_door()
 #		$AnswerSprite.frame = 1
 	else:
 		DialogBox.enable_dialog_box( dialog_resource[2], self, $InteractableArea.player)
