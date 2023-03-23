@@ -3,7 +3,11 @@ extends Node2D
 const UNIT_HEIGHT = 42
 const UNIT_TIME = 0.5
 const SHRINK_FACTOR = 0.75
-export(int) var panel_count = 0
+
+export(int) var selectable_object_count = 1
+var selected_object_count: int = 0
+var panel_count: int = 0
+
 var bottom_panel = null
 var off: bool = true
 var player: Player = null
@@ -18,7 +22,12 @@ func _ready():
 		if i == 0:
 			panel.z_index = 0
 			bottom_panel = panel
+		for child in panel.get_children():
+			if child is MachineObject:
+				child.get_node("InteractableArea").disable()
+		
 		panel.UNIT_HEIGHT = UNIT_HEIGHT
+		panel.position.y = -UNIT_HEIGHT * i
 		# print(panel, " index: ", panel.index)
 		
 		var goup_animation = Animation.new()

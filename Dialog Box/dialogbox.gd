@@ -116,5 +116,6 @@ func _close_dialog_box():
 	button_3.clear_button()
 	button_4.clear_button()
 	facecontainer.visible = false
+	endmarker.visible = false
 	
 	visible = false
