@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://HUD/Testing/NPC.gd" type="Script" id=1]
+[ext_resource path="res://Mailbox Puzzle/test/sprites/npc2.png" type="Texture" id=2]
+[ext_resource path="res://Mailbox Puzzle/test/sprites/npc1.png" type="Texture" id=3]
+[ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 4.5, 11.5 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7.5, 12.5 )
+
+[node name="NPC" type="StaticBody2D"]
+collision_layer = 8
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Idle"
+playing = true
+
+[node name="InteractableArea" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2( -0.5, 0.5 )
+shape = SubResource( 3 )
