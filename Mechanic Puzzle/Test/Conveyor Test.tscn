@@ -17,7 +17,7 @@
 [ext_resource path="res://Mechanic Puzzle/Test/Mechanic.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 4, 13.5 )
+extents = Vector2( 10, 13.5 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -232,6 +232,7 @@ texture = ExtResource( 16 )
 script = ExtResource( 17 )
 
 [node name="InteractableArea" parent="Mechanic" instance=ExtResource( 13 )]
+popup_offset = Vector2( 0, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mechanic/InteractableArea"]
 position = Vector2( 0, 2.5 )
