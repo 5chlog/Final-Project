@@ -11,6 +11,7 @@ onready var animationplayer = $AnimationPlayer
 
 func _ready():
 	animationplayer.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
+	z_index = 1
 
 
 func _activate():

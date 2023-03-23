@@ -9,10 +9,11 @@ var selected = false
 
 
 func _ready():
-	var interactablearea = get_child(0)
+	var interactablearea = get_node("InteractableArea")
 	interactablearea.connect("body_entered", self, "_Player_entered_area")
 	interactablearea.connect("body_exited", self, "_Player_exited_area")
 	interactablearea.disable()
+	$SelectionSprite.visible = false
 	
 	var parts_available = []
 	for part in parts:
@@ -27,10 +28,12 @@ func interact():
 	if selected:
 		display.remove_parts(parts)
 		conveyor.selected_object_count -= 1
+		$SelectionSprite.visible = false
 		selected = false
 	elif conveyor.selectable_object_count - conveyor.selected_object_count > 0:
 		display.add_parts(parts)
 		conveyor.selected_object_count += 1
+		$SelectionSprite.visible = true
 		selected = true
 		
 		for i in display.parts_used:
