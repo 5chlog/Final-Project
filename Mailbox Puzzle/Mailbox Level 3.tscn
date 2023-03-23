@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Concrete Bricked TileMap.tscn" type="PackedScene" id=2]
@@ -13,11 +13,14 @@
 [ext_resource path="res://Mailbox Puzzle/level 1/Failure message.tres" type="Resource" id=11]
 [ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=12]
 [ext_resource path="res://Dialog Box/DialogBox.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Dialog Faces/Avatar Face.png" type="Texture" id=14]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 12 )
-dialogs = [ "Would you check to see if there is a Golden Mail in any 
-of the mailboxes ? ", "Come back to me after finding the Golden Mail" ]
+face_images = [ ExtResource( 14 ) ]
+names = [ "Mailman" ]
+dialogs = [ "Would you check to see if there is a Golden Mail in any of the mailboxes? ", "Come back to me after finding the Golden Mail." ]
+name_face_indices = [ 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"
@@ -202,7 +205,6 @@ dialog_resource = [ SubResource( 1 ), ExtResource( 10 ), ExtResource( 11 ) ]
 
 [node name="Door 2-3" parent="." instance=ExtResource( 7 )]
 position = Vector2( -200, 80 )
-script = null
 
 [node name="Door 3-conclusion" parent="." instance=ExtResource( 7 )]
 position = Vector2( 443, 80 )
