@@ -22,7 +22,7 @@ func _activate():
 		animationplayer.play("Go In")
 		for child in get_children():
 			if child is MachineObject:
-				child.get_child(0).disable()
+				child.get_node("InteractableArea").disable()
 	pass
 
 
@@ -39,7 +39,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		if index == 0:
 			for child in get_children():
 				if child is MachineObject:
-					child.get_child(0).enable()
+					child.get_node("InteractableArea").enable()
 			get_parent().bottom_panel = self
 	elif anim_name == "Come Out":
 		var parent = get_parent()
