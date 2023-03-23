@@ -38,7 +38,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, -1 ) ]
 }
 
-[node name="Gift" type="KinematicBody2D"]
+[node name="Gift" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
