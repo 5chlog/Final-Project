@@ -66,8 +66,10 @@ func clear_label():
 	visible = false
 
 
-func _physics_process(delta):
+func _input(delta):
 	if visible and Input.is_action_just_pressed("ui_accept"):
+		if has_focus():
+			get_tree().set_input_as_handled()
 		if animationplayer.is_playing() and animationplayer.current_animation == "Show Text":
 			animationplayer.stop()
 			percent_visible = 1
