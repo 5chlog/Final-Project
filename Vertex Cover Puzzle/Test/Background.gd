@@ -1,6 +1,8 @@
 extends Sprite
 
 
+const UNIT_HEIGHT = 48
+
 var player: Player = null
 var switch = null
 var active: bool = false
@@ -18,12 +20,12 @@ func _input(event):
 		get_tree().set_input_as_handled()
 		
 		# Move Sprite down
-		position.y += 48
+		position.y += UNIT_HEIGHT
 	elif Input.is_action_just_pressed("ui_down"):
 		get_tree().set_input_as_handled()
 		
 		# Move Sprite up
-		position.y -= 48
+		position.y -= UNIT_HEIGHT
 	elif Input.is_action_just_pressed("ui_accept"):
 		get_tree().set_input_as_handled()
 		

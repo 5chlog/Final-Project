@@ -10,6 +10,7 @@ func _ready():
 
 func interact():
 	interactactable_area.disable()
+	
 	var player = interactactable_area.player
 	var control = get_node("../Control")
 	var background = control.get_node("ViewportContainer/Viewport/Test Map/Background")
@@ -17,6 +18,7 @@ func interact():
 	background.switch = self
 	background.active = true
 	control.visible = true
+	frame = 2
 	
 	var player_camera = player.get_node("Camera2D")
 	var viewport_node = control.get_node("ViewportContainer/Viewport")
@@ -24,4 +26,3 @@ func interact():
 			- player_camera.offset.y) 
 	var new_pos = -player.position + control.rect_position + displacement
 	player.get_node("Camera2D").position = new_pos
-	frame = 2
