@@ -23,6 +23,7 @@ func interact():
 func button_TL_function(): # Yes
 	DialogBox.disable_dialog_box()
 	$InteractableArea.player.toggleHold()
+	$InteractableArea.disable()
 	get_node("../Scanner").equip()
 
 
@@ -44,4 +45,5 @@ func _scanner_anim_completed(anim_name):
 				child.get_node("InteractableArea").enable()
 		get_node("../ConveyorSwitch/InteractableArea").enable()
 		started = true
+		$InteractableArea.enable()
 	pass
