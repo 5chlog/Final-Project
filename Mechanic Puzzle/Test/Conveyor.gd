@@ -1,6 +1,6 @@
 extends Node2D
 
-const UNIT_HEIGHT = 42
+const UNIT_HEIGHT = 48
 const UNIT_TIME = 0.5
 const SHRINK_FACTOR = 0.75
 
