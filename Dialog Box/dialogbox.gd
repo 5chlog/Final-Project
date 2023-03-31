@@ -14,7 +14,24 @@ onready var button_1: Button = $Button1
 onready var button_2: Button = $Button2
 onready var button_3: Button = $Button3
 onready var button_4: Button = $Button4
+onready var endmarker: TextureRect = $EndMarker
 onready var facecontainer = $FaceContainer
+
+
+func _ready():
+	visible = false
+	label.visible = false
+	button_1.get_child(0).visible = false
+	button_1.visible = false
+	button_2.get_child(0).visible = false
+	button_2.visible = false
+	button_3.get_child(0).visible = false
+	button_3.visible = false
+	button_4.get_child(0).visible = false
+	button_4.visible = false
+	endmarker.visible = false
+	facecontainer.visible = false
+
 
 func _physics_process(delta):
 	if enable:
@@ -99,5 +116,6 @@ func _close_dialog_box():
 	button_3.clear_button()
 	button_4.clear_button()
 	facecontainer.visible = false
+	endmarker.visible = false
 	
 	visible = false

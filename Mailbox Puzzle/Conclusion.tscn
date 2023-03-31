@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Concrete Bricked TileMap.tscn" type="PackedScene" id=2]
@@ -7,16 +7,17 @@
 [ext_resource path="res://Dialog Box/DialogBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Mailbox Puzzle/Mailman.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=7]
+[ext_resource path="res://Dialog Faces/Avatar Face.png" type="Texture" id=8]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 7 )
+face_images = [ ExtResource( 8 ) ]
+names = [ "Mailman" ]
 dialogs = [ "I see you have completed the 3 puzzles.
-Now that wasn't so hard was it? 
-(despite the increasing number of mailboxes you
- had to check towards the end...)
-", "There are problems which can be solved rather easily even for 
-large inputs and such problems are said to belong to 
-class of problems called Class P." ]
+Now that wasn't so hard was it?
+(despite the increasing number of mailboxes you  had to check towards the end...)
+", "There are problems which can be solved rather easily even for large inputs and such problems are said to belong to class of problems called Class P." ]
+name_face_indices = [ 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

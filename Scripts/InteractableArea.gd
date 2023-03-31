@@ -4,10 +4,19 @@ class_name InteractableArea
 var active: bool = false
 var player = null
 export(bool) var enabled = true
+export(Vector2) var popup_offset = Vector2.ZERO
 
 
-func _physics_process(_delta):
+func _ready():
+	if not enabled:
+		disable()
+	$InteractSprite.position += popup_offset
+
+
+func _input(_event): #_physics_process(_delta):
 	if active and enabled and not DialogBox.visible and Input.is_action_just_pressed("ui_accept"):
+		get_tree().set_input_as_handled() # Only works correctly if used inside input handling fucnctions
+				# like _inpput() or _unhandled_input()
 		player.toggleHold()
 		get_parent().interact()
 

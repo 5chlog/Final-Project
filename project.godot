@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Dialog Box/Dialog Resource.gd"
 }, {
+"base": "StaticBody2D",
+"class": "Door",
+"language": "GDScript",
+"path": "res://Scripts/Door.gd"
+}, {
 "base": "Area2D",
 "class": "InteractableArea",
 "language": "GDScript",
@@ -34,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Ladder.gd"
 }, {
+"base": "Sprite",
+"class": "MachineObject",
+"language": "GDScript",
+"path": "res://Mechanic Puzzle/Test/Machine Object.gd"
+}, {
 "base": "Area2D",
 "class": "Mailbox",
 "language": "GDScript",
@@ -43,6 +53,11 @@ _global_script_classes=[ {
 "class": "Mailboxes",
 "language": "GDScript",
 "path": "res://Scripts/Mailboxes.gd"
+}, {
+"base": "Node2D",
+"class": "PartsDisplay",
+"language": "GDScript",
+"path": "res://Mechanic Puzzle/Test/Parts_Display.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -58,10 +73,13 @@ _global_script_class_icons={
 "DialogBoxButton": "",
 "DialogBoxLabel": "",
 "DialogResource": "",
+"Door": "",
 "InteractableArea": "",
 "Ladder": "",
+"MachineObject": "",
 "Mailbox": "",
 "Mailboxes": "",
+"PartsDisplay": "",
 "Player": "",
 "PlayerConstants": ""
 }
@@ -75,6 +93,7 @@ config/icon="res://icon.png"
 [autoload]
 
 DialogBox="*res://Dialog Box/DialogBox.tscn"
+HUD="*res://HUD/HUD.tscn"
 JsonData="*res://Inventory/Test/JSONData.gd"
 PlayerInventory="*res://Inventory/Test/PlayerInventory.gd"
 
@@ -87,6 +106,11 @@ window/size/fullscreen=true
 window/size/test_width=1920
 window/size/test_height=1080
 window/stretch/mode="2d"
+
+[global]
+
+pixel=false
+"pixel snap"=false
 
 [gui]
 

@@ -12,6 +12,7 @@ onready var animationplayer = $AnimationPlayer
 onready var facecontainer = get_node("../FaceContainer")
 onready var facetexture = get_node("../FaceContainer/FaceTexture")
 onready var speakername = get_node("../FaceContainer/SpeakerName")
+onready var endmarker = get_node("../EndMarker")
 
 
 # Function to prepare the Label in DialogBox when a dialog starts
@@ -22,6 +23,7 @@ func prepare_label(var lines: Array, var name_face_indices: Array,
 	facetexture.texture = facecontainer.images[namefaceindices[0]]
 	speakername.text = facecontainer.names[namefaceindices[0]]
 	
+	# If no lines in dialog
 	if lines.size() == 0:
 		clear_label()
 		if has_buttons:
@@ -44,10 +46,10 @@ func prepare_label(var lines: Array, var name_face_indices: Array,
 	visible = true
 	grab_focus()
 	
-	if self.lineno == lines.size() and has_buttons and show_last_line_with_buttons:
-		dialog_completed = true
-		# print("dialog lines completed")
-		get_parent()._show_buttons()
+	# if self.lineno == lines.size() and has_buttons and show_last_line_with_buttons:
+	# 	dialog_completed = true
+	# 	# print("dialog lines completed")
+	# 	get_parent()._show_buttons()
 
 
 func clear_label():
@@ -64,24 +66,32 @@ func clear_label():
 	visible = false
 
 
-func _physics_process(delta):
+func _input(delta):
 	if visible and Input.is_action_just_pressed("ui_accept"):
-		if animationplayer.is_playing():
+		if has_focus():
+			get_tree().set_input_as_handled()
+		if animationplayer.is_playing() and animationplayer.current_animation == "Show Text":
 			animationplayer.stop()
 			percent_visible = 1
+			
 			if lineno == lines.size() and has_buttons and !show_last_line_alone:
 				get_parent()._show_buttons()
 				dialog_completed = true
 				# print("dialog lines completed")
+			else:
+				endmarker.visible = true
+				animationplayer.play("Animate Marker")
 		else:
 			if lineno < lines.size():
 				if namefaceindices[lineno] != namefaceindices[lineno - 1]:
 					facetexture.texture = facecontainer.images[namefaceindices[lineno]]
 					speakername.text = facecontainer.names[namefaceindices[lineno]]
+				
 				text = lines[lineno]
 				lineno += 1
 				text_speed = 50.0/text.length()
 				percent_visible = 0
+				endmarker.visible = false
 				animationplayer.play("Show Text", -1, text_speed)
 			elif !dialog_completed:
 				dialog_completed = true
@@ -94,7 +104,11 @@ func _physics_process(delta):
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if lineno == lines.size() and has_buttons and !show_last_line_alone:
-		get_parent()._show_buttons()
-		dialog_completed = true
-		# print("dialog lines completed")
+	if anim_name == "Show Text":
+		if lineno == lines.size() and has_buttons and !show_last_line_alone:
+			get_parent()._show_buttons()
+			dialog_completed = true
+			# print("dialog lines completed")
+		else:
+			endmarker.visible = true
+			animationplayer.play("Animate Marker")

@@ -1,4 +1,4 @@
-extends Position2D
+extends Sprite
 
 var index: int = 0
 var UNIT_HEIGHT = 0
@@ -11,15 +11,7 @@ onready var animationplayer = $AnimationPlayer
 
 func _ready():
 	animationplayer.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
-	
-	# print(self, " position: ", position)
-	# print("*************\n")
-
-
-func _physics_process(delta):
-	# if Input.is_action_just_pressed("ui_accept"):
-	# 	_activate()
-	pass
+	z_index = 1
 
 
 func _activate():
@@ -28,6 +20,9 @@ func _activate():
 	else:
 		z_index = 0
 		animationplayer.play("Go In")
+		for child in get_children():
+			if child is MachineObject:
+				child.get_node("InteractableArea").disable()
 	pass
 
 
@@ -41,6 +36,11 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		animationplayer.play("Come Out")
 	elif anim_name == "Come Down":
 		index = index - 1
+		if index == 0:
+			for child in get_children():
+				if child is MachineObject:
+					child.get_node("InteractableArea").enable()
+			get_parent().bottom_panel = self
 	elif anim_name == "Come Out":
 		var parent = get_parent()
 		parent.off = true
