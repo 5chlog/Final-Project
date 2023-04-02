@@ -1,14 +1,15 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
 [ext_resource path="res://Dialog Faces/Avatar Face.png" type="Texture" id=2]
+[ext_resource path="res://Dialog Faces/Santa Face.png" type="Texture" id=3]
 
 [resource]
 script = ExtResource( 1 )
-face_images = [ ExtResource( 2 ), ExtResource( 2 ) ]
-names = [ "Santa", "Santi Claws" ]
-dialogs = [ "HoeHoeHoe mothafaqa! The name's Santi Claws. And you're gonna do some shit for me because fuck you that's why.", "See that fucking kid over there? I fuckin hate kids. Mrs Claws wants kids, so I got her a fuckin Poke-Man. Anyway, you're gonna give em some gifts cause I'm too old for this shit." ]
-name_face_indices = [ 0, 1 ]
+face_images = [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 2 ) ]
+names = [ "Santa Claus", "Santa Claus", "Player" ]
+dialogs = [ "Hey, kid. I don't suppose you have a second to spare for a weary old man? I've a small favor to ask...", "You see those kids there? I have gifts for them, but I wanna give it to them in a way that makes them all happy. It's proving to be rather difficult. Could you lend a hand?", "Well, I suppose I could give it a go..." ]
+name_face_indices = [ 0, 1, 2 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

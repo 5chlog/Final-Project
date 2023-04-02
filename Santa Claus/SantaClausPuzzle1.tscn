@@ -34,27 +34,27 @@ position = Vector2( 375.958, 189 )
 [node name="Door2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 744.958, 189 )
 
-[node name="Gift" parent="." instance=ExtResource( 5 )]
-position = Vector2( 517.958, 149 )
+[node name="Gift1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 436.958, 207 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Gift2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 556.958, 149 )
+position = Vector2( 472.958, 206 )
 scale = Vector2( 0.3, 0.3 )
 sprite = ExtResource( 12 )
 
 [node name="Gift3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 595.958, 149 )
+position = Vector2( 508.958, 206 )
 scale = Vector2( 0.3, 0.3 )
 sprite = ExtResource( 11 )
 
-[node name="Child" parent="." instance=ExtResource( 1 )]
-position = Vector2( 517.958, 206 )
+[node name="Child1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608.958, 206 )
 
 [node name="Child2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 557.958, 206 )
+position = Vector2( 647.958, 205 )
 sprite = ExtResource( 14 )
 
 [node name="Child3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 596.958, 206 )
+position = Vector2( 693.958, 206 )
 sprite = ExtResource( 13 )
