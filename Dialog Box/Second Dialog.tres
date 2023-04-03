@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource( 1 )
+dialog_name = "Second Dialog"
 face_images = [ ExtResource( 2 ) ]
 names = [ "You" ]
 dialogs = [ "Test line number one.", "Test line number two.", "Last line. Dialog Box should close after this." ]

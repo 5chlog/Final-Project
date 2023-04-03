@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource( 1 )
+dialog_name = "First Dialog"
 face_images = [ ExtResource( 2 ), ExtResource( 3 ) ]
 names = [ "You", "Still You" ]
 dialogs = [ "*Talking to myself*
