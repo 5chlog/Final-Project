@@ -8,7 +8,7 @@ var started: bool = false
 
 
 func _ready():
-	get_node("../Scanner/AnimationPlayer").connect("animation_finished", self, 
+	get_node("../Extra HUD/AnimationPlayer").connect("animation_finished", self, 
 			"_scanner_anim_completed")
 
 
@@ -24,7 +24,7 @@ func button_TL_function(): # Yes
 	DialogBox.disable_dialog_box()
 	$InteractableArea.player.toggleHold()
 	$InteractableArea.disable()
-	get_node("../Scanner").equip()
+	get_node("../Extra HUD").equip_scanner()
 
 
 func button_TR_function(): # No
@@ -35,7 +35,11 @@ func _scanner_anim_completed(anim_name):
 	if started:
 		return
 	
-	if anim_name == "Slide In":
+	if anim_name == "Slide Scanner In":
+		get_node("../Extra HUD").show_select_count()
+	
+	
+	elif anim_name == "Show Select Count":	
 		current_dialog = instructions_dialog
 		DialogBox.enable_dialog_box(current_dialog, self, $InteractableArea.player)
 		

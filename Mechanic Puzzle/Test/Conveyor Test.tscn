@@ -9,7 +9,7 @@
 [ext_resource path="res://Mechanic Puzzle/Test/ConveyorSwitch.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Mechanic Puzzle/Test/Parts_Display.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Mechanic Puzzle/Test/Scanner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Mechanic Puzzle/Test/Extra HUD.tscn" type="PackedScene" id=11]
 [ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Mechanic Puzzle/Test/Sprites/Screen Cells.png" type="Texture" id=14]
 [ext_resource path="res://Mechanic Puzzle/Test/MachineObject.tscn" type="PackedScene" id=15]
@@ -221,7 +221,7 @@ parts = [ 0, 1, 2 ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panel 4"]
 
-[node name="Scanner" parent="." instance=ExtResource( 11 )]
+[node name="Extra HUD" parent="." instance=ExtResource( 11 )]
 
 [node name="ConveyorSwitch" parent="." instance=ExtResource( 8 )]
 position = Vector2( 123, -18 )
