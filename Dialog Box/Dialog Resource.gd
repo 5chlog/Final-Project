@@ -6,6 +6,7 @@ const BUTTON_2_FLAG = 4
 const BUTTON_3_FLAG = 2
 const BUTTON_4_FLAG = 8
 
+export(String) var dialog_name
 export(Array, Texture) var face_images = []
 export(Array, String) var names = []
 export(Array, String, MULTILINE) var dialogs = []
