@@ -10,6 +10,7 @@ var started: bool = false
 func _ready():
 	get_node("../Extra HUD/AnimationPlayer").connect("animation_finished", self, 
 			"_scanner_anim_completed")
+	DialogBox.connect("dialogbox_closed", self, "_on_dialogbox_closed")
 
 
 func interact():
@@ -18,17 +19,18 @@ func interact():
 	else:
 		current_dialog = puzzle_dialog
 	DialogBox.enable_dialog_box(current_dialog, self, $InteractableArea.player)
+	$InteractableArea.disable()
 
 
 func button_TL_function(): # Yes
 	DialogBox.disable_dialog_box()
 	$InteractableArea.player.toggleHold()
-	$InteractableArea.disable()
 	get_node("../Extra HUD").equip_scanner()
 
 
 func button_TR_function(): # No
 	DialogBox.disable_dialog_box()
+	$InteractableArea.enable()
 
 
 func _scanner_anim_completed(anim_name):
@@ -42,7 +44,10 @@ func _scanner_anim_completed(anim_name):
 	elif anim_name == "Show Select Count":	
 		current_dialog = instructions_dialog
 		DialogBox.enable_dialog_box(current_dialog, self, $InteractableArea.player)
-		
+
+
+func _on_dialogbox_closed(dialog_name):
+	if dialog_name == "Puzzle Instructions":
 		var bottom_panel = get_node("../Conveyor").bottom_panel
 		for child in bottom_panel.get_children():
 			if child is MachineObject:
@@ -50,4 +55,3 @@ func _scanner_anim_completed(anim_name):
 		get_node("../ConveyorSwitch/InteractableArea").enable()
 		started = true
 		$InteractableArea.enable()
-	pass

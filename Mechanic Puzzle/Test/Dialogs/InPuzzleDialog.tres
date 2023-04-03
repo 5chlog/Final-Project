@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource( 1 )
+dialog_name = "In Puzzle Dialog"
 face_images = [ ExtResource( 2 ) ]
 names = [ "Mechanic" ]
 dialogs = [ "HeHeHe" ]
