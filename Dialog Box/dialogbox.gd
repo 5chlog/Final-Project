@@ -2,13 +2,14 @@ extends CanvasLayer
 
 # DialogBox can be enabled by any object with a DialogResouce as member and if
 # buttons are used, the functions connected to them as well.
-signal dialogbox_closed
+signal dialogbox_closed(dialog_name)
 
 var player: Player = null
 var caller = null
 var enable = false
 var disable = false
 var dialog_resource = null
+var last_dialog_name: String = ""
 onready var label: DialogBoxLabel = $Label
 onready var button_1: Button = $Button1
 onready var button_2: Button = $Button2
@@ -41,7 +42,7 @@ func _physics_process(delta):
 		disable = false
 		_close_dialog_box()
 		player.toggleHold()
-		emit_signal("dialogbox_closed")
+		emit_signal("dialogbox_closed", last_dialog_name)
 
 
 # Function to show all non-disabled buttons and give focus with the priority order (Highest first)
@@ -97,6 +98,7 @@ func _prepare_dialog_box():
 	label.prepare_label(dialog_resource.dialogs, dialog_resource.name_face_indices, 
 			dialog_resource.show_buttons_with_last_line, dialog_resource.button_flag)
 	
+	last_dialog_name = dialog_resource.dialog_name
 	dialog_resource = null
 	
 	visible = true

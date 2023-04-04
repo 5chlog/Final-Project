@@ -5,11 +5,10 @@
 
 [resource]
 script = ExtResource( 1 )
-dialog_name = "Second Dialog"
-face_images = [ ExtResource( 2 ) ]
-names = [ "You" ]
-dialogs = [ "Test line number one.", "Test line number two.", "Last line. Dialog Box should close after this." ]
-name_face_indices = [ 0, 0, 0 ]
+face_images = [ ExtResource( 2 ), ExtResource( 2 ) ]
+names = [ "Santa", "Santi Claws" ]
+dialogs = [ "HoeHoeHoe mothafaqa! The name's Santi Claws. And you're gonna do some shit for me because fuck you that's why.", "See that fucking kid over there? I fuckin hate kids. Mrs Claws wants kids, so I got her a fuckin Poke-Man. Anyway, you're gonna give em some gifts cause I'm too old for this shit." ]
+name_face_indices = [ 0, 1 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"
