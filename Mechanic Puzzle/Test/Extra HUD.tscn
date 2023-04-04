@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Mechanic Puzzle/Test/Extra HUD.gd" type="Script" id=1]
-[ext_resource path="res://Mechanic Puzzle/Test/Scanner Sprites/Scanner Sprite Sheet.png" type="Texture" id=2]
-[ext_resource path="res://Mechanic Puzzle/Test/Scanner Sprites/Cell Border.png" type="Texture" id=3]
-[ext_resource path="res://Mechanic Puzzle/Test/Scanner Sprites/Part Scanner - Empty Msg.png" type="Texture" id=4]
+[ext_resource path="res://Mechanic Puzzle/Test/Extra HUD Sprites/Scanner Sprite Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Mechanic Puzzle/Test/Extra HUD Sprites/Cell Border.png" type="Texture" id=3]
+[ext_resource path="res://Mechanic Puzzle/Test/Extra HUD Sprites/Part Scanner - Empty Msg.png" type="Texture" id=4]
+[ext_resource path="res://Mechanic Puzzle/Test/Extra HUD Sprites/SelectCountBkg.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=6]
 resource_name = "Hide Select Count"
@@ -308,12 +309,22 @@ texture = ExtResource( 4 )
 
 [node name="SelectCount" type="Node2D" parent="."]
 visible = false
-position = Vector2( 602, 92 )
+position = Vector2( 640, 91 )
+
+[node name="Background" type="Sprite" parent="SelectCount"]
+modulate = Color( 1, 1, 1, 0.854902 )
+position = Vector2( -48, 0 )
+texture = ExtResource( 5 )
+centered = false
 
 [node name="SelectCountLabel" type="Label" parent="SelectCount"]
-margin_right = 32.0
-margin_bottom = 14.0
-text = "0/8"
+margin_left = -47.0
+margin_top = 1.0
+margin_right = -2.0
+margin_bottom = 15.0
+text = "0\\0"
+align = 2
+valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Hide Select Count" = SubResource( 6 )

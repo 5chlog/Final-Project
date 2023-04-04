@@ -12,6 +12,7 @@ var calling_node = null
 func _ready():
 	scanner.frame = 1
 	visible = false
+	$SelectCount/SelectCountLabel.text = "0/" + String(get_node("../Conveyor").selectable_object_count)
 
 
 func equip_scanner():
