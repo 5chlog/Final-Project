@@ -17,7 +17,6 @@ position = Vector2( 152, 209 )
 position = Vector2( 194, 222 )
 
 [node name="Control" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 375.0
@@ -28,14 +27,14 @@ margin_bottom = 240.0
 [node name="ViewportContainer" type="ViewportContainer" parent="Control"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 120.0
-margin_bottom = 248.0
+margin_right = 206.0
+margin_bottom = 349.0
 
 [node name="Viewport" type="Viewport" parent="Control/ViewportContainer"]
-size = Vector2( 112, 240 )
+size = Vector2( 198, 341 )
 handle_input_locally = false
 hdr = false
 usage = 0
-render_target_update_mode = 0
+render_target_update_mode = 3
 
 [node name="Test Map" parent="Control/ViewportContainer/Viewport" instance=ExtResource( 3 )]
