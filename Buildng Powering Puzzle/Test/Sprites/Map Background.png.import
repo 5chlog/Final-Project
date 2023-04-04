@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Map Background.png-1815a068b5e8766c8bea82ab0103365d.stex"
+path="res://.import/Map Background.png-5c03091e48b2621fed3b840ea63d7b30.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Vertex Cover Puzzle/Test/Sprites/Map Background.png"
-dest_files=[ "res://.import/Map Background.png-1815a068b5e8766c8bea82ab0103365d.stex" ]
+source_file="res://Buildng Powering Puzzle/Test/Sprites/Map Background.png"
+dest_files=[ "res://.import/Map Background.png-5c03091e48b2621fed3b840ea63d7b30.stex" ]
 
 [params]
 

@@ -17,7 +17,7 @@ func interact():
 	viewport_camera.player = player
 	viewport_camera.switch = self
 	viewport_camera.active = true
-	viewport_camera.visible = true
+	control.visible = true
 	frame = 2
 	
 	var player_camera = player.get_node("Camera2D")
