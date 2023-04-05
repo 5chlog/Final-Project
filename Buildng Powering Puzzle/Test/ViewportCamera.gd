@@ -12,7 +12,7 @@ var top_bound: int = 0
 
 
 func _ready():
-	bottom_bound = get_node("../Background").texture.get_size().y - get_viewport_rect().size.y
+	bottom_bound = get_node("../BuildingSprite").texture.get_size().y - get_viewport_rect().size.y
 	if bottom_bound < 0:
 		top_bound = bottom_bound
 	position.y = bottom_bound
