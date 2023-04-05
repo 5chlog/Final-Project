@@ -37,10 +37,13 @@ func _input(event):
 	elif Input.is_action_just_pressed("ui_accept"):
 		get_tree().set_input_as_handled()
 		
+		var room = get_node("../BuildingSprite/Graph/Room 1")
+		room.frame = 1 - room.frame
+		
 		# Return disable the viewport, enable InteractableArea of Switch and control to player
-		active = false
-		get_node("../../../..").visible = false
-		player.get_node("Camera2D").position = Vector2(0, 0)
-		switch.get_node("InteractableArea").enable()
-		switch.frame = 0
-		player.toggleHold()
+		# active = false
+		# get_node("../../../..").visible = false
+		# player.get_node("Camera2D").position = Vector2(0, 0)
+		# switch.get_node("InteractableArea").enable()
+		# switch.frame = 0
+		# player.toggleHold()
