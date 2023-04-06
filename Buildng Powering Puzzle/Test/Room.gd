@@ -1,3 +1,5 @@
+tool
+
 extends Sprite
 class_name RoomEdge
 
@@ -10,6 +12,9 @@ var on: bool = false
 
 export(NodePath) var generator_1_path = null
 export(NodePath) var generator_2_path = null
+export(Vector2) var connection_1_anchor = Vector2.ZERO
+export(Vector2) var connection_2_anchor = Vector2.ZERO
+
 onready var generator_1: GeneratorVertex = get_node(generator_1_path)
 onready var generator_2: GeneratorVertex = get_node(generator_2_path)
 onready var connection_1: Line2D = get_node("Connection 1")
@@ -33,10 +38,10 @@ func _ready():
 	
 	# Adding starting and anchor points
 	connection_1.add_point(room_centre)
-	connection_1.add_point(room_centre)
+	connection_1.add_point(room_centre + connection_1_anchor)
 	
 	connection_2.add_point(room_centre)
-	connection_2.add_point(room_centre)
+	connection_2.add_point(room_centre + connection_2_anchor)
 	
 	# Setting coordinates for generator end-points and adding those points
 	var room_pos_from_graph = position + get_parent().position

@@ -1,7 +1,10 @@
+tool
+
 extends AnimatedSprite
 class_name GeneratorVertex
 
 
+export(int) var id_number = 0
 var on: bool = false
 var room_list: Array = []
 
@@ -11,7 +14,9 @@ func _ready():
 	animation = "Off"
 	frame = 0
 	playing = false
-	pass # Replace with function body.
+	
+	$FirstDigitSprite.frame = int(id_number/10) % 10 
+	$SecondDigitSprite.frame = id_number % 10
 
 
 func switch_on():

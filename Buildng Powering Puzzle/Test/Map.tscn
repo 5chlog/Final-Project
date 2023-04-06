@@ -21,14 +21,19 @@ script = ExtResource( 8 )
 position = Vector2( 46, 18 )
 generator_1_path = NodePath("../../Generators/Generator 1")
 generator_2_path = NodePath("../../Generators/Generator 2")
+connection_2_anchor = Vector2( 0, 48 )
 
 [node name="Generators" type="Node2D" parent="BuildingSprite/Graph"]
 
 [node name="Generator 1" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 5 )]
 position = Vector2( 126, 27 )
+animation = "Off"
+id_number = 1
 
 [node name="Generator 2" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 5 )]
 position = Vector2( 126, 75 )
+animation = "Off"
+id_number = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

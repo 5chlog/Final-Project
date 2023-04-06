@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Buildng Powering Puzzle/Test/Sprites/Generator Sprite Sheets/Generator On Sprite Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Buildng Powering Puzzle/Test/Sprites/Generator Sprite Sheets/Generator Off Sprite Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Buildng Powering Puzzle/Test/Generator.gd" type="Script" id=3]
+[ext_resource path="res://Buildng Powering Puzzle/Test/Sprites/Generator Sprite Sheets/Generator Number Sprite Sheet.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -35,3 +36,16 @@ frames = SubResource( 4 )
 animation = "On"
 centered = false
 script = ExtResource( 3 )
+
+[node name="FirstDigitSprite" type="Sprite" parent="."]
+position = Vector2( 2, 1 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 10
+
+[node name="SecondDigitSprite" type="Sprite" parent="."]
+position = Vector2( 7, 1 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 10
+frame = 1
