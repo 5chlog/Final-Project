@@ -19,7 +19,7 @@ tile_data = PoolIntArray( -458752, 1, 0, -458751, 1, 1, -458750, 1, 1, -458749, 
 position = Vector2( 229, 220 )
 
 [node name="MapSwitch" parent="." instance=ExtResource( 4 )]
-position = Vector2( 267, 223 )
+position = Vector2( 268, 220 )
 
 [node name="MapBorder" type="NinePatchRect" parent="."]
 visible = false

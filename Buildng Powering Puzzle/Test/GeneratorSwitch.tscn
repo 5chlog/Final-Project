@@ -16,6 +16,7 @@ __meta__ = {
 }
 
 [node name="InteractableArea" parent="." instance=ExtResource( 3 )]
+popup_offset = Vector2( 0, 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
 shape = SubResource( 1 )

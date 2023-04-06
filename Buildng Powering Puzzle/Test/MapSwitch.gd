@@ -22,7 +22,6 @@ func interact():
 	viewport_camera.switch = self
 	viewport_camera.active = true
 	map_border.visible = true
-	frame = 2
 	
 	# Setting Player's Camera to centre of the Map (Viewport)
 	var cam_offset = Vector2(0, int(player.get_node("Camera2D").offset.y))
