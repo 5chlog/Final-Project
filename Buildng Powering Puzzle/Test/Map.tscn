@@ -1,26 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Buildng Powering Puzzle/Test/Sprites/Building Sprite.png" type="Texture" id=1]
-[ext_resource path="res://Buildng Powering Puzzle/Test/Sprites/Room Sprite Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Buildng Powering Puzzle/Test/Room.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Buildng Powering Puzzle/Test/ViewportCamera.gd" type="Script" id=3]
-[ext_resource path="res://Buildng Powering Puzzle/Test/Room.gd" type="Script" id=4]
-[ext_resource path="res://Buildng Powering Puzzle/Test/Sprites/Generator Sprite Sheet.png" type="Texture" id=5]
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 5 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
-"name": "Running",
-"speed": 5.0
-} ]
+[ext_resource path="res://Buildng Powering Puzzle/Test/Generator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buildng Powering Puzzle/Test/Graph.gd" type="Script" id=8]
 
 [node name="Map" type="Node2D"]
 
@@ -29,18 +13,22 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Graph" type="Node2D" parent="BuildingSprite"]
+script = ExtResource( 8 )
 
-[node name="Room 1" type="Sprite" parent="BuildingSprite/Graph"]
-position = Vector2( 56, 34 )
-texture = ExtResource( 2 )
-hframes = 2
-script = ExtResource( 4 )
+[node name="Rooms" type="Node2D" parent="BuildingSprite/Graph"]
 
-[node name="Generator 1" type="AnimatedSprite" parent="BuildingSprite/Graph"]
-position = Vector2( 140, 34 )
-frames = SubResource( 3 )
-animation = "Running"
-playing = true
+[node name="Room 1" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 2 )]
+position = Vector2( 46, 18 )
+generator_1_path = NodePath("../../Generators/Generator 1")
+generator_2_path = NodePath("../../Generators/Generator 2")
+
+[node name="Generators" type="Node2D" parent="BuildingSprite/Graph"]
+
+[node name="Generator 1" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 5 )]
+position = Vector2( 126, 27 )
+
+[node name="Generator 2" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 5 )]
+position = Vector2( 126, 75 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

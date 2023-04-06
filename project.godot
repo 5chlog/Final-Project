@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Door.gd"
 }, {
+"base": "AnimatedSprite",
+"class": "GeneratorVertex",
+"language": "GDScript",
+"path": "res://Buildng Powering Puzzle/Test/Generator.gd"
+}, {
 "base": "Area2D",
 "class": "InteractableArea",
 "language": "GDScript",
@@ -68,12 +73,18 @@ _global_script_classes=[ {
 "class": "PlayerConstants",
 "language": "GDScript",
 "path": "res://Scripts/PlayerConstants.gd"
+}, {
+"base": "Sprite",
+"class": "RoomEdge",
+"language": "GDScript",
+"path": "res://Buildng Powering Puzzle/Test/Room.gd"
 } ]
 _global_script_class_icons={
 "DialogBoxButton": "",
 "DialogBoxLabel": "",
 "DialogResource": "",
 "Door": "",
+"GeneratorVertex": "",
 "InteractableArea": "",
 "Ladder": "",
 "MachineObject": "",
@@ -81,7 +92,8 @@ _global_script_class_icons={
 "Mailboxes": "",
 "PartsDisplay": "",
 "Player": "",
-"PlayerConstants": ""
+"PlayerConstants": "",
+"RoomEdge": ""
 }
 
 [application]
