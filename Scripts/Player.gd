@@ -108,11 +108,12 @@ func climb():
 	
 func is_climbing():
 	if input.y > 0.8 and is_on_floor() and ladderClimbDown.is_colliding() and ladderClimbDown.get_collider() is Ladder:
-		ladderpos = ladderClimbDown.get_collider().position
+		var ladder_piece = ladderClimbDown.get_collider()
+		ladderpos = ladder_piece.position + ladder_piece.get_parent().position
 		return true
 	if input.y < -0.8 and ladderClimbUp.is_colliding() and ladderClimbUp.get_collider() is Ladder:
-		ladderpos = ladderClimbUp.get_collider().position
-		# ladderpos.y = ladderpos.y - 16
+		var ladder_piece = ladderClimbUp.get_collider()
+		ladderpos = ladder_piece.position + ladder_piece.get_parent().position
 		return true
 	return false
 	
@@ -127,7 +128,8 @@ func is_climbing_off():
 		ladderpos.y -= LADDER_CLIMBOVER_OFFSET
 		print(ladderpos, position)
 	elif ladderClimbUp.get_collider() is Ladder:
-		ladderpos =  ladderClimbUp.get_collider().position
+		var ladder_piece = ladderClimbUp.get_collider()
+		ladderpos =  ladder_piece.position + ladder_piece.get_parent().position
 	return temp1 or temp2 or (is_on_floor() and input.y > 0)
 	
 func climb_to_walk():
