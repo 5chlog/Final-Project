@@ -5,11 +5,13 @@ extends Sprite
 
 export(int) var generator_number = -1
 var generator: GeneratorVertex = null
+onready var parent = get_parent()
 
 
 func _ready():
 	$FirstDigitSprite.frame = int(generator_number/10) % 10 
 	$SecondDigitSprite.frame = generator_number % 10
+	frame = 0
 
 
 func interact():
@@ -29,9 +31,11 @@ func interact():
 			return
 	
 	if generator.on:
+		parent.selected_count -= 1
 		generator.switch_off()
 		frame = 0
-	else:
+	elif parent.selectable_count > parent.selected_count:
+		parent.selected_count += 1
 		generator.switch_on()
 		frame = 1
 	
