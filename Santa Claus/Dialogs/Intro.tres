@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource( 1 )
+dialog_name = "Intro"
 face_images = [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 2 ) ]
 names = [ "Santa Claus", "Santa Claus", "Player" ]
 dialogs = [ "Hey, kid. I don't suppose you have a second to spare for a weary old man? I've a small favor to ask...", "You see those kids there? I have gifts for them, but I wanna give it to them in a way that makes them all happy. It's proving to be rather difficult. Could you lend a hand?", "Well, I suppose I could give it a go..." ]
