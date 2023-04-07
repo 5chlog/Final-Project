@@ -34,9 +34,13 @@ func interact():
 		parent.selected_count -= 1
 		generator.switch_off()
 		frame = 0
+		var count_string = String(parent.selected_count) + "/" + String(parent.selectable_count)
+		get_node("../../ExtraHUD/SelectCount/SelectCountLabel").text = count_string
 	elif parent.selectable_count > parent.selected_count:
 		parent.selected_count += 1
 		generator.switch_on()
 		frame = 1
+		var count_string = String(parent.selected_count) + "/" + String(parent.selectable_count)
+		get_node("../../ExtraHUD/SelectCount/SelectCountLabel").text = count_string
 	
 	$InteractableArea.player.toggleHold()

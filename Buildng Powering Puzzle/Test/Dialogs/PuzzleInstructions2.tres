@@ -5,12 +5,12 @@
 
 [resource]
 script = ExtResource( 1 )
-dialog_name = "Puzzle Instructions"
+dialog_name = "Puzzle Instructions 2"
 face_images = [ ExtResource( 2 ) ]
 names = [ "Owner" ]
-dialogs = [ "Much appreciated sir.", "You see, the power to the building is out and this is the Backup Power Room.", "The building has mulitple Generators with each Room connected to exactly two Generators.", "This room is where the switches to all the Generators are.", "Each Switch is marked by a number that matches the number on a Generator in the building.", "I would turn all the Switches on but...
+dialogs = [ "I would turn all the Switches on but...
 You see, only a certain number of switches can be turned on at once.", "Could you see if there is a way to power all the Rooms?", "There is a map in this room that shows the Generators and Rooms in the building and whether they are powered or not.", "Good luck!" ]
-name_face_indices = [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+name_face_indices = [ 0, 0, 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

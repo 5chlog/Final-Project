@@ -5,7 +5,8 @@ var started: bool = false
 
 # Dialogs
 var first_dialog = preload("res://Buildng Powering Puzzle/Test/Dialogs/FirstDialog.tres")
-var puzzle_instr = preload("res://Buildng Powering Puzzle/Test/Dialogs/PuzzleInstructions.tres")
+var puzzle_instr_1 = preload("res://Buildng Powering Puzzle/Test/Dialogs/PuzzleInstructions1.tres")
+var puzzle_instr_2 = preload("res://Buildng Powering Puzzle/Test/Dialogs/PuzzleInstructions2.tres")
 var in_puzzle_dialog = preload("res://Buildng Powering Puzzle/Test/Dialogs/InPuzzleDialog.tres")
 var puzzle_yes_correct = preload("res://Buildng Powering Puzzle/Test/Dialogs/PuzzleYesCorrect.tres")
 var puzzle_yes_wrong = preload("res://Buildng Powering Puzzle/Test/Dialogs/PuzzleYesWrong.tres")
@@ -20,10 +21,12 @@ var current_dialog = first_dialog
 
 func _ready():
 	DialogBox.connect("dialogbox_closed", self, "_on_dialogbox_closed")
+	get_node("../ExtraHUD/AnimationPlayer").connect("animation_finished", self, "_on_animation_finished")
 
 
 func interact():
 	if current_dialog != null:
+		$InteractableArea.disable()
 		start_current_dialog()
 
 
@@ -50,7 +53,7 @@ func start_level():
 func first_dialog_yes():
 	start_level()
 	started = true
-	current_dialog = puzzle_instr
+	current_dialog = puzzle_instr_1
 	start_current_dialog()
 
 
@@ -96,5 +99,17 @@ func in_puzzle_recheck():
 
 
 func _on_dialogbox_closed(dialog_name):
-	if dialog_name == "Puzzle Instructions":
+	if dialog_name == "Puzzle Instructions 1":
+		$InteractableArea.player.toggleHold()
+		current_dialog = puzzle_instr_2
+		get_node("../ExtraHUD").show_select_count()
+		return
+	elif dialog_name == "Puzzle Instructions 2":
 		current_dialog = in_puzzle_dialog
+	
+	$InteractableArea.enable()
+
+
+func _on_animation_finished(anim_name):
+	if anim_name == "Show Select Count":
+		start_current_dialog()
