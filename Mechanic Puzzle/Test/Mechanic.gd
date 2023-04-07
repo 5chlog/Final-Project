@@ -60,10 +60,10 @@ func in_puzzle_dialog_yes_function():
 	extra_hud.unequip_scanner()
 	yield(extra_hud.get_node("AnimationPlayer"), "animation_finished")
 	
-	if not get_parent().has_solution:
-		DialogBox.enable_dialog_box(puzzle_yes_none_dialog, self, $InteractableArea.player)
-	elif found_cover():
+	if found_cover():
 		DialogBox.enable_dialog_box(puzzle_yes_correct_dialog, self, $InteractableArea.player)
+	elif not get_parent().has_solution:
+		DialogBox.enable_dialog_box(puzzle_yes_none_dialog, self, $InteractableArea.player)
 	else:
 		DialogBox.enable_dialog_box(puzzle_yes_wrong_dialog, self, $InteractableArea.player)
 	
