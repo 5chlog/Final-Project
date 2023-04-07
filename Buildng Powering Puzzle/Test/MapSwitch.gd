@@ -7,6 +7,7 @@ var const_displacement: Vector2 = Vector2.ZERO
 
 
 func _ready():
+	interactactable_area.disable()
 	var viewport_container = map_border.get_node("ViewportContainer")
 	var viewport_node = viewport_container.get_node("Viewport")
 	var vp_centre = Vector2(int(viewport_node.size.x / 2), int(viewport_node.size.y / 2))

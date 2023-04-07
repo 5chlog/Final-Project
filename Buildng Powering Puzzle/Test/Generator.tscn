@@ -33,7 +33,7 @@ animations = [ {
 [node name="Generator" type="AnimatedSprite"]
 z_index = 1
 frames = SubResource( 4 )
-animation = "On"
+animation = "Off"
 centered = false
 script = ExtResource( 3 )
 
@@ -48,4 +48,3 @@ position = Vector2( 7, 1 )
 texture = ExtResource( 4 )
 centered = false
 hframes = 10
-frame = 1

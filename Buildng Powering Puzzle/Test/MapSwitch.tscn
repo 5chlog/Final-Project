@@ -12,6 +12,7 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="InteractableArea" parent="." instance=ExtResource( 3 )]
+enabled = false
 popup_offset = Vector2( 0, 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
