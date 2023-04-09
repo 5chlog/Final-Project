@@ -17,6 +17,7 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 12 )
+dialog_name = ""
 face_images = [ ExtResource( 14 ) ]
 names = [ "Mailman" ]
 dialogs = [ "Would you check to see if there is a Golden Mail in any of the mailboxes? ", "Come back to me after finding the Golden Mail." ]
