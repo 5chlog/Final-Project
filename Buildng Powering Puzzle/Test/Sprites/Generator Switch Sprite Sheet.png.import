@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Map Background.png-1815a068b5e8766c8bea82ab0103365d.stex"
+path="res://.import/Generator Switch Sprite Sheet.png-0e845860e1db5e1e4c35f08fd5e1cb10.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Vertex Cover Puzzle/Test/Sprites/Map Background.png"
-dest_files=[ "res://.import/Map Background.png-1815a068b5e8766c8bea82ab0103365d.stex" ]
+source_file="res://Buildng Powering Puzzle/Test/Sprites/Generator Switch Sprite Sheet.png"
+dest_files=[ "res://.import/Generator Switch Sprite Sheet.png-0e845860e1db5e1e4c35f08fd5e1cb10.stex" ]
 
 [params]
 

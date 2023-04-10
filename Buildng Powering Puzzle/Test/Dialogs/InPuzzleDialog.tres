@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
+[ext_resource path="res://Buildng Powering Puzzle/Test/Sprites/Owner NPC Face Temp.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+dialog_name = "In Puzzle Dialog"
+face_images = [ ExtResource( 2 ) ]
+names = [ "Owner" ]
+dialogs = [ "Have you powered all the rooms?" ]
+name_face_indices = [ 0 ]
+button_flag = 15
+button_tl_text = "Yes I have"
+button_tl_function = "in_puzzle_yes"
+button_tr_text = "It's not possible"
+button_tr_function = "in_puzzle_no"
+button_bl_text = "Sorry (Give up)"
+button_bl_function = "in_puzzle_giveup"
+button_br_text = "Let me check again"
+button_br_function = "in_puzzle_recheck"
+show_buttons_with_last_line = true
