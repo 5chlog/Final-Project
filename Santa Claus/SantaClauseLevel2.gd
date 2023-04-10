@@ -16,6 +16,6 @@ func interact():
 func _process(delta):
 	animation.play("Idle")
 
-func _next_dialog():
-	get_node("../Door").open_door()
+func _next_dialog(dialog_name):
+	get_node("../Door2").open_door()
 	DialogBox.disconnect("dialogbox_closed", self, "_next_dialog")
