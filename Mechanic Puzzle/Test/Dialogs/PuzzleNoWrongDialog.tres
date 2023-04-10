@@ -5,11 +5,12 @@
 
 [resource]
 script = ExtResource( 1 )
-dialog_name = "Puzzle Instructions"
+dialog_name = "Puzzle No Wrong Dialog"
 face_images = [ ExtResource( 2 ) ]
 names = [ "Mechanic" ]
-dialogs = [ "Stand in front of an object and check the Scanner to see the parts used in it.", "Interact with an unselected object to select it. Interact with a selected object to deselect it.", "Use the conveyor switch to move the conveyor panels to access other objects on the conveyor.", "The count shown above the Scanner shows the number of objects you can select.", "Good luck!" ]
-name_face_indices = [ 0, 0, 0, 0, 0 ]
+dialogs = [ "Hmm...
+I am sure there is at least one correct combination.", " I guess you couldn't find it, huh." ]
+name_face_indices = [ 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

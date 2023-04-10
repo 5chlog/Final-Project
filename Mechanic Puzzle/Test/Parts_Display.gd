@@ -27,17 +27,27 @@ onready var partsDictionary:Dictionary = {
 			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
 		],
-	partNames.MOTOR : 
-		[
-			0,
-			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
-		],
 	partNames.SPRING : 
 		[
 			0,
-			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Spring.png")
 		],
 	partNames.FUEL : 
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Fuel.png")
+		],
+	partNames.CAPACITOR :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Capacitor.png")
+		],
+	partNames.SWITCH :
+		[
+			0,
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Switch.png")
+		],
+	partNames.MOTOR : 
 		[
 			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
@@ -47,22 +57,11 @@ onready var partsDictionary:Dictionary = {
 			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
 		],
-	partNames.CAPACITOR :
-		[
-			0,
-			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
-		],
 	partNames.RESISTOR :
 		[
 			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
-		],
-	partNames.SWITCH :
-		[
-			0,
-			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
-		],
-	partNames.BALLBEARING :
+		],	partNames.BALLBEARING :
 		[
 			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
