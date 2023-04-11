@@ -8,7 +8,7 @@
 [ext_resource path="res://Mechanic Puzzle/Test/Sprites/Drill Machine.png" type="Texture" id=6]
 [ext_resource path="res://Mechanic Puzzle/Test/Sprites/Pillars.png" type="Texture" id=7]
 [ext_resource path="res://Mechanic Puzzle/Test/ConveyorSwitch.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Mechanic Puzzle/Test/Parts_Display.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mechanic Puzzle/Test/Extra HUD.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Mechanic Puzzle/Test/Mechanic Level.gd" type="Script" id=12]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Player/PlayerConstants.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+MAX_HVEL = 120
+MAX_JUMP_VEL = -200
+MIN_JUMP_VEL = -30
+MAX_CLIMB_VEL = 120
+HACCEL = 18
+CLIMB_ACCEL = 18
+CLIMB_FRICTION = 22
+FRICTION = 22
