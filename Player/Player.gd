@@ -3,7 +3,7 @@ class_name Player
 
 const GRAVITY = Vector2(0, 10)
 const TERM_VEL = -500 # Terminal Fall Velocity
-const LADDER_CLIMBOVER_OFFSET = 26 # Offset to adjust difference between ladder and player centers
+const LADDER_CLIMBOVER_OFFSET = 26 # Offset between top of ladder and and player when climbing off top
 
 enum State {IDLE, WALK, RUN, JUMP, FALL, CLIMB, HOLD}
 
@@ -11,18 +11,19 @@ enum State {IDLE, WALK, RUN, JUMP, FALL, CLIMB, HOLD}
 export(Resource) var walk_constants = preload("res://Player/Player Constants/WalkConstants.tres")
 export(Resource) var run_constants = preload("res://Player/Player Constants/RunConstants.tres")
 
+var state = State.IDLE
+var old_state = State.IDLE
 var velocity: Vector2 = Vector2.ZERO
 var move_input: Vector2 = Vector2.ZERO
 var run_flag: bool = false
 var jump_pressed: bool = false
 var jump_released: bool = false
-var state = State.IDLE
-var old_state = State.IDLE
-var player_constants = walk_constants
 var hold_signal = false
+var player_constants = walk_constants
+var jump_constants = walk_constants
 
-var readyingclimb: bool = false
-var stoppingclimb: bool = false
+var readying_climb: bool = false
+var stopping_climb: bool = false
 var ladderpos: Vector2 = Vector2.ZERO
 
 onready var animatedSprite = $AnimatedSprite
@@ -135,7 +136,7 @@ func walk():
 	
 	face_sprite()
 	add_gravity()
-	set_horizontal_velocity()
+	set_horizontal_velocity(player_constants)
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
@@ -159,7 +160,7 @@ func run():
 	
 	face_sprite()
 	add_gravity()
-	set_horizontal_velocity()
+	set_horizontal_velocity(player_constants)
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
@@ -179,7 +180,7 @@ func fall():
 	
 	face_sprite()
 	add_gravity()
-	set_horizontal_velocity()
+	set_horizontal_velocity(jump_constants)
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
@@ -194,7 +195,7 @@ func jump():
 	
 	face_sprite()
 	add_gravity()
-	set_horizontal_velocity()
+	set_horizontal_velocity(jump_constants)
 	
 	if(jump_released and velocity.y < player_constants.MIN_JUMP_VEL):
 			velocity.y = player_constants.MIN_JUMP_VEL
@@ -204,29 +205,31 @@ func jump():
 
 func climb():
 	# When climbing onto the ladder
-	if readyingclimb:
+	if readying_climb:
 		velocity = position.direction_to(ladderpos) * player_constants.MAX_CLIMB_VEL
 		if position.distance_to(ladderpos) > 2:
 			velocity = move_and_slide(velocity, Vector2.UP)
 		else:
-			readyingclimb = false
+			readying_climb = false
 			velocity.x = 0
 			ladderJumpDown.enabled = true
 			wallBehind.enabled = true
 		return
 	
 	# When climbing off the top of the ladder
-	if stoppingclimb:
+	if stopping_climb:
 		velocity = position.direction_to(ladderpos) * player_constants.MAX_CLIMB_VEL
 		if position.distance_to(ladderpos) > 2:
 			velocity = move_and_slide(velocity, Vector2.UP)
 		else:
-			stoppingclimb = false
+			stopping_climb = false
+			reset_climb_parameters()
 			to_idle()
 			velocity.y = 0
 		return
 	
 	if is_climbing_off():
+		reset_climb_parameters()
 		to_fall()
 		return
 	
@@ -253,29 +256,25 @@ func is_climbing():
 
 
 func is_climbing_off():
-	var temp1 = false
-	var temp2 = false
-	if Input.is_action_just_pressed("ui_jump"):
-		temp1 = ladderJumpDown.is_colliding() and not wallBehind.is_colliding()
+	var jump_off = false
+	
+	if jump_pressed:
+		jump_off = ladderJumpDown.is_colliding() and not wallBehind.is_colliding()
+	
 	if not ladderClimbUp.is_colliding():
-		stoppingclimb = true
+		stopping_climb = true
 		ladderpos.y -= LADDER_CLIMBOVER_OFFSET
 		print(ladderpos, position)
+		return false
 	elif ladderClimbUp.get_collider() is Ladder:
 		var ladder_piece = ladderClimbUp.get_collider()
 		ladderpos =  ladder_piece.position + ladder_piece.get_parent().position
-	return temp1 or temp2 or (is_on_floor() and move_input.y > 0)
+	
+	return jump_off or (is_on_floor() and move_input.y > 0)
 
 
 func to_idle():
 	print("To Idle")
-	if state == State.CLIMB:
-		Input.action_release("ui_up")
-		Input.action_release("ui_down")
-		ladderJumpDown.enabled = false
-		wallBehind.enabled = false
-		collision_layer = 2
-		collision_mask = 1
 	old_state = state
 	state = State.IDLE
 	idle()
@@ -283,14 +282,6 @@ func to_idle():
 
 func to_walk():
 	print("To Walk")
-	if state == State.CLIMB:
-		Input.action_release("ui_up")
-		Input.action_release("ui_down")
-		ladderJumpDown.enabled = false
-		wallBehind.enabled = false
-		collision_layer = 2
-		collision_mask = 1
-	
 	old_state = state
 	state = State.WALK
 	walk()
@@ -298,14 +289,6 @@ func to_walk():
 
 func to_run():
 	print("To Run")
-	if state == State.CLIMB:
-		Input.action_release("ui_up")
-		Input.action_release("ui_down")
-		ladderJumpDown.enabled = false
-		wallBehind.enabled = false
-		collision_layer = 2
-		collision_mask = 1
-	
 	old_state = state
 	state = State.RUN
 	run()
@@ -313,13 +296,13 @@ func to_run():
 
 func to_fall():
 	print("To Fall")
-	if state == State.CLIMB:
-		Input.action_release("ui_up")
-		Input.action_release("ui_down")
-		ladderJumpDown.enabled = false
-		wallBehind.enabled = false
-		collision_layer = 2
-		collision_mask = 1
+	if state == State.JUMP:
+		pass
+	elif state == State.RUN:
+		jump_constants = run_constants
+	else:
+		jump_constants = walk_constants
+	
 	old_state = state
 	state = State.FALL
 	
@@ -328,6 +311,11 @@ func to_fall():
 
 func to_jump():
 	print("To Jump")
+	if state == State.RUN:
+		jump_constants = run_constants
+	else:
+		jump_constants = walk_constants
+	
 	old_state = state
 	state = State.JUMP
 	
@@ -339,10 +327,9 @@ func to_climb():
 	print("To Climb Idle")
 	old_state = state
 	state = State.CLIMB
-	readyingclimb = true
-	print(ladderpos, position)
-	collision_layer = 4
-	collision_mask = 4
+	
+	set_climb_parameters()
+	
 	climb()
 
 
@@ -351,6 +338,22 @@ func to_hold():
 	velocity = Vector2.ZERO
 	old_state = state
 	state = State.HOLD
+
+
+func set_climb_parameters():
+	readying_climb = true
+	print(ladderpos, position)
+	collision_layer = 4
+	collision_mask = 4
+
+
+func reset_climb_parameters():
+	Input.action_release("ui_up")
+	Input.action_release("ui_down")
+	ladderJumpDown.enabled = false
+	wallBehind.enabled = false
+	collision_layer = 2
+	collision_mask = 1
 
 
 func face_sprite():
@@ -366,13 +369,13 @@ func add_gravity():
 		velocity.y = TERM_VEL
 
 
-func set_horizontal_velocity():
+func set_horizontal_velocity(constants):
 	if(move_input.x == 0):
-		velocity.x = move_toward(velocity.x, 0, player_constants.FRICTION)
+		velocity.x = move_toward(velocity.x, 0, constants.FRICTION)
 	elif(move_input.x > 0):
-		velocity.x = move_toward(velocity.x, player_constants.MAX_HVEL, player_constants.HACCEL)
+		velocity.x = move_toward(velocity.x, constants.MAX_HVEL, constants.HACCEL)
 	else:
-		velocity.x = move_toward(velocity.x, -player_constants.MAX_HVEL, player_constants.HACCEL)
+		velocity.x = move_toward(velocity.x, -constants.MAX_HVEL, constants.HACCEL)
 
 
 func set_climb_velocity():
