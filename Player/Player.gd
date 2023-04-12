@@ -117,7 +117,7 @@ func idle():
 		return
 	
 	add_gravity()
-	velocity.x = move_toward(velocity.x, 0, player_constants.FRICTION)
+	velocity.x = move_toward(velocity.x, 0, walk_constants.FRICTION)
 	
 	move_and_slide(velocity, Vector2.UP)
 
@@ -140,7 +140,7 @@ func walk():
 	
 	face_sprite()
 	add_gravity()
-	set_horizontal_velocity(player_constants)
+	set_horizontal_velocity(walk_constants)
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
@@ -164,7 +164,7 @@ func run():
 	
 	face_sprite()
 	add_gravity()
-	set_horizontal_velocity(player_constants)
+	set_horizontal_velocity(run_constants)
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
@@ -201,8 +201,8 @@ func jump():
 	add_gravity()
 	set_horizontal_velocity(jump_constants)
 	
-	if(jump_released and velocity.y < player_constants.MIN_JUMP_VEL):
-			velocity.y = player_constants.MIN_JUMP_VEL
+	if(jump_released and velocity.y < jump_constants.MIN_JUMP_VEL):
+			velocity.y = jump_constants.MIN_JUMP_VEL
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
