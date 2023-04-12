@@ -5,7 +5,7 @@ const GRAVITY = Vector2(0, 10)
 const TERM_VEL = -500 # Terminal Fall Velocity
 const LADDER_CLIMBOVER_OFFSET = 26 # Offset between top of ladder and and player when climbing off top
 
-enum State {IDLE, WALK, RUN, JUMP, FALL, CLIMB, HOLD}
+enum State {IDLE, WALK, RUN, JUMP, FALL, READY_CLIMB, CLIMB, STOP_CLIMB, HOLD}
 
 
 export(Resource) var walk_constants = preload("res://Player/Player Constants/WalkConstants.tres")
@@ -61,8 +61,12 @@ func _physics_process(delta):
 			fall()
 		State.JUMP:
 			jump()
+		State.READY_CLIMB:
+			ready_climb()
 		State.CLIMB:
 			climb()
+		State.STOP_CLIMB:
+			stop_climb()
 		State.HOLD:
 			hold()
 
@@ -97,7 +101,7 @@ func toggleHold():
 
 func idle():
 	if is_climbing():
-		to_climb()
+		to_ready_climb()
 		return
 	elif not is_on_floor():
 		to_fall()
@@ -119,7 +123,7 @@ func idle():
 
 func walk():
 	if is_climbing():
-		to_climb()
+		to_ready_climb()
 		return
 	elif not is_on_floor():
 		to_fall()
@@ -143,7 +147,7 @@ func walk():
 
 func run():
 	if is_climbing():
-		to_climb()
+		to_ready_climb()
 		return
 	elif not is_on_floor():
 		to_fall()
@@ -167,7 +171,7 @@ func run():
 
 func fall():
 	if is_climbing():
-		to_climb()
+		to_ready_climb()
 		return
 	elif is_on_floor():
 		if move_input.x == 0:
@@ -187,7 +191,7 @@ func fall():
 
 func jump():
 	if is_climbing():
-		to_climb()
+		to_ready_climb()
 		return
 	elif velocity.y >= 0:
 		to_fall()
@@ -203,32 +207,26 @@ func jump():
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 
+func ready_climb():
+	if not readying_climb:
+		to_climb()
+		return
+	
+	velocity = position.direction_to(ladderpos) * player_constants.MAX_CLIMB_VEL
+	if position.distance_to(ladderpos) > 2:
+		velocity = move_and_slide(velocity, Vector2.UP)
+	else:
+		readying_climb = false
+		velocity.x = 0
+		ladderJumpDown.enabled = true
+		wallBehind.enabled = true
+
+
 func climb():
-	# When climbing onto the ladder
-	if readying_climb:
-		velocity = position.direction_to(ladderpos) * player_constants.MAX_CLIMB_VEL
-		if position.distance_to(ladderpos) > 2:
-			velocity = move_and_slide(velocity, Vector2.UP)
-		else:
-			readying_climb = false
-			velocity.x = 0
-			ladderJumpDown.enabled = true
-			wallBehind.enabled = true
-		return
-	
-	# When climbing off the top of the ladder
 	if stopping_climb:
-		velocity = position.direction_to(ladderpos) * player_constants.MAX_CLIMB_VEL
-		if position.distance_to(ladderpos) > 2:
-			velocity = move_and_slide(velocity, Vector2.UP)
-		else:
-			stopping_climb = false
-			reset_climb_parameters()
-			to_idle()
-			velocity.y = 0
+		to_stop_climb()
 		return
-	
-	if is_climbing_off():
+	elif is_climbing_off():
 		reset_climb_parameters()
 		to_fall()
 		return
@@ -236,6 +234,20 @@ func climb():
 	set_climb_velocity()
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+
+func stop_climb():
+	if not stopping_climb:
+		reset_climb_parameters()
+		velocity.y = 0
+		to_idle()
+		return
+	
+	velocity = position.direction_to(ladderpos) * player_constants.MAX_CLIMB_VEL
+	if position.distance_to(ladderpos) > 2:
+		velocity = move_and_slide(velocity, Vector2.UP)
+	else:
+		stopping_climb = false
 
 
 func hold():
@@ -323,14 +335,30 @@ func to_jump():
 	jump()
 
 
+func to_ready_climb():
+	print("To Ready Climb")
+	old_state = state
+	state = State.READY_CLIMB
+	
+	set_climb_parameters()
+	
+	ready_climb()
+
+
 func to_climb():
 	print("To Climb Idle")
 	old_state = state
 	state = State.CLIMB
 	
-	set_climb_parameters()
-	
 	climb()
+
+
+func to_stop_climb():
+	print("To Stop Climb")
+	old_state = state
+	state = State.STOP_CLIMB
+	
+	stop_climb()
 
 
 func to_hold():
