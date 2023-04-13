@@ -1,4 +1,4 @@
-extends Node2D
+Extends Node2D
 
 onready var animation = $AnimationPlayer
 export(Texture) var sprite = preload("res://Santa Claus/Sprites/gift1.png")

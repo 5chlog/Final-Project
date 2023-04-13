@@ -43,24 +43,32 @@ script = ExtResource( 8 )
 [node name="Gift1" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 436.958, 207 )
 scale = Vector2( 0.3, 0.3 )
+gift_index = 0
 
 [node name="Gift2" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 472.958, 206 )
 scale = Vector2( 0.3, 0.3 )
 sprite = ExtResource( 12 )
+gift_index = 1
 
 [node name="Gift3" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 508.958, 206 )
 scale = Vector2( 0.3, 0.3 )
 sprite = ExtResource( 11 )
+gift_index = 2
 
-[node name="Child1" parent="." instance=ExtResource( 1 )]
+[node name="Child" type="Node2D" parent="."]
+
+[node name="Child1" parent="Child" instance=ExtResource( 1 )]
 position = Vector2( 608.958, 206 )
+child_index = 0
 
-[node name="Child2" parent="." instance=ExtResource( 1 )]
+[node name="Child2" parent="Child" instance=ExtResource( 1 )]
 position = Vector2( 647.958, 205 )
+child_index = 1
 sprite = ExtResource( 14 )
 
-[node name="Child3" parent="." instance=ExtResource( 1 )]
+[node name="Child3" parent="Child" instance=ExtResource( 1 )]
 position = Vector2( 691.958, 206 )
+child_index = 2
 sprite = ExtResource( 13 )
