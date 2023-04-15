@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Scanner Sprite Sheet.png-a876bc765b7fb083b29f691c30193939.stex"
+path="res://.import/Scanner Sprite Sheet.png-92c205e7d23abfb75dc9320e0eecffbf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mechanic Puzzle/Test/Extra HUD Sprites/Scanner Sprite Sheet.png"
-dest_files=[ "res://.import/Scanner Sprite Sheet.png-a876bc765b7fb083b29f691c30193939.stex" ]
+source_file="res://Mechanic Puzzle/Test/Sprites/Extra HUD Sprites/Scanner Sprite Sheet.png"
+dest_files=[ "res://.import/Scanner Sprite Sheet.png-92c205e7d23abfb75dc9320e0eecffbf.stex" ]
 
 [params]
 

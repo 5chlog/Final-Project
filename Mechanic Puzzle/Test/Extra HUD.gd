@@ -1,10 +1,10 @@
-extends CanvasLayer
+extends Node2D
 
 const CELL_COUNT = 16
 
 onready var scanner: Sprite = get_node("Scanner")
 onready var animationplayer: AnimationPlayer = get_node("AnimationPlayer")
-onready var display = get_node("../Display")
+onready var display = get_node("/root/Level/Display")
 var parts_on_screen: int  = 0
 var calling_node = null
 
@@ -12,7 +12,7 @@ var calling_node = null
 func _ready():
 	scanner.frame = 1
 	visible = false
-	$SelectCount/SelectCountLabel.text = "0/" + String(get_node("../Conveyor").selectable_object_count)
+	$SelectCount/SelectCountLabel.text = "0/" + String(get_node("/root/Level/Conveyor").selectable_object_count)
 
 
 func equip_scanner():

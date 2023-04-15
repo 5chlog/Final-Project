@@ -17,8 +17,8 @@ var started: bool = false
 
 
 func _ready():
-	get_node("../Extra HUD/AnimationPlayer").connect("animation_finished", self, 
-			"_scanner_anim_completed")
+	# get_node("/root/HUD/Extra HUD/AnimationPlayer").connect("animation_finished", self, 
+	# 		"_scanner_anim_completed")
 	DialogBox.connect("dialogbox_closed", self, "_on_dialogbox_closed")
 
 
@@ -42,7 +42,7 @@ func start_dialog_yes_button_function():
 	DialogBox.disable_dialog_box()
 	$InteractableArea.player.toggleHold()
 	current_dialog = instructions_dialog
-	get_node("../Extra HUD").equip_scanner()
+	get_node("/root/HUD//Extra HUD").equip_scanner()
 
 
 # Function called when replying No to Start Dialog
@@ -53,7 +53,7 @@ func start_dialog_no_button_function():
 
 # Function called when replying Yes to In Puzzle Dialog
 func in_puzzle_dialog_yes_function():
-	var extra_hud = get_node("../Extra HUD")
+	var extra_hud = get_node("/root/HUD//Extra HUD")
 	
 	extra_hud.hide_select_count()
 	yield(extra_hud.get_node("AnimationPlayer"), "animation_finished")
@@ -72,7 +72,7 @@ func in_puzzle_dialog_yes_function():
 
 # Function called when replying No to In Puzzle Dialog
 func in_puzzle_dialog_no_function():
-	var extra_hud = get_node("../Extra HUD")
+	var extra_hud = get_node("/root/HUD//Extra HUD")
 	
 	extra_hud.hide_select_count()
 	yield(extra_hud.get_node("AnimationPlayer"), "animation_finished")
@@ -89,7 +89,7 @@ func in_puzzle_dialog_no_function():
 
 # Function called when replying Give Up to In Puzzle Dialog
 func in_puzzle_dialog_giveup_function():
-	var extra_hud = get_node("../Extra HUD")
+	var extra_hud = get_node("/root/HUD//Extra HUD")
 	
 	extra_hud.hide_select_count()
 	yield(extra_hud.get_node("AnimationPlayer"), "animation_finished")
@@ -111,7 +111,7 @@ func _scanner_anim_completed(anim_name):
 		return
 	
 	if anim_name == "Slide Scanner In":
-		get_node("../Extra HUD").show_select_count()
+		get_node("/root/HUD//Extra HUD").show_select_count()
 	
 	
 	elif anim_name == "Show Select Count":	

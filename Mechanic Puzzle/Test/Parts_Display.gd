@@ -98,7 +98,6 @@ func _ready():
 	var i = 0 
 	for part in parts_used:
 		var cell = get_child(i)
-		# print(cell.get_child(0))
 		cell.get_child(0).texture = partsDictionary[part][1]
 		i += 1
 

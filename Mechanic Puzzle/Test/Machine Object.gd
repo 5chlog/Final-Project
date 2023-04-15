@@ -37,16 +37,16 @@ func interact():
 		selected = true
 	
 	var select_count_string = String(conveyor.selected_object_count) + "/" + String(conveyor.selectable_object_count)
-	get_node("../../../../Extra HUD/SelectCount/SelectCountLabel").text = select_count_string
+	get_node("/root/HUD/Extra HUD/SelectCount/SelectCountLabel").text = select_count_string
 
 
 func _Player_entered_area(var body):
 	if body is Player and get_parent() == conveyor.bottom_panel:
-		var extra_hud = get_node("../../../../Extra HUD")
+		var extra_hud = get_node("/root/HUD/Extra HUD")
 		extra_hud.show_parts(parts, self)
 
 
 func _Player_exited_area(var body):
 	if body is Player and get_parent() == conveyor.bottom_panel:
-		var extra_hud = get_node("../../../../Extra HUD")
+		var extra_hud = get_node("/root/HUD/Extra HUD")
 		extra_hud.clear_parts(self)

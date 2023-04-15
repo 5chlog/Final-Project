@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Panel Sprite 3.png-1404e3abda09e7d6e9cd5ae032a0575a.stex"
+path="res://.import/SelectCountBkg.png-45ab9163f9a4812dab11c563a858f297.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mechanic Puzzle/Test/Sprites/Panel Sprite 3.png"
-dest_files=[ "res://.import/Panel Sprite 3.png-1404e3abda09e7d6e9cd5ae032a0575a.stex" ]
+source_file="res://Mechanic Puzzle/Test/Sprites/Extra HUD Sprites/SelectCountBkg.png"
+dest_files=[ "res://.import/SelectCountBkg.png-45ab9163f9a4812dab11c563a858f297.stex" ]
 
 [params]
 
