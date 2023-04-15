@@ -5,9 +5,12 @@ const GRAVITY = Vector2(0, 10)
 const TERM_VEL = -500 # Terminal Fall Velocity
 const LADDER_CLIMBOVER_OFFSET = 26 # Offset between top of ladder and and player when climbing off top
 
-enum State {IDLE, WALK, RUN, JUMP, FALL, READY_CLIMB, CLIMB, STOP_CLIMB, HOLD}
+# Player states
+enum State {IDLE, WALK, RUN, JUMP, FALL, READY_CLIMB, CLIMB_IDLE, CLIMB_SLOW, CLIMB_FAST, 
+		STOP_CLIMB, HOLD}
 
 
+# Player walk and run constants for slow and fast movements
 export(Resource) var walk_constants = preload("res://Player/Player Constants/WalkConstants.tres")
 export(Resource) var run_constants = preload("res://Player/Player Constants/RunConstants.tres")
 
@@ -19,8 +22,7 @@ var run_flag: bool = false
 var jump_pressed: bool = false
 var jump_released: bool = false
 var hold_signal = false
-var player_constants = walk_constants
-var jump_constants = walk_constants
+var jump_constants = null
 
 var readying_climb: bool = false
 var stopping_climb: bool = false
@@ -63,8 +65,12 @@ func _physics_process(delta):
 			jump()
 		State.READY_CLIMB:
 			ready_climb()
-		State.CLIMB:
-			climb()
+		State.CLIMB_IDLE:
+			climb_idle()
+		State.CLIMB_SLOW:
+			climb_slow()
+		State.CLIMB_FAST:
+			climb_fast()
 		State.STOP_CLIMB:
 			stop_climb()
 		State.HOLD:
@@ -77,10 +83,10 @@ func _input(event):
 	
 	if Input.is_action_pressed("game_run"):
 		run_flag = true
-		player_constants = run_constants
+		# player_constants = run_constants
 	else:
 		run_flag = false
-		player_constants = walk_constants
+		# player_constants = walk_constants
 	
 	if Input.is_action_just_pressed("game_jump"):
 		jump_pressed = true
@@ -209,10 +215,10 @@ func jump():
 
 func ready_climb():
 	if not readying_climb:
-		to_climb()
+		to_climb_idle()
 		return
 	
-	velocity = position.direction_to(ladderpos) * player_constants.MAX_CLIMB_VEL
+	velocity = position.direction_to(ladderpos) * walk_constants.MAX_CLIMB_VEL
 	if position.distance_to(ladderpos) > 2:
 		velocity = move_and_slide(velocity, Vector2.UP)
 	else:
@@ -222,7 +228,7 @@ func ready_climb():
 		wallBehind.enabled = true
 
 
-func climb():
+func climb_idle():
 	if stopping_climb:
 		to_stop_climb()
 		return
@@ -230,8 +236,53 @@ func climb():
 		reset_climb_parameters()
 		to_fall()
 		return
+	elif move_input.y != 0:
+		if run_flag:
+			to_climb_fast()
+		else:
+			to_climb_slow()
+		return
 	
-	set_climb_velocity()
+	velocity.y = move_toward(velocity.y, 0, walk_constants.FRICTION)
+	
+	move_and_slide(velocity, Vector2.UP)
+
+
+func climb_slow():
+	if stopping_climb:
+		to_stop_climb()
+		return
+	elif is_climbing_off():
+		reset_climb_parameters()
+		to_fall()
+		return
+	elif move_input.y == 0:
+		to_climb_idle()
+		return
+	elif run_flag:
+		to_climb_fast()
+		return
+	
+	set_climb_velocity(walk_constants)
+	
+	velocity = move_and_slide(velocity, Vector2.UP)
+
+func climb_fast():
+	if stopping_climb:
+		to_stop_climb()
+		return
+	elif is_climbing_off():
+		reset_climb_parameters()
+		to_fall()
+		return
+	elif move_input.y == 0:
+		to_climb_idle()
+		return
+	elif not run_flag:
+		to_climb_slow()
+		return
+	
+	set_climb_velocity(run_constants)
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
@@ -243,7 +294,7 @@ func stop_climb():
 		to_idle()
 		return
 	
-	velocity = position.direction_to(ladderpos) * player_constants.MAX_CLIMB_VEL
+	velocity = position.direction_to(ladderpos) * walk_constants.MAX_CLIMB_VEL
 	if position.distance_to(ladderpos) > 2:
 		velocity = move_and_slide(velocity, Vector2.UP)
 	else:
@@ -317,7 +368,6 @@ func to_fall():
 	
 	old_state = state
 	state = State.FALL
-	
 	fall()
 
 
@@ -331,7 +381,7 @@ func to_jump():
 	old_state = state
 	state = State.JUMP
 	
-	velocity.y = player_constants.MAX_JUMP_VEL
+	velocity.y = jump_constants.MAX_JUMP_VEL
 	jump()
 
 
@@ -345,19 +395,31 @@ func to_ready_climb():
 	ready_climb()
 
 
-func to_climb():
+func to_climb_idle():
 	print("To Climb Idle")
 	old_state = state
-	state = State.CLIMB
-	
-	climb()
+	state = State.CLIMB_IDLE
+	climb_idle()
+
+
+func to_climb_slow():
+	print("To Climb Slow")
+	old_state = state
+	state = State.CLIMB_SLOW
+	climb_slow()
+
+
+func to_climb_fast():
+	print("To Climb Fast")
+	old_state = state
+	state = State.CLIMB_FAST
+	climb_fast()
 
 
 func to_stop_climb():
 	print("To Stop Climb")
 	old_state = state
 	state = State.STOP_CLIMB
-	
 	stop_climb()
 
 
@@ -398,18 +460,14 @@ func add_gravity():
 
 
 func set_horizontal_velocity(constants):
-	if(move_input.x == 0):
-		velocity.x = move_toward(velocity.x, 0, constants.FRICTION)
-	elif(move_input.x > 0):
+	if(move_input.x > 0):
 		velocity.x = move_toward(velocity.x, constants.MAX_HVEL, constants.HACCEL)
 	else:
 		velocity.x = move_toward(velocity.x, -constants.MAX_HVEL, constants.HACCEL)
 
 
-func set_climb_velocity():
-	if(move_input.y == 0):
-		velocity.y = move_toward(velocity.y, 0, player_constants.CLIMB_FRICTION)
-	elif(move_input.y > 0):
-		velocity.y = move_toward(velocity.y, player_constants.MAX_CLIMB_VEL, player_constants.CLIMB_ACCEL)
+func set_climb_velocity(constants):
+	if(move_input.y > 0):
+		velocity.y = move_toward(velocity.y, constants.MAX_CLIMB_VEL, constants.CLIMB_ACCEL)
 	else:
-		velocity.y = move_toward(velocity.y, -player_constants.MAX_CLIMB_VEL, player_constants.CLIMB_ACCEL)
+		velocity.y = move_toward(velocity.y, -constants.MAX_CLIMB_VEL, constants.CLIMB_ACCEL)
