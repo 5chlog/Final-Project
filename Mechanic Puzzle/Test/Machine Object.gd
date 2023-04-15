@@ -41,12 +41,12 @@ func interact():
 
 
 func _Player_entered_area(var body):
-	if body is Player and get_parent() == conveyor.bottom_panel:
+	if body is Player and get_parent() == conveyor.bottom_panel and HUD.has_node("Extra HUD"):
 		var extra_hud = get_node("/root/HUD/Extra HUD")
 		extra_hud.show_parts(parts, self)
 
 
 func _Player_exited_area(var body):
-	if body is Player and get_parent() == conveyor.bottom_panel:
+	if body is Player and get_parent() == conveyor.bottom_panel and HUD.has_node("Extra HUD"):
 		var extra_hud = get_node("/root/HUD/Extra HUD")
 		extra_hud.clear_parts(self)

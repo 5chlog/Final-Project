@@ -17,8 +17,6 @@ var started: bool = false
 
 
 func _ready():
-	# get_node("/root/HUD/Extra HUD/AnimationPlayer").connect("animation_finished", self, 
-	# 		"_scanner_anim_completed")
 	DialogBox.connect("dialogbox_closed", self, "_on_dialogbox_closed")
 
 
@@ -128,7 +126,17 @@ func _on_dialogbox_closed(dialog_name):
 		get_node("../ConveyorSwitch/InteractableArea").enable()
 		started = true
 		$InteractableArea.enable()
-	elif dialog_name in ["In Puzzle Dialog", "Puzzle Yes Correct Dialog", "Puzzle Yes Wrong Dialog",
+	elif dialog_name in ["Puzzle Yes Correct Dialog", "Puzzle Yes Wrong Dialog",
 			"Puzzle Yes None Dialog", "Puzzle No Correct Dialog", "Puzzle No Wrong Dialog",
-			"Puzzle Give Up Dialog", "Puzzle Complete Dialog"]:
+			"Puzzle Give Up Dialog"]:
+		HUD.get_node("Extra HUD").queue_free()
+		
+		var bottom_panel = get_node("../Conveyor").bottom_panel
+		for child in bottom_panel.get_children():
+			if child is MachineObject:
+				child.get_node("InteractableArea").disable()
+		get_node("../ConveyorSwitch/InteractableArea").disable()
+		
+		$InteractableArea.enable()
+	elif dialog_name in ["In Puzzle Dialog", "Puzzle Complete Dialog"]:
 		$InteractableArea.enable()
