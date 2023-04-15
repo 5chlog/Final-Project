@@ -61,7 +61,8 @@ onready var partsDictionary:Dictionary = {
 		[
 			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
-		],	partNames.BALLBEARING :
+		],
+	partNames.BALLBEARING :
 		[
 			0,
 			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")

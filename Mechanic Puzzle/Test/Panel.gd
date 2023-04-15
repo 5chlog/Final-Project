@@ -31,7 +31,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		animationplayer.play("Go Up")
 		return
 	elif anim_name == "Go Up":
-		index = get_parent().panel_count - 1
+		index = get_node("../..").panel_count - 1
 		z_index = 1
 		animationplayer.play("Come Out")
 	elif anim_name == "Come Down":
@@ -40,9 +40,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			for child in get_children():
 				if child is MachineObject:
 					child.get_node("InteractableArea").enable()
-			get_parent().bottom_panel = self
+			get_node("../..").bottom_panel = self
 	elif anim_name == "Come Out":
-		var parent = get_parent()
+		var parent = get_node("../..")
 		parent.off = true
 		parent.player.toggleHold()
 		parent.switch.get_node("InteractableArea").enable()

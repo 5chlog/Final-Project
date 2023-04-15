@@ -130,5 +130,5 @@ func _on_dialogbox_closed(dialog_name):
 		$InteractableArea.enable()
 	elif dialog_name in ["In Puzzle Dialog", "Puzzle Yes Correct Dialog", "Puzzle Yes Wrong Dialog",
 			"Puzzle Yes None Dialog", "Puzzle No Correct Dialog", "Puzzle No Wrong Dialog",
-			"Puzzle Give Up Dialog"]:
+			"Puzzle Give Up Dialog", "Puzzle Complete Dialog"]:
 		$InteractableArea.enable()

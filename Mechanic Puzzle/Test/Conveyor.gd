@@ -14,9 +14,9 @@ var player: Player = null
 var switch = null
 
 func _ready():
-	panel_count = get_child_count()
+	panel_count = get_node("Panels").get_child_count()
 	for i in panel_count:
-		var panel = get_child(i)
+		var panel = get_node("Panels").get_child(i)
 		
 		panel.index = i
 		if i == 0:
@@ -95,5 +95,5 @@ func activate():
 	if not off:
 		return
 	
-	for panel in get_children():
+	for panel in get_node("Panels").get_children():
 		panel._activate()

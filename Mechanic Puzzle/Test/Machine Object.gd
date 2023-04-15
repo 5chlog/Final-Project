@@ -1,8 +1,8 @@
 extends Sprite
 class_name MachineObject
 
-onready var display = get_node("../../../Display")
-onready var conveyor = get_node("../..")
+onready var display = get_node("../../../../Display")
+onready var conveyor = get_node("../../..")
 export(Array, PartsDisplay.partNames) var parts
 
 var selected = false
@@ -35,25 +35,18 @@ func interact():
 		conveyor.selected_object_count += 1
 		$SelectionSprite.visible = true
 		selected = true
-		
-		# If at least one count in dictionay is 0, then a set cover has not yet been found
-		# for i in display.parts_used:
-		# 	if display.partsDictionary[i][0] == 0:
-		# 		return
-			
-		# print("Puzzle completed successfully")
 	
 	var select_count_string = String(conveyor.selected_object_count) + "/" + String(conveyor.selectable_object_count)
-	get_node("../../../Extra HUD/SelectCount/SelectCountLabel").text = select_count_string
+	get_node("../../../../Extra HUD/SelectCount/SelectCountLabel").text = select_count_string
 
 
 func _Player_entered_area(var body):
 	if body is Player and get_parent() == conveyor.bottom_panel:
-		var extra_hud = get_node("../../../Extra HUD")
+		var extra_hud = get_node("../../../../Extra HUD")
 		extra_hud.show_parts(parts, self)
 
 
 func _Player_exited_area(var body):
 	if body is Player and get_parent() == conveyor.bottom_panel:
-		var extra_hud = get_node("../../../Extra HUD")
+		var extra_hud = get_node("../../../../Extra HUD")
 		extra_hud.clear_parts(self)
