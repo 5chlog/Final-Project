@@ -62,7 +62,7 @@ tracks/0/keys = {
 "values": [ false, 602.0 ]
 }
 
-[node name="ExtraHUD" type="CanvasLayer"]
+[node name="ExtraHUD" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="SelectCount" type="Node2D" parent="."]
