@@ -42,10 +42,17 @@ func solved():
 func start_current_dialog():
 	DialogBox.enable_dialog_box(current_dialog, self, $InteractableArea.player)
 
+
 func start_level():
 	for switch in get_node("../GeneratorSwitches").get_children():
 		switch.get_node("InteractableArea").enable()
 	get_node("../MapSwitch").interactactable_area.enable()
+
+
+func end_level():
+	for switch in get_node("../GeneratorSwitches").get_children():
+		switch.get_node("InteractableArea").disable()
+	get_node("../MapSwitch").interactactable_area.disable()
 
 
 # Yes reply to First Dialog
@@ -104,6 +111,7 @@ func _on_dialogbox_closed(dialog_name):
 	elif dialog_name in ["Puzzle Yes Correct", "Puzzle Yes None", "Puzzle Yes Wrong", 
 			"Puzzle No Correct", "Puzzle No Wrong", "Puzzle Giveup"]:
 		HUD.get_node("ExtraHUD").queue_free()
+		end_level()
 	
 	$InteractableArea.enable()
 
