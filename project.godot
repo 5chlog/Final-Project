@@ -106,6 +106,7 @@ config/icon="res://icon.png"
 
 DialogBox="*res://Dialog Box/DialogBox.tscn"
 HUD="*res://HUD/HUD.tscn"
+Certificates="*res://Certificates.gd"
 JsonData="*res://Inventory/Test/JSONData.gd"
 PlayerInventory="*res://Inventory/Test/PlayerInventory.gd"
 
