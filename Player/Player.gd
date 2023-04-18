@@ -86,8 +86,8 @@ func _input(event):
 	else:
 		jump_released = false
 	
-	if state != State.HOLD:
-		get_viewport().set_input_as_handled()
+	# if state != State.HOLD:
+	# 	get_viewport().set_input_as_handled()
 
 
 func toggleHold():
