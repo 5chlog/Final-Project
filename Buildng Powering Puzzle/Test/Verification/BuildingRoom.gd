@@ -22,4 +22,16 @@ func interact():
 		print("Generator 2 Unassigned")
 		return
 	
+	if generator_1_no in Certificates.generator_data:
+		$"Generator 1 Indicator/Indicator".frame = 1
+	else:
+		$"Generator 1 Indicator/Indicator".frame = 2
+		
+	if generator_2_no in Certificates.generator_data:
+		$"Generator 2 Indicator/Indicator".frame = 1
+	else:
+		$"Generator 2 Indicator/Indicator".frame = 2
+	
+	print("Interacted")
+	$InteractableArea.disable()
 	$InteractableArea.player.toggleHold()

@@ -53,6 +53,15 @@ func end_level():
 	for switch in get_node("../GeneratorSwitches").get_children():
 		switch.get_node("InteractableArea").disable()
 	get_node("../MapSwitch").interactactable_area.disable()
+	
+	var generators = get_node("../MapBorder/ViewportContainer/Viewport/Map/BuildingSprite/Graph/Generators")
+	for generator in generators.get_children():
+		if generator.on:
+			Certificates.add_generator_data(generator.id_number)
+	print(Certificates.generator_data)
+	# Certificates.sort_generator_data()
+	
+	get_node("../Door").open_door()
 
 
 # Yes reply to First Dialog

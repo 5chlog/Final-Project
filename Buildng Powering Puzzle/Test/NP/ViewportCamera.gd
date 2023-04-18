@@ -37,9 +37,9 @@ func _input(event):
 	elif Input.is_action_just_pressed("ui_accept"):
 		get_tree().set_input_as_handled()
 		
-		var room: RoomEdge = get_node("../BuildingSprite/Graph/Rooms/Room 1")
-		var gen_1: GeneratorVertex = get_node("../BuildingSprite/Graph/Generators/Generator 1")
-		var gen_2: GeneratorVertex = get_node("../BuildingSprite/Graph/Generators/Generator 2")
+		# var room: RoomEdge = get_node("../BuildingSprite/Graph/Rooms/Room 1")
+		# var gen_1: GeneratorVertex = get_node("../BuildingSprite/Graph/Generators/Generator 1")
+		# var gen_2: GeneratorVertex = get_node("../BuildingSprite/Graph/Generators/Generator 2")
 		
 		# Return disable the viewport, enable InteractableArea of Switch and control to player
 		active = false
