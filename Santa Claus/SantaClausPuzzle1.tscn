@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Santa Claus/Child.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Santa Claus/SantaClause.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Black Bricked TileMap.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Santa Claus/Gift.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Santa Claus/SantaClausPuzzle1.gd" type="Script" id=6]
-[ext_resource path="res://Santa Claus/Dialogs/Intro.tres" type="Resource" id=7]
+[ext_resource path="res://Santa Claus/SantaClauseLevel1.gd" type="Script" id=7]
+[ext_resource path="res://Santa Claus/Gifts.gd" type="Script" id=8]
+[ext_resource path="res://Santa Claus/Dialogs/Level1.tres" type="Resource" id=9]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Santa Claus/Sprites/gift3.png" type="Texture" id=11]
 [ext_resource path="res://Santa Claus/Sprites/gift2.png" type="Texture" id=12]
@@ -26,7 +28,8 @@ position = Vector2( 49, 129 )
 
 [node name="SantaClaus" parent="." instance=ExtResource( 2 )]
 position = Vector2( 115.958, 125 )
-dialogs = [ ExtResource( 7 ) ]
+script = ExtResource( 7 )
+dialogs = [ ExtResource( 9 ) ]
 
 [node name="Door" parent="." instance=ExtResource( 10 )]
 position = Vector2( 375.958, 189 )
@@ -34,27 +37,30 @@ position = Vector2( 375.958, 189 )
 [node name="Door2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 744.958, 189 )
 
-[node name="Gift" parent="." instance=ExtResource( 5 )]
-position = Vector2( 517.958, 149 )
+[node name="Gifts" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="Gift1" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 436.958, 207 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Gift2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 556.958, 149 )
+[node name="Gift2" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 472.958, 206 )
 scale = Vector2( 0.3, 0.3 )
 sprite = ExtResource( 12 )
 
-[node name="Gift3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 595.958, 149 )
+[node name="Gift3" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 508.958, 206 )
 scale = Vector2( 0.3, 0.3 )
 sprite = ExtResource( 11 )
 
-[node name="Child" parent="." instance=ExtResource( 1 )]
-position = Vector2( 517.958, 206 )
+[node name="Child1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608.958, 206 )
 
 [node name="Child2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 557.958, 206 )
+position = Vector2( 647.958, 205 )
 sprite = ExtResource( 14 )
 
 [node name="Child3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 596.958, 206 )
+position = Vector2( 691.958, 206 )
 sprite = ExtResource( 13 )
