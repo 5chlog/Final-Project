@@ -21,7 +21,6 @@ var move_input: Vector2 = Vector2.ZERO
 var run_flag: bool = false
 var jump_pressed: bool = false
 var jump_released: bool = false
-var hold_signal = false
 var jump_constants = null
 
 var readying_climb: bool = false
@@ -41,17 +40,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	if hold_signal:
-		hold_signal = false
-		if state != State.HOLD:
-			to_hold()
-		else:
-			if is_on_floor():
-				to_idle()
-			else:
-				to_fall()
-			return
-	
 	match state:
 		State.IDLE:
 			idle()
@@ -103,7 +91,14 @@ func _input(event):
 
 
 func toggleHold():
-	hold_signal = true
+	if state != State.HOLD:
+		to_hold()
+	else:
+		if is_on_floor():
+			to_idle()
+		else:
+			to_fall()
+		return
 
 
 func idle():
