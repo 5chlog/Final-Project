@@ -1,15 +1,16 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
-[ext_resource path="res://Buildng Powering Puzzle/Test/NP/Sprites/Owner NPC Face Temp.png" type="Texture" id=2]
+[ext_resource path="res://Dialog Faces/Owner NPC Face Temp.png" type="Texture" id=2]
+[ext_resource path="res://Dialog Faces/Avatar Face.png" type="Texture" id=3]
 
 [resource]
 script = ExtResource( 1 )
 dialog_name = "Puzzle Yes None"
-face_images = [ ExtResource( 2 ) ]
-names = [ "Owner" ]
-dialogs = [ "It would seem that it is not possible to power all the Rooms with the current circuit.", "I guess I will have to change the circuit. Maybe add a few Generators." ]
-name_face_indices = [ 0, 0 ]
+face_images = [ ExtResource( 2 ), ExtResource( 3 ) ]
+names = [ "Owner", "Player" ]
+dialogs = [ "It would seem that it is not possible to power all the Rooms with the current circuit.", "But just in case, I wish for you to confirm if any of the rooms did not get power.", "Could you please go through that door to the right? It leads to the main Building.", "Sure.", "Thank you so much.", "I will meet you there." ]
+name_face_indices = [ 0, 0, 0, 1, 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

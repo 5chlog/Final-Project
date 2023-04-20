@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
-[ext_resource path="res://Buildng Powering Puzzle/Test/NP/Sprites/Owner NPC Face Temp.png" type="Texture" id=2]
+[ext_resource path="res://Dialog Faces/Owner NPC Face Temp.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
@@ -9,7 +9,7 @@ dialog_name = "Puzzle No Correct"
 face_images = [ ExtResource( 2 ) ]
 names = [ "Owner" ]
 dialogs = [ "Hmm...
-I think you are right.", "I faintly remember the electrician telling me that more Switches need to be allowed to turn on for the backup system to function properly.", "I had completely  forgotten about it.", "Thank you so much for your help lad." ]
+I think you are right.", "I faintly remember the electrician telling me that more Switches need to be allowed to turn on for the backup system to function properly.", "I had completely forgotten about it.", "Thank you so much for your help lad." ]
 name_face_indices = [ 0, 0, 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"

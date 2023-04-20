@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Owner NPC Face Temp.png-e8a30eea8fad3fbd1e6774f8f9a44688.stex"
+path="res://.import/Owner NPC Face Temp.png-435cb8aa168c1551151480b9d4961da7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Buildng Powering Puzzle/Test/NP/Sprites/Owner NPC Face Temp.png"
-dest_files=[ "res://.import/Owner NPC Face Temp.png-e8a30eea8fad3fbd1e6774f8f9a44688.stex" ]
+source_file="res://Dialog Faces/Owner NPC Face Temp.png"
+dest_files=[ "res://.import/Owner NPC Face Temp.png-435cb8aa168c1551151480b9d4961da7.stex" ]
 
 [params]
 

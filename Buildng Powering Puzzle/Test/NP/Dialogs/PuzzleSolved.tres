@@ -1,14 +1,14 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
-[ext_resource path="res://Dialog Faces/Owner NPC Face Temp.png" type="Texture" id=2]
+[ext_resource path="res://Dialog Faces/Owner NPC Face Temp.png" type="Texture" id=1]
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=2]
 
 [resource]
-script = ExtResource( 1 )
-dialog_name = "Puzzle Yes Correct"
-face_images = [ ExtResource( 2 ) ]
+script = ExtResource( 2 )
+dialog_name = "Puzzle Solved"
+face_images = [ ExtResource( 1 ) ]
 names = [ "Owner" ]
-dialogs = [ "Oh, so you got all the Rooms powered.", "Thank you so much my good sir.." ]
+dialogs = [ "Thank you so much for your help.", "Hope to see you again." ]
 name_face_indices = [ 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"

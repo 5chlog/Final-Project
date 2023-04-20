@@ -15,9 +15,11 @@ var puzzle_yes_none = preload("res://Buildng Powering Puzzle/Test/NP/Dialogs/Puz
 var puzzle_no_correct = preload("res://Buildng Powering Puzzle/Test/NP/Dialogs/PuzzleNoCorrect.tres")
 var puzzle_no_wrong = preload("res://Buildng Powering Puzzle/Test/NP/Dialogs/PuzzleNoWrong.tres")
 var puzzle_giveup = preload("res://Buildng Powering Puzzle/Test/NP/Dialogs/PuzzleGiveup.tres")
-var puzzle_complete = preload("res://Buildng Powering Puzzle/Test/NP/Dialogs/PuzzleComplete.tres")
+var puzzle_solved = preload("res://Buildng Powering Puzzle/Test/NP/Dialogs/PuzzleSolved.tres")
+var to_verification = preload("res://Buildng Powering Puzzle/Test/NP/Dialogs/ToVerification.tres")
 
 var current_dialog = first_dialog
+export(Array, int) var preset_certificate = [3, 4, 5, 6]
 
 
 func _ready():
@@ -27,6 +29,7 @@ func _ready():
 func interact():
 	if current_dialog != null:
 		$InteractableArea.disable()
+		print("Started dialog: ", current_dialog.dialog_name)
 		start_current_dialog()
 
 
@@ -55,11 +58,18 @@ func end_level():
 	get_node("../MapSwitch").interactactable_area.disable()
 
 
-func set_certificate():
+func set_certificate_from_level():
 	var generators = get_node("../MapBorder/ViewportContainer/Viewport/Map/BuildingSprite/Graph/Generators")
 	for generator in generators.get_children():
 		if generator.on:
 			Certificates.add_generator_data(generator.id_number)
+	print(Certificates.generator_data)
+	# Certificates.sort_generator_data()
+
+
+func set_certificate_from_preset():
+	for data in preset_certificate:
+		Certificates.add_generator_data(data)
 	print(Certificates.generator_data)
 	# Certificates.sort_generator_data()
 
@@ -120,10 +130,15 @@ func _on_dialogbox_closed(dialog_name):
 	elif dialog_name in ["Puzzle Yes Correct", "Puzzle No Correct"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
-	elif dialog_name in ["Puzzle Yes None", "Puzzle Yes Wrong", "Puzzle No Wrong", "Puzzle Giveup"]:
+	elif dialog_name in ["Puzzle Yes None", "Puzzle Yes Wrong"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
-		set_certificate()
+		set_certificate_from_level()
+		get_node("../Door").open_door()
+	elif dialog_name in ["Puzzle No Wrong", "Puzzle Giveup"]:
+		HUD.get_node("ExtraHUD").queue_free()
+		end_level()
+		set_certificate_from_preset()
 		get_node("../Door").open_door()
 		
 	$InteractableArea.enable()
@@ -134,4 +149,7 @@ func _on_animation_finished(anim_name):
 		start_current_dialog()
 	elif anim_name == "Hide Select Count":
 		start_current_dialog()
-		current_dialog = puzzle_complete
+		if current_dialog in [puzzle_yes_correct, puzzle_no_correct]:
+			current_dialog = puzzle_solved
+		else:
+			current_dialog = to_verification
