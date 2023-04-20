@@ -19,7 +19,7 @@ var puzzle_solved = preload("res://Buildng Powering Puzzle/Test/NP/Dialogs/Puzzl
 var to_verification = preload("res://Buildng Powering Puzzle/Test/NP/Dialogs/ToVerification.tres")
 
 var current_dialog = first_dialog
-export(Array, int) var preset_certificate = [3, 4, 5, 6]
+export(Array, int) var preset_certificate = [2, 3, 4, 5]
 
 
 func _ready():
@@ -29,7 +29,6 @@ func _ready():
 func interact():
 	if current_dialog != null:
 		$InteractableArea.disable()
-		print("Started dialog: ", current_dialog.dialog_name)
 		start_current_dialog()
 
 
@@ -68,6 +67,7 @@ func set_certificate_from_level():
 
 
 func set_certificate_from_preset():
+	preset_certificate.resize(get_node("../GeneratorSwitches").selectable_count)
 	for data in preset_certificate:
 		Certificates.add_generator_data(data)
 	print(Certificates.generator_data)

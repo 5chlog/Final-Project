@@ -51,6 +51,7 @@ hframes = 10
 
 [node name="InteractableArea" parent="." instance=ExtResource( 4 )]
 position = Vector2( 16, 0 )
+enabled = false
 popup_offset = Vector2( 0, 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
