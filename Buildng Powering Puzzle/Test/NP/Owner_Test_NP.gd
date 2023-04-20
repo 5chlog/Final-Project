@@ -53,15 +53,15 @@ func end_level():
 	for switch in get_node("../GeneratorSwitches").get_children():
 		switch.get_node("InteractableArea").disable()
 	get_node("../MapSwitch").interactactable_area.disable()
-	
+
+
+func set_certificate():
 	var generators = get_node("../MapBorder/ViewportContainer/Viewport/Map/BuildingSprite/Graph/Generators")
 	for generator in generators.get_children():
 		if generator.on:
 			Certificates.add_generator_data(generator.id_number)
 	print(Certificates.generator_data)
 	# Certificates.sort_generator_data()
-	
-	get_node("../Door").open_door()
 
 
 # Yes reply to First Dialog
@@ -117,11 +117,15 @@ func _on_dialogbox_closed(dialog_name):
 		return
 	elif dialog_name == "Puzzle Instructions 2":
 		current_dialog = in_puzzle_dialog
-	elif dialog_name in ["Puzzle Yes Correct", "Puzzle Yes None", "Puzzle Yes Wrong", 
-			"Puzzle No Correct", "Puzzle No Wrong", "Puzzle Giveup"]:
+	elif dialog_name in ["Puzzle Yes Correct", "Puzzle No Correct"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
-	
+	elif dialog_name in ["Puzzle Yes None", "Puzzle Yes Wrong", "Puzzle No Wrong", "Puzzle Giveup"]:
+		HUD.get_node("ExtraHUD").queue_free()
+		end_level()
+		set_certificate()
+		get_node("../Door").open_door()
+		
 	$InteractableArea.enable()
 
 
