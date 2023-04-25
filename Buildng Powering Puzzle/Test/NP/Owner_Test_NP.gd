@@ -130,6 +130,12 @@ func _on_dialogbox_closed(dialog_name):
 	elif dialog_name in ["Puzzle Yes Correct", "Puzzle No Correct"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
+		if get_node("/root/Level").final_level:
+			if dialog_name == "Puzzle Yes Correct":
+				set_certificate_from_level()
+			else:
+				set_certificate_from_preset()
+			get_node("../Door").open_door()
 	elif dialog_name in ["Puzzle Yes None", "Puzzle Yes Wrong"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()

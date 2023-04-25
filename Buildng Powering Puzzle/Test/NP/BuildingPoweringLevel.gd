@@ -2,6 +2,7 @@ extends Node2D
 
 
 export(bool) var has_solution = true
+export(bool) var final_level = false
 var extra_hud_scene = preload("res://Buildng Powering Puzzle/Test/NP/ExtraHUD.tscn")
 
 func _ready():
