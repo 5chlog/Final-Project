@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "Sprite",
 "class": "MachineObject",
 "language": "GDScript",
-"path": "res://Mechanic Puzzle/Test/Machine Object.gd"
+"path": "res://Mechanic Puzzle/NP/Test/Machine Object.gd"
 }, {
 "base": "Area2D",
 "class": "Mailbox",
@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "PartsDisplay",
 "language": "GDScript",
-"path": "res://Mechanic Puzzle/Test/Parts_Display.gd"
+"path": "res://Mechanic Puzzle/NP/Test/Parts_Display.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
