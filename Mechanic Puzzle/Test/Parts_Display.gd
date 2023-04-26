@@ -2,8 +2,8 @@ extends Node2D
 class_name PartsDisplay
 
 
-enum partNames { GEAR, BATTERY, BOLT, SCREW, MOTOR, SPRING, FUEL, TRANSFORMER, CAPACITOR, RESISTOR, 
-		SWITCH, BALLBEARING, LIGHT, TENSILECABLE, PISTON, TNUT}
+enum partNames { GEAR, BATTERY, BOLT, SCREW, SPRING, FUEL, CAPACITOR, SWITCH, MOTOR, TRANSFORMER, 
+		RESISTOR, BALLBEARING, LIGHT, TENSILECABLE, PISTON, TNUT}
 export(Array, partNames) var parts_used
 
 onready var partsDictionary:Dictionary = {
@@ -50,27 +50,27 @@ onready var partsDictionary:Dictionary = {
 	partNames.MOTOR : 
 		[
 			0,
-			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Motor.png")
 		],
 	partNames.TRANSFORMER : 
 		[
 			0,
-			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Transformer.png")
 		],
 	partNames.RESISTOR :
 		[
 			0,
-			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Resistor.png")
 		],
 	partNames.BALLBEARING :
 		[
 			0,
-			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Ball_Bearings.png")
 		],
 	partNames.LIGHT :
 		[
 			0,
-			preload("res://Mechanic Puzzle/Test/Sprites/parts/Screw.png")
+			preload("res://Mechanic Puzzle/Test/Sprites/parts/Light.png")
 		],
 	partNames.TENSILECABLE :
 		[
