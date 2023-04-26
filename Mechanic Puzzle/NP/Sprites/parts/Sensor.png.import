@@ -2,15 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<< HEAD:Mechanic Puzzle/Test/Sprites/parts/Sensor.png.import
+path="res://.import/Sensor.png-14943b339c4ac59127d92e3cbb809ec6.stex"
+=======
 path="res://.import/Sensor.png-7fe095f47d406473feaf7e05d54f4367.stex"
+>>>>>>> set-cover-puzzle:Mechanic Puzzle/NP/Sprites/parts/Sensor.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD:Mechanic Puzzle/Test/Sprites/parts/Sensor.png.import
+source_file="res://Mechanic Puzzle/Test/Sprites/parts/Sensor.png"
+dest_files=[ "res://.import/Sensor.png-14943b339c4ac59127d92e3cbb809ec6.stex" ]
+=======
 source_file="res://Mechanic Puzzle/NP/Sprites/parts/Sensor.png"
 dest_files=[ "res://.import/Sensor.png-7fe095f47d406473feaf7e05d54f4367.stex" ]
+>>>>>>> set-cover-puzzle:Mechanic Puzzle/NP/Sprites/parts/Sensor.png.import
 
 [params]
 

@@ -2,15 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<< HEAD:Mechanic Puzzle/Test/Sprites/parts/Motor.png.import
+path="res://.import/Motor.png-ab3bca0fb9db88f5a07f40cba75e7987.stex"
+=======
 path="res://.import/Motor.png-115adc0f189d1a60886811de1632ea1a.stex"
+>>>>>>> set-cover-puzzle:Mechanic Puzzle/NP/Sprites/parts/Motor.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD:Mechanic Puzzle/Test/Sprites/parts/Motor.png.import
+source_file="res://Mechanic Puzzle/Test/Sprites/parts/Motor.png"
+dest_files=[ "res://.import/Motor.png-ab3bca0fb9db88f5a07f40cba75e7987.stex" ]
+=======
 source_file="res://Mechanic Puzzle/NP/Sprites/parts/Motor.png"
 dest_files=[ "res://.import/Motor.png-115adc0f189d1a60886811de1632ea1a.stex" ]
+>>>>>>> set-cover-puzzle:Mechanic Puzzle/NP/Sprites/parts/Motor.png.import
 
 [params]
 

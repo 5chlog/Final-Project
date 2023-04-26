@@ -2,15 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<< HEAD:Mechanic Puzzle/Test/Sprites/parts/Ball_Bearings.png.import
+path="res://.import/Ball_Bearings.png-2f899dcebf286f6b13656f4a049fa731.stex"
+=======
 path="res://.import/Ball_Bearings.png-f852cedbaa137714f8d02b3167edd973.stex"
+>>>>>>> set-cover-puzzle:Mechanic Puzzle/NP/Sprites/parts/Ball_Bearings.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD:Mechanic Puzzle/Test/Sprites/parts/Ball_Bearings.png.import
+source_file="res://Mechanic Puzzle/Test/Sprites/parts/Ball_Bearings.png"
+dest_files=[ "res://.import/Ball_Bearings.png-2f899dcebf286f6b13656f4a049fa731.stex" ]
+=======
 source_file="res://Mechanic Puzzle/NP/Sprites/parts/Ball_Bearings.png"
 dest_files=[ "res://.import/Ball_Bearings.png-f852cedbaa137714f8d02b3167edd973.stex" ]
+>>>>>>> set-cover-puzzle:Mechanic Puzzle/NP/Sprites/parts/Ball_Bearings.png.import
 
 [params]
 
