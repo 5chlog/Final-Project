@@ -4,16 +4,16 @@ extends Node
 var generator_data = []
 
 
-func add_generator_data(id: int, powered: bool):
-	generator_data.append([id, powered])
+func add_generator_data(id: int):
+	generator_data.append(id)
 
 
 func sort_generator_data():
-	generator_data.sort_custom(self, "_gen_data_compare")
+	generator_data.sort()
 
 
-func _gen_data_compare(a, b):
-	return a[0] < b[0]
+# func _gen_data_compare(a, b):
+# 	return a[0] < b[0]
 
 
 # Set Cover Certificate data

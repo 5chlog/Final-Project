@@ -32,7 +32,7 @@ _global_script_classes=[ {
 "base": "AnimatedSprite",
 "class": "GeneratorVertex",
 "language": "GDScript",
-"path": "res://Buildng Powering Puzzle/Test/NP/Generator.gd"
+"path": "res://Buildng Powering Puzzle/NP/Test/Generator.gd"
 }, {
 "base": "Area2D",
 "class": "InteractableArea",
@@ -77,7 +77,7 @@ _global_script_classes=[ {
 "base": "Sprite",
 "class": "RoomEdge",
 "language": "GDScript",
-"path": "res://Buildng Powering Puzzle/Test/NP/Room.gd"
+"path": "res://Buildng Powering Puzzle/NP/Test/Room.gd"
 } ]
 _global_script_class_icons={
 "DialogBoxButton": "",
