@@ -24,6 +24,7 @@ export(Array, int) var preset_certificate = [2, 3, 4, 5]
 
 func _ready():
 	DialogBox.connect("dialogbox_closed", self, "_on_dialogbox_closed")
+	Certificates.clear_generator_data()
 
 
 func interact():
@@ -68,8 +69,7 @@ func set_certificate_from_level():
 
 func set_certificate_from_preset():
 	preset_certificate.resize(get_node("../GeneratorSwitches").selectable_count)
-	for data in preset_certificate:
-		Certificates.add_generator_data(data)
+	Certificates.generator_data = preset_certificate
 	print(Certificates.generator_data)
 	# Certificates.sort_generator_data()
 
