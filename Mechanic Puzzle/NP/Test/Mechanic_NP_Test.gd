@@ -72,6 +72,7 @@ func set_certificate_from_level():
 
 # Function that sets the Certificate for Mechanic puzzle from the preset
 func set_certificate_from_preset():
+	preset_certificate.resize(get_node("../Conveyor").selectable_object_count)
 	Certificates.parts_list = preset_certificate
 
 
