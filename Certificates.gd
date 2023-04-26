@@ -17,3 +17,13 @@ func sort_generator_data():
 
 
 # Set Cover Certificate data
+# List of Arrays having elements from PartsDisplay.partNames
+var parts_list = []
+
+
+func add_parts_list(list: Array):
+	parts_list.append(list)
+
+
+func clear_parts_list():
+	parts_list = []
