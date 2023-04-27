@@ -19,9 +19,10 @@ func _physics_process(delta):
 		position = player.position - Vector2(0, 32)
 
 func _input(event):
-	if event.is_action_pressed("reset") and is_picked_up:
+	if event.is_action_pressed("game_back") and is_picked_up:
 		is_picked_up = false
 		position = initial_position
+		
 	#if event.is_action_pressed("ui_accept") and is_picked_up:
 		#is_picked_up = false
 	
