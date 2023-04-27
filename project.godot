@@ -62,7 +62,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "PartsDisplay",
 "language": "GDScript",
-"path": "res://Mechanic Puzzle/NP/Test/Parts_Display.gd"
+"path": "res://Mechanic Puzzle/NP/Test/Parts Display.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",

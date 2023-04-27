@@ -1,3 +1,5 @@
+tool
+
 extends Node2D
 class_name PartsDisplay
 
@@ -101,6 +103,8 @@ func _ready():
 		var cell = get_child(i)
 		cell.get_child(0).texture = partsDictionary[part][1]
 		i += 1
+	for j in range(i, n):
+		get_child(j).visible = false
 
 
 func add_parts(var parts_selected: Array):

@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Mechanic Puzzle/NP/Test/Parts Display.gd" type="Script" id=1]
+[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Parts Display Screen.png" type="Texture" id=2]
+[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Screen Cells.png" type="Texture" id=3]
+
+[node name="PartsDisplay_" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Cell 1" type="Sprite" parent="."]
+position = Vector2( -39, -39 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 1"]
+
+[node name="Cell 2" type="Sprite" parent="."]
+position = Vector2( -13, -39 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 2"]
+
+[node name="Cell 3" type="Sprite" parent="."]
+position = Vector2( 13, -39 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 3"]
+
+[node name="Cell 4" type="Sprite" parent="."]
+position = Vector2( 39, -39 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 4"]
+
+[node name="Cell 5" type="Sprite" parent="."]
+position = Vector2( -39, -13 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 5"]
+
+[node name="Cell 6" type="Sprite" parent="."]
+position = Vector2( -13, -13 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 6"]
+
+[node name="Cell 7" type="Sprite" parent="."]
+position = Vector2( 13, -13 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 7"]
+
+[node name="Cell 8" type="Sprite" parent="."]
+position = Vector2( 39, -13 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 8"]
+
+[node name="Cell 9" type="Sprite" parent="."]
+position = Vector2( -39, 13 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 9"]
+
+[node name="Cell 10" type="Sprite" parent="."]
+position = Vector2( -13, 13 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 10"]
+
+[node name="Cell 11" type="Sprite" parent="."]
+position = Vector2( 13, 13 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 11"]
+
+[node name="Cell 12" type="Sprite" parent="."]
+position = Vector2( 39, 13 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 12"]
+
+[node name="Cell 13" type="Sprite" parent="."]
+position = Vector2( -39, 39 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 13"]
+
+[node name="Cell 14" type="Sprite" parent="."]
+position = Vector2( -13, 39 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 14"]
+
+[node name="Cell 15" type="Sprite" parent="."]
+position = Vector2( 13, 39 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 15"]
+
+[node name="Cell 16" type="Sprite" parent="."]
+position = Vector2( 39, 39 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Part" type="Sprite" parent="Cell 16"]
