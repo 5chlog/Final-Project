@@ -105,12 +105,14 @@ func _ready():
 		get_child(j).visible = false
 
 
+# Activates cell for which parts are selected
 func set_parts(var parts_selected: Array):
 	clear_parts()
 	for part in parts_selected:
 		get_child(parts_used.find(part)).frame = 1
 
 
+# Clears all selection
 func clear_parts():
 	for i in parts_used.size():
 		get_child(i).frame = 0

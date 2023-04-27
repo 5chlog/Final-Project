@@ -1,12 +1,63 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Box.png" type="Texture" id=1]
 [ext_resource path="res://Mechanic Puzzle/Verification/Test/DismantlerPartsDisplay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mechanic Puzzle/Verification/Test/Dismantler.gd" type="Script" id=4]
+[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Robo Face.png" type="Texture" id=5]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/5x7 Transparent Number Sprite Sheet.png" type="Texture" id=6]
+[ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Display.png" type="Texture" id=7]
+[ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Display Done.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.5, 9 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Move Display Left"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("ObjectDisplay/Objects:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -28.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Move Display Right"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("ObjectDisplay/Objects:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 28.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ObjectDisplay/Objects:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [node name="Dismantler" type="Node2D"]
 script = ExtResource( 4 )
@@ -19,12 +70,60 @@ position = Vector2( 0, -33 )
 
 [node name="ObjectDisplay" type="Node2D" parent="."]
 position = Vector2( 0, 68 )
+z_index = -1
 
-[node name="PreviousObject" type="Sprite" parent="ObjectDisplay"]
+[node name="Display" type="Sprite" parent="ObjectDisplay"]
+texture = ExtResource( 7 )
 
-[node name="CurrentObject" type="Sprite" parent="ObjectDisplay"]
+[node name="Objects" type="Node2D" parent="ObjectDisplay"]
 
-[node name="NextObject" type="Sprite" parent="ObjectDisplay"]
+[node name="PreviousObject" type="Sprite" parent="ObjectDisplay/Objects"]
+position = Vector2( -28, -5 )
+texture = ExtResource( 5 )
+
+[node name="UpperDigit" type="Sprite" parent="ObjectDisplay/Objects/PreviousObject"]
+position = Vector2( -3, 14 )
+texture = ExtResource( 6 )
+hframes = 10
+
+[node name="LowerDigit" type="Sprite" parent="ObjectDisplay/Objects/PreviousObject"]
+position = Vector2( 3, 14 )
+texture = ExtResource( 6 )
+hframes = 10
+
+[node name="CurrentObject" type="Sprite" parent="ObjectDisplay/Objects"]
+position = Vector2( 0, -5 )
+texture = ExtResource( 5 )
+
+[node name="UpperDigit" type="Sprite" parent="ObjectDisplay/Objects/CurrentObject"]
+position = Vector2( -3, 14 )
+texture = ExtResource( 6 )
+hframes = 10
+
+[node name="LowerDigit" type="Sprite" parent="ObjectDisplay/Objects/CurrentObject"]
+position = Vector2( 3, 14 )
+texture = ExtResource( 6 )
+hframes = 10
+frame = 1
+
+[node name="NextObject" type="Sprite" parent="ObjectDisplay/Objects"]
+position = Vector2( 28, -5 )
+texture = ExtResource( 5 )
+
+[node name="UpperDigit" type="Sprite" parent="ObjectDisplay/Objects/NextObject"]
+position = Vector2( -3, 14 )
+texture = ExtResource( 6 )
+hframes = 10
+
+[node name="LowerDigit" type="Sprite" parent="ObjectDisplay/Objects/NextObject"]
+position = Vector2( 3, 14 )
+texture = ExtResource( 6 )
+hframes = 10
+frame = 2
+
+[node name="CompletedSprite" type="Sprite" parent="ObjectDisplay"]
+visible = false
+texture = ExtResource( 8 )
 
 [node name="InteractableArea" parent="." instance=ExtResource( 3 )]
 position = Vector2( 42, 110 )
@@ -35,3 +134,8 @@ position = Vector2( -0.5, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Move Display Left" = SubResource( 4 )
+"anims/Move Display Right" = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
