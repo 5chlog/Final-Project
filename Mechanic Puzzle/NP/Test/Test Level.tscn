@@ -30,6 +30,16 @@ position = Vector2( 272, -32 )
 script = ExtResource( 9 )
 selectable_object_count = 8
 
+[node name="Pillar 1" type="Sprite" parent="Conveyor"]
+position = Vector2( -96, -92.5 )
+scale = Vector2( 1, 1.11161 )
+texture = ExtResource( 12 )
+
+[node name="Pillar 2" type="Sprite" parent="Conveyor"]
+position = Vector2( 96, -92.5 )
+scale = Vector2( 1, 1.11161 )
+texture = ExtResource( 12 )
+
 [node name="Panels" type="Node2D" parent="Conveyor"]
 
 [node name="Panel 1" type="Sprite" parent="Conveyor/Panels"]
@@ -140,16 +150,6 @@ position = Vector2( 64, 1 )
 parts = [ 0, 1, 2 ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panels/Panel 4"]
-
-[node name="Pillar 1" type="Sprite" parent="Conveyor"]
-position = Vector2( -96, -92.5 )
-scale = Vector2( 1, 1.11161 )
-texture = ExtResource( 12 )
-
-[node name="Pillar 2" type="Sprite" parent="Conveyor"]
-position = Vector2( 96, -92.5 )
-scale = Vector2( 1, 1.11161 )
-texture = ExtResource( 12 )
 
 [node name="ConveyorSwitch" parent="." instance=ExtResource( 6 )]
 position = Vector2( 123, -18 )

@@ -105,15 +105,12 @@ func _ready():
 		get_child(j).visible = false
 
 
-func add_parts(var parts_selected: Array):
+func set_parts(var parts_selected: Array):
+	clear_parts()
 	for part in parts_selected:
-		if partsDictionary[part][0] == 0:
-			get_child(parts_used.find(part)).frame = 1
-		partsDictionary[part][0] += 1
+		get_child(parts_used.find(part)).frame = 1
 
 
-func remove_parts(var parts_selected: Array):
-	for part in parts_selected:
-		if partsDictionary[part][0] == 1:
-			get_child(parts_used.find(part)).frame = 0
-		partsDictionary[part][0] -= 1
+func clear_parts():
+	for i in parts_used.size():
+		get_child(i).frame = 0
