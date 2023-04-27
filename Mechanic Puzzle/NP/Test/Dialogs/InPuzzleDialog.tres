@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Mechanic Face Temp.png" type="Texture" id=1]
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+dialog_name = "In Puzzle Dialog"
+face_images = [ ExtResource( 1 ) ]
+names = [ "Mechanic" ]
+dialogs = [ "Have you found the right combination of Objects?" ]
+name_face_indices = [ 0 ]
+button_flag = 15
+button_tl_text = "Yes I have"
+button_tl_function = "in_puzzle_dialog_yes_function"
+button_tr_text = "No such combination"
+button_tr_function = "in_puzzle_dialog_no_function"
+button_bl_text = "I'm sorry (Give up)"
+button_bl_function = "in_puzzle_dialog_giveup_function"
+button_br_text = "Let me check again"
+button_br_function = "in_puzzle_dialog_recheck_function"
+show_buttons_with_last_line = true
