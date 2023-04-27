@@ -68,12 +68,16 @@ func set_certificate_from_level():
 		for child in panel.get_children():
 			if child is MachineObject and child.selected:
 				Certificates.add_parts_list(child.parts)
+	
+	Certificates.parts_in_level = get_node("../Display").parts_used
 
 
 # Function that sets the Certificate for Mechanic puzzle from the preset
 func set_certificate_from_preset():
 	preset_certificate.resize(get_node("../Conveyor").selectable_object_count)
 	Certificates.parts_list = preset_certificate
+	
+	Certificates.parts_in_level = get_node("../Display").parts_used
 
 
 # Function called when replying Yes to Start Dialog

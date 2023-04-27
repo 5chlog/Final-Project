@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Mechanic Puzzle/NP/Test/Parts Display.gd" type="Script" id=1]
+[ext_resource path="res://Mechanic Puzzle/Verification/Test/Dismantler Parts Display.gd" type="Script" id=1]
 [ext_resource path="res://Mechanic Puzzle/NP/Sprites/Parts Display Screen.png" type="Texture" id=2]
 [ext_resource path="res://Mechanic Puzzle/NP/Sprites/Screen Cells.png" type="Texture" id=3]
 
-[node name="PartsDisplay" type="Sprite"]
+[node name="DismantlerPartsDisplay" type="Sprite"]
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
 

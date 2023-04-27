@@ -156,6 +156,7 @@ position = Vector2( 123, -18 )
 
 [node name="Door" parent="." instance=ExtResource( 14 )]
 position = Vector2( 456, -32 )
+target_level_path = "res://Mechanic Puzzle/Verification/Test/Test Scene.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 
