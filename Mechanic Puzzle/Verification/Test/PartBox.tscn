@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Part Box.png" type="Texture" id=1]
+[ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Box Chute.png" type="Texture" id=2]
+
+[node name="PartBox" type="Sprite"]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -16, -15 )
+hframes = 2
+
+[node name="PartSprite" type="Sprite" parent="."]
+position = Vector2( 0, 2 )
+
+[node name="ChuteSprite" type="Sprite" parent="."]
+position = Vector2( 0, -24 )
+z_index = -1
+texture = ExtResource( 2 )

@@ -1,13 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Box.png" type="Texture" id=1]
 [ext_resource path="res://Mechanic Puzzle/Verification/Test/DismantlerPartsDisplay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mechanic Puzzle/Verification/Test/Dismantler.gd" type="Script" id=4]
-[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Robo Face.png" type="Texture" id=5]
+[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Machine Object Sprite.png" type="Texture" id=5]
 [ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/5x7 Transparent Number Sprite Sheet.png" type="Texture" id=6]
 [ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Display.png" type="Texture" id=7]
 [ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Display Done.png" type="Texture" id=8]
+[ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Slot Background.png" type="Texture" id=9]
+[ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Slot Door.png" type="Texture" id=10]
+[ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Wall Chute.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.5, 9 )
@@ -27,6 +30,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0, -28.0 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Left" ],
+"method": "update_on_move"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Move Display Right"
@@ -42,6 +59,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 28.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Right" ],
+"method": "update_on_move"
+} ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -64,6 +95,10 @@ script = ExtResource( 4 )
 
 [node name="DismantlerBox" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+
+[node name="ChuteSprite" type="Sprite" parent="."]
+position = Vector2( 88, -24 )
+texture = ExtResource( 11 )
 
 [node name="PartsDisplay" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -33 )
@@ -124,6 +159,27 @@ frame = 2
 [node name="CompletedSprite" type="Sprite" parent="ObjectDisplay"]
 visible = false
 texture = ExtResource( 8 )
+
+[node name="ObjectSlot" type="Node2D" parent="."]
+position = Vector2( -41, 106 )
+z_index = -1
+
+[node name="Background" type="Sprite" parent="ObjectSlot"]
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( -18, -12 )
+
+[node name="FallingObject" type="Sprite" parent="ObjectSlot"]
+position = Vector2( 0, -23 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -8, -9 )
+
+[node name="SlotDoor" type="Sprite" parent="ObjectSlot"]
+position = Vector2( 0, -23 )
+texture = ExtResource( 10 )
+centered = false
+offset = Vector2( -18, -12 )
 
 [node name="InteractableArea" parent="." instance=ExtResource( 3 )]
 position = Vector2( 42, 110 )
