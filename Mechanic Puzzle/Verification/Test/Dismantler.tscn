@@ -133,6 +133,7 @@ tracks/0/keys = {
 }
 
 [node name="Dismantler" type="Node2D"]
+z_index = 1
 script = ExtResource( 4 )
 
 [node name="DismantlerBox" type="Sprite" parent="."]

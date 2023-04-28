@@ -5,6 +5,7 @@
 [ext_resource path="res://Mechanic Puzzle/Verification/Test/PartBox.gd" type="Script" id=3]
 
 [node name="PartBox" type="Sprite"]
+z_index = 1
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -16, -15 )

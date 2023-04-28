@@ -34,6 +34,7 @@ func _ready():
 func interact():
 	active = true
 	$InteractableArea.disable()
+	HUD.get_node("ExtraHUD").visible = true
 
 
 func _input(_event):
@@ -42,6 +43,7 @@ func _input(_event):
 	
 	if Input.is_action_just_pressed("game_back"):
 		active = false
+		HUD.get_node("ExtraHUD").visible = false
 		$InteractableArea.enable()
 		$InteractableArea.player.toggleHold()
 		
