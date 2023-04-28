@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Box.png" type="Texture" id=1]
 [ext_resource path="res://Mechanic Puzzle/Verification/Test/DismantlerPartsDisplay.tscn" type="PackedScene" id=2]
@@ -14,6 +14,48 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.5, 9 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Dismantle"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ObjectSlot/FallingObject:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -23.0, 0.0, 0.0, -23.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ObjectSlot/SlotDoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6, 0.8, 1.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -23 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -23 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_boxes"
+} ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Move Display Left"
@@ -190,6 +232,7 @@ position = Vector2( -0.5, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Dismantle = SubResource( 5 )
 "anims/Move Display Left" = SubResource( 4 )
 "anims/Move Display Right" = SubResource( 2 )
 anims/RESET = SubResource( 3 )
