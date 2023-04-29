@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Santa Claus/Sprites/Slot.png" type="Texture" id=1]
+[ext_resource path="res://Santa Claus/Slot.gd" type="Script" id=2]
+[ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14, 13 )
+
+[node name="GiftSlot" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Gift" type="Position2D" parent="."]
+
+[node name="InteractableArea" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2( 0, 1 )
+shape = SubResource( 1 )

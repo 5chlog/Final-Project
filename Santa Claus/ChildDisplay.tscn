@@ -12,12 +12,7 @@ extents = Vector2( 37, 28.5 )
 [node name="ChildDisplay" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="ChildSprite" type="Sprite" parent="."]
-z_index = 1
-texture = ExtResource( 5 )
-hframes = 2
-
-[node name="Sprite" type="Sprite" parent="."]
+[node name="DisplaySprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="LeftButton" type="Sprite" parent="."]
@@ -28,6 +23,10 @@ texture = ExtResource( 3 )
 position = Vector2( 27, 0 )
 texture = ExtResource( 3 )
 flip_h = true
+
+[node name="ChildSprite" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+hframes = 2
 
 [node name="InteractableArea" parent="." instance=ExtResource( 1 )]
 
