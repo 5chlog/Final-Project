@@ -37,5 +37,6 @@ func _input(event):
 		active = false
 		get_node("../../../..").visible = false
 		player.get_node("Camera2D").position = Vector2(0, 0)
+		player.visible = true
 		switch.get_node("InteractableArea").enable()
 		player.toggleHold()
