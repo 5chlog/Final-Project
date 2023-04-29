@@ -135,17 +135,19 @@ func _on_dialogbox_closed(dialog_name):
 				set_certificate_from_level()
 			else:
 				set_certificate_from_preset()
-			get_node("../Door").open_door()
+			get_node("../DoorVerify").open_door()
+		else:
+			get_node("../DoorOut").open_door()
 	elif dialog_name in ["Puzzle Yes None", "Puzzle Yes Wrong"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
 		set_certificate_from_level()
-		get_node("../Door").open_door()
+		get_node("../DoorVerify").open_door()
 	elif dialog_name in ["Puzzle No Wrong", "Puzzle Giveup"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
 		set_certificate_from_preset()
-		get_node("../Door").open_door()
+		get_node("../DoorVerify").open_door()
 		
 	$InteractableArea.enable()
 

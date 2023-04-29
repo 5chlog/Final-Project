@@ -43,6 +43,7 @@ func end_level():
 	for room in get_node("../Rooms").get_children():
 		if room.get_node("InteractableArea").enabled:
 			room.get_node("InteractableArea").disable()
+	get_node("../DoorOut").open_door()
 
 
 func any_room_unpowered():
