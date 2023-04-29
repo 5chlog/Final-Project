@@ -47,16 +47,14 @@ func end_level():
 
 func any_room_unpowered():
 	for room in get_node("../Rooms").get_children():
-		var gen_1_red: bool = room.get_node("Generator 1 Indicator/Indicator").frame == 2
-		var gen_2_red: bool = room.get_node("Generator 2 Indicator/Indicator").frame == 2
-		if gen_1_red and gen_2_red:
+		if room.frame == 1:
 			return true
 	return false
 
 
 func all_rooms_checked():
 	for room in get_node("../Rooms").get_children():
-		if room.get_node("Generator 1 Indicator/Indicator").frame == 0:
+		if room.frame == 0:
 			return false
 	return true
 

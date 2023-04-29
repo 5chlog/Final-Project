@@ -6,7 +6,7 @@
 [ext_resource path="res://Buildng Powering Puzzle/Verification/Test/BuildingRoom.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Buildng Powering Puzzle/NP/Test/Owner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Buildng Powering Puzzle/Verification/Test/Owner_Test_V.gd" type="Script" id=7]
+[ext_resource path="res://Buildng Powering Puzzle/Verification/Test/Owner Test V.gd" type="Script" id=7]
 
 [node name="Level" type="Node2D"]
 
