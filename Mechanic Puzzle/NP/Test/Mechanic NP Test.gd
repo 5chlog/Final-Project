@@ -182,17 +182,19 @@ func _on_dialogbox_closed(dialog_name):
 				set_certificate_from_level()
 			else:
 				set_certificate_from_preset()
-			get_node("../Door").open_door()
+			get_node("../DoorVerify").open_door()
+		else:
+			get_node("../DoorIn").open_door()
 		$InteractableArea.enable()
 	elif dialog_name in ["Puzzle Yes Wrong Dialog", "Puzzle Yes None Dialog"]:
 		end_level()
 		set_certificate_from_level()
-		get_node("../Door").open_door()
+		get_node("../DoorVerify").open_door()
 		$InteractableArea.enable()
 	elif dialog_name in ["Puzzle No Wrong Dialog", "Puzzle Give Up Dialog"]:
 		end_level()
 		set_certificate_from_preset()
-		get_node("../Door").open_door()
+		get_node("../DoorVerify").open_door()
 		$InteractableArea.enable()
 	elif dialog_name in ["In Puzzle Dialog", "Puzzle Solved Dialog", "To Verification Dialog"]:
 		$InteractableArea.enable()
