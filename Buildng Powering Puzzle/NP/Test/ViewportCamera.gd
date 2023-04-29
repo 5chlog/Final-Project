@@ -23,18 +23,14 @@ func _input(event):
 		return
 	
 	if Input.is_action_just_pressed("game_up"):
-		get_tree().set_input_as_handled()
-		
 		# Move Camera up
 		if position.y > top_bound:
 			position.y -= UNIT_HEIGHT
 	elif Input.is_action_just_pressed("game_down"):
-		get_tree().set_input_as_handled()
-		
 		# Move Camera down
 		if position.y < bottom_bound:
 			position.y += UNIT_HEIGHT
-	elif Input.is_action_just_pressed("ui_accept"):
+	elif Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("game_back"):
 		get_tree().set_input_as_handled()
 		
 		# Return disable the viewport, enable InteractableArea of Switch and control to player
