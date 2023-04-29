@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mechanic Face Temp.png-d13de7a4e58e7f088c2bc8239b9f2c00.stex"
+path="res://.import/Dismantler Object Display.png-e590b7e6134ee209e677bc7b19b03537.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mechanic Puzzle/NP/Sprites/Mechanic Face Temp.png"
-dest_files=[ "res://.import/Mechanic Face Temp.png-d13de7a4e58e7f088c2bc8239b9f2c00.stex" ]
+source_file="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Display.png"
+dest_files=[ "res://.import/Dismantler Object Display.png-e590b7e6134ee209e677bc7b19b03537.stex" ]
 
 [params]
 

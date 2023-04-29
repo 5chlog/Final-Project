@@ -2,24 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-<<<<<<< HEAD:Mechanic Puzzle/Test/Sprites/parts/Light.png.import
-path="res://.import/Light.png-158b482e24dc2a4fc90a5c5be4ee14c9.stex"
-=======
 path="res://.import/Light.png-a736810c664f258c2d58dfb442155699.stex"
->>>>>>> set-cover-puzzle:Mechanic Puzzle/NP/Sprites/parts/Light.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:Mechanic Puzzle/Test/Sprites/parts/Light.png.import
-source_file="res://Mechanic Puzzle/Test/Sprites/parts/Light.png"
-dest_files=[ "res://.import/Light.png-158b482e24dc2a4fc90a5c5be4ee14c9.stex" ]
-=======
 source_file="res://Mechanic Puzzle/NP/Sprites/parts/Light.png"
 dest_files=[ "res://.import/Light.png-a736810c664f258c2d58dfb442155699.stex" ]
->>>>>>> set-cover-puzzle:Mechanic Puzzle/NP/Sprites/parts/Light.png.import
 
 [params]
 

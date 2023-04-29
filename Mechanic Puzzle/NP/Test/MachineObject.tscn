@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Machine Object.gd" type="Script" id=1]
-[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Robo Face.png" type="Texture" id=2]
+[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Machine Object Sprite.png" type="Texture" id=2]
 [ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mechanic Puzzle/NP/Sprites/Selection Indicator Sprite.png" type="Texture" id=4]
 

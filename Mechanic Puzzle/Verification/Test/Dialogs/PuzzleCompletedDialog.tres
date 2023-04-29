@@ -1,15 +1,15 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://Dialog Faces/Mechanic Face Temp.png" type="Texture" id=1]
-[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=2]
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
+[ext_resource path="res://Dialog Faces/Mechanic Face Temp.png" type="Texture" id=2]
 
 [resource]
-script = ExtResource( 2 )
-dialog_name = "Puzzle Yes Correct Dialog"
-face_images = [ ExtResource( 1 ) ]
+script = ExtResource( 1 )
+dialog_name = "Puzzle Completed Dialog"
+face_images = [ ExtResource( 2 ) ]
 names = [ "Mechanic" ]
-dialogs = [ "Thanks a lot!", "Now I won't end up having to dismantle all of the Objects." ]
-name_face_indices = [ 0, 0 ]
+dialogs = [ "See you around." ]
+name_face_indices = [ 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

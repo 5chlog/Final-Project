@@ -5,11 +5,11 @@
 
 [resource]
 script = ExtResource( 2 )
-dialog_name = "Puzzle Yes Correct Dialog"
+dialog_name = "Puzzle Solved Dialog"
 face_images = [ ExtResource( 1 ) ]
 names = [ "Mechanic" ]
-dialogs = [ "Thanks a lot!", "Now I won't end up having to dismantle all of the Objects." ]
-name_face_indices = [ 0, 0 ]
+dialogs = [ "Bye." ]
+name_face_indices = [ 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

@@ -1,10 +1,9 @@
 extends Node2D
-class_name PartsDisplay
 
 
 enum partNames { GEAR, BATTERY, BOLT, SCREW, SPRING, FUEL, CAPACITOR, SWITCH, MOTOR, TRANSFORMER, 
 		RESISTOR, BALLBEARING, LIGHT, TENSILECABLE, PISTON, TNUT}
-export(Array, partNames) var parts_used
+var parts_used
 
 onready var partsDictionary:Dictionary = {
 	partNames.GEAR : 
@@ -92,6 +91,7 @@ onready var partsDictionary:Dictionary = {
 
 func _ready():
 	var n = get_child_count()
+	parts_used = Certificates.parts_in_level
 	if parts_used.size() > n:
 		parts_used.resize(n)
 	parts_used.sort()
@@ -101,17 +101,18 @@ func _ready():
 		var cell = get_child(i)
 		cell.get_child(0).texture = partsDictionary[part][1]
 		i += 1
+	for j in range(i, n):
+		get_child(j).visible = false
 
 
-func add_parts(var parts_selected: Array):
+# Activates cell for which parts are selected
+func set_parts(var parts_selected: Array):
+	clear_parts()
 	for part in parts_selected:
-		if partsDictionary[part][0] == 0:
-			get_child(parts_used.find(part)).frame = 1
-		partsDictionary[part][0] += 1
+		get_child(parts_used.find(part)).frame = 1
 
 
-func remove_parts(var parts_selected: Array):
-	for part in parts_selected:
-		if partsDictionary[part][0] == 1:
-			get_child(parts_used.find(part)).frame = 0
-		partsDictionary[part][0] -= 1
+# Clears all selection
+func clear_parts():
+	for i in parts_used.size():
+		get_child(i).frame = 0
