@@ -226,6 +226,7 @@ offset = Vector2( -18, -12 )
 
 [node name="InteractableArea" parent="." instance=ExtResource( 3 )]
 position = Vector2( 42, 110 )
+enabled = false
 popup_offset = Vector2( 0, 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic Level.gd" type="Script" id=1]
+[ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic NP Level Test.gd" type="Script" id=1]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Panel.gd" type="Script" id=2]
 [ext_resource path="res://Black Bricked TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic.tscn" type="PackedScene" id=4]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Conveyor.gd" type="Script" id=9]
 [ext_resource path="res://Mechanic Puzzle/NP/Sprites/Panel Sprite.png" type="Texture" id=11]
 [ext_resource path="res://Mechanic Puzzle/NP/Sprites/Pillars.png" type="Texture" id=12]
-[ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic_NP_Test.gd" type="Script" id=13]
+[ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic NP Test.gd" type="Script" id=13]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/PartsDisplay.tscn" type="PackedScene" id=15]
 
