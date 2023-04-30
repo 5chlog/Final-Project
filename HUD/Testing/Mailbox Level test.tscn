@@ -4,8 +4,8 @@
 [ext_resource path="res://HUD/Testing/NPC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Mailbox Puzzle/Level 1/Mailbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Dialog Box/First Dialog.tres" type="Resource" id=5]
-[ext_resource path="res://Dialog Box/Second Dialog.tres" type="Resource" id=6]
+[ext_resource path="res://Dialog Box/Testing/First Dialog.tres" type="Resource" id=5]
+[ext_resource path="res://Dialog Box/Testing/Second Dialog.tres" type="Resource" id=6]
 [ext_resource path="res://Concrete Bricked TileMap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=11]
 
