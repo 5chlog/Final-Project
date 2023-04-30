@@ -29,7 +29,6 @@ position = Vector2( -48, 0 )
 
 [node name="Mailbox4" parent="Mailboxes" instance=ExtResource( 3 )]
 position = Vector2( 8, 0 )
-targetmailslot = 2
 
 [node name="Mailbox5" parent="Mailboxes" instance=ExtResource( 3 )]
 position = Vector2( 64, 0 )
