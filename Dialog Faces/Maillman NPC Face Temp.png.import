@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialogBG.png-7bf133e96927dc942b2860c826a2ef71.stex"
+path="res://.import/Maillman NPC Face Temp.png-89d09f315ed58deda4696a02c44e0a9d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mailbox Puzzle/Test/Sprites/dialogBG.png"
-dest_files=[ "res://.import/dialogBG.png-7bf133e96927dc942b2860c826a2ef71.stex" ]
+source_file="res://Dialog Faces/Maillman NPC Face Temp.png"
+dest_files=[ "res://.import/Maillman NPC Face Temp.png-89d09f315ed58deda4696a02c44e0a9d.stex" ]
 
 [params]
 

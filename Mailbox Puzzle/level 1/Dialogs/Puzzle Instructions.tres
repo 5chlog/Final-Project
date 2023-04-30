@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
+[ext_resource path="res://Dialog Faces/Maillman NPC Face Temp.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+dialog_name = "Puzzle Instructions"
+face_images = [ ExtResource( 2 ) ]
+names = [ "Mailman" ]
+dialogs = [ "Great!", "You see...
+Lately, we have been shorthanded here and under all the hustle, there was a mix up.", "A mail was put in to one of these mailboxes by mistake and we don't know which one.", "Could you check to see if there is a golden-coloured mail in any of the mailboxes?", "Just Interact with the mailbox you think has the mail you are looking for. This will Select the mailbox.", "Interact with an already Setected mailbox to Deselect it.", "If you think none of the mailboxes have the mail, don't select any mailbox.", "Come back to me after finding the Golden mail or if you are sure it is not inside any of these mailboxes." ]
+name_face_indices = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+button_flag = 0
+button_tl_text = "Option 1"
+button_tl_function = "button_TL_function"
+button_tr_text = "Option 3"
+button_tr_function = "button_TR_function"
+button_bl_text = "Option 2"
+button_bl_function = "button_BL_function"
+button_br_text = "Option 4"
+button_br_function = "button_BR_function"
+show_buttons_with_last_line = true
