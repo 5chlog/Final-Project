@@ -12,6 +12,10 @@ func sort_generator_data():
 	generator_data.sort()
 
 
+func clear_generator_data():
+	generator_data = []
+
+
 # func _gen_data_compare(a, b):
 # 	return a[0] < b[0]
 

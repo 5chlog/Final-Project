@@ -24,6 +24,7 @@ export(Array, int) var preset_certificate = [2, 3, 4, 5]
 
 func _ready():
 	DialogBox.connect("dialogbox_closed", self, "_on_dialogbox_closed")
+	Certificates.clear_generator_data()
 
 
 func interact():
@@ -68,8 +69,7 @@ func set_certificate_from_level():
 
 func set_certificate_from_preset():
 	preset_certificate.resize(get_node("../GeneratorSwitches").selectable_count)
-	for data in preset_certificate:
-		Certificates.add_generator_data(data)
+	Certificates.generator_data = preset_certificate
 	print(Certificates.generator_data)
 	# Certificates.sort_generator_data()
 
@@ -135,17 +135,19 @@ func _on_dialogbox_closed(dialog_name):
 				set_certificate_from_level()
 			else:
 				set_certificate_from_preset()
-			get_node("../Door").open_door()
+			get_node("../DoorVerify").open_door()
+		else:
+			get_node("../DoorOut").open_door()
 	elif dialog_name in ["Puzzle Yes None", "Puzzle Yes Wrong"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
 		set_certificate_from_level()
-		get_node("../Door").open_door()
+		get_node("../DoorVerify").open_door()
 	elif dialog_name in ["Puzzle No Wrong", "Puzzle Giveup"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
 		set_certificate_from_preset()
-		get_node("../Door").open_door()
+		get_node("../DoorVerify").open_door()
 		
 	$InteractableArea.enable()
 

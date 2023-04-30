@@ -1,4 +1,4 @@
 extends Node2D
 class_name Mailboxes
 
-var selectedmailbox: int = -1
+var selected_mailbox: int = -1

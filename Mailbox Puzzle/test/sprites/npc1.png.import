@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/npc1.png-4f18b15c537672c84a11f75902f5687e.stex"
+path="res://.import/npc1.png-18c902670208312fd2de599d457010ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mailbox Puzzle/test/sprites/npc1.png"
-dest_files=[ "res://.import/npc1.png-4f18b15c537672c84a11f75902f5687e.stex" ]
+source_file="res://Mailbox Puzzle/Test/Sprites/npc1.png"
+dest_files=[ "res://.import/npc1.png-18c902670208312fd2de599d457010ff.stex" ]
 
 [params]
 
