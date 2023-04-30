@@ -1,6 +1,8 @@
 extends Node2D
 
 onready var animationplayer: AnimationPlayer = get_node("AnimationPlayer")
+onready var rooms = get_node("MapBorder/ViewportContainer/Viewport/Map/BuildingSprite/Graph/Rooms")
+onready var generators = get_node("MapBorder/ViewportContainer/Viewport/Map/BuildingSprite/Graph/Generators")
 
 
 func _ready():
@@ -14,3 +16,19 @@ func show_select_count():
 
 func hide_select_count():
 	animationplayer.play("Hide Select Count")
+
+
+func show_map():
+	get_node("MapBorder").visible = true
+
+func hide_map():
+	get_node("MapBorder").visible = false
+
+
+func get_rooms():
+	return rooms
+
+
+func get_generators():
+	return generators
+	
