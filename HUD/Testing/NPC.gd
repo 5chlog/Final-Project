@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+
 # Use Resouces of type DialogResource as elements
 export(Array, Resource) var dialog_resources = []
 
@@ -26,5 +27,5 @@ func button_TR_function():
 	DialogBox.disable_dialog_box()
 
 
-func _on_DialogBox_closed():
+func _on_DialogBox_closed(dialog_name):
 	HUD.get_node("Coins").hide()
