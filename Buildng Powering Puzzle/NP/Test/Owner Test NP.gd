@@ -34,7 +34,7 @@ func interact():
 
 
 func solved():
-	var rooms = get_node("../MapBorder/ViewportContainer/Viewport/Map/BuildingSprite/Graph/Rooms")
+	var rooms = get_node("/root/HUD/ExtraHUD").get_rooms()
 	for room in rooms.get_children():
 		if not room.on:
 			return false
@@ -59,7 +59,7 @@ func end_level():
 
 
 func set_certificate_from_level():
-	var generators = get_node("../MapBorder/ViewportContainer/Viewport/Map/BuildingSprite/Graph/Generators")
+	var generators = get_node("/root/HUD/ExtraHUD").get_generators()
 	for generator in generators.get_children():
 		if generator.on:
 			Certificates.add_generator_data(generator.id_number)
@@ -128,8 +128,6 @@ func _on_dialogbox_closed(dialog_name):
 	elif dialog_name == "Puzzle Instructions 2":
 		current_dialog = in_puzzle_dialog
 	elif dialog_name in ["Puzzle Yes Correct", "Puzzle No Correct"]:
-		HUD.get_node("ExtraHUD").queue_free()
-		end_level()
 		if get_node("/root/Level").final_level:
 			if dialog_name == "Puzzle Yes Correct":
 				set_certificate_from_level()
@@ -138,15 +136,17 @@ func _on_dialogbox_closed(dialog_name):
 			get_node("../DoorVerify").open_door()
 		else:
 			get_node("../DoorOut").open_door()
-	elif dialog_name in ["Puzzle Yes None", "Puzzle Yes Wrong"]:
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
+	elif dialog_name in ["Puzzle Yes None", "Puzzle Yes Wrong"]:
 		set_certificate_from_level()
+		HUD.get_node("ExtraHUD").queue_free()
+		end_level()
 		get_node("../DoorVerify").open_door()
 	elif dialog_name in ["Puzzle No Wrong", "Puzzle Giveup"]:
+		set_certificate_from_preset()
 		HUD.get_node("ExtraHUD").queue_free()
 		end_level()
-		set_certificate_from_preset()
 		get_node("../DoorVerify").open_door()
 		
 	$InteractableArea.enable()

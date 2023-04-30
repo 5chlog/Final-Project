@@ -20,7 +20,7 @@ func interact():
 		return
 	
 	if generator == null:
-		var generators = get_node("../../MapBorder/ViewportContainer/Viewport/Map/BuildingSprite/Graph/Generators")
+		var generators = get_node("/root/HUD/ExtraHUD").get_generators()
 		for gen in generators.get_children():
 			if gen.id_number == generator_number:
 				generator = gen
