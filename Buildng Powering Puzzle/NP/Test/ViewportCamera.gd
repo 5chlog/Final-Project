@@ -33,10 +33,8 @@ func _input(event):
 	elif Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("game_back"):
 		get_tree().set_input_as_handled()
 		
-		# Return disable the viewport, enable InteractableArea of Switch and control to player
+		# Disable the viewport, enable InteractableArea of Switch and return control to player
 		active = false
-		get_node("../../../..").visible = false
-		player.get_node("Camera2D").position = Vector2(0, 0)
-		player.visible = true
+		get_node("../../../../..").hide_map()
 		switch.get_node("InteractableArea").enable()
 		player.toggleHold()
