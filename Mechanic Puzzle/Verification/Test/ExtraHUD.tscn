@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Mechanic Puzzle/Verification/Sprites/ExtraHUD Background.png" type="Texture" id=1]
+
+[node name="ExtraHUD" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.666667 )
+position = Vector2( 513, 144 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="InputOptionsText" type="Label" parent="Background"]
+margin_left = 3.0
+margin_top = 4.0
+margin_right = 120.0
+margin_bottom = 69.0
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Previous Object:
+Next Object:
+Dismantle Object:
+Stop Operation:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="InputMappingsText" type="Label" parent="Background"]
+margin_left = 88.0
+margin_top = 4.0
+margin_right = 138.0
+margin_bottom = 69.0
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Left
+Right
+Interact
+Back"
+__meta__ = {
+"_edit_use_anchors_": true
+}

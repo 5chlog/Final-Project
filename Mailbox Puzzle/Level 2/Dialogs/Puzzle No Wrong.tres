@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
+[ext_resource path="res://Dialog Faces/Maillman NPC Face Temp.png" type="Texture" id=2]
+[ext_resource path="res://Dialog Faces/Avatar Face.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 1 )
+dialog_name = "Puzzle No Wrong"
+face_images = [ ExtResource( 2 ), ExtResource( 3 ) ]
+names = [ "Mailman", "Player" ]
+dialogs = [ "I'm sure that the Golden mail is in one of these mailboxes.", "Sorry I coudn't find it.", "It 's alright. I'll look for it when I get time.", "Thanks for trying though.", "Bye." ]
+name_face_indices = [ 0, 1, 0, 0, 0 ]
+button_flag = 0
+button_tl_text = "Option 1"
+button_tl_function = "button_TL_function"
+button_tr_text = "Option 3"
+button_tr_function = "button_TR_function"
+button_bl_text = "Option 2"
+button_bl_function = "button_BL_function"
+button_br_text = "Option 4"
+button_br_function = "button_BR_function"
+show_buttons_with_last_line = true
