@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Mailbox Puzzle/Level 1/Mailboxes.gd" type="Script" id=1]
+[ext_resource path="res://Mailbox Puzzle/vel 1/Mailboxes.gd" type="Script" id=1]
 [ext_resource path="res://Dialog Box/Testing/NPC re.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Mailbox Puzzle/Level 1/Mailbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Mailbox Puzzle/vel 1/Mailbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Dialog Box/First Dialog.tres" type="Resource" id=5]
 [ext_resource path="res://Dialog Box/Second Dialog.tres" type="Resource" id=6]

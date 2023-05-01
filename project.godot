@@ -52,12 +52,12 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Mailbox",
 "language": "GDScript",
-"path": "res://Mailbox Puzzle/Level 1/Mailbox.gd"
+"path": "res://Mailbox Puzzle/vel 1/Mailbox.gd"
 }, {
 "base": "Node2D",
 "class": "Mailboxes",
 "language": "GDScript",
-"path": "res://Mailbox Puzzle/Level 1/Mailboxes.gd"
+"path": "res://Mailbox Puzzle/vel 1/Mailboxes.gd"
 }, {
 "base": "Node2D",
 "class": "PartsDisplay",
