@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Project Integration/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Project Integration/StartMenu.gd" type="Script" id=2]
@@ -10,6 +10,13 @@
 [ext_resource path="res://Project Integration/Level1Button.gd" type="Script" id=8]
 [ext_resource path="res://Project Integration/Level2Button.gd" type="Script" id=9]
 [ext_resource path="res://Project Integration/Level3Button.gd" type="Script" id=10]
+[ext_resource path="res://Project Integration/MailboxMenu.gd" type="Script" id=11]
+[ext_resource path="res://Project Integration/BuildingPoweringMenu.gd" type="Script" id=12]
+[ext_resource path="res://Project Integration/MechanicMenu.gd" type="Script" id=13]
+[ext_resource path="res://Project Integration/SantaClausMenu.gd" type="Script" id=14]
+[ext_resource path="res://Project Integration/BuildingPoweringVFMenu.gd" type="Script" id=15]
+[ext_resource path="res://Project Integration/MechanicVFMenu.gd" type="Script" id=16]
+[ext_resource path="res://Project Integration/SantaClausVFMenu.gd" type="Script" id=17]
 
 [node name="MainMenu" type="Control"]
 script = ExtResource( 1 )
@@ -195,35 +202,35 @@ margin_bottom = 20.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath(".")
 focus_neighbour_right = NodePath(".")
-focus_neighbour_bottom = NodePath("../MechanicPuzzleVFButton")
-focus_next = NodePath("../MechanicPuzzleVFButton")
+focus_neighbour_bottom = NodePath("../MechanicVFPuzzleButton")
+focus_next = NodePath("../MechanicVFPuzzleButton")
 focus_previous = NodePath(".")
 text = "Building Powering Verification Puzzle"
 flat = true
 
-[node name="MechanicPuzzleVFButton" type="Button" parent="CenterContainer/Lesson3Menu"]
+[node name="MechanicVFPuzzleButton" type="Button" parent="CenterContainer/Lesson3Menu"]
 margin_top = 24.0
 margin_right = 248.0
 margin_bottom = 44.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath("../BuildingPoweringVFPuzzleButton")
 focus_neighbour_right = NodePath(".")
-focus_neighbour_bottom = NodePath("../SantaClausPuzzleVFButton")
-focus_next = NodePath("../SantaClausPuzzleVFButton")
+focus_neighbour_bottom = NodePath("../SantaClausVFPuzzleButton")
+focus_next = NodePath("../SantaClausVFPuzzleButton")
 focus_previous = NodePath("../BuildingPoweringVFPuzzleButton")
 text = "Mechanic Verification Puzzle"
 flat = true
 
-[node name="SantaClausPuzzleVFButton" type="Button" parent="CenterContainer/Lesson3Menu"]
+[node name="SantaClausVFPuzzleButton" type="Button" parent="CenterContainer/Lesson3Menu"]
 margin_top = 48.0
 margin_right = 248.0
 margin_bottom = 68.0
 focus_neighbour_left = NodePath(".")
-focus_neighbour_top = NodePath("../MechanicPuzzleVFButton")
+focus_neighbour_top = NodePath("../MechanicVFPuzzleButton")
 focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath(".")
 focus_next = NodePath(".")
-focus_previous = NodePath("../MechanicPuzzleVFButton")
+focus_previous = NodePath("../MechanicVFPuzzleButton")
 text = "Santa Claus Verification Puzzle"
 flat = true
 
@@ -233,6 +240,7 @@ margin_left = 291.0
 margin_top = 146.0
 margin_right = 349.0
 margin_bottom = 214.0
+script = ExtResource( 11 )
 
 [node name="Level1Button" type="Button" parent="CenterContainer/MailboxMenu"]
 margin_right = 58.0
@@ -284,6 +292,7 @@ margin_left = 291.0
 margin_top = 146.0
 margin_right = 349.0
 margin_bottom = 214.0
+script = ExtResource( 12 )
 
 [node name="Level1Button" type="Button" parent="CenterContainer/BuildingPoweringMenu"]
 margin_right = 58.0
@@ -329,6 +338,7 @@ margin_left = 291.0
 margin_top = 146.0
 margin_right = 349.0
 margin_bottom = 214.0
+script = ExtResource( 13 )
 
 [node name="Level1Button" type="Button" parent="CenterContainer/MechanicMenu"]
 margin_right = 58.0
@@ -374,6 +384,7 @@ margin_left = 291.0
 margin_top = 146.0
 margin_right = 349.0
 margin_bottom = 214.0
+script = ExtResource( 14 )
 
 [node name="Level1Button" type="Button" parent="CenterContainer/SantaClausMenu"]
 margin_right = 58.0
@@ -419,6 +430,7 @@ margin_left = 291.0
 margin_top = 146.0
 margin_right = 349.0
 margin_bottom = 214.0
+script = ExtResource( 15 )
 
 [node name="Level1Button" type="Button" parent="CenterContainer/BuildingPoweringVFMenu"]
 margin_right = 58.0
@@ -464,6 +476,7 @@ margin_left = 291.0
 margin_top = 146.0
 margin_right = 349.0
 margin_bottom = 214.0
+script = ExtResource( 16 )
 
 [node name="Level1Button" type="Button" parent="CenterContainer/MechanicVFMenu"]
 margin_right = 58.0
@@ -509,6 +522,7 @@ margin_left = 291.0
 margin_top = 146.0
 margin_right = 349.0
 margin_bottom = 214.0
+script = ExtResource( 17 )
 
 [node name="Level1Button" type="Button" parent="CenterContainer/SantaClausVFMenu"]
 margin_right = 58.0
@@ -568,8 +582,8 @@ flat = true
 [connection signal="pressed" from="CenterContainer/Lesson2Menu/MechanicPuzzleButton" to="CenterContainer/Lesson2Menu" method="_on_MechanicPuzzleButton_pressed"]
 [connection signal="pressed" from="CenterContainer/Lesson2Menu/SantaClausPuzzleButton" to="CenterContainer/Lesson2Menu" method="_on_SantaClausPuzzleButton_pressed"]
 [connection signal="pressed" from="CenterContainer/Lesson3Menu/BuildingPoweringVFPuzzleButton" to="CenterContainer/Lesson3Menu" method="_on_BuildingPoweringVFPuzzleButton_pressed"]
-[connection signal="pressed" from="CenterContainer/Lesson3Menu/MechanicPuzzleVFButton" to="CenterContainer/Lesson3Menu" method="_on_MechanicPuzzleVFButton_pressed"]
-[connection signal="pressed" from="CenterContainer/Lesson3Menu/SantaClausPuzzleVFButton" to="CenterContainer/Lesson3Menu" method="_on_SantaClausPuzzleVFButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Lesson3Menu/MechanicVFPuzzleButton" to="CenterContainer/Lesson3Menu" method="_on_MechanicPuzzleVFButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Lesson3Menu/SantaClausVFPuzzleButton" to="CenterContainer/Lesson3Menu" method="_on_SantaClausPuzzleVFButton_pressed"]
 [connection signal="pressed" from="CenterContainer/MailboxMenu/Level1Button" to="CenterContainer/MailboxMenu/Level1Button" method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="CenterContainer/MailboxMenu/Level2Button" to="CenterContainer/MailboxMenu/Level2Button" method="_on_Level2Button_pressed"]
 [connection signal="pressed" from="CenterContainer/MailboxMenu/Level3Button" to="CenterContainer/MailboxMenu/Level3Button" method="_on_Level3Button_pressed"]

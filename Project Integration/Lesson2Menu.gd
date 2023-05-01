@@ -7,6 +7,23 @@ onready var mechanic_menu_container = get_node("../MechanicMenu")
 onready var santa_claus_menu_container = get_node("../SantaClausMenu")
 
 
+func _ready():
+	if ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_2_puzzles_unlocked:
+		$BuildingPoweringPuzzleButton.visible = true
+	else :
+		$BuildingPoweringPuzzleButton.visible = false
+	
+	if ProgressData.puzzle_types.MechanicPuzzle in ProgressData.lesson_2_puzzles_unlocked:
+		$MechanicPuzzleButton.visible = true
+	else :
+		$MechanicPuzzleButton.visible = false
+	
+	if ProgressData.puzzle_types.SantaClausPuzzle in ProgressData.lesson_2_puzzles_unlocked:
+		$SantaClausPuzzleButton.visible = true
+	else :
+		$SantaClausPuzzleButton.visible = false
+
+
 func _on_BuildingPoweringPuzzleButton_pressed():
 	main_menu.set_menu_container(building_powering_menu_container)
 
