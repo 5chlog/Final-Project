@@ -1,0 +1,564 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Project Integration/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Project Integration/StartMenu.gd" type="Script" id=2]
+[ext_resource path="res://Project Integration/Sprites and Textures/MainMenu Back Button Texture.png" type="Texture" id=3]
+[ext_resource path="res://Project Integration/LessonMenu.gd" type="Script" id=4]
+[ext_resource path="res://Project Integration/Lesson1Menu.gd" type="Script" id=5]
+[ext_resource path="res://Project Integration/Lesson2Menu.gd" type="Script" id=6]
+[ext_resource path="res://Project Integration/Lesson3Menu.gd" type="Script" id=7]
+
+[node name="MainMenu" type="Control"]
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 645.0
+margin_bottom = 366.0
+color = Color( 0.439216, 0.713726, 0.756863, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+
+[node name="StartMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 286.0
+margin_top = 146.0
+margin_right = 353.0
+margin_bottom = 214.0
+script = ExtResource( 2 )
+
+[node name="StartButton" type="Button" parent="CenterContainer/StartMenu"]
+margin_right = 67.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../GlossaryButton")
+focus_next = NodePath("../GlossaryButton")
+focus_previous = NodePath(".")
+text = "Start"
+flat = true
+
+[node name="GlossaryButton" type="Button" parent="CenterContainer/StartMenu"]
+margin_top = 24.0
+margin_right = 67.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../StartButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../ExitButton")
+focus_next = NodePath("../ExitButton")
+focus_previous = NodePath("../StartButton")
+text = "Glossary"
+flat = true
+
+[node name="ExitButton" type="Button" parent="CenterContainer/StartMenu"]
+margin_top = 48.0
+margin_right = 67.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../GlossaryButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../GlossaryButton")
+text = "Exit"
+flat = true
+
+[node name="LessonMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 285.0
+margin_top = 146.0
+margin_right = 354.0
+margin_bottom = 214.0
+script = ExtResource( 4 )
+
+[node name="Lesson1Button" type="Button" parent="CenterContainer/LessonMenu"]
+margin_right = 69.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Lesson2Button")
+focus_next = NodePath("../Lesson2Button")
+focus_previous = NodePath(".")
+text = "Lesson 1"
+flat = true
+
+[node name="Lesson2Button" type="Button" parent="CenterContainer/LessonMenu"]
+margin_top = 24.0
+margin_right = 69.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Lesson1Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Lesson3Button")
+focus_next = NodePath("../Lesson3Button")
+focus_previous = NodePath("../Lesson1Button")
+text = "Lesson 2"
+flat = true
+
+[node name="Lesson3Button" type="Button" parent="CenterContainer/LessonMenu"]
+margin_top = 48.0
+margin_right = 69.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Lesson2Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../Lesson2Button")
+text = "Lesson 3"
+flat = true
+
+[node name="Lesson1Menu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 266.0
+margin_top = 170.0
+margin_right = 374.0
+margin_bottom = 190.0
+script = ExtResource( 5 )
+
+[node name="MailboxPuzzleButton" type="Button" parent="CenterContainer/Lesson1Menu"]
+margin_right = 108.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "Mailbox Puzzle"
+flat = true
+
+[node name="Lesson2Menu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 234.0
+margin_top = 146.0
+margin_right = 406.0
+margin_bottom = 214.0
+script = ExtResource( 6 )
+
+[node name="BuildingPoweringPuzzleButton" type="Button" parent="CenterContainer/Lesson2Menu"]
+margin_right = 172.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../MechanicPuzzleButton")
+focus_next = NodePath("../MechanicPuzzleButton")
+focus_previous = NodePath(".")
+text = "Building Powering Puzzle"
+flat = true
+
+[node name="MechanicPuzzleButton" type="Button" parent="CenterContainer/Lesson2Menu"]
+margin_top = 24.0
+margin_right = 172.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../BuildingPoweringPuzzleButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../SantaClausPuzzleButton")
+focus_next = NodePath("../SantaClausPuzzleButton")
+focus_previous = NodePath("../BuildingPoweringPuzzleButton")
+text = "Mechanic Puzzle"
+flat = true
+
+[node name="SantaClausPuzzleButton" type="Button" parent="CenterContainer/Lesson2Menu"]
+margin_top = 48.0
+margin_right = 172.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../MechanicPuzzleButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../MechanicPuzzleButton")
+text = "Santa Claus Puzzle"
+flat = true
+
+[node name="Lesson3Menu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 196.0
+margin_top = 146.0
+margin_right = 444.0
+margin_bottom = 214.0
+script = ExtResource( 7 )
+
+[node name="BuildingPoweringVFPuzzleButton" type="Button" parent="CenterContainer/Lesson3Menu"]
+margin_right = 248.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../MechanicPuzzleVFButton")
+focus_next = NodePath("../MechanicPuzzleVFButton")
+focus_previous = NodePath(".")
+text = "Building Powering Verification Puzzle"
+flat = true
+
+[node name="MechanicPuzzleVFButton" type="Button" parent="CenterContainer/Lesson3Menu"]
+margin_top = 24.0
+margin_right = 248.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../BuildingPoweringVFPuzzleButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../SantaClausPuzzleVFButton")
+focus_next = NodePath("../SantaClausPuzzleVFButton")
+focus_previous = NodePath("../BuildingPoweringVFPuzzleButton")
+text = "Mechanic Verification Puzzle"
+flat = true
+
+[node name="SantaClausPuzzleVFButton" type="Button" parent="CenterContainer/Lesson3Menu"]
+margin_top = 48.0
+margin_right = 248.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../MechanicPuzzleVFButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../MechanicPuzzleVFButton")
+text = "Santa Claus Verification Puzzle"
+flat = true
+
+[node name="MailboxMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 291.0
+margin_top = 146.0
+margin_right = 349.0
+margin_bottom = 214.0
+
+[node name="Level1Button" type="Button" parent="CenterContainer/MailboxMenu"]
+margin_right = 58.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level2Button")
+focus_next = NodePath("../Level2Button")
+focus_previous = NodePath(".")
+text = "Level 1"
+flat = true
+
+[node name="Level2Button" type="Button" parent="CenterContainer/MailboxMenu"]
+margin_top = 24.0
+margin_right = 58.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level1Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level3Button")
+focus_previous = NodePath("../Level1Button")
+text = "Level 2"
+flat = true
+
+[node name="Level3Button" type="Button" parent="CenterContainer/MailboxMenu"]
+margin_top = 48.0
+margin_right = 58.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level2Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../Level2Button")
+text = "Level 3"
+flat = true
+
+[node name="BuildingPoweringMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 291.0
+margin_top = 146.0
+margin_right = 349.0
+margin_bottom = 214.0
+
+[node name="Level1Button" type="Button" parent="CenterContainer/BuildingPoweringMenu"]
+margin_right = 58.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level2Button")
+focus_next = NodePath("../Level2Button")
+focus_previous = NodePath(".")
+text = "Level 1"
+flat = true
+
+[node name="Level2Button" type="Button" parent="CenterContainer/BuildingPoweringMenu"]
+margin_top = 24.0
+margin_right = 58.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level1Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level3Button")
+focus_previous = NodePath("../Level1Button")
+text = "Level 2"
+flat = true
+
+[node name="Level3Button" type="Button" parent="CenterContainer/BuildingPoweringMenu"]
+margin_top = 48.0
+margin_right = 58.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level2Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../Level2Button")
+text = "Level 3"
+flat = true
+
+[node name="MechanicMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 291.0
+margin_top = 146.0
+margin_right = 349.0
+margin_bottom = 214.0
+
+[node name="Level1Button" type="Button" parent="CenterContainer/MechanicMenu"]
+margin_right = 58.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level2Button")
+focus_next = NodePath("../Level2Button")
+focus_previous = NodePath(".")
+text = "Level 1"
+flat = true
+
+[node name="Level2Button" type="Button" parent="CenterContainer/MechanicMenu"]
+margin_top = 24.0
+margin_right = 58.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level1Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level3Button")
+focus_previous = NodePath("../Level1Button")
+text = "Level 2"
+flat = true
+
+[node name="Level3Button" type="Button" parent="CenterContainer/MechanicMenu"]
+margin_top = 48.0
+margin_right = 58.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level2Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../Level2Button")
+text = "Level 3"
+flat = true
+
+[node name="SantaClausMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 291.0
+margin_top = 146.0
+margin_right = 349.0
+margin_bottom = 214.0
+
+[node name="Level1Button" type="Button" parent="CenterContainer/SantaClausMenu"]
+margin_right = 58.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level2Button")
+focus_next = NodePath("../Level2Button")
+focus_previous = NodePath(".")
+text = "Level 1"
+flat = true
+
+[node name="Level2Button" type="Button" parent="CenterContainer/SantaClausMenu"]
+margin_top = 24.0
+margin_right = 58.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level1Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level3Button")
+focus_previous = NodePath("../Level1Button")
+text = "Level 2"
+flat = true
+
+[node name="Level3Button" type="Button" parent="CenterContainer/SantaClausMenu"]
+margin_top = 48.0
+margin_right = 58.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level2Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../Level2Button")
+text = "Level 3"
+flat = true
+
+[node name="BuildingPoweringVFMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 291.0
+margin_top = 146.0
+margin_right = 349.0
+margin_bottom = 214.0
+
+[node name="Level1Button" type="Button" parent="CenterContainer/BuildingPoweringVFMenu"]
+margin_right = 58.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level2Button")
+focus_next = NodePath("../Level2Button")
+focus_previous = NodePath(".")
+text = "Level 1"
+flat = true
+
+[node name="Level2Button" type="Button" parent="CenterContainer/BuildingPoweringVFMenu"]
+margin_top = 24.0
+margin_right = 58.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level1Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level3Button")
+focus_previous = NodePath("../Level1Button")
+text = "Level 2"
+flat = true
+
+[node name="Level3Button" type="Button" parent="CenterContainer/BuildingPoweringVFMenu"]
+margin_top = 48.0
+margin_right = 58.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level2Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../Level2Button")
+text = "Level 3"
+flat = true
+
+[node name="MechanicVFMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 291.0
+margin_top = 146.0
+margin_right = 349.0
+margin_bottom = 214.0
+
+[node name="Level1Button" type="Button" parent="CenterContainer/MechanicVFMenu"]
+margin_right = 58.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level2Button")
+focus_next = NodePath("../Level2Button")
+focus_previous = NodePath(".")
+text = "Level 1"
+flat = true
+
+[node name="Level2Button" type="Button" parent="CenterContainer/MechanicVFMenu"]
+margin_top = 24.0
+margin_right = 58.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level1Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level3Button")
+focus_previous = NodePath("../Level1Button")
+text = "Level 2"
+flat = true
+
+[node name="Level3Button" type="Button" parent="CenterContainer/MechanicVFMenu"]
+margin_top = 48.0
+margin_right = 58.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level2Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../Level2Button")
+text = "Level 3"
+flat = true
+
+[node name="SantaClausVFMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 291.0
+margin_top = 146.0
+margin_right = 349.0
+margin_bottom = 214.0
+
+[node name="Level1Button" type="Button" parent="CenterContainer/SantaClausVFMenu"]
+margin_right = 58.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level2Button")
+focus_next = NodePath("../Level2Button")
+focus_previous = NodePath(".")
+text = "Level 1"
+flat = true
+
+[node name="Level2Button" type="Button" parent="CenterContainer/SantaClausVFMenu"]
+margin_top = 24.0
+margin_right = 58.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level1Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level3Button")
+focus_previous = NodePath("../Level1Button")
+text = "Level 2"
+flat = true
+
+[node name="Level3Button" type="Button" parent="CenterContainer/SantaClausVFMenu"]
+margin_top = 48.0
+margin_right = 58.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../Level2Button")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../Level2Button")
+text = "Level 3"
+flat = true
+
+[node name="BackButton" type="Button" parent="."]
+visible = false
+margin_left = 84.0
+margin_top = 101.0
+margin_right = 152.0
+margin_bottom = 139.0
+rect_scale = Vector2( 0.5, 0.5 )
+icon = ExtResource( 3 )
+flat = true
+
+[connection signal="pressed" from="CenterContainer/StartMenu/StartButton" to="CenterContainer/StartMenu" method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CenterContainer/StartMenu/ExitButton" to="CenterContainer/StartMenu" method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="CenterContainer/LessonMenu/Lesson1Button" to="CenterContainer/LessonMenu" method="_on_Lesson1Button_pressed"]
+[connection signal="pressed" from="CenterContainer/LessonMenu/Lesson2Button" to="CenterContainer/LessonMenu" method="_on_Lesson2Button_pressed"]
+[connection signal="pressed" from="CenterContainer/LessonMenu/Lesson3Button" to="CenterContainer/LessonMenu" method="_on_Lesson3Button_pressed"]
+[connection signal="pressed" from="CenterContainer/Lesson1Menu/MailboxPuzzleButton" to="CenterContainer/Lesson1Menu" method="_on_MailboxPuzzleButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Lesson2Menu/BuildingPoweringPuzzleButton" to="CenterContainer/Lesson2Menu" method="_on_BuildingPoweringPuzzleButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Lesson2Menu/MechanicPuzzleButton" to="CenterContainer/Lesson2Menu" method="_on_MechanicPuzzleButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Lesson2Menu/SantaClausPuzzleButton" to="CenterContainer/Lesson2Menu" method="_on_SantaClausPuzzleButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Lesson3Menu/BuildingPoweringVFPuzzleButton" to="CenterContainer/Lesson3Menu" method="_on_BuildingPoweringVFPuzzleButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Lesson3Menu/MechanicPuzzleVFButton" to="CenterContainer/Lesson3Menu" method="_on_MechanicPuzzleVFButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Lesson3Menu/SantaClausPuzzleVFButton" to="CenterContainer/Lesson3Menu" method="_on_SantaClausPuzzleVFButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
