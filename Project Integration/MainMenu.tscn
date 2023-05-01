@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Project Integration/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Project Integration/StartMenu.gd" type="Script" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Project Integration/Lesson1Menu.gd" type="Script" id=5]
 [ext_resource path="res://Project Integration/Lesson2Menu.gd" type="Script" id=6]
 [ext_resource path="res://Project Integration/Lesson3Menu.gd" type="Script" id=7]
+[ext_resource path="res://Project Integration/Level1Button.gd" type="Script" id=8]
+[ext_resource path="res://Project Integration/Level2Button.gd" type="Script" id=9]
+[ext_resource path="res://Project Integration/Level3Button.gd" type="Script" id=10]
 
 [node name="MainMenu" type="Control"]
 script = ExtResource( 1 )
@@ -242,6 +245,8 @@ focus_next = NodePath("../Level2Button")
 focus_previous = NodePath(".")
 text = "Level 1"
 flat = true
+script = ExtResource( 8 )
+target_level_path = "res://Mailbox Puzzle/Level 1/Mailbox Level 1.tscn"
 
 [node name="Level2Button" type="Button" parent="CenterContainer/MailboxMenu"]
 margin_top = 24.0
@@ -255,6 +260,8 @@ focus_next = NodePath("../Level3Button")
 focus_previous = NodePath("../Level1Button")
 text = "Level 2"
 flat = true
+script = ExtResource( 9 )
+target_level_path = "res://Mailbox Puzzle/Level 2/Mailbox Level 2.tscn"
 
 [node name="Level3Button" type="Button" parent="CenterContainer/MailboxMenu"]
 margin_top = 48.0
@@ -268,6 +275,8 @@ focus_next = NodePath(".")
 focus_previous = NodePath("../Level2Button")
 text = "Level 3"
 flat = true
+script = ExtResource( 10 )
+target_level_path = "res://Mailbox Puzzle/Level 3/Mailbox Level 3.tscn"
 
 [node name="BuildingPoweringMenu" type="GridContainer" parent="CenterContainer"]
 visible = false
@@ -561,4 +570,7 @@ flat = true
 [connection signal="pressed" from="CenterContainer/Lesson3Menu/BuildingPoweringVFPuzzleButton" to="CenterContainer/Lesson3Menu" method="_on_BuildingPoweringVFPuzzleButton_pressed"]
 [connection signal="pressed" from="CenterContainer/Lesson3Menu/MechanicPuzzleVFButton" to="CenterContainer/Lesson3Menu" method="_on_MechanicPuzzleVFButton_pressed"]
 [connection signal="pressed" from="CenterContainer/Lesson3Menu/SantaClausPuzzleVFButton" to="CenterContainer/Lesson3Menu" method="_on_SantaClausPuzzleVFButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MailboxMenu/Level1Button" to="CenterContainer/MailboxMenu/Level1Button" method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="CenterContainer/MailboxMenu/Level2Button" to="CenterContainer/MailboxMenu/Level2Button" method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="CenterContainer/MailboxMenu/Level3Button" to="CenterContainer/MailboxMenu/Level3Button" method="_on_Level3Button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

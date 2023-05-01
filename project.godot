@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Ladder.gd"
 }, {
+"base": "Button",
+"class": "LevelButton",
+"language": "GDScript",
+"path": "res://Project Integration/LevelButton.gd"
+}, {
 "base": "Sprite",
 "class": "MachineObject",
 "language": "GDScript",
@@ -87,6 +92,7 @@ _global_script_class_icons={
 "GeneratorVertex": "",
 "InteractableArea": "",
 "Ladder": "",
+"LevelButton": "",
 "MachineObject": "",
 "Mailbox": "",
 "Mailboxes": "",
