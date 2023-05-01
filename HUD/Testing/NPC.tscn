@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://HUD/Testing/NPC.gd" type="Script" id=1]
-[ext_resource path="res://Mailbox Puzzle/st/Sprites/npc2.png" type="Texture" id=2]
-[ext_resource path="res://Mailbox Puzzle/st/Sprites/npc1.png" type="Texture" id=3]
+[ext_resource path="res://Mailbox Puzzle/Test/Sprites/npc2.png" type="Texture" id=2]
+[ext_resource path="res://Mailbox Puzzle/Test/Sprites/npc1.png" type="Texture" id=3]
 [ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=4]
