@@ -64,6 +64,17 @@ func puzzle_yes_button():
 		else:
 			current_dialog = puzzle_no_correct
 		get_node("../DoorOut").open_door()
+		
+		if not (2 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(2)
+			ProgressData.lesson_2_puzzles_unlocked = [
+				ProgressData.puzzle_types.BuildingPoweringPuzzle,
+				ProgressData.puzzle_types.MechanicPuzzle,
+				ProgressData.puzzle_types.SantaClausPuzzle,
+			]
+			ProgressData.building_powering_levels_unlocked.append(1)
+			ProgressData.mechanic_levels_unlocked.append(1)
+			ProgressData.santa_claus_levels_unlocked.append(1)
 	else:
 		if mailboxes.selected_mailbox != -1:
 			current_dialog = puzzle_yes_wrong
