@@ -4,7 +4,7 @@
 [ext_resource path="res://Mailbox Puzzle/Sprites/Mailbox.png" type="Texture" id=2]
 [ext_resource path="res://Mailbox Puzzle/Sprites/Normal Mail.png" type="Texture" id=3]
 [ext_resource path="res://Mailbox Puzzle/Sprites/Target Mail.png" type="Texture" id=4]
-[ext_resource path="res://Mailbox Puzzle/vel 1/Mailbox.gd" type="Script" id=5]
+[ext_resource path="res://Mailbox Puzzle/Level 1/Mailbox.gd" type="Script" id=5]
 [ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=4]
