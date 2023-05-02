@@ -66,7 +66,7 @@ func puzzle_yes_button():
 			current_dialog = puzzle_no_correct
 		get_node("../DoorOut").open_door()
 	else:
-		if solution_index_mailbox != -1:
+		if mailboxes.selected_mailbox != -1:
 			current_dialog = puzzle_yes_wrong
 		else:
 			current_dialog = puzzle_no_wrong
