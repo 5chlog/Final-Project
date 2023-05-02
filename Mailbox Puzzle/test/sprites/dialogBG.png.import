@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialogBG.png-7bf133e96927dc942b2860c826a2ef71.stex"
+path="res://.import/dialogBG.png-22e2f60249e13660291b1ca32856d770.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mailbox Puzzle/Test/Sprites/dialogBG.png"
-dest_files=[ "res://.import/dialogBG.png-7bf133e96927dc942b2860c826a2ef71.stex" ]
+source_file="res://Mailbox Puzzle/test/sprites/dialogBG.png"
+dest_files=[ "res://.import/dialogBG.png-22e2f60249e13660291b1ca32856d770.stex" ]
 
 [params]
 
