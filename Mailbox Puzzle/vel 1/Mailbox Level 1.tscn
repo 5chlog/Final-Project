@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Mailbox Puzzle/Level 1/Mailman Level 1.gd" type="Script" id=1]
-[ext_resource path="res://Mailbox Puzzle/Level 1/Mailboxes.gd" type="Script" id=5]
-[ext_resource path="res://Mailbox Puzzle/Level 1/Mailman.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mailbox Puzzle/vel 1/Mailman Level 1.gd" type="Script" id=1]
+[ext_resource path="res://Mailbox Puzzle/vel 1/Mailboxes.gd" type="Script" id=5]
+[ext_resource path="res://Mailbox Puzzle/vel 1/Mailman.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Concrete Bricked TileMap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Mailbox Puzzle/Level 1/Mailbox.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Mailbox Puzzle/vel 1/Mailbox.tscn" type="PackedScene" id=10]
 
 [node name="Level" type="Node2D"]
 
