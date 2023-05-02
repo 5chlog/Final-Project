@@ -90,10 +90,22 @@ func first_dialog_no():
 func in_puzzle_yes():
 	if solved():
 		current_dialog = puzzle_yes_correct
+		if not (2 in ProgressData.building_powering_levels_unlocked):
+			ProgressData.building_powering_levels_unlocked.append(2)
+		
 	elif not get_parent().has_solution:
 		current_dialog = puzzle_yes_none
+		if not (3 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(3)
+			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
+			ProgressData.building_powering_vf_levels_unlocked.append(1)
+		
 	else:
 		current_dialog = puzzle_yes_wrong
+		if not (3 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(3)
+			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
+			ProgressData.building_powering_vf_levels_unlocked.append(1)
 	
 	get_node("/root/HUD/ExtraHUD").hide_select_count()
 
@@ -102,8 +114,15 @@ func in_puzzle_yes():
 func in_puzzle_no():
 	if get_parent().has_solution:
 		current_dialog = puzzle_no_wrong
+		if not (3 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(3)
+			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
+			ProgressData.building_powering_vf_levels_unlocked.append(1)
+		
 	else:
 		current_dialog = puzzle_no_correct
+		if not (2 in ProgressData.building_powering_levels_unlocked):
+			ProgressData.building_powering_levels_unlocked.append(2)
 	
 	get_node("/root/HUD/ExtraHUD").hide_select_count()
 
