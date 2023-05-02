@@ -5,18 +5,18 @@ var complete: bool = false
 
 
 # Dialogs
-var first_dialog = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/FirstDialog.tres")
-var puzzle_instr_1 = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/PuzzleInstructions1.tres")
-var puzzle_instr_2 = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/PuzzleInstructions2.tres")
-var in_puzzle_dialog = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/InPuzzleDialog.tres")
-var puzzle_yes_correct = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/PuzzleYesCorrect.tres")
-var puzzle_yes_wrong = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/PuzzleYesWrong.tres")
-var puzzle_yes_none = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/PuzzleYesNone.tres")
-var puzzle_no_correct = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/PuzzleNoCorrect.tres")
-var puzzle_no_wrong = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/PuzzleNoWrong.tres")
-var puzzle_giveup = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/PuzzleGiveup.tres")
-var puzzle_solved = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/PuzzleSolved.tres")
-var to_verification = preload("res://Buildng Powering Puzzle/NP/Test/Dialogs/ToVerification.tres")
+var first_dialog = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/FirstDialog.tres")
+var puzzle_instr_1 = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/PuzzleInstructions1.tres")
+var puzzle_instr_2 = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/PuzzleInstructions2.tres")
+var in_puzzle_dialog = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/InPuzzleDialog.tres")
+var puzzle_yes_correct = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/PuzzleYesCorrect.tres")
+var puzzle_yes_wrong = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/PuzzleYesWrong.tres")
+var puzzle_yes_none = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/PuzzleYesNone.tres")
+var puzzle_no_correct = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/PuzzleNoCorrect.tres")
+var puzzle_no_wrong = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/PuzzleNoWrong.tres")
+var puzzle_giveup = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/PuzzleGiveup.tres")
+var puzzle_solved = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/PuzzleSolved.tres")
+var to_verification = preload("res://Buildng Powering Puzzle/NP/Level 1/Dialogs/ToVerification.tres")
 
 var current_dialog = first_dialog
 export(Array, int) var preset_certificate = [2, 3, 4, 5]

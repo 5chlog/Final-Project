@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/npc2.png-c2dda81d8790b1f877556b225e0fcacd.stex"
+path="res://.import/Building 1 Sprite.png-37d93ce305fb468d95b41b359d230239.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mailbox Puzzle/Test/Sprites/npc2.png"
-dest_files=[ "res://.import/npc2.png-c2dda81d8790b1f877556b225e0fcacd.stex" ]
+source_file="res://Buildng Powering Puzzle/NP/Level 1/Sprites/Building 1 Sprite.png"
+dest_files=[ "res://.import/Building 1 Sprite.png-37d93ce305fb468d95b41b359d230239.stex" ]
 
 [params]
 

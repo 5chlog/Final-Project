@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/ExtraHUD Sprites/SelectCountBkg.png" type="Texture" id=1]
-[ext_resource path="res://Buildng Powering Puzzle/NP/Test/ExtraHUD.gd" type="Script" id=2]
-[ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/Map Border.png" type="Texture" id=3]
-[ext_resource path="res://Buildng Powering Puzzle/NP/Test/Map.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/Map Border.png" type="Texture" id=2]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Level 1/Map1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Test/ExtraHUD.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hide Select Count"
@@ -65,7 +65,7 @@ tracks/0/keys = {
 }
 
 [node name="ExtraHUD" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 
 [node name="SelectCount" type="Node2D" parent="."]
 visible = false
@@ -99,7 +99,7 @@ margin_left = 1.0
 margin_top = 1.0
 margin_right = 212.0
 margin_bottom = 358.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
@@ -120,4 +120,4 @@ hdr = false
 usage = 0
 render_target_update_mode = 0
 
-[node name="Map" parent="MapBorder/ViewportContainer/Viewport" instance=ExtResource( 5 )]
+[node name="Map" parent="MapBorder/ViewportContainer/Viewport" instance=ExtResource( 3 )]
