@@ -20,9 +20,11 @@ func hide_select_count():
 
 func show_map():
 	get_node("MapBorder").visible = true
+	get_node("InstructionsPanel").visible = true
 
 func hide_map():
 	get_node("MapBorder").visible = false
+	get_node("InstructionsPanel").visible = false
 
 
 func get_rooms():
