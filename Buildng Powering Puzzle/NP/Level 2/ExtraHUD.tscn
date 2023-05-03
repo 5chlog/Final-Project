@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/ExtraHUD Sprites/SelectCountBkg.png" type="Texture" id=1]
-[ext_resource path="res://Buildng Powering Puzzle/NP/Test/ExtraHUD.gd" type="Script" id=2]
-[ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/Map Border.png" type="Texture" id=3]
-[ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/ExtraHUD Sprites/Map Controls Background.png" type="Texture" id=4]
-[ext_resource path="res://Buildng Powering Puzzle/NP/Test/Map.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/Map Border.png" type="Texture" id=2]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Level 2/Map2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Test/ExtraHUD.gd" type="Script" id=4]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/ExtraHUD Sprites/Map Controls Background.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hide Select Count"
@@ -66,7 +66,7 @@ tracks/0/keys = {
 }
 
 [node name="ExtraHUD" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 
 [node name="SelectCount" type="Node2D" parent="."]
 visible = false
@@ -96,7 +96,7 @@ anims/RESET = SubResource( 2 )
 visible = false
 modulate = Color( 1, 1, 1, 0.666667 )
 position = Vector2( 514, 138 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 centered = false
 
 [node name="Instructions" type="GridContainer" parent="InstructionsPanel"]
@@ -135,9 +135,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
 margin_top = 1.0
-margin_right = 212.0
+margin_right = 320.0
 margin_bottom = 358.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
@@ -148,14 +148,14 @@ axis_stretch_vertical = 1
 [node name="ViewportContainer" type="ViewportContainer" parent="MapBorder"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 206.0
+margin_right = 311.0
 margin_bottom = 349.0
 
 [node name="Viewport" type="Viewport" parent="MapBorder/ViewportContainer"]
-size = Vector2( 198, 341 )
+size = Vector2( 303, 341 )
 handle_input_locally = false
 hdr = false
 usage = 0
 render_target_update_mode = 0
 
-[node name="Map" parent="MapBorder/ViewportContainer/Viewport" instance=ExtResource( 5 )]
+[node name="Map" parent="MapBorder/ViewportContainer/Viewport" instance=ExtResource( 3 )]
