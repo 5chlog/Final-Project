@@ -3,6 +3,7 @@ extends GridContainer
 
 onready var main_menu = get_node("../..")
 onready var lesson_menu = get_node("../LessonMenu")
+var menu_name = ""
 
 
 func _on_StartButton_pressed():

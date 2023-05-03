@@ -1,6 +1,9 @@
 extends GridContainer
 
 
+var menu_name = "Mechanic Puzzle"
+
+
 func _ready():
 	if 1 in ProgressData.mechanic_levels_unlocked:
 		$Level1Button.visible = true

@@ -1,6 +1,9 @@
 extends GridContainer
 
 
+var menu_name = "Mailbox Puzzle"
+
+
 func _ready():
 	if 1 in ProgressData.mailbox_levels_unlocked:
 		$Level1Button.visible = true

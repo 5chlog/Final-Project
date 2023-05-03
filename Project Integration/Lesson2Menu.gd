@@ -5,6 +5,7 @@ onready var main_menu = get_node("../..")
 onready var building_powering_menu_container = get_node("../BuildingPoweringMenu")
 onready var mechanic_menu_container = get_node("../MechanicMenu")
 onready var santa_claus_menu_container = get_node("../SantaClausMenu")
+var menu_name = "Lesson 2"
 
 
 func _ready():

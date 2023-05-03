@@ -1,6 +1,9 @@
 extends GridContainer
 
 
+var menu_name = "Santa Claus Puzzle"
+
+
 func _ready():
 	if 1 in ProgressData.santa_claus_levels_unlocked:
 		$Level1Button.visible = true

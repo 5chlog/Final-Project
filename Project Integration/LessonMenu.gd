@@ -5,6 +5,7 @@ onready var main_menu = get_node("../..")
 onready var lesson_1_menu = get_node("../Lesson1Menu")
 onready var lesson_2_menu = get_node("../Lesson2Menu")
 onready var lesson_3_menu = get_node("../Lesson3Menu")
+var menu_name = "Lessons"
 
 
 func _ready():

@@ -30,6 +30,7 @@ func set_menu_container(var menu_container: Container):
 		active_menu_container.visible = false
 	
 	menu_container.visible = true
+	$MenuNameLabel.text = menu_container.menu_name
 	active_menu_container = menu_container
 	set_prev_menu()
 	set_focus_on_first_button(menu_container)

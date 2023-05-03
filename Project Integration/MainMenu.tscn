@@ -30,6 +30,13 @@ margin_right = 645.0
 margin_bottom = 366.0
 color = Color( 0.439216, 0.713726, 0.756863, 1 )
 
+[node name="MenuNameLabel" type="Label" parent="."]
+margin_left = 218.0
+margin_top = 115.0
+margin_right = 418.0
+margin_bottom = 129.0
+align = 1
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 640.0
 margin_bottom = 360.0

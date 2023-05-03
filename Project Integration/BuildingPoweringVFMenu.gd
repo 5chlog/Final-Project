@@ -1,6 +1,9 @@
 extends GridContainer
 
 
+var menu_name = "Building Powering Verification Puzzle"
+
+
 func _ready():
 	if 1 in ProgressData.building_powering_vf_levels_unlocked:
 		$Level1Button.visible = true

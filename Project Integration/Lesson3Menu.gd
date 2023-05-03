@@ -5,6 +5,7 @@ onready var main_menu = get_node("../..")
 onready var building_powering_vf_menu_container = get_node("../BuildingPoweringVFMenu")
 onready var mechanic_vf_menu_container = get_node("../MechanicVFMenu")
 onready var santa_claus_vf_menu_container = get_node("../SantaClausVFMenu")
+var menu_name = "Lesson 3"
 
 
 func _ready():

@@ -3,6 +3,7 @@ extends GridContainer
 
 onready var main_menu = get_node("../..")
 onready var mailbox_menu = get_node("../MailboxMenu")
+var menu_name = "Lesson 1"
 
 
 func _ready():
