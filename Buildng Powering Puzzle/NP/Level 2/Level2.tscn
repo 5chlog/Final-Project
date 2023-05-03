@@ -139,3 +139,4 @@ target_level_path = "res://Buildng Powering Puzzle/Verification/Level 2/Level2.t
 [node name="DoorOut" parent="." instance=ExtResource( 2 )]
 position = Vector2( 9, 208 )
 scale = Vector2( -1, 1 )
+target_level_path = "res://Project Integration/MainMenu.tscn"

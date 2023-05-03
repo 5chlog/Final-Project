@@ -97,14 +97,18 @@ func in_puzzle_yes():
 		current_dialog = puzzle_yes_none
 		if not (3 in ProgressData.lessons_unlocked):
 			ProgressData.lessons_unlocked.append(3)
+		if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
 			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
+		if not (1 in ProgressData.building_powering_vf_levels_unlocked):
 			ProgressData.building_powering_vf_levels_unlocked.append(1)
 		
 	else:
 		current_dialog = puzzle_yes_wrong
 		if not (3 in ProgressData.lessons_unlocked):
 			ProgressData.lessons_unlocked.append(3)
+		if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
 			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
+		if not (1 in ProgressData.building_powering_vf_levels_unlocked):
 			ProgressData.building_powering_vf_levels_unlocked.append(1)
 	
 	get_node("/root/HUD/ExtraHUD").hide_select_count()
@@ -116,7 +120,9 @@ func in_puzzle_no():
 		current_dialog = puzzle_no_wrong
 		if not (3 in ProgressData.lessons_unlocked):
 			ProgressData.lessons_unlocked.append(3)
+		if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
 			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
+		if not (1 in ProgressData.building_powering_vf_levels_unlocked):
 			ProgressData.building_powering_vf_levels_unlocked.append(1)
 		
 	else:
@@ -130,6 +136,13 @@ func in_puzzle_no():
 # Give Up reply to In Puzzle Dialog
 func in_puzzle_giveup():
 	current_dialog = puzzle_giveup
+	if not (3 in ProgressData.lessons_unlocked):
+		ProgressData.lessons_unlocked.append(3)
+	if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+		ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
+	if not (1 in ProgressData.building_powering_vf_levels_unlocked):
+		ProgressData.building_powering_vf_levels_unlocked.append(1)
+	
 	get_node("/root/HUD/ExtraHUD").hide_select_count()
 
 
