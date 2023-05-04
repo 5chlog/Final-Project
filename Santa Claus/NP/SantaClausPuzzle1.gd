@@ -4,14 +4,8 @@ extends Node2D
 var number_of_children = 0
 var number_of_gifts = 0
 var submitted = false
-var happiness_threshold = 0
-var happiness_matrix = [[0,0,0],
-						[0,0,0],
-						[0,0,0]]
-var happiness_values = [0,0,0]
 
 func _ready():
-	print(happiness_matrix[2][1])
 	pass 
 
 func _process(delta):
