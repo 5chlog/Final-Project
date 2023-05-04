@@ -456,14 +456,16 @@ func add_gravity():
 
 
 func set_horizontal_velocity(constants):
-	if(move_input.x > 0):
+	if move_input.x > 0:
 		velocity.x = move_toward(velocity.x, constants.MAX_HVEL, constants.HACCEL)
-	else:
+	elif move_input.x < 0:
 		velocity.x = move_toward(velocity.x, -constants.MAX_HVEL, constants.HACCEL)
+	else:
+		velocity.x = move_toward(velocity.x, 0, walk_constants.FRICTION)
 
 
 func set_climb_velocity(constants):
-	if(move_input.y > 0):
+	if move_input.y > 0:
 		velocity.y = move_toward(velocity.y, constants.MAX_CLIMB_VEL, constants.CLIMB_ACCEL)
 	else:
 		velocity.y = move_toward(velocity.y, -constants.MAX_CLIMB_VEL, constants.CLIMB_ACCEL)

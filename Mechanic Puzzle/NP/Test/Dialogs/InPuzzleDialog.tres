@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Mechanic Face Temp.png" type="Texture" id=1]
+[ext_resource path="res://Dialog Faces/Mechanic Face Temp.png" type="Texture" id=1]
 [ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=2]
 
 [resource]

@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Mechanic Puzzle/NP/Test/Parts_Display.gd" type="Script" id=1]
-[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Parts Display Screen.png" type="Texture" id=2]
-
-[node name="Main Screen" type="Sprite"]
-texture = ExtResource( 2 )
-script = ExtResource( 1 )

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
+[ext_resource path="res://Dialog Faces/Maillman NPC Face Temp.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+dialog_name = "Puzzle Start"
+face_images = [ ExtResource( 2 ) ]
+names = [ "Mailman" ]
+dialogs = [ "Ready for the last one?" ]
+name_face_indices = [ 0 ]
+button_flag = 3
+button_tl_text = "Yeah"
+button_tl_function = "start_yeah_button"
+button_tr_text = "No"
+button_tr_function = "start_no_button"
+button_bl_text = "Option 2"
+button_bl_function = "button_BL_function"
+button_br_text = "Option 4"
+button_br_function = "button_BR_function"
+show_buttons_with_last_line = true
