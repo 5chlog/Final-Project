@@ -6,11 +6,11 @@
 
 [resource]
 script = ExtResource( 2 )
-dialog_name = "Puzzle Give Up Dialog"
+dialog_name = "Puzzle Yes None Dialog"
 face_images = [ ExtResource( 3 ), ExtResource( 1 ) ]
 names = [ "Mechanic", "Player" ]
-dialogs = [ "Alright...", "But thanks for trying.", "Could you stick around for a little bit more.", "Sure.", "I'll try a combination myself.", "Just head to the room on the right and I'll explain what I want you to do." ]
-name_face_indices = [ 0, 0, 0, 1, 0, 0 ]
+dialogs = [ "I'm sorry but I think there is no combination that will work out.", "But lets check whether the ones you selected will do the trick.", "Just go  to the Dismantling room to the right.", "Head there and I'll explain what I mean.", "Okay." ]
+name_face_indices = [ 0, 0, 0, 0, 1 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"
