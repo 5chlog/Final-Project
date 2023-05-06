@@ -2,7 +2,7 @@ extends Node2D
 
 
 enum partNames { GEAR, BATTERY, BOLT, SCREW, SPRING, FUEL, CAPACITOR, SWITCH, MOTOR, TRANSFORMER, 
-		RESISTOR, BALLBEARING, LIGHT, TENSILECABLE, PISTON, TNUT}
+		RESISTOR, BALLBEARING, LIGHT, KEY, DISPLAY, MICROCHIP}
 var parts_used
 
 onready var partsDictionary:Dictionary = {
@@ -71,20 +71,20 @@ onready var partsDictionary:Dictionary = {
 			0,
 			preload("res://Mechanic Puzzle/NP/Sprites/parts/Light.png")
 		],
-	partNames.TENSILECABLE :
+	partNames.KEY :
 		[
 			0,
-			preload("res://Mechanic Puzzle/NP/Sprites/parts/Screw.png") 
+			preload("res://Mechanic Puzzle/NP/Sprites/parts/Key.png") 
 		],
-	partNames.PISTON :
+	partNames.DISPLAY :
 		[
 			0,
-			preload("res://Mechanic Puzzle/NP/Sprites/parts/Screw.png")
+			preload("res://Mechanic Puzzle/NP/Sprites/parts/Display.png")
 		],
-	partNames.TNUT :
+	partNames.MICROCHIP :
 		[
 			0,
-			preload("res://Mechanic Puzzle/NP/Sprites/parts/Screw.png")
+			preload("res://Mechanic Puzzle/NP/Sprites/parts/Microchip.png")
 		]
 }
 

@@ -4,18 +4,18 @@ extends Sprite
 var started: bool = false
 
 # Dialogs
-var first_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleStartDialog.tres")
-var intro_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleIntro.tres")
-var instructions_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleInstructions.tres")
-var puzzle_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/InPuzzleDialog.tres")
-var puzzle_yes_correct_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleYesCorrectDialog.tres")
-var puzzle_yes_none_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleYesNoneDialog.tres")
-var puzzle_yes_wrong_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleYesWrongDialog.tres")
-var puzzle_no_correct_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleNoCorrectDialog.tres")
-var puzzle_no_wrong_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleNoWrongDialog.tres")
-var puzzle_give_up_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleGiveUpDialog.tres")
-var puzzle_solved_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleSolvedDialog.tres")
-var to_verify_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/ToVerificationDialog.tres")
+var first_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleStartDialog.tres")
+var intro_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleIntro.tres")
+var instructions_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleInstructions.tres")
+var puzzle_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/InPuzzleDialog.tres")
+var puzzle_yes_correct_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleYesCorrectDialog.tres")
+var puzzle_yes_none_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleYesNoneDialog.tres")
+var puzzle_yes_wrong_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleYesWrongDialog.tres")
+var puzzle_no_correct_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleNoCorrectDialog.tres")
+var puzzle_no_wrong_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleNoWrongDialog.tres")
+var puzzle_give_up_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleGiveUpDialog.tres")
+var puzzle_solved_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/PuzzleSolvedDialog.tres")
+var to_verify_dialog = preload("res://Mechanic Puzzle/NP/Level 1/Dialogs/ToVerificationDialog.tres")
 
 var current_dialog = first_dialog
 export(Array, Array, PartsDisplay.partNames) var preset_certificate = []
