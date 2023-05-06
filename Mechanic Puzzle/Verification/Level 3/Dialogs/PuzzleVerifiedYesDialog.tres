@@ -5,11 +5,11 @@
 
 [resource]
 script = ExtResource( 1 )
-dialog_name = "Puzzle Introduction"
+dialog_name = "Puzzle Verified Yes Dialog"
 face_images = [ ExtResource( 2 ) ]
 names = [ "Mechanic" ]
-dialogs = [ "It happened again. I bought a new set of high-grade parts that I needed and I left them on my work table.", "I had told my apprentice that I will give him a new set of parts and I kept the parts I needed along with the ones I kept for him.", "He took all the parts from the work table and made a lot of Machine Objects from them.", "I have kept all of them on the conveyor shelf.", "And here is the Scanner." ]
-name_face_indices = [ 0, 0, 0, 0, 0 ]
+dialogs = [ "Alright! We got one of each part.", "Guess I won't have to dismantle any more of my work.", "Thanks a lot for all your help.", "See you around." ]
+name_face_indices = [ 0, 0, 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

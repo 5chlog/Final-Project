@@ -7,7 +7,7 @@
 [ext_resource path="res://Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Mechanic Puzzle/Verification/Test/Mechanic VF Level.gd" type="Script" id=6]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Mechanic Puzzle/Verification/Test/Mechanic VF Test.gd" type="Script" id=8]
+[ext_resource path="res://Mechanic Puzzle/Verification/Level 1/Mechanic VF 1.gd" type="Script" id=8]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 6 )
