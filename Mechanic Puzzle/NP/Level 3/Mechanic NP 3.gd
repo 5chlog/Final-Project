@@ -18,7 +18,12 @@ var puzzle_solved_dialog = preload("res://Mechanic Puzzle/NP/Level 3/Dialogs/Puz
 var to_verify_dialog = preload("res://Mechanic Puzzle/NP/Level 3/Dialogs/ToVerificationDialog.tres")
 
 var current_dialog = first_dialog
-export(Array, Array, PartsDisplay.partNames) var preset_certificate = []
+export(Array, Array, PartsDisplay.partNames) var preset_certificate = [
+	[1, 5, 7, 10, 12], 
+	[0, 3, 6, 10, 15],
+	[1, 3, 8, 9, 11],
+	[2, 4, 11, 13, 14],
+]
 
 
 func _ready():
