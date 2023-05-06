@@ -84,7 +84,7 @@ func set_prev_menu():
 
 func set_focus_on_first_button(var menu_container: Container):
 	for child in menu_container.get_children():
-		if child is Button:
+		if child is Button and child.visible:
 			child.grab_focus()
 			return
 

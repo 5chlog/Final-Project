@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Project Integration/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Project Integration/StartMenu.gd" type="Script" id=2]
@@ -21,6 +21,12 @@
 [ext_resource path="res://Project Integration/LevelButton Scripts/BuildingPowering/Level2Button.gd" type="Script" id=19]
 [ext_resource path="res://Project Integration/LevelButton Scripts/BuildingPoweringVF/Level1Button.gd" type="Script" id=20]
 [ext_resource path="res://Project Integration/LevelButton Scripts/BuildingPoweringVF/Level2Button.gd" type="Script" id=21]
+[ext_resource path="res://Project Integration/LevelButton Scripts/Mechanic/Level1Button.gd" type="Script" id=22]
+[ext_resource path="res://Project Integration/LevelButton Scripts/Mechanic/Level2Button.gd" type="Script" id=23]
+[ext_resource path="res://Project Integration/LevelButton Scripts/Mechanic/Level3Button.gd" type="Script" id=24]
+[ext_resource path="res://Project Integration/LevelButton Scripts/MechanicVF/Level1Button.gd" type="Script" id=25]
+[ext_resource path="res://Project Integration/LevelButton Scripts/MechanicVF/Level2Button.gd" type="Script" id=26]
+[ext_resource path="res://Project Integration/LevelButton Scripts/MechanicVF/Level3Button.gd" type="Script" id=27]
 
 [node name="MainMenu" type="Control"]
 script = ExtResource( 1 )
@@ -366,6 +372,8 @@ focus_next = NodePath("../Level2Button")
 focus_previous = NodePath(".")
 text = "Level 1"
 flat = true
+script = ExtResource( 22 )
+target_level_path = "res://Mechanic Puzzle/NP/Level 1/Level 1.tscn"
 
 [node name="Level2Button" type="Button" parent="CenterContainer/MechanicMenu"]
 margin_top = 24.0
@@ -379,6 +387,8 @@ focus_next = NodePath("../Level3Button")
 focus_previous = NodePath("../Level1Button")
 text = "Level 2"
 flat = true
+script = ExtResource( 23 )
+target_level_path = "res://Mechanic Puzzle/NP/Level 2/Level 2.tscn"
 
 [node name="Level3Button" type="Button" parent="CenterContainer/MechanicMenu"]
 margin_top = 48.0
@@ -392,6 +402,8 @@ focus_next = NodePath(".")
 focus_previous = NodePath("../Level2Button")
 text = "Level 3"
 flat = true
+script = ExtResource( 24 )
+target_level_path = "res://Mechanic Puzzle/NP/Level 3/Level 3.tscn"
 
 [node name="SantaClausMenu" type="GridContainer" parent="CenterContainer"]
 visible = false
@@ -507,6 +519,8 @@ focus_next = NodePath("../Level2Button")
 focus_previous = NodePath(".")
 text = "Level 1"
 flat = true
+script = ExtResource( 25 )
+target_level_path = "res://Mechanic Puzzle/Verification/Level 1/Level1.tscn"
 
 [node name="Level2Button" type="Button" parent="CenterContainer/MechanicVFMenu"]
 margin_top = 24.0
@@ -520,6 +534,8 @@ focus_next = NodePath("../Level3Button")
 focus_previous = NodePath("../Level1Button")
 text = "Level 2"
 flat = true
+script = ExtResource( 26 )
+target_level_path = "res://Mechanic Puzzle/Verification/Level 2/Level2.tscn"
 
 [node name="Level3Button" type="Button" parent="CenterContainer/MechanicVFMenu"]
 margin_top = 48.0
@@ -533,6 +549,8 @@ focus_next = NodePath(".")
 focus_previous = NodePath("../Level2Button")
 text = "Level 3"
 flat = true
+script = ExtResource( 27 )
+target_level_path = "res://Mechanic Puzzle/Verification/Level 3/Level3.tscn"
 
 [node name="SantaClausVFMenu" type="GridContainer" parent="CenterContainer"]
 visible = false
@@ -607,6 +625,12 @@ flat = true
 [connection signal="pressed" from="CenterContainer/MailboxMenu/Level3Button" to="CenterContainer/MailboxMenu/Level3Button" method="_on_Level3Button_pressed"]
 [connection signal="pressed" from="CenterContainer/BuildingPoweringMenu/Level1Button" to="CenterContainer/BuildingPoweringMenu/Level1Button" method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="CenterContainer/BuildingPoweringMenu/Level2Button" to="CenterContainer/BuildingPoweringMenu/Level2Button" method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="CenterContainer/MechanicMenu/Level1Button" to="CenterContainer/MechanicMenu/Level1Button" method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="CenterContainer/MechanicMenu/Level2Button" to="CenterContainer/MechanicMenu/Level2Button" method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="CenterContainer/MechanicMenu/Level3Button" to="CenterContainer/MechanicMenu/Level3Button" method="_on_Level3Button_pressed"]
 [connection signal="pressed" from="CenterContainer/BuildingPoweringVFMenu/Level1Button" to="CenterContainer/BuildingPoweringVFMenu/Level1Button" method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="CenterContainer/BuildingPoweringVFMenu/Level2Button" to="CenterContainer/BuildingPoweringVFMenu/Level2Button" method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="CenterContainer/MechanicVFMenu/Level1Button" to="CenterContainer/MechanicVFMenu/Level1Button" method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="CenterContainer/MechanicVFMenu/Level2Button" to="CenterContainer/MechanicVFMenu/Level2Button" method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="CenterContainer/MechanicVFMenu/Level3Button" to="CenterContainer/MechanicVFMenu/Level3Button" method="_on_Level3Button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

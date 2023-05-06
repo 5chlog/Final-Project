@@ -95,6 +95,7 @@ func in_puzzle_yes():
 		
 	elif not get_parent().has_solution:
 		current_dialog = puzzle_yes_none
+		ProgressData.level_lost_last[ProgressData.puzzle_types.BuildingPoweringPuzzle] = 2
 		if not (3 in ProgressData.lessons_unlocked):
 			ProgressData.lessons_unlocked.append(3)
 		if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
@@ -104,6 +105,7 @@ func in_puzzle_yes():
 		
 	else:
 		current_dialog = puzzle_yes_wrong
+		ProgressData.level_lost_last[ProgressData.puzzle_types.BuildingPoweringPuzzle] = 2
 		if not (3 in ProgressData.lessons_unlocked):
 			ProgressData.lessons_unlocked.append(3)
 		if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
@@ -119,6 +121,7 @@ func in_puzzle_yes():
 func in_puzzle_no():
 	if get_parent().has_solution:
 		current_dialog = puzzle_no_wrong
+		ProgressData.level_lost_last[ProgressData.puzzle_types.BuildingPoweringPuzzle] = 2
 		if not (3 in ProgressData.lessons_unlocked):
 			ProgressData.lessons_unlocked.append(3)
 		if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
@@ -138,6 +141,7 @@ func in_puzzle_no():
 # Give Up reply to In Puzzle Dialog
 func in_puzzle_giveup():
 	current_dialog = puzzle_giveup
+	ProgressData.level_lost_last[ProgressData.puzzle_types.BuildingPoweringPuzzle] = 2
 	if not (3 in ProgressData.lessons_unlocked):
 		ProgressData.lessons_unlocked.append(3)
 	if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):

@@ -114,14 +114,35 @@ func in_puzzle_dialog_yes_function():
 		DialogBox.enable_dialog_box(puzzle_yes_correct_dialog, self, $InteractableArea.player)
 		if get_node("/root/Level").final_level:
 			current_dialog = to_verify_dialog
+			ProgressData.level_lost_last[ProgressData.puzzle_types.MechanicPuzzle] = 3
+			if not (3 in ProgressData.lessons_unlocked):
+				ProgressData.lessons_unlocked.append(3)
+			if not (ProgressData.puzzle_types.MechanicPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+				ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.MechanicPuzzle)
+			if not (3 in ProgressData.mechanic_vf_levels_unlocked):
+				ProgressData.mechanic_vf_levels_unlocked.append(3)
 		else:
 			current_dialog = puzzle_solved_dialog
 	elif not get_parent().has_solution:
 		DialogBox.enable_dialog_box(puzzle_yes_none_dialog, self, $InteractableArea.player)
 		current_dialog = to_verify_dialog
+		ProgressData.level_lost_last[ProgressData.puzzle_types.MechanicPuzzle] = 3
+		if not (3 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(3)
+		if not (ProgressData.puzzle_types.MechanicPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.MechanicPuzzle)
+		if not (3 in ProgressData.mechanic_vf_levels_unlocked):
+			ProgressData.mechanic_vf_levels_unlocked.append(3)
 	else:
 		DialogBox.enable_dialog_box(puzzle_yes_wrong_dialog, self, $InteractableArea.player)
 		current_dialog = to_verify_dialog
+		ProgressData.level_lost_last[ProgressData.puzzle_types.MechanicPuzzle] = 3
+		if not (3 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(3)
+		if not (ProgressData.puzzle_types.MechanicPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.MechanicPuzzle)
+		if not (3 in ProgressData.mechanic_vf_levels_unlocked):
+			ProgressData.mechanic_vf_levels_unlocked.append(3)
 
 
 # Function called when replying No to In Puzzle Dialog
@@ -136,10 +157,24 @@ func in_puzzle_dialog_no_function():
 	if get_parent().has_solution:
 		DialogBox.enable_dialog_box(puzzle_no_wrong_dialog, self, $InteractableArea.player)
 		current_dialog = to_verify_dialog
+		ProgressData.level_lost_last[ProgressData.puzzle_types.MechanicPuzzle] = 3
+		if not (3 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(3)
+		if not (ProgressData.puzzle_types.MechanicPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.MechanicPuzzle)
+		if not (3 in ProgressData.mechanic_vf_levels_unlocked):
+			ProgressData.mechanic_vf_levels_unlocked.append(3)
 	else:
 		DialogBox.enable_dialog_box(puzzle_no_correct_dialog, self, $InteractableArea.player)
 		if get_node("/root/Level").final_level:
 			current_dialog = to_verify_dialog
+			ProgressData.level_lost_last[ProgressData.puzzle_types.MechanicPuzzle] = 3
+			if not (3 in ProgressData.lessons_unlocked):
+				ProgressData.lessons_unlocked.append(3)
+			if not (ProgressData.puzzle_types.MechanicPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+				ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.MechanicPuzzle)
+			if not (3 in ProgressData.mechanic_vf_levels_unlocked):
+				ProgressData.mechanic_vf_levels_unlocked.append(3)
 		else:
 			current_dialog = puzzle_solved_dialog
 
@@ -156,6 +191,13 @@ func in_puzzle_dialog_giveup_function():
 	DialogBox.enable_dialog_box(puzzle_give_up_dialog, self, $InteractableArea.player)
 	
 	current_dialog = to_verify_dialog
+	ProgressData.level_lost_last[ProgressData.puzzle_types.MechanicPuzzle] = 3
+	if not (3 in ProgressData.lessons_unlocked):
+		ProgressData.lessons_unlocked.append(3)
+	if not (ProgressData.puzzle_types.MechanicPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+		ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.MechanicPuzzle)
+	if not (3 in ProgressData.mechanic_vf_levels_unlocked):
+		ProgressData.mechanic_vf_levels_unlocked.append(3)
 
 
 # Function called when replying Recheck to In Puzzle Dialog

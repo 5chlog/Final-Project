@@ -24,6 +24,7 @@ tile_data = PoolIntArray( -1703941, 1, 0, -1703940, 1, 1, -1703939, 1, 1, -17039
 
 [node name="DoorOut" parent="." instance=ExtResource( 5 )]
 position = Vector2( 648, -32 )
+target_level_path = "res://Project Integration/MainMenu.tscn"
 
 [node name="DoorIn" parent="." instance=ExtResource( 5 )]
 position = Vector2( -9, -32 )
