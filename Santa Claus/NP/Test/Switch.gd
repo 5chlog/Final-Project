@@ -13,10 +13,11 @@ func interact():
 	
 	child = child_display.children[child_display.index]
 	
+	
 	if platform.placed_gift == null:
 		if child.assigned_gift != null:
-			platform.place_gift(child.assigned_gift)
-			child.remove_gift()
+			var gift = child.remove_gift()
+			platform.place_gift(gift)
 		else:
 			return
 	else:

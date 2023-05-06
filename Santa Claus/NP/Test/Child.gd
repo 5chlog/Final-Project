@@ -31,11 +31,18 @@ func _ready():
 
 
 func assign_gift_to_child(var gift):
-		gift.global_position = $Gift.global_position
-		assigned_gift = gift
-		update_threshold()
+	#gift.hide_gift()
+	gift.get_parent().remove_child(gift)
+	$Gift.add_child(gift)
+	gift.position = Vector2(0,0)
+	assigned_gift = gift
+	update_threshold()
 
 
 func remove_gift():
-		assigned_gift =  null
-		update_threshold()
+	$Gift.remove_child(assigned_gift)
+	get_node("/root/Level/Gifts").add_child(assigned_gift)
+	var gift = assigned_gift
+	assigned_gift =  null
+	update_threshold()
+	return gift

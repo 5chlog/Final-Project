@@ -3,7 +3,7 @@
 [ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Santa Claus/Sprites/Child_Display.png" type="Texture" id=2]
 [ext_resource path="res://Santa Claus/Sprites/Left_Button.png" type="Texture" id=3]
-[ext_resource path="res://Santa Claus/NP/ChildDisplay.gd" type="Script" id=4]
+[ext_resource path="res://Santa Claus/NP/Test/ChildDisplay.gd" type="Script" id=4]
 [ext_resource path="res://Santa Claus/Sprites/Child4.png" type="Texture" id=5]
 [ext_resource path="res://Santa Claus/Sprites/5x7 Transparent Number Sprite Sheet.png" type="Texture" id=6]
 
@@ -31,6 +31,7 @@ texture = ExtResource( 5 )
 hframes = 2
 
 [node name="InteractableArea" parent="." instance=ExtResource( 1 )]
+enabled = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
 position = Vector2( 0, 0.5 )

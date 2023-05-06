@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Santa Claus/SantaClausPuzzle3.gd" type="Script" id=1]
-[ext_resource path="res://Santa Claus/NP/SantaClause.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Santa Claus/NP/Test/SantaClause.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Black Bricked TileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
@@ -12,7 +12,7 @@
 [ext_resource path="res://Santa Claus/Sprites/gift5.png" type="Texture" id=10]
 [ext_resource path="res://Santa Claus/Sprites/gift6.png" type="Texture" id=11]
 [ext_resource path="res://Santa Claus/Sprites/gift7.png" type="Texture" id=12]
-[ext_resource path="res://Santa Claus/NP/Gift.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Santa Claus/NP/Test/Gift.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Ladders/LadderEndBlock.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Ladders/Ladder Type 1/LadderPiece.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Santa Claus/Sprites/gift15.png" type="Texture" id=16]
@@ -22,7 +22,7 @@
 [ext_resource path="res://Santa Claus/Sprites/gift13.png" type="Texture" id=20]
 [ext_resource path="res://Santa Claus/Sprites/gift10.png" type="Texture" id=21]
 [ext_resource path="res://Santa Claus/Sprites/gift11.png" type="Texture" id=22]
-[ext_resource path="res://Santa Claus/NP/Child.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Santa Claus/NP/Test/Child.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Santa Claus/Sprites/Child2.png" type="Texture" id=24]
 [ext_resource path="res://Santa Claus/Sprites/Child5.png" type="Texture" id=25]
 [ext_resource path="res://Santa Claus/Sprites/Child4.png" type="Texture" id=26]
@@ -37,8 +37,8 @@
 [ext_resource path="res://Santa Claus/Sprites/Child10.png" type="Texture" id=35]
 [ext_resource path="res://Santa Claus/Sprites/Child11.png" type="Texture" id=36]
 [ext_resource path="res://Santa Claus/Sprites/Child12.png" type="Texture" id=37]
-[ext_resource path="res://Santa Claus/NP/SantaClauseLevel3.gd" type="Script" id=38]
-[ext_resource path="res://Santa Claus/Dialogs/Level3.tres" type="Resource" id=39]
+[ext_resource path="res://Santa Claus/NP/Level 3/SantaClauseLevel3.gd" type="Script" id=38]
+[ext_resource path="res://Santa Claus/NP/Level 3/Dialogs/Level3.tres" type="Resource" id=39]
 
 [node name="SantaClausPuzzle3" type="Node2D"]
 script = ExtResource( 1 )
