@@ -5,11 +5,11 @@
 
 [resource]
 script = ExtResource( 2 )
-dialog_name = "Puzzle Instructions"
+dialog_name = "Puzzle Solved Dialog"
 face_images = [ ExtResource( 1 ) ]
 names = [ "Mechanic" ]
-dialogs = [ "Stand in front of an object and check the Scanner to see the parts used in it.", "Interact with a Machine Object to select or deselect it. I'll dismantle the Machine Objects you select.", "Use the conveyor switch to move the conveyor panels to access other Machine Objects on the conveyor.", "Even I would feel bad if I dismantled all of his work so I only want to limit the number of Machine Objects you can select.", "The count shown above the Scanner shows the maximum number of Machine Objects you can select.", "Good luck!" ]
-name_face_indices = [ 0, 0, 0, 0, 0, 0 ]
+dialogs = [ "Bye." ]
+name_face_indices = [ 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"
