@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
+[ext_resource path="res://Dialog Faces/Mechanic Face Temp.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+dialog_name = "Puzzle Introduction"
+face_images = [ ExtResource( 2 ) ]
+names = [ "Mechanic" ]
+dialogs = [ "You won't believe what happened. I bought a new set of high-grade parts that I needed and I left them on my work table.", "My apprentices didn't have anything to do with it this time. ", "I took all the special-grade parts and started working on my machine.", "Once I made a LOT of Machine Objects from the schematics, I realized that I was using the schematics from an older version.", "I have kept all of Machine Objects I made by mistake on the conveyor shelf.", "And here is the Scanner." ]
+name_face_indices = [ 0, 0, 0, 0, 0, 0 ]
+button_flag = 0
+button_tl_text = "Option 1"
+button_tl_function = "button_TL_function"
+button_tr_text = "Option 3"
+button_tr_function = "button_TR_function"
+button_bl_text = "Option 2"
+button_bl_function = "button_BL_function"
+button_br_text = "Option 4"
+button_br_function = "button_BR_function"
+show_buttons_with_last_line = true

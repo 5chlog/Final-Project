@@ -5,6 +5,7 @@ var started: bool = false
 
 # Dialogs
 var first_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleStartDialog.tres")
+var intro_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleIntro.tres")
 var instructions_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleInstructions.tres")
 var puzzle_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/InPuzzleDialog.tres")
 var puzzle_yes_correct_dialog = preload("res://Mechanic Puzzle/NP/Test/Dialogs/PuzzleYesCorrectDialog.tres")
@@ -53,6 +54,7 @@ func start_level():
 # Function that deactivates the puzzle elements in the scene
 func end_level():
 	HUD.get_node("Extra HUD").queue_free()
+	# DialogBox.disconnect("dialogbox_closed", self, "_on_dialogbox_closed")
 		
 	var bottom_panel = get_node("../Conveyor").bottom_panel
 	for child in bottom_panel.get_children():
@@ -84,10 +86,8 @@ func set_certificate_from_preset():
 
 # Function called when replying Yes to Start Dialog
 func start_dialog_yes_button_function():
-	DialogBox.disable_dialog_box()
-	$InteractableArea.player.toggleHold()
-	current_dialog = instructions_dialog
-	get_node("/root/HUD//Extra HUD").equip_scanner()
+	current_dialog = intro_dialog
+	DialogBox.enable_dialog_box(current_dialog, self, $InteractableArea.player)
 
 
 # Function called when replying No to Start Dialog
@@ -172,7 +172,11 @@ func _scanner_anim_completed(anim_name):
 
 
 func _on_dialogbox_closed(dialog_name):
-	if dialog_name == "Puzzle Instructions":
+	if dialog_name == "Puzzle Introduction":
+		current_dialog = instructions_dialog
+		$InteractableArea.player.toggleHold()
+		get_node("/root/HUD//Extra HUD").equip_scanner()
+	elif dialog_name == "Puzzle Instructions":
 		start_level()
 		$InteractableArea.enable()
 	elif dialog_name in ["Puzzle Yes Correct Dialog", "Puzzle No Correct Dialog"]:
@@ -184,7 +188,7 @@ func _on_dialogbox_closed(dialog_name):
 				set_certificate_from_preset()
 			get_node("../DoorVerify").open_door()
 		else:
-			get_node("../DoorIn").open_door()
+			get_node("../DoorOut").open_door()
 		$InteractableArea.enable()
 	elif dialog_name in ["Puzzle Yes Wrong Dialog", "Puzzle Yes None Dialog"]:
 		end_level()

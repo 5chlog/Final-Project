@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
+[ext_resource path="res://Dialog Faces/Mechanic Face Temp.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+dialog_name = "Puzzle Introduction"
+face_images = [ ExtResource( 2 ) ]
+names = [ "Mechanic" ]
+dialogs = [ "I'm the Mechanic of this wonderful workshop.", "You see, I had recently gotten my hands on some high-grade parts that I needed.", "But I accidentally left them on my apprentice's work table.", "When he saw those parts on his table, he assumed it was ok for him to use those for his work and ended up using all of them to make a lot of Machine Objects.", "I have kept all of them on the conveyor shelf to your right.", "I want to dismantle some of them so that I can get back at least one of each type of part that I bought.", "All the parts are shown on that display above you.", "And use this Scanner as well." ]
+name_face_indices = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+button_flag = 0
+button_tl_text = "Option 1"
+button_tl_function = "button_TL_function"
+button_tr_text = "Option 3"
+button_tr_function = "button_TR_function"
+button_bl_text = "Option 2"
+button_bl_function = "button_BL_function"
+button_br_text = "Option 4"
+button_br_function = "button_BR_function"
+show_buttons_with_last_line = true

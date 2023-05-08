@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic NP Level Test.gd" type="Script" id=1]
+[ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic NP Level.gd" type="Script" id=1]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Panel.gd" type="Script" id=2]
 [ext_resource path="res://Black Bricked TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic.tscn" type="PackedScene" id=4]
@@ -154,7 +154,7 @@ parts = [ 0, 1, 2 ]
 [node name="ConveyorSwitch" parent="." instance=ExtResource( 6 )]
 position = Vector2( 123, -18 )
 
-[node name="DoorIn" parent="." instance=ExtResource( 14 )]
+[node name="DoorOut" parent="." instance=ExtResource( 14 )]
 position = Vector2( -49, -32 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
