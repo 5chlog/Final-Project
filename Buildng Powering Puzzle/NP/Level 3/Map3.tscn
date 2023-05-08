@@ -1,0 +1,307 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Buildng Powering Puzzle/NP/Test/ViewportCamera.gd" type="Script" id=1]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Test/Graph.gd" type="Script" id=2]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Level 3/Sprites/Building 3 Sprite.png" type="Texture" id=3]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Test/Generator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Buildng Powering Puzzle/NP/Test/Room.tscn" type="PackedScene" id=5]
+
+[node name="Map" type="Node2D"]
+
+[node name="BuildingSprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Graph" type="Node2D" parent="BuildingSprite"]
+script = ExtResource( 2 )
+
+[node name="Rooms" type="Node2D" parent="BuildingSprite/Graph"]
+
+[node name="Room 1" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 102, 402 )
+generator_1_path = NodePath("../../Generators/Generator 1")
+generator_2_path = NodePath("../../Generators/Generator 2")
+
+[node name="Room 2" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 298, 402 )
+generator_1_path = NodePath("../../Generators/Generator 4")
+generator_2_path = NodePath("../../Generators/Generator 8")
+
+[node name="Room 3" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 102, 354 )
+generator_1_path = NodePath("../../Generators/Generator 1")
+generator_2_path = NodePath("../../Generators/Generator 9")
+
+[node name="Room 4" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 200, 354 )
+generator_1_path = NodePath("../../Generators/Generator 3")
+generator_2_path = NodePath("../../Generators/Generator 7")
+
+[node name="Room 5" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 249, 354 )
+generator_1_path = NodePath("../../Generators/Generator 3")
+generator_2_path = NodePath("../../Generators/Generator 4")
+
+[node name="Room 6" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 347, 354 )
+generator_1_path = NodePath("../../Generators/Generator 5")
+generator_2_path = NodePath("../../Generators/Generator 8")
+
+[node name="Room 7" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 53, 306 )
+generator_1_path = NodePath("../../Generators/Generator 6")
+generator_2_path = NodePath("../../Generators/Generator 9")
+
+[node name="Room 8" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 151, 306 )
+generator_1_path = NodePath("../../Generators/Generator 7")
+generator_2_path = NodePath("../../Generators/Generator 9")
+
+[node name="Room 9" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 200, 306 )
+generator_1_path = NodePath("../../Generators/Generator 7")
+generator_2_path = NodePath("../../Generators/Generator 12")
+
+[node name="Room 10" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 249, 306 )
+generator_1_path = NodePath("../../Generators/Generator 3")
+generator_2_path = NodePath("../../Generators/Generator 10")
+connection_2_anchor = Vector2( 49, 24 )
+
+[node name="Room 11" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 298, 306 )
+generator_1_path = NodePath("../../Generators/Generator 10")
+generator_2_path = NodePath("../../Generators/Generator 13")
+
+[node name="Room 12" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 102, 258 )
+generator_1_path = NodePath("../../Generators/Generator 9")
+generator_2_path = NodePath("../../Generators/Generator 11")
+
+[node name="Room 13" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 151, 258 )
+generator_1_path = NodePath("../../Generators/Generator 12")
+generator_2_path = NodePath("../../Generators/Generator 15")
+
+[node name="Room 14" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 298, 258 )
+generator_1_path = NodePath("../../Generators/Generator 13")
+generator_2_path = NodePath("../../Generators/Generator 17")
+
+[node name="Room 15" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 347, 258 )
+generator_1_path = NodePath("../../Generators/Generator 10")
+generator_2_path = NodePath("../../Generators/Generator 18")
+
+[node name="Room 16" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 102, 210 )
+generator_1_path = NodePath("../../Generators/Generator 14")
+generator_2_path = NodePath("../../Generators/Generator 15")
+
+[node name="Room 17" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 200, 210 )
+generator_1_path = NodePath("../../Generators/Generator 15")
+generator_2_path = NodePath("../../Generators/Generator 16")
+
+[node name="Room 18" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 53, 162 )
+generator_1_path = NodePath("../../Generators/Generator 11")
+generator_2_path = NodePath("../../Generators/Generator 20")
+connection_1_anchor = Vector2( -24, 48 )
+
+[node name="Room 19" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 102, 162 )
+generator_1_path = NodePath("../../Generators/Generator 15")
+generator_2_path = NodePath("../../Generators/Generator 20")
+
+[node name="Room 20" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 151, 162 )
+generator_1_path = NodePath("../../Generators/Generator 19")
+generator_2_path = NodePath("../../Generators/Generator 20")
+
+[node name="Room 21" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 249, 162 )
+generator_1_path = NodePath("../../Generators/Generator 16")
+generator_2_path = NodePath("../../Generators/Generator 17")
+
+[node name="Room 22" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 298, 162 )
+generator_1_path = NodePath("../../Generators/Generator 18")
+generator_2_path = NodePath("../../Generators/Generator 23")
+
+[node name="Room 23" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 347, 162 )
+generator_1_path = NodePath("../../Generators/Generator 18")
+generator_2_path = NodePath("../../Generators/Generator 24")
+
+[node name="Room 24" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 151, 114 )
+generator_1_path = NodePath("../../Generators/Generator 19")
+generator_2_path = NodePath("../../Generators/Generator 21")
+
+[node name="Room 25" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 249, 114 )
+generator_1_path = NodePath("../../Generators/Generator 22")
+generator_2_path = NodePath("../../Generators/Generator 23")
+
+[node name="Room 26" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 53, 66 )
+generator_1_path = NodePath("../../Generators/Generator 21")
+generator_2_path = NodePath("../../Generators/Generator 28")
+
+[node name="Room 27" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 102, 66 )
+generator_1_path = NodePath("../../Generators/Generator 25")
+generator_2_path = NodePath("../../Generators/Generator 28")
+
+[node name="Room 28" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 249, 66 )
+generator_1_path = NodePath("../../Generators/Generator 22")
+generator_2_path = NodePath("../../Generators/Generator 26")
+
+[node name="Room 29" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 347, 66 )
+generator_1_path = NodePath("../../Generators/Generator 24")
+generator_2_path = NodePath("../../Generators/Generator 27")
+
+[node name="Room 30" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 102, 18 )
+generator_1_path = NodePath("../../Generators/Generator 28")
+generator_2_path = NodePath("../../Generators/Generator 29")
+
+[node name="Room 31" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 200, 18 )
+generator_1_path = NodePath("../../Generators/Generator 25")
+generator_2_path = NodePath("../../Generators/Generator 26")
+
+[node name="Room 32" parent="BuildingSprite/Graph/Rooms" instance=ExtResource( 5 )]
+position = Vector2( 298, 18 )
+generator_1_path = NodePath("../../Generators/Generator 27")
+generator_2_path = NodePath("../../Generators/Generator 30")
+
+[node name="Generators" type="Node2D" parent="BuildingSprite/Graph"]
+
+[node name="Generator 1" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 53, 411 )
+id_number = 1
+
+[node name="Generator 2" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 151, 411 )
+id_number = 2
+
+[node name="Generator 3" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 200, 411 )
+id_number = 3
+
+[node name="Generator 4" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 249, 411 )
+id_number = 4
+
+[node name="Generator 5" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 347, 411 )
+id_number = 5
+
+[node name="Generator 6" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 53, 363 )
+id_number = 6
+
+[node name="Generator 7" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 151, 363 )
+id_number = 7
+
+[node name="Generator 8" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 298, 363 )
+id_number = 8
+
+[node name="Generator 9" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 102, 315 )
+id_number = 9
+
+[node name="Generator 10" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 347, 315 )
+id_number = 10
+
+[node name="Generator 11" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 53, 267 )
+id_number = 11
+
+[node name="Generator 12" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 200, 267 )
+id_number = 12
+
+[node name="Generator 13" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 249, 267 )
+id_number = 13
+
+[node name="Generator 14" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 53, 219 )
+id_number = 14
+
+[node name="Generator 15" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 151, 219 )
+id_number = 15
+
+[node name="Generator 16" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 249, 219 )
+id_number = 16
+
+[node name="Generator 17" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 298, 219 )
+id_number = 17
+
+[node name="Generator 18" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 347, 219 )
+id_number = 18
+
+[node name="Generator 19" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 200, 171 )
+id_number = 19
+
+[node name="Generator 20" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 53, 123 )
+id_number = 20
+
+[node name="Generator 21" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 102, 123 )
+id_number = 21
+
+[node name="Generator 22" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 200, 123 )
+id_number = 22
+
+[node name="Generator 23" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 298, 123 )
+id_number = 23
+
+[node name="Generator 24" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 347, 123 )
+id_number = 24
+
+[node name="Generator 25" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 151, 75 )
+id_number = 25
+
+[node name="Generator 26" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 200, 75 )
+id_number = 26
+
+[node name="Generator 27" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 298, 75 )
+id_number = 27
+
+[node name="Generator 28" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 53, 27 )
+id_number = 28
+
+[node name="Generator 29" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 151, 27 )
+id_number = 29
+
+[node name="Generator 30" parent="BuildingSprite/Graph/Generators" instance=ExtResource( 4 )]
+position = Vector2( 249, 27 )
+id_number = 30
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 1 )
