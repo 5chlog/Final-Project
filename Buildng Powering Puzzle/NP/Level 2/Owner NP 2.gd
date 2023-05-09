@@ -19,7 +19,7 @@ var puzzle_solved = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/Pu
 var to_verification = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/ToVerification.tres")
 
 var current_dialog = first_dialog
-export(Array, int) var preset_certificate = [2, 3, 4, 5]
+export(Array, int) var preset_certificate = [3, 5, 7, 11, 12, 13]
 
 
 func _ready():

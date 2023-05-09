@@ -31,7 +31,7 @@ position = Vector2( 37, 224 )
 
 [node name="GeneratorSwitches" type="Node2D" parent="."]
 script = ExtResource( 11 )
-selectable_count = 6
+selectable_count = 15
 
 [node name="GeneratorSwitch" parent="GeneratorSwitches" instance=ExtResource( 6 )]
 position = Vector2( 433, 225 )
