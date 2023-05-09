@@ -5,21 +5,21 @@ var complete: bool = false
 
 
 # Dialogs
-var first_dialog = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/FirstDialog.tres")
-var puzzle_instr_1 = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/PuzzleInstructions1.tres")
-var puzzle_instr_2 = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/PuzzleInstructions2.tres")
-var in_puzzle_dialog = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/InPuzzleDialog.tres")
-var puzzle_yes_correct = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/PuzzleYesCorrect.tres")
-var puzzle_yes_wrong = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/PuzzleYesWrong.tres")
-var puzzle_yes_none = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/PuzzleYesNone.tres")
-var puzzle_no_correct = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/PuzzleNoCorrect.tres")
-var puzzle_no_wrong = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/PuzzleNoWrong.tres")
-var puzzle_giveup = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/PuzzleGiveup.tres")
-var puzzle_solved = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/PuzzleSolved.tres")
-var to_verification = preload("res://Buildng Powering Puzzle/NP/Level 2/Dialogs/ToVerification.tres")
+var first_dialog = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/FirstDialog.tres")
+var puzzle_instr_1 = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/PuzzleInstructions1.tres")
+var puzzle_instr_2 = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/PuzzleInstructions2.tres")
+var in_puzzle_dialog = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/InPuzzleDialog.tres")
+var puzzle_yes_correct = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/PuzzleYesCorrect.tres")
+var puzzle_yes_wrong = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/PuzzleYesWrong.tres")
+var puzzle_yes_none = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/PuzzleYesNone.tres")
+var puzzle_no_correct = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/PuzzleNoCorrect.tres")
+var puzzle_no_wrong = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/PuzzleNoWrong.tres")
+var puzzle_giveup = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/PuzzleGiveup.tres")
+var puzzle_solved = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/PuzzleSolved.tres")
+var to_verification = preload("res://Buildng Powering Puzzle/NP/Level 3/Dialogs/ToVerification.tres")
 
 var current_dialog = first_dialog
-export(Array, int) var preset_certificate = [3, 5, 7, 11, 12, 13]
+export(Array, int) var preset_certificate = [1, 4, 5, 6, 7, 10, 11, 15, 17, 19, 23, 24, 26, 27, 28]
 
 
 func _ready():
@@ -90,29 +90,10 @@ func first_dialog_no():
 func in_puzzle_yes():
 	if solved():
 		current_dialog = puzzle_yes_correct
-		if not (3 in ProgressData.building_powering_levels_unlocked):
-			ProgressData.building_powering_levels_unlocked.append(3)
-		
 	elif not get_parent().has_solution:
 		current_dialog = puzzle_yes_none
-		ProgressData.level_lost_last[ProgressData.puzzle_types.BuildingPoweringPuzzle] = 2
-		if not (3 in ProgressData.lessons_unlocked):
-			ProgressData.lessons_unlocked.append(3)
-		if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
-			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
-		if not (2 in ProgressData.building_powering_vf_levels_unlocked):
-			ProgressData.building_powering_vf_levels_unlocked.append(2)
-		
 	else:
 		current_dialog = puzzle_yes_wrong
-		ProgressData.level_lost_last[ProgressData.puzzle_types.BuildingPoweringPuzzle] = 2
-		if not (3 in ProgressData.lessons_unlocked):
-			ProgressData.lessons_unlocked.append(3)
-		if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
-			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
-		if not (2 in ProgressData.building_powering_vf_levels_unlocked):
-			ProgressData.building_powering_vf_levels_unlocked.append(2)
-		
 	
 	get_node("/root/HUD/ExtraHUD").hide_select_count()
 
@@ -121,19 +102,8 @@ func in_puzzle_yes():
 func in_puzzle_no():
 	if get_parent().has_solution:
 		current_dialog = puzzle_no_wrong
-		ProgressData.level_lost_last[ProgressData.puzzle_types.BuildingPoweringPuzzle] = 2
-		if not (3 in ProgressData.lessons_unlocked):
-			ProgressData.lessons_unlocked.append(3)
-		if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
-			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
-		if not (2 in ProgressData.building_powering_vf_levels_unlocked):
-			ProgressData.building_powering_vf_levels_unlocked.append(2)
-		
 	else:
 		current_dialog = puzzle_no_correct
-		if not (3 in ProgressData.building_powering_levels_unlocked):
-			ProgressData.building_powering_levels_unlocked.append(3)
-		
 	
 	get_node("/root/HUD/ExtraHUD").hide_select_count()
 
@@ -141,14 +111,6 @@ func in_puzzle_no():
 # Give Up reply to In Puzzle Dialog
 func in_puzzle_giveup():
 	current_dialog = puzzle_giveup
-	ProgressData.level_lost_last[ProgressData.puzzle_types.BuildingPoweringPuzzle] = 2
-	if not (3 in ProgressData.lessons_unlocked):
-		ProgressData.lessons_unlocked.append(3)
-	if not (ProgressData.puzzle_types.BuildingPoweringPuzzle in ProgressData.lesson_3_puzzles_unlocked):
-		ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.BuildingPoweringPuzzle)
-	if not (2 in ProgressData.building_powering_vf_levels_unlocked):
-		ProgressData.building_powering_vf_levels_unlocked.append(2)
-		
 	get_node("/root/HUD/ExtraHUD").hide_select_count()
 
 

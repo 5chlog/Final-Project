@@ -1,14 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic NP Level.gd" type="Script" id=1]
-[ext_resource path="res://Mechanic Puzzle/NP/Test/Panel.gd" type="Script" id=2]
 [ext_resource path="res://Black Bricked TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/ConveyorSwitch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mechanic Puzzle/NP/Test/Panel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/MachineObject.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Conveyor.gd" type="Script" id=9]
-[ext_resource path="res://Mechanic Puzzle/NP/Sprites/Panel Sprite.png" type="Texture" id=11]
 [ext_resource path="res://Mechanic Puzzle/NP/Sprites/Pillars.png" type="Texture" id=12]
 [ext_resource path="res://Mechanic Puzzle/NP/Test/Mechanic NP Test.gd" type="Script" id=13]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=14]
@@ -42,10 +41,8 @@ texture = ExtResource( 12 )
 
 [node name="Panels" type="Node2D" parent="Conveyor"]
 
-[node name="Panel 1" type="Sprite" parent="Conveyor/Panels"]
-z_index = 1
-texture = ExtResource( 11 )
-script = ExtResource( 2 )
+[node name="Panel 1" parent="Conveyor/Panels" instance=ExtResource( 7 )]
+panel_no = 1
 
 [node name="MachineObject 1" parent="Conveyor/Panels/Panel 1" instance=ExtResource( 8 )]
 position = Vector2( -64, 1 )
@@ -56,7 +53,7 @@ position = Vector2( -32, 1 )
 parts = [ 3, 6 ]
 
 [node name="MachineObject 3" parent="Conveyor/Panels/Panel 1" instance=ExtResource( 8 )]
-position = Vector2( -7.62907e-06, 1 )
+position = Vector2( 0, 1 )
 parts = [ 1, 3 ]
 
 [node name="MachineObject 4" parent="Conveyor/Panels/Panel 1" instance=ExtResource( 8 )]
@@ -66,13 +63,9 @@ position = Vector2( 32, 1 )
 position = Vector2( 64, 1 )
 parts = [ 2, 3 ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panels/Panel 1"]
-
-[node name="Panel 2" type="Sprite" parent="Conveyor/Panels"]
+[node name="Panel 2" parent="Conveyor/Panels" instance=ExtResource( 7 )]
 position = Vector2( 0, -50 )
-z_index = 1
-texture = ExtResource( 11 )
-script = ExtResource( 2 )
+panel_no = 2
 
 [node name="MachineObject 1" parent="Conveyor/Panels/Panel 2" instance=ExtResource( 8 )]
 position = Vector2( -64, 1 )
@@ -83,7 +76,7 @@ position = Vector2( -32, 1 )
 parts = [ 8, 3 ]
 
 [node name="MachineObject 3" parent="Conveyor/Panels/Panel 2" instance=ExtResource( 8 )]
-position = Vector2( -7.62907e-06, 1 )
+position = Vector2( 0, 1 )
 parts = [ 10 ]
 
 [node name="MachineObject 4" parent="Conveyor/Panels/Panel 2" instance=ExtResource( 8 )]
@@ -94,13 +87,9 @@ parts = [ 3, 1 ]
 position = Vector2( 64, 1 )
 parts = [ 3, 0 ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panels/Panel 2"]
-
-[node name="Panel 3" type="Sprite" parent="Conveyor/Panels"]
+[node name="Panel 3" parent="Conveyor/Panels" instance=ExtResource( 7 )]
 position = Vector2( 0, -100 )
-z_index = 1
-texture = ExtResource( 11 )
-script = ExtResource( 2 )
+panel_no = 3
 
 [node name="MachineObject 1" parent="Conveyor/Panels/Panel 3" instance=ExtResource( 8 )]
 position = Vector2( -64, 1 )
@@ -111,7 +100,7 @@ position = Vector2( -32, 1 )
 parts = [ 3 ]
 
 [node name="MachineObject 3" parent="Conveyor/Panels/Panel 3" instance=ExtResource( 8 )]
-position = Vector2( -7.62907e-06, 1 )
+position = Vector2( 0, 1 )
 parts = [ 1 ]
 
 [node name="MachineObject 4" parent="Conveyor/Panels/Panel 3" instance=ExtResource( 8 )]
@@ -122,13 +111,9 @@ parts = [ 1, 3 ]
 position = Vector2( 64, 1 )
 parts = [ 2 ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panels/Panel 3"]
-
-[node name="Panel 4" type="Sprite" parent="Conveyor/Panels"]
+[node name="Panel 4" parent="Conveyor/Panels" instance=ExtResource( 7 )]
 position = Vector2( 0, -150 )
-z_index = 1
-texture = ExtResource( 11 )
-script = ExtResource( 2 )
+panel_no = 4
 
 [node name="MachineObject 1" parent="Conveyor/Panels/Panel 4" instance=ExtResource( 8 )]
 position = Vector2( -64, 1 )
@@ -139,7 +124,7 @@ position = Vector2( -32, 1 )
 parts = [ 1, 0, 2 ]
 
 [node name="MachineObject 3" parent="Conveyor/Panels/Panel 4" instance=ExtResource( 8 )]
-position = Vector2( -7.62907e-06, 1 )
+position = Vector2( 0, 1 )
 
 [node name="MachineObject 4" parent="Conveyor/Panels/Panel 4" instance=ExtResource( 8 )]
 position = Vector2( 32, 1 )
@@ -148,8 +133,6 @@ parts = [ 2, 0, 3 ]
 [node name="MachineObject 5" parent="Conveyor/Panels/Panel 4" instance=ExtResource( 8 )]
 position = Vector2( 64, 1 )
 parts = [ 0, 1, 2 ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Panels/Panel 4"]
 
 [node name="ConveyorSwitch" parent="." instance=ExtResource( 6 )]
 position = Vector2( 123, -18 )

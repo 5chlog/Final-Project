@@ -59,11 +59,11 @@ position = Vector2( 421, 128 )
 generator_number = 6
 
 [node name="GeneratorSwitch7" parent="GeneratorSwitches" instance=ExtResource( 6 )]
-position = Vector2( 450, 128 )
+position = Vector2( 451, 128 )
 generator_number = 7
 
 [node name="GeneratorSwitch8" parent="GeneratorSwitches" instance=ExtResource( 6 )]
-position = Vector2( 480, 128 )
+position = Vector2( 481, 128 )
 generator_number = 8
 
 [node name="GeneratorSwitch9" parent="GeneratorSwitches" instance=ExtResource( 6 )]
@@ -79,11 +79,11 @@ position = Vector2( 421, 32 )
 generator_number = 11
 
 [node name="GeneratorSwitch12" parent="GeneratorSwitches" instance=ExtResource( 6 )]
-position = Vector2( 450, 32 )
+position = Vector2( 451, 32 )
 generator_number = 12
 
 [node name="GeneratorSwitch13" parent="GeneratorSwitches" instance=ExtResource( 6 )]
-position = Vector2( 480, 32 )
+position = Vector2( 481, 32 )
 generator_number = 13
 
 [node name="GeneratorSwitch14" parent="GeneratorSwitches" instance=ExtResource( 6 )]
