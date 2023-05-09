@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
+[ext_resource path="res://Dialog Faces/Owner NPC Face Temp.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+dialog_name = "First Dialog"
+face_images = [ ExtResource( 2 ) ]
+names = [ "Owner" ]
+dialogs = [ "Would you mind helping me for the last time?" ]
+name_face_indices = [ 0 ]
+button_flag = 3
+button_tl_text = "Yes"
+button_tl_function = "first_dialog_yes"
+button_tr_text = "No"
+button_tr_function = "first_dialog_no"
+button_bl_text = "Option 2"
+button_bl_function = "button_BL_function"
+button_br_text = "Option 4"
+button_br_function = "button_BR_function"
+show_buttons_with_last_line = true
