@@ -5,7 +5,7 @@
 [ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mechanic Puzzle/Verification/Test/Dismantler.gd" type="Script" id=4]
 [ext_resource path="res://Mechanic Puzzle/NP/Sprites/Machine Object Sprite.png" type="Texture" id=5]
-[ext_resource path="res://Buildng Powering Puzzle/NP/Sprites/5x7 Transparent Number Sprite Sheet.png" type="Texture" id=6]
+[ext_resource path="res://Mechanic Puzzle/NP/Sprites/5x7 Transparent Number Sprite Sheet.png" type="Texture" id=6]
 [ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Display.png" type="Texture" id=7]
 [ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Display Done.png" type="Texture" id=8]
 [ext_resource path="res://Mechanic Puzzle/Verification/Sprites/Dismantler Object Slot Background.png" type="Texture" id=9]

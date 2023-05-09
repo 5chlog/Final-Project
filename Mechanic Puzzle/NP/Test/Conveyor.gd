@@ -29,6 +29,8 @@ func _ready():
 		panel.UNIT_HEIGHT = UNIT_HEIGHT
 		panel.position.y = -UNIT_HEIGHT * i
 		
+		print(i, ", ", panel.animationplayer)
+		
 		var goup_animation = Animation.new()
 		goup_animation.length = UNIT_TIME * (panel_count - 1)
 		var goup_pos_y_trackno = goup_animation.add_track(Animation.TYPE_VALUE)

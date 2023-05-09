@@ -8,10 +8,13 @@ var comedown_key_0: int = 0
 var comedown_key_1: int = 1
 onready var animationplayer = $AnimationPlayer
 
+export(int) var panel_no = 0
+
 
 func _ready():
 	animationplayer.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 	z_index = 1
+	$NumberSprite.frame = panel_no
 
 
 func _activate():
