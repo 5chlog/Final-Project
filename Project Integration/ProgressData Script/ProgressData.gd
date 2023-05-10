@@ -3,6 +3,9 @@ extends Node
 enum puzzle_types {MailboxPuzzle, BuildingPoweringPuzzle, MechanicPuzzle, SantaClausPuzzle}
 
 var lessons_unlocked = [1] #[1, 2]
+# if lesson 2 is unlocked, lesson 1 is complete
+# if lesson 3 is unlocked, lesson 2 is complete
+var lesson_3_completed: bool = false #false
 
 var lesson_1_puzzles_unlocked = [puzzle_types.MailboxPuzzle]
 var lesson_2_puzzles_unlocked = [] #[puzzle_types.BuildingPoweringPuzzle, puzzle_types.MechanicPuzzle, puzzle_types.SantaClausPuzzle]

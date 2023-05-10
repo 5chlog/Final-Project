@@ -68,6 +68,7 @@ func _on_dialogbox_closed(dialog_name):
 		current_dialog = puzzle_dialog
 	elif dialog_name in ["Puzzle Verified Yes Dialog", "Puzzle Verified No Dialog"]:
 		end_level()
+		ProgressData.lesson_3_completed = true
 		current_dialog = puzzle_completed_dialog
 	
 	$InteractableArea.enable()
