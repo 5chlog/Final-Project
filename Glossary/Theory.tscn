@@ -1,6 +1,9 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Glossary/Scroller.png" type="Texture" id=1]
+[ext_resource path="res://Glossary/PuzzleButton.gd" type="Script" id=2]
+[ext_resource path="res://Glossary/LabelColumn.gd" type="Script" id=3]
+[ext_resource path="res://Glossary/PageContainer.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -97,6 +100,99 @@ centered = false
 margin_right = 640.0
 margin_bottom = 360.0
 
+[node name="PageContainer" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+
+[node name="CompClassContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/CompClassContainer"]
+margin_top = -1.0
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Mailbox COlumn 1"
+autowrap = true
+script = ExtResource( 3 )
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/CompClassContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+text = "Mailbox Column 2"
+autowrap = true
+
+[node name="PContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/PContainer"]
+margin_top = -1.0
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Building COlumn 1"
+autowrap = true
+script = ExtResource( 3 )
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/PContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+text = "Building Column 2"
+autowrap = true
+
+[node name="PTVContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/PTVContainer"]
+margin_top = -1.0
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Mechanic Column 1"
+autowrap = true
+script = ExtResource( 3 )
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/PTVContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+text = "Mechanic Column 2"
+autowrap = true
+
+[node name="NPContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/NPContainer"]
+margin_top = -1.0
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Santa  Column 1"
+autowrap = true
+script = ExtResource( 3 )
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/NPContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+text = "Santa Column 2"
+autowrap = true
+
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 margin_left = 2.0
 margin_top = 25.0
@@ -105,52 +201,51 @@ margin_bottom = 619.0
 rect_scale = Vector2( 0.52, 0.52 )
 
 [node name="ButtonContainer" type="GridContainer" parent="Control/CenterContainer"]
-margin_left = 1.0
-margin_top = 239.0
-margin_right = 147.0
-margin_bottom = 355.0
+margin_left = 6.0
+margin_top = 251.0
+margin_right = 142.0
+margin_bottom = 343.0
 
 [node name="Button1" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_right = 146.0
+margin_right = 136.0
 margin_bottom = 20.0
-text = "Big O Notation"
+text = "Complexity Classes"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/CompClassContainer")
 
 [node name="Button2" type="Button" parent="Control/CenterContainer/ButtonContainer"]
 margin_top = 24.0
-margin_right = 146.0
+margin_right = 136.0
 margin_bottom = 44.0
-text = "Computation Classes"
+text = "Class P"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/PContainer")
 
 [node name="Button3" type="Button" parent="Control/CenterContainer/ButtonContainer"]
 margin_top = 48.0
-margin_right = 146.0
+margin_right = 136.0
 margin_bottom = 68.0
-text = "Class P"
+text = "P Time Verification"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/PTVContainer")
 
 [node name="Button4" type="Button" parent="Control/CenterContainer/ButtonContainer"]
 margin_top = 72.0
-margin_right = 146.0
+margin_right = 136.0
 margin_bottom = 92.0
 text = "Class NP"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/NPContainer")
 
-[node name="Button5" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_top = 96.0
-margin_right = 146.0
-margin_bottom = 116.0
+[node name="BackButton" type="Button" parent="Control"]
+margin_left = 7.68
+margin_top = 32.2
+margin_right = 137.68
+margin_bottom = 52.2
+rect_scale = Vector2( 0.5, 0.5 )
 text = "Back"
 
-[node name="LabelColumn1" type="Label" parent="Control"]
-margin_left = 83.0
-margin_top = 32.0
-margin_right = 364.0
-margin_bottom = 325.0
-text = "kjdzkjbsvf"
-autowrap = true
-
-[node name="LabelColumn2" type="Label" parent="Control"]
-margin_left = 366.0
-margin_top = 32.0
-margin_right = 640.0
-margin_bottom = 325.0
-text = "akfjvbksdfbv"
-autowrap = true
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button1" to="Control/CenterContainer/ButtonContainer/Button1" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button2" to="Control/CenterContainer/ButtonContainer/Button2" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button3" to="Control/CenterContainer/ButtonContainer/Button3" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button4" to="Control/CenterContainer/ButtonContainer/Button4" method="_on_Button_pressed"]
