@@ -36,36 +36,6 @@ position = Vector2( 277, 0 )
 [node name="ChildVF 5" parent="Children" instance=ExtResource( 4 )]
 position = Vector2( 347, 0 )
 
-[node name="ChildVF 6" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 67, -112 )
-
-[node name="ChildVF 7" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 137, -112 )
-
-[node name="ChildVF 8" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 207, -112 )
-
-[node name="ChildVF 9" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 277, -112 )
-
-[node name="ChildVF 10" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 347, -112 )
-
-[node name="ChildVF 11" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 67, -224 )
-
-[node name="ChildVF 12" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 137, -224 )
-
-[node name="ChildVF 13" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 207, -224 )
-
-[node name="ChildVF 14" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 277, -224 )
-
-[node name="ChildVF 15" parent="Children" instance=ExtResource( 4 )]
-position = Vector2( 347, -224 )
-
 [node name="Ladders" type="Node2D" parent="."]
 
 [node name="Ladder 1" parent="Ladders" instance=ExtResource( 5 )]
@@ -84,3 +54,4 @@ position = Vector2( 424, -104 )
 position = Vector2( -69, -32 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -112, -16 )

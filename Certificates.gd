@@ -47,7 +47,7 @@ func add_gift_textures(gift_sprite: Texture):
 	gift_textures.append(gift_sprite)
 
 
-func add_happiness_values(happy: bool):
+func add_happiness_values(happy: int):
 	happiness_values.append(happy)
 
 

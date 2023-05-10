@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Santa Claus/Sprites/Child1.png" type="Texture" id=1]
 [ext_resource path="res://Santa Claus/Verification/Sprites/Room Door.png" type="Texture" id=2]
@@ -72,6 +72,46 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Give Nothing"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("HappinessSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HappinessSprite:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -16.0, -32.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ChildSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -165,6 +205,7 @@ position = Vector2( -8, -33 )
 texture = ExtResource( 5 )
 
 [node name="InteractableArea" parent="." instance=ExtResource( 3 )]
+enabled = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
 position = Vector2( 4, -11.5 )
@@ -172,6 +213,7 @@ shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Give Gift" = SubResource( 5 )
+"anims/Give Nothing" = SubResource( 8 )
 anims/Idle = SubResource( 7 )
 anims/RESET = SubResource( 6 )
 
