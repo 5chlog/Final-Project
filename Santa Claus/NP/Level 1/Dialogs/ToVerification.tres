@@ -1,16 +1,15 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Dialog Box/Dialog Resource.gd" type="Script" id=1]
-[ext_resource path="res://Dialog Faces/Avatar Face.png" type="Texture" id=2]
-[ext_resource path="res://Dialog Faces/Santa Face.png" type="Texture" id=3]
+[ext_resource path="res://Dialog Faces/Santa Face.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
-dialog_name = "Intro"
-face_images = [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 2 ) ]
-names = [ "Santa Claus", "Santa Claus", "Player" ]
-dialogs = [ "Damn boi, great work.", "Now do it again.", ":(" ]
-name_face_indices = [ 0, 1, 2 ]
+dialog_name = "To Verification"
+face_images = [ ExtResource( 2 ) ]
+names = [ "Santa Claus" ]
+dialogs = [ "Just go through the door to the right.", "I will meet you there." ]
+name_face_indices = [ 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

@@ -1,17 +1,17 @@
 extends Sprite
 
 # Dialogs
-var first_dialog = preload("res://Santa Claus/NP/Test/Dialogs/FirstDialog.tres")
-var puzzle_instr = preload("res://Santa Claus/NP/Test/Dialogs/PuzzleInstructions.tres")
-var in_puzzle_dialog = preload("res://Santa Claus/NP/Test/Dialogs/InPuzzleDialog.tres")
-var puzzle_yes_correct = preload("res://Santa Claus/NP/Test/Dialogs/PuzzleYesCorrect.tres")
-var puzzle_yes_wrong = preload("res://Santa Claus/NP/Test/Dialogs/PuzzleYesWrong.tres")
-var puzzle_yes_none = preload("res://Santa Claus/NP/Test/Dialogs/PuzzleYesNone.tres")
-var puzzle_no_correct = preload("res://Santa Claus/NP/Test/Dialogs/PuzzleNoCorrect.tres")
-var puzzle_no_wrong = preload("res://Santa Claus/NP/Test/Dialogs/PuzzleNoWrong.tres")
-var puzzle_giveup = preload("res://Santa Claus/NP/Test/Dialogs/PuzzleGiveup.tres")
-var puzzle_solved = preload("res://Santa Claus/NP/Test/Dialogs/PuzzleSolved.tres")
-var to_verification = preload("res://Santa Claus/NP/Test/Dialogs/ToVerification.tres")
+var first_dialog = preload("res://Santa Claus/NP/Level 2/Dialogs/FirstDialog.tres")
+var puzzle_instr = preload("res://Santa Claus/NP/Level 2/Dialogs/PuzzleInstructions.tres")
+var in_puzzle_dialog = preload("res://Santa Claus/NP/Level 2/Dialogs/InPuzzleDialog.tres")
+var puzzle_yes_correct = preload("res://Santa Claus/NP/Level 2/Dialogs/PuzzleYesCorrect.tres")
+var puzzle_yes_wrong = preload("res://Santa Claus/NP/Level 2/Dialogs/PuzzleYesWrong.tres")
+var puzzle_yes_none = preload("res://Santa Claus/NP/Level 2/Dialogs/PuzzleYesNone.tres")
+var puzzle_no_correct = preload("res://Santa Claus/NP/Level 2/Dialogs/PuzzleNoCorrect.tres")
+var puzzle_no_wrong = preload("res://Santa Claus/NP/Level 2/Dialogs/PuzzleNoWrong.tres")
+var puzzle_giveup = preload("res://Santa Claus/NP/Level 2/Dialogs/PuzzleGiveup.tres")
+var puzzle_solved = preload("res://Santa Claus/NP/Level 2/Dialogs/PuzzleSolved.tres")
+var to_verification = preload("res://Santa Claus/NP/Level 2/Dialogs/ToVerification.tres")
 
 
 var complete: bool = false

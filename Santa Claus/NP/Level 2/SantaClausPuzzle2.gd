@@ -4,7 +4,7 @@ extends Node2D
 export(bool) var has_solution = true
 export(bool) var final_level = false
 
-var extra_hud_scene = preload("res://Santa Claus/NP/Level 1/ExtraHUDLevel1.tscn")
+var extra_hud_scene = preload("res://Santa Claus/NP/Level 2/ExtraHUDLevel2.tscn")
 
 func _ready():
 	var extra_hud = extra_hud_scene.instance()

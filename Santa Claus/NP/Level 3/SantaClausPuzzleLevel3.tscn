@@ -1,0 +1,226 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Santa Claus/Sprites/gift7.png" type="Texture" id=1]
+[ext_resource path="res://Santa Claus/NP/Test/SantaClause.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Black Bricked TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Santa Claus/NP/Test/Gift.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Santa Claus/NP/Level 3/SantaClausPuzzle3.gd" type="Script" id=6]
+[ext_resource path="res://Santa Claus/NP/Level 1/SantaClause1.gd" type="Script" id=7]
+[ext_resource path="res://Santa Claus/NP/Test/Gifts.gd" type="Script" id=8]
+[ext_resource path="res://Santa Claus/Sprites/gift5.png" type="Texture" id=9]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Santa Claus/Sprites/gift3.png" type="Texture" id=11]
+[ext_resource path="res://Santa Claus/Sprites/gift2.png" type="Texture" id=12]
+[ext_resource path="res://Santa Claus/Sprites/gift8.png" type="Texture" id=13]
+[ext_resource path="res://Santa Claus/Sprites/gift4.png" type="Texture" id=14]
+[ext_resource path="res://Santa Claus/NP/Test/ChildDisplay.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Santa Claus/NP/Test/GiftSlot.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Santa Claus/Sprites/pipe.png" type="Texture" id=17]
+[ext_resource path="res://Santa Claus/NP/Test/Switch.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Santa Claus/Sprites/gift6.png" type="Texture" id=19]
+[ext_resource path="res://Santa Claus/Sprites/gift12.png" type="Texture" id=20]
+[ext_resource path="res://Santa Claus/Sprites/gift9.png" type="Texture" id=21]
+[ext_resource path="res://Santa Claus/Sprites/gift11.png" type="Texture" id=22]
+[ext_resource path="res://Santa Claus/Sprites/gift15.png" type="Texture" id=23]
+[ext_resource path="res://Santa Claus/Sprites/gift13.png" type="Texture" id=24]
+[ext_resource path="res://Santa Claus/Sprites/gift10.png" type="Texture" id=25]
+[ext_resource path="res://Santa Claus/Sprites/gift14.png" type="Texture" id=26]
+
+[node name="Level" type="Node2D"]
+position = Vector2( 14.042, 0 )
+script = ExtResource( 6 )
+
+[node name="Black Bricked TileMap" parent="." instance=ExtResource( 3 )]
+position = Vector2( -46.042, 29 )
+tile_data = PoolIntArray( -131068, 1, 0, -131067, 1, 1, -131066, 1, 1, -131065, 1, 1, -131064, 1, 1, -131063, 1, 1, -131062, 1, 1, -131061, 1, 1, -131060, 1, 1, -131059, 1, 1, -131058, 1, 1, -131057, 1, 1, -131056, 1, 1, -131055, 1, 1, -131054, 1, 1, -131053, 1, 1, -131052, 1, 1, -131051, 1, 1, -131050, 1, 1, -131049, 1, 1, -131048, 1, 1, -131047, 1, 1, -131046, 1, 1, -131045, 1, 1, -131044, 1, 1, -131043, 1, 1, -131042, 1, 1, -131041, 1, 1, -131040, 1, 1, -131039, 1, 1, -131038, 1, 1, -131037, 1, 1, -131036, 1, 1, -131035, 1, 1, -131034, 1, 1, -131033, 1, 1, -131032, 1, 1, -131031, 1, 1, -131030, 1, 1, -131029, 1, 1, -131028, 1, 1, -131027, 1, 1, -131026, 1, 1, -131025, 1, 1, -131024, 1, 1, -131023, 1, 1, -131022, 1, 1, -131021, 1, 1, -131020, 1, 1, -131019, 1, 1, -131018, 1, 1, -131017, 1, 1, -131016, 1, 1, -131015, 1, 1, -131014, 1, 1, -131013, 1, 1, -131012, 1, 1, -131011, 1, 1, -131010, 1, 1, -131009, 1, 1, -131008, 1, 1, -131007, 1, 1, -131006, 1, 1, -131005, 1, 1, -131004, 1, 1, -131003, 1, 1, -131002, 1, 1, -131001, 1, 1, -131000, 1, 1, -130999, 1, 1, -130998, 1, 1, -130997, 1, 1, -130996, 1, 1, -130995, 1, 1, -130994, 1, 1, -130993, 1, 1, -130992, 1, 1, -130991, 1, 1, -130990, 1, 1, -130989, 1, 1, -130988, 1, 2, -65532, 1, 65536, -65531, 1, 65537, -65530, 1, 65537, -65529, 1, 65537, -65528, 1, 65537, -65527, 1, 65537, -65526, 1, 65537, -65525, 1, 65537, -65524, 1, 65537, -65523, 1, 65537, -65522, 1, 65537, -65521, 1, 65537, -65520, 1, 65537, -65519, 1, 65537, -65518, 1, 65537, -65517, 1, 65537, -65516, 1, 65537, -65515, 1, 65537, -65514, 1, 65537, -65513, 1, 65537, -65512, 1, 65537, -65511, 1, 65537, -65510, 1, 65537, -65509, 1, 65537, -65508, 1, 65537, -65507, 1, 65537, -65506, 1, 65537, -65505, 1, 65537, -65504, 1, 65537, -65503, 1, 65537, -65502, 1, 65537, -65501, 1, 65537, -65500, 1, 65537, -65499, 1, 65537, -65498, 1, 65537, -65497, 1, 65537, -65496, 1, 65537, -65495, 1, 65537, -65494, 1, 65537, -65493, 1, 65537, -65492, 1, 65537, -65491, 1, 65537, -65490, 1, 65537, -65489, 1, 65537, -65488, 1, 65537, -65487, 1, 65537, -65486, 1, 65537, -65485, 1, 65537, -65484, 1, 65537, -65483, 1, 65537, -65482, 1, 65537, -65481, 1, 65537, -65480, 1, 65537, -65479, 1, 65537, -65478, 1, 65537, -65477, 1, 65537, -65476, 1, 65537, -65475, 1, 65537, -65474, 1, 65537, -65473, 1, 65537, -65472, 1, 65537, -65471, 1, 65537, -65470, 1, 65537, -65469, 1, 65537, -65468, 1, 65537, -65467, 1, 65537, -65466, 1, 65537, -65465, 1, 65537, -65464, 1, 65537, -65463, 1, 65537, -65462, 1, 65537, -65461, 1, 65537, -65460, 1, 65537, -65459, 1, 65537, -65458, 1, 65537, -65457, 1, 65537, -65456, 1, 65537, -65455, 1, 65537, -65454, 1, 65537, -65453, 1, 65537, -65452, 1, 65538, 4, 1, 131072, 5, 1, 131073, 6, 1, 131073, 7, 1, 131073, 8, 1, 65542, 9, 1, 65541, 10, 1, 131073, 11, 1, 131073, 12, 1, 131073, 13, 1, 131073, 14, 1, 131073, 15, 1, 131073, 16, 1, 131073, 17, 1, 131073, 18, 1, 131073, 19, 1, 131073, 20, 1, 131073, 21, 1, 131073, 22, 1, 131073, 23, 1, 131073, 24, 1, 131073, 25, 1, 131073, 26, 1, 131073, 27, 1, 131073, 28, 1, 131073, 29, 1, 131073, 30, 1, 131073, 31, 1, 131073, 32, 1, 131073, 33, 1, 131073, 34, 1, 131073, 35, 1, 131073, 36, 1, 131073, 37, 1, 131073, 38, 1, 131073, 39, 1, 131073, 40, 1, 131073, 41, 1, 131073, 42, 1, 131073, 43, 1, 131073, 44, 1, 131073, 45, 1, 131073, 46, 1, 131073, 47, 1, 131073, 48, 1, 131073, 49, 1, 131073, 50, 1, 131073, 51, 1, 131073, 52, 1, 131073, 53, 1, 131073, 54, 1, 131073, 55, 1, 131073, 56, 1, 131073, 57, 1, 131073, 58, 1, 131073, 59, 1, 131073, 60, 1, 131073, 61, 1, 131073, 62, 1, 131073, 63, 1, 131073, 64, 1, 131073, 65, 1, 131073, 66, 1, 131073, 67, 1, 131073, 68, 1, 131073, 69, 1, 131073, 70, 1, 131073, 71, 1, 131073, 72, 1, 131073, 73, 1, 131073, 74, 1, 131073, 75, 1, 131073, 76, 1, 131073, 77, 1, 131073, 78, 1, 131073, 79, 1, 65542, 80, 1, 65537, 81, 1, 65541, 82, 1, 131073, 83, 1, 131073, 84, 1, 131074, 65544, 1, 65536, 65545, 1, 65538, 65615, 1, 65536, 65616, 1, 65537, 65617, 1, 65538, 131080, 1, 65536, 131081, 1, 65538, 131151, 1, 65536, 131152, 1, 65537, 131153, 1, 65538, 196616, 1, 65536, 196617, 1, 65538, 196687, 1, 65536, 196688, 1, 65537, 196689, 1, 65538, 262152, 1, 65536, 262153, 1, 65538, 262223, 1, 65536, 262224, 1, 65537, 262225, 1, 65538, 327688, 1, 65536, 327689, 1, 65538, 327759, 1, 65536, 327760, 1, 65537, 327761, 1, 65538, 393224, 1, 65536, 393225, 1, 65538, 393295, 1, 65536, 393296, 1, 65537, 393297, 1, 65538, 458760, 1, 131072, 458761, 1, 131074, 458831, 1, 131072, 458832, 1, 131073, 458833, 1, 131074, 786436, 1, 0, 786437, 1, 1, 786438, 1, 1, 786439, 1, 1, 786440, 1, 1, 786441, 1, 1, 786442, 1, 1, 786443, 1, 1, 786444, 1, 1, 786445, 1, 1, 786446, 1, 1, 786447, 1, 1, 786448, 1, 1, 786449, 1, 1, 786450, 1, 1, 786451, 1, 1, 786452, 1, 1, 786453, 1, 1, 786454, 1, 1, 786455, 1, 1, 786456, 1, 1, 786457, 1, 1, 786458, 1, 1, 786459, 1, 1, 786460, 1, 1, 786461, 1, 1, 786462, 1, 1, 786463, 1, 1, 786464, 1, 1, 786465, 1, 1, 786466, 1, 1, 786467, 1, 1, 786468, 1, 1, 786469, 1, 1, 786470, 1, 1, 786471, 1, 1, 786472, 1, 1, 786473, 1, 1, 786474, 1, 1, 786475, 1, 1, 786476, 1, 1, 786477, 1, 1, 786478, 1, 1, 786479, 1, 1, 786480, 1, 1, 786481, 1, 1, 786482, 1, 1, 786483, 1, 1, 786484, 1, 1, 786485, 1, 1, 786486, 1, 1, 786487, 1, 1, 786488, 1, 1, 786489, 1, 1, 786490, 1, 1, 786491, 1, 1, 786492, 1, 1, 786493, 1, 1, 786494, 1, 1, 786495, 1, 1, 786496, 1, 1, 786497, 1, 1, 786498, 1, 1, 786499, 1, 1, 786500, 1, 1, 786501, 1, 1, 786502, 1, 1, 786503, 1, 1, 786504, 1, 1, 786505, 1, 1, 786506, 1, 1, 786507, 1, 1, 786508, 1, 1, 786509, 1, 1, 786510, 1, 1, 786511, 1, 1, 786512, 1, 1, 786513, 1, 1, 786514, 1, 1, 786515, 1, 1, 786516, 1, 2, 851972, 1, 65536, 851973, 1, 65537, 851974, 1, 65537, 851975, 1, 65537, 851976, 1, 65537, 851977, 1, 65537, 851978, 1, 65537, 851979, 1, 65537, 851980, 1, 65537, 851981, 1, 65537, 851982, 1, 65537, 851983, 1, 65537, 851984, 1, 65537, 851985, 1, 65537, 851986, 1, 65537, 851987, 1, 65537, 851988, 1, 65537, 851989, 1, 65537, 851990, 1, 65537, 851991, 1, 65537, 851992, 1, 65537, 851993, 1, 65537, 851994, 1, 65537, 851995, 1, 65537, 851996, 1, 65537, 851997, 1, 65537, 851998, 1, 65537, 851999, 1, 65537, 852000, 1, 65537, 852001, 1, 65537, 852002, 1, 65537, 852003, 1, 65537, 852004, 1, 65537, 852005, 1, 65537, 852006, 1, 65537, 852007, 1, 65537, 852008, 1, 65537, 852009, 1, 65537, 852010, 1, 65537, 852011, 1, 65537, 852012, 1, 65537, 852013, 1, 65537, 852014, 1, 65537, 852015, 1, 65537, 852016, 1, 65537, 852017, 1, 65537, 852018, 1, 65537, 852019, 1, 65537, 852020, 1, 65537, 852021, 1, 65537, 852022, 1, 65537, 852023, 1, 65537, 852024, 1, 65537, 852025, 1, 65537, 852026, 1, 65537, 852027, 1, 65537, 852028, 1, 65537, 852029, 1, 65537, 852030, 1, 65537, 852031, 1, 65537, 852032, 1, 65537, 852033, 1, 65537, 852034, 1, 65537, 852035, 1, 65537, 852036, 1, 65537, 852037, 1, 65537, 852038, 1, 65537, 852039, 1, 65537, 852040, 1, 65537, 852041, 1, 65537, 852042, 1, 65537, 852043, 1, 65537, 852044, 1, 65537, 852045, 1, 65537, 852046, 1, 65537, 852047, 1, 65537, 852048, 1, 65537, 852049, 1, 65537, 852050, 1, 65537, 852051, 1, 65537, 852052, 1, 65538, 917508, 1, 65536, 917509, 1, 65537, 917510, 1, 65537, 917511, 1, 65537, 917512, 1, 65537, 917513, 1, 65537, 917514, 1, 65537, 917515, 1, 65537, 917516, 1, 65537, 917517, 1, 65537, 917518, 1, 65537, 917519, 1, 65537, 917520, 1, 65537, 917521, 1, 65537, 917522, 1, 65537, 917523, 1, 65537, 917524, 1, 65537, 917525, 1, 65537, 917526, 1, 65537, 917527, 1, 65537, 917528, 1, 65537, 917529, 1, 65537, 917530, 1, 65537, 917531, 1, 65537, 917532, 1, 65537, 917533, 1, 65537, 917534, 1, 65537, 917535, 1, 65537, 917536, 1, 65537, 917537, 1, 65537, 917538, 1, 65537, 917539, 1, 65537, 917540, 1, 65537, 917541, 1, 65537, 917542, 1, 65537, 917543, 1, 65537, 917544, 1, 65537, 917545, 1, 65537, 917546, 1, 65537, 917547, 1, 65537, 917548, 1, 65537, 917549, 1, 65537, 917550, 1, 65537, 917551, 1, 65537, 917552, 1, 65537, 917553, 1, 65537, 917554, 1, 65537, 917555, 1, 65537, 917556, 1, 65537, 917557, 1, 65537, 917558, 1, 65537, 917559, 1, 65537, 917560, 1, 65537, 917561, 1, 65537, 917562, 1, 65537, 917563, 1, 65537, 917564, 1, 65537, 917565, 1, 65537, 917566, 1, 65537, 917567, 1, 65537, 917568, 1, 65537, 917569, 1, 65537, 917570, 1, 65537, 917571, 1, 65537, 917572, 1, 65537, 917573, 1, 65537, 917574, 1, 65537, 917575, 1, 65537, 917576, 1, 65537, 917577, 1, 65537, 917578, 1, 65537, 917579, 1, 65537, 917580, 1, 65537, 917581, 1, 65537, 917582, 1, 65537, 917583, 1, 65537, 917584, 1, 65537, 917585, 1, 65537, 917586, 1, 65537, 917587, 1, 65537, 917588, 1, 65538, 983044, 1, 131072, 983045, 1, 131073, 983046, 1, 131073, 983047, 1, 131073, 983048, 1, 131073, 983049, 1, 131073, 983050, 1, 131073, 983051, 1, 131073, 983052, 1, 131073, 983053, 1, 131073, 983054, 1, 131073, 983055, 1, 131073, 983056, 1, 131073, 983057, 1, 131073, 983058, 1, 131073, 983059, 1, 131073, 983060, 1, 131073, 983061, 1, 131073, 983062, 1, 131073, 983063, 1, 131073, 983064, 1, 131073, 983065, 1, 131073, 983066, 1, 131073, 983067, 1, 131073, 983068, 1, 131073, 983069, 1, 131073, 983070, 1, 131073, 983071, 1, 131073, 983072, 1, 131073, 983073, 1, 131073, 983074, 1, 131073, 983075, 1, 131073, 983076, 1, 131073, 983077, 1, 131073, 983078, 1, 131073, 983079, 1, 131073, 983080, 1, 131073, 983081, 1, 131073, 983082, 1, 131073, 983083, 1, 131073, 983084, 1, 131073, 983085, 1, 131073, 983086, 1, 131073, 983087, 1, 131073, 983088, 1, 131073, 983089, 1, 131073, 983090, 1, 131073, 983091, 1, 131073, 983092, 1, 131073, 983093, 1, 131073, 983094, 1, 131073, 983095, 1, 131073, 983096, 1, 131073, 983097, 1, 131073, 983098, 1, 131073, 983099, 1, 131073, 983100, 1, 131073, 983101, 1, 131073, 983102, 1, 131073, 983103, 1, 131073, 983104, 1, 131073, 983105, 1, 131073, 983106, 1, 131073, 983107, 1, 131073, 983108, 1, 131073, 983109, 1, 131073, 983110, 1, 131073, 983111, 1, 131073, 983112, 1, 131073, 983113, 1, 131073, 983114, 1, 131073, 983115, 1, 131073, 983116, 1, 131073, 983117, 1, 131073, 983118, 1, 131073, 983119, 1, 131073, 983120, 1, 131073, 983121, 1, 131073, 983122, 1, 131073, 983123, 1, 131073, 983124, 1, 131074 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 153.958, 205 )
+
+[node name="SantaClaus" parent="." instance=ExtResource( 2 )]
+position = Vector2( 216.958, 188 )
+script = ExtResource( 7 )
+
+[node name="DoorOut" parent="." instance=ExtResource( 10 )]
+position = Vector2( 107.958, 189 )
+scale = Vector2( -1, 1 )
+
+[node name="DoorVerify" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1233.96, 190 )
+target_level_path = "res://Santa Claus/Verification/Test/TestScene.tscn"
+
+[node name="TransportSwitch" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1116.96, 202 )
+
+[node name="ChildDisplay" parent="." instance=ExtResource( 15 )]
+position = Vector2( 988.958, 168 )
+
+[node name="Gifts" type="Node2D" parent="."]
+position = Vector2( -125, 0 )
+script = ExtResource( 8 )
+
+[node name="Gift1" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 446.958, 209 )
+texture = ExtResource( 1 )
+gift_index = 0
+gift_values = [ 8, 0, 4, 2, 3, 1, 0, 0, 1, 10, 4, 0, 2, 6, 1 ]
+
+[node name="Gift2" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 487.958, 206 )
+sprite = ExtResource( 12 )
+gift_index = 1
+gift_values = [ 1, 3, 6, 4, 8, 5, 2, 5, 3, 7, 7, 2, 4, 0, 4 ]
+
+[node name="Gift3" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 528.958, 208 )
+sprite = ExtResource( 11 )
+gift_index = 2
+gift_values = [ 0, 5, 7, 0, 6, 6, 4, 6, 5, 8, 3, 4, 5, 1, 2 ]
+
+[node name="Gift4" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 571.958, 209 )
+texture = ExtResource( 14 )
+sprite = ExtResource( 14 )
+gift_index = 3
+gift_values = [ 2, 6, 1, 10, 0, 7, 5, 7, 2, 0, 9, 5, 0, 2, 4 ]
+
+[node name="Gift5" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 615.958, 209 )
+texture = ExtResource( 1 )
+sprite = ExtResource( 9 )
+gift_index = 4
+gift_values = [ 4, 1, 5, 2, 5, 3, 6, 2, 9, 4, 6, 7, 2, 8, 0 ]
+
+[node name="Gift6" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 656.958, 206 )
+sprite = ExtResource( 19 )
+gift_index = 5
+gift_values = [ 5, 9, 0, 5, 4, 4, 7, 0, 1, 3, 7, 0, 5, 10, 3 ]
+
+[node name="Gift7" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 697.958, 208 )
+sprite = ExtResource( 1 )
+gift_index = 6
+gift_values = [ 3, 0, 10, 6, 6, 2, 1, 8, 0, 2, 5, 3, 9, 6, 2 ]
+
+[node name="Gift8" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 740.958, 209 )
+texture = ExtResource( 14 )
+sprite = ExtResource( 13 )
+gift_index = 7
+gift_values = [ 6, 2, 7, 9, 1, 5, 6, 4, 6, 0, 0, 5, 6, 5, 8 ]
+
+[node name="Gift9" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 784.958, 209 )
+texture = ExtResource( 1 )
+sprite = ExtResource( 21 )
+gift_index = 8
+gift_values = [ 1, 9, 8, 0, 0, 6, 3, 8, 0, 1, 8, 6, 4, 2, 6 ]
+
+[node name="Gift10" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 825.958, 206 )
+sprite = ExtResource( 25 )
+gift_index = 9
+gift_values = [ 10, 7, 4, 7, 4, 8, 0, 0, 5, 4, 6, 1, 1, 3, 9 ]
+
+[node name="Gift11" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 866.958, 208 )
+sprite = ExtResource( 22 )
+gift_index = 10
+gift_values = [ 7, 0, 5, 4, 0, 2, 4, 7, 7, 0, 4, 0, 3, 1, 7 ]
+
+[node name="Gift12" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 909.958, 209 )
+texture = ExtResource( 14 )
+sprite = ExtResource( 20 )
+gift_index = 11
+gift_values = [ 1, 2, 0, 1, 10, 0, 9, 6, 0, 4, 2, 9, 1, 0, 6 ]
+
+[node name="Gift13" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 953.958, 209 )
+texture = ExtResource( 1 )
+sprite = ExtResource( 24 )
+gift_index = 12
+gift_values = [ 4, 4, 4, 0, 2, 1, 0, 4, 3, 0, 0, 9, 0, 4, 4 ]
+
+[node name="Gift14" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 994.958, 206 )
+sprite = ExtResource( 26 )
+gift_index = 13
+gift_values = [ 3, 0, 6, 2, 5, 0, 2, 2, 4, 5, 2, 4, 10, 3, 5 ]
+
+[node name="Gift15" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 1035.96, 208 )
+sprite = ExtResource( 23 )
+gift_index = 14
+gift_values = [ 2, 3, 2, 3, 6, 4, 6, 1, 9, 0, 0, 2, 7, 6, 0 ]
+
+[node name="GiftSlots" type="Node2D" parent="."]
+position = Vector2( -125, 0 )
+
+[node name="GiftSlot1" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 446.958, 209 )
+gift_path = NodePath("../../Gifts/Gift1")
+
+[node name="GiftSlot2" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 487.958, 209 )
+gift_path = NodePath("../../Gifts/Gift2")
+
+[node name="GiftSlot3" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 528.958, 209 )
+gift_path = NodePath("../../Gifts/Gift3")
+
+[node name="GiftSlot4" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 571.958, 209 )
+gift_path = NodePath("../../Gifts/Gift4")
+
+[node name="GiftSlot5" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 615.958, 209 )
+gift_path = NodePath("../../Gifts/Gift5")
+
+[node name="GiftSlot6" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 656.958, 209 )
+gift_path = NodePath("../../Gifts/Gift6")
+
+[node name="GiftSlot7" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 697.958, 209 )
+gift_path = NodePath("../../Gifts/Gift7")
+
+[node name="GiftSlot8" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 740.958, 209 )
+gift_path = NodePath("../../Gifts/Gift8")
+
+[node name="GiftSlot9" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 784.958, 209 )
+gift_path = NodePath("../../Gifts/Gift9")
+
+[node name="GiftSlot10" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 825.958, 209 )
+gift_path = NodePath("../../Gifts/Gift10")
+
+[node name="GiftSlot11" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 866.958, 209 )
+gift_path = NodePath("../../Gifts/Gift11")
+
+[node name="GiftSlot12" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 909.958, 209 )
+gift_path = NodePath("../../Gifts/Gift12")
+
+[node name="GiftSlot13" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 953.958, 209 )
+gift_path = NodePath("../../Gifts/Gift13")
+
+[node name="GiftSlot14" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 994.958, 209 )
+gift_path = NodePath("../../Gifts/Gift14")
+
+[node name="GiftSlot15" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 1035.96, 209 )
+gift_path = NodePath("../../Gifts/Gift7")
+
+[node name="GiftPlatform" parent="GiftSlots" instance=ExtResource( 16 )]
+position = Vector2( 1200.96, 203 )
+texture = ExtResource( 17 )
+offset = Vector2( 0, -22 )
+offset = Vector2( 0, -22 )

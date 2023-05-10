@@ -22,8 +22,9 @@ func interact():
 			return
 	else:
 		if child.assigned_gift != null:
+			var gift = child.remove_gift()
 			var temp = platform.placed_gift 
-			platform.place_gift(child.assigned_gift)
+			platform.place_gift(gift)
 			child.assign_gift_to_child(temp)
 		else:
 			child.assign_gift_to_child(platform.placed_gift)
