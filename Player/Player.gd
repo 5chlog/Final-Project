@@ -121,7 +121,7 @@ func idle():
 	add_gravity()
 	velocity.x = move_toward(velocity.x, 0, walk_constants.FRICTION)
 	
-	move_and_slide(velocity, Vector2.UP)
+	velocity = move_and_slide(velocity, Vector2.UP)
 
 func walk():
 	if is_climbing():
