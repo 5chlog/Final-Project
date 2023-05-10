@@ -105,6 +105,28 @@ margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 4 )
 
+[node name="PAndExpContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/PAndExpContainer"]
+margin_top = -1.0
+margin_right = 281.0
+margin_bottom = 292.0
+text = "P and EXP Column 1"
+autowrap = true
+script = ExtResource( 3 )
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/PAndExpContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+text = "P And EXP Column 2"
+autowrap = true
+
 [node name="CompClassContainer" type="Control" parent="Control/PageContainer"]
 visible = false
 margin_left = 83.0
@@ -201,38 +223,45 @@ margin_bottom = 619.0
 rect_scale = Vector2( 0.52, 0.52 )
 
 [node name="ButtonContainer" type="GridContainer" parent="Control/CenterContainer"]
-margin_left = 6.0
-margin_top = 251.0
-margin_right = 142.0
-margin_bottom = 343.0
+margin_top = 239.0
+margin_right = 150.0
+margin_bottom = 355.0
 
-[node name="Button1" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_right = 136.0
+[node name="P and EXP" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_right = 150.0
 margin_bottom = 20.0
+text = "P And EXP Algorithms"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/PAndExpContainer")
+
+[node name="Comp Classes" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_top = 24.0
+margin_right = 150.0
+margin_bottom = 44.0
 text = "Complexity Classes"
 script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/CompClassContainer")
 
-[node name="Button2" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_top = 24.0
-margin_right = 136.0
-margin_bottom = 44.0
+[node name="Class P" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_top = 48.0
+margin_right = 150.0
+margin_bottom = 68.0
 text = "Class P"
 script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/PContainer")
 
-[node name="Button3" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_top = 48.0
-margin_right = 136.0
-margin_bottom = 68.0
+[node name="PTV" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_top = 72.0
+margin_right = 150.0
+margin_bottom = 92.0
 text = "P Time Verification"
 script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/PTVContainer")
 
-[node name="Button4" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_top = 72.0
-margin_right = 136.0
-margin_bottom = 92.0
+[node name="NP" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_top = 96.0
+margin_right = 150.0
+margin_bottom = 116.0
 text = "Class NP"
 script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/NPContainer")
@@ -245,7 +274,8 @@ margin_bottom = 52.2
 rect_scale = Vector2( 0.5, 0.5 )
 text = "Back"
 
-[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button1" to="Control/CenterContainer/ButtonContainer/Button1" method="_on_Button_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button2" to="Control/CenterContainer/ButtonContainer/Button2" method="_on_Button_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button3" to="Control/CenterContainer/ButtonContainer/Button3" method="_on_Button_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button4" to="Control/CenterContainer/ButtonContainer/Button4" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/P and EXP" to="Control/CenterContainer/ButtonContainer/P and EXP" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Comp Classes" to="Control/CenterContainer/ButtonContainer/Comp Classes" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Class P" to="Control/CenterContainer/ButtonContainer/Class P" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/PTV" to="Control/CenterContainer/ButtonContainer/PTV" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/NP" to="Control/CenterContainer/ButtonContainer/NP" method="_on_Button_pressed"]

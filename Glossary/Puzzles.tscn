@@ -206,14 +206,14 @@ margin_top = 251.0
 margin_right = 139.0
 margin_bottom = 343.0
 
-[node name="Button1" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+[node name="Mailbox" type="Button" parent="Control/CenterContainer/ButtonContainer"]
 margin_right = 130.0
 margin_bottom = 20.0
 text = "Mailbox"
 script = ExtResource( 3 )
 container_path = NodePath("../../../PageContainer/MailboxContainer")
 
-[node name="Button2" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+[node name="Building" type="Button" parent="Control/CenterContainer/ButtonContainer"]
 margin_top = 24.0
 margin_right = 130.0
 margin_bottom = 44.0
@@ -221,7 +221,7 @@ text = "Buiilding Powering"
 script = ExtResource( 3 )
 container_path = NodePath("../../../PageContainer/BuildingContainer")
 
-[node name="Button3" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+[node name="Mech" type="Button" parent="Control/CenterContainer/ButtonContainer"]
 margin_top = 48.0
 margin_right = 130.0
 margin_bottom = 68.0
@@ -229,7 +229,7 @@ text = "Mechanic"
 script = ExtResource( 3 )
 container_path = NodePath("../../../PageContainer/MechanicContainer")
 
-[node name="Button4" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+[node name="Santa" type="Button" parent="Control/CenterContainer/ButtonContainer"]
 margin_top = 72.0
 margin_right = 130.0
 margin_bottom = 92.0
@@ -245,7 +245,7 @@ margin_bottom = 52.2
 rect_scale = Vector2( 0.5, 0.5 )
 text = "Back"
 
-[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button1" to="Control/CenterContainer/ButtonContainer/Button1" method="_on_Button_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button2" to="Control/CenterContainer/ButtonContainer/Button2" method="_on_Button_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button3" to="Control/CenterContainer/ButtonContainer/Button3" method="_on_Button_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Button4" to="Control/CenterContainer/ButtonContainer/Button4" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Mailbox" to="Control/CenterContainer/ButtonContainer/Mailbox" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Building" to="Control/CenterContainer/ButtonContainer/Building" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Mech" to="Control/CenterContainer/ButtonContainer/Mech" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Santa" to="Control/CenterContainer/ButtonContainer/Santa" method="_on_Button_pressed"]
