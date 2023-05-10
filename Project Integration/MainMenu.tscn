@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Project Integration/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Project Integration/StartMenu.gd" type="Script" id=2]
@@ -27,13 +27,15 @@
 [ext_resource path="res://Project Integration/LevelButton Scripts/MechanicVF/Level1Button.gd" type="Script" id=25]
 [ext_resource path="res://Project Integration/LevelButton Scripts/MechanicVF/Level2Button.gd" type="Script" id=26]
 [ext_resource path="res://Project Integration/LevelButton Scripts/MechanicVF/Level3Button.gd" type="Script" id=27]
+[ext_resource path="res://Project Integration/LevelButton Scripts/BuildingPowering/Level3Button.gd" type="Script" id=28]
+[ext_resource path="res://Project Integration/LevelButton Scripts/BuildingPoweringVF/Level3Button.gd" type="Script" id=29]
 
 [node name="MainMenu" type="Control"]
 script = ExtResource( 1 )
 
 [node name="Background" type="ColorRect" parent="."]
-margin_right = 645.0
-margin_bottom = 366.0
+margin_right = 641.0
+margin_bottom = 361.0
 color = Color( 0.439216, 0.713726, 0.756863, 1 )
 
 [node name="MenuNameLabel" type="Label" parent="."]
@@ -352,6 +354,8 @@ focus_next = NodePath(".")
 focus_previous = NodePath("../Level2Button")
 text = "Level 3"
 flat = true
+script = ExtResource( 28 )
+target_level_path = "res://Buildng Powering Puzzle/NP/Level 3/Level3.tscn"
 
 [node name="MechanicMenu" type="GridContainer" parent="CenterContainer"]
 visible = false
@@ -499,6 +503,8 @@ focus_next = NodePath(".")
 focus_previous = NodePath("../Level2Button")
 text = "Level 3"
 flat = true
+script = ExtResource( 29 )
+target_level_path = "res://Buildng Powering Puzzle/Verification/Level 3/Level3.tscn"
 
 [node name="MechanicVFMenu" type="GridContainer" parent="CenterContainer"]
 visible = false
@@ -625,11 +631,13 @@ flat = true
 [connection signal="pressed" from="CenterContainer/MailboxMenu/Level3Button" to="CenterContainer/MailboxMenu/Level3Button" method="_on_Level3Button_pressed"]
 [connection signal="pressed" from="CenterContainer/BuildingPoweringMenu/Level1Button" to="CenterContainer/BuildingPoweringMenu/Level1Button" method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="CenterContainer/BuildingPoweringMenu/Level2Button" to="CenterContainer/BuildingPoweringMenu/Level2Button" method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="CenterContainer/BuildingPoweringMenu/Level3Button" to="CenterContainer/BuildingPoweringMenu/Level3Button" method="_on_Level3Button_pressed"]
 [connection signal="pressed" from="CenterContainer/MechanicMenu/Level1Button" to="CenterContainer/MechanicMenu/Level1Button" method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="CenterContainer/MechanicMenu/Level2Button" to="CenterContainer/MechanicMenu/Level2Button" method="_on_Level2Button_pressed"]
 [connection signal="pressed" from="CenterContainer/MechanicMenu/Level3Button" to="CenterContainer/MechanicMenu/Level3Button" method="_on_Level3Button_pressed"]
 [connection signal="pressed" from="CenterContainer/BuildingPoweringVFMenu/Level1Button" to="CenterContainer/BuildingPoweringVFMenu/Level1Button" method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="CenterContainer/BuildingPoweringVFMenu/Level2Button" to="CenterContainer/BuildingPoweringVFMenu/Level2Button" method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="CenterContainer/BuildingPoweringVFMenu/Level3Button" to="CenterContainer/BuildingPoweringVFMenu/Level3Button" method="_on_Level3Button_pressed"]
 [connection signal="pressed" from="CenterContainer/MechanicVFMenu/Level1Button" to="CenterContainer/MechanicVFMenu/Level1Button" method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="CenterContainer/MechanicVFMenu/Level2Button" to="CenterContainer/MechanicVFMenu/Level2Button" method="_on_Level2Button_pressed"]
 [connection signal="pressed" from="CenterContainer/MechanicVFMenu/Level3Button" to="CenterContainer/MechanicVFMenu/Level3Button" method="_on_Level3Button_pressed"]
