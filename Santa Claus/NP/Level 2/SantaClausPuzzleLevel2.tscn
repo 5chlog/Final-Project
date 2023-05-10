@@ -41,7 +41,7 @@ scale = Vector2( -1, 1 )
 
 [node name="DoorVerify" parent="." instance=ExtResource( 10 )]
 position = Vector2( 984.958, 190 )
-target_level_path = "res://Santa Claus/Verification/Test/TestScene.tscn"
+target_level_path = "res://Santa Claus/Verification/Level 2/SantaClausVFLevel2.tscn"
 
 [node name="TransportSwitch" parent="." instance=ExtResource( 18 )]
 position = Vector2( 872.958, 202 )

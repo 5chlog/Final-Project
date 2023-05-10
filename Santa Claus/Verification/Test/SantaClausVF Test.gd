@@ -46,14 +46,14 @@ func end_level():
 
 func any_child_unhappy():
 	for childvf in get_node("../Children").get_children():
-		if childvf.happiness < threshold:
+		if childvf.checked and childvf.happiness < threshold:
 			return true
 	return false
 
 
 func every_child_happy():
 	for childvf in get_node("../Children").get_children():
-		if childvf.happiness >= threshold:
+		if !childvf.checked or childvf.happiness < threshold:
 			return false
 	return true
 

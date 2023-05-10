@@ -38,7 +38,7 @@ scale = Vector2( -1, 1 )
 
 [node name="DoorVerify" parent="." instance=ExtResource( 10 )]
 position = Vector2( 829.958, 190 )
-target_level_path = "res://Santa Claus/Verification/Test/TestScene.tscn"
+target_level_path = "res://Santa Claus/Verification/Level 1/SantaClausVFLevel1.tscn"
 
 [node name="TransportSwitch" parent="." instance=ExtResource( 18 )]
 position = Vector2( 712.958, 202 )
@@ -73,7 +73,7 @@ position = Vector2( 571.958, 209 )
 texture = ExtResource( 14 )
 sprite = ExtResource( 14 )
 gift_index = 3
-gift_values = [ 7, 4, 8, 3 ]
+gift_values = [ 7, 4, 8, 6 ]
 
 [node name="GiftSlots" type="Node2D" parent="."]
 position = Vector2( -80, 0 )

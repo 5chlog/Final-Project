@@ -30,6 +30,7 @@
 [node name="Level" type="Node2D"]
 position = Vector2( 14.042, 0 )
 script = ExtResource( 6 )
+final_level = true
 
 [node name="Black Bricked TileMap" parent="." instance=ExtResource( 3 )]
 position = Vector2( -46.042, 29 )
@@ -48,7 +49,7 @@ scale = Vector2( -1, 1 )
 
 [node name="DoorVerify" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1233.96, 190 )
-target_level_path = "res://Santa Claus/Verification/Test/TestScene.tscn"
+target_level_path = "res://Santa Claus/Verification/Level 3/SantaClausVFLevel3.tscn"
 
 [node name="TransportSwitch" parent="." instance=ExtResource( 18 )]
 position = Vector2( 1116.96, 202 )
