@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Santa Claus/Sprites/Child1.png" type="Texture" id=1]
 [ext_resource path="res://Santa Claus/NP/Test/Child.gd" type="Script" id=2]
 [ext_resource path="res://Santa Claus/Sprites/Happiness_Indicators.png" type="Texture" id=3]
 [ext_resource path="res://Santa Claus/Sprites/5x7 Transparent Number Sprite Sheet.png" type="Texture" id=4]
+[ext_resource path="res://Santa Claus/NP/Test/ChldGiftSlot.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -84,4 +85,29 @@ position = Vector2( 0, 3 )
 shape = SubResource( 4 )
 
 [node name="Gift" type="Position2D" parent="."]
-position = Vector2( 24, 4 )
+position = Vector2( 31, 4 )
+
+[node name="Gifts" type="Node2D" parent="."]
+
+[node name="GiftSlots" type="Node2D" parent="."]
+
+[node name="ChildGiftSlot1" parent="GiftSlots" instance=ExtResource( 5 )]
+position = Vector2( 31, 4 )
+
+[node name="ChildGiftSlot2" parent="GiftSlots" instance=ExtResource( 5 )]
+position = Vector2( 31, 42 )
+
+[node name="ChildGiftSlot3" parent="GiftSlots" instance=ExtResource( 5 )]
+position = Vector2( 0, 42 )
+
+[node name="ChildGiftSlot4" parent="GiftSlots" instance=ExtResource( 5 )]
+position = Vector2( -32, 42 )
+
+[node name="ChildGiftSlot5" parent="GiftSlots" instance=ExtResource( 5 )]
+position = Vector2( -32, 4 )
+
+[node name="ChildGiftSlot6" parent="GiftSlots" instance=ExtResource( 5 )]
+position = Vector2( -32, -35 )
+
+[node name="ChildGiftSlot7" parent="GiftSlots" instance=ExtResource( 5 )]
+position = Vector2( 31, -35 )

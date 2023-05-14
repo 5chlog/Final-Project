@@ -1,15 +1,16 @@
 extends Node2D
 
 # Initial values
-var number_of_children = 0
-var number_of_gifts = 0
-var submitted = false
+export(bool) var has_solution = true
+export(bool) var final_level = false
+var extra_hud_scene = preload("res://Santa Claus/NP/Test/ExtraHUD.tscn")
+
 
 func _ready():
-	pass 
+	var extra_hud = extra_hud_scene.instance()
+	HUD.add_child(extra_hud)
+	$ChildDisplay.prepare_display()
 
-func _process(delta):
-	pass
 
 # Player interacts with gifts, gifts follow player
 # Player then interacts with child, gift will be near child, values will be updated

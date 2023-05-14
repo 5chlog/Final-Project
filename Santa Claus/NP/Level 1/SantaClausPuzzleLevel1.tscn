@@ -15,7 +15,7 @@
 [ext_resource path="res://Santa Claus/NP/Test/ChildDisplay.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Santa Claus/NP/Test/GiftSlot.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Santa Claus/Sprites/pipe.png" type="Texture" id=17]
-[ext_resource path="res://Santa Claus/NP/Test/Switch.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Santa Claus/NP/Test/SendButton.tscn" type="PackedScene" id=18]
 
 [node name="Level" type="Node2D"]
 position = Vector2( 14.042, 0 )

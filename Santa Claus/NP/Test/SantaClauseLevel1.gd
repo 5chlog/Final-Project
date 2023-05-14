@@ -55,7 +55,8 @@ func start_current_dialog():
 
 
 func start_level():
-	get_node("../TransportSwitch/InteractableArea").enable()
+	get_node("../SendButton/InteractableArea").enable()
+	get_node("../ReceiveButton/InteractableArea").enable()
 	
 	for slot in get_node("../GiftSlots").get_children():
 		slot.get_node("InteractableArea").enable()
@@ -64,7 +65,8 @@ func start_level():
 
 
 func end_level():
-	get_node("../TransportSwitch/InteractableArea").disable()
+	get_node("../SendButton/InteractableArea").disable()
+	get_node("../ReceiveButton/InteractableArea").disable()
 	
 	for slot in get_node("../GiftSlots").get_children():
 		slot.get_node("InteractableArea").disable()
