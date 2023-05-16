@@ -1,0 +1,324 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Glossary/Scroller.png" type="Texture" id=1]
+[ext_resource path="res://Glossary/PuzzleButton.gd" type="Script" id=2]
+[ext_resource path="res://Glossary/PageContainer.gd" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 640, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 1280, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 1920, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 2560, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 3200, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 3840, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 4480, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 5120, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 5760, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 6400, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 7040, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 7680, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 8320, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 8960, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 9600, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 10240, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 10880, 0, 640, 360 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 11520, 0, 640, 360 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": false,
+"name": "Scroll Open",
+"speed": 26.0
+} ]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "Scroll Open"
+frame = 18
+playing = true
+centered = false
+
+[node name="Control" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+
+[node name="PageContainer" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+
+[node name="TypesContainer" type="Control" parent="Control/PageContainer"]
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/TypesContainer"]
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Optimization Problems
+
+A problem for which some parameter, namely the objective function is to be optimized, subject to certain constraints is called an Optimization problem. Here are some examples of optimization problems.
+    1. All Pair Shortest Path problem 
+    2. Knapsack problem 
+    3. Simple Linear Regression problem"
+autowrap = true
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/TypesContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+text = "Decision Problems
+
+A problem for which the answer is either a yes or a no is called a decision problem. The following are some examples of decision problems.
+    1. Given an integer n, check whether n is even or odd.
+    2. Given a string w, check whether w is a palindrome or not.
+
+It is worth noting that in computational complexity, every optimization problem has an equivalent decision problem and vice-versa."
+autowrap = true
+
+[node name="PAndExpContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/PAndExpContainer"]
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Polynomial-Time Algorithms
+
+An algorithm for a problem is said to be a polynomial-time algorithm if its time complexity can be bounded by a polynomial in the input size of the problem. In such a case, the time complexity of the algorithm can be expressed as O(p(n)) where p(n) is a polynomial in the input size n."
+autowrap = true
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/PAndExpContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+text = "Exponential-Time Algorithms
+
+An algorithm for a problem is said to be an exponential-time algorithm if its time complexity can be bounded by a constant raised to some polynomial in the input size n. In this case, the time complexity of the algorithm can be expressed as O(c^p(n)) where c is a constant and p(n) is a polynomial in the input size n."
+autowrap = true
+
+[node name="CompClassContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/CompClassContainer"]
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Complexity Classes
+
+In complexity theory, a Complexity Class is a set of problems with related complexity. These classes help researchers and developers to classify problems based on the resources they require to solve problems and verify the solutions. It is the branch of the theory of computation that deals with the resources required to solve a problem."
+autowrap = true
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/CompClassContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+text = "Given below are a few examples of Complexity Classes:
+
+    1. Class P
+    2. Class NP
+    3. Class NP Hard
+    4. Class NP Complete"
+autowrap = true
+
+[node name="PContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/PContainer"]
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Class P
+
+Class P is the class of decision problems which can be solved by polynomial-time algorithms. These are the problems which can be solved easily and efficiently on digital computers in relatively little time."
+autowrap = true
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/PContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+autowrap = true
+
+[node name="PTVContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/PTVContainer"]
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Polynomial Time Verification
+
+Given a set of value inputs, if we are able to determine whether or not these values are a valid solution to a particular problem in polynomial-time, then that problem is said to be polynomial-time verifiable."
+autowrap = true
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/PTVContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+autowrap = true
+
+[node name="NPContainer" type="Control" parent="Control/PageContainer"]
+visible = false
+margin_left = 83.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 32.0
+
+[node name="LabelColumn1" type="Label" parent="Control/PageContainer/NPContainer"]
+margin_right = 281.0
+margin_bottom = 292.0
+text = "Class NP
+
+Class NP is the class of all polynomial-time verifiable problems. But this does not mean that all problems in Class NP are polynomial-time solvable."
+autowrap = true
+
+[node name="LabelColumn2" type="Label" parent="Control/PageContainer/NPContainer"]
+margin_left = 283.0
+margin_right = 557.0
+margin_bottom = 293.0
+text = "It is also worth noting that since any problem that is polynomial-time solvable is also polynomial-time verifiable, Class P is a subset of Class NP."
+autowrap = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+margin_left = 2.0
+margin_top = 25.0
+margin_right = 150.0
+margin_bottom = 619.0
+rect_scale = Vector2( 0.52, 0.52 )
+
+[node name="ButtonContainer" type="GridContainer" parent="Control/CenterContainer"]
+margin_top = 227.0
+margin_right = 150.0
+margin_bottom = 367.0
+
+[node name="Types" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_right = 150.0
+margin_bottom = 20.0
+text = "Types of Problems"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/TypesContainer")
+
+[node name="P and EXP" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_top = 24.0
+margin_right = 150.0
+margin_bottom = 44.0
+text = "P And EXP Algorithms"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/PAndExpContainer")
+
+[node name="Comp Classes" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_top = 48.0
+margin_right = 150.0
+margin_bottom = 68.0
+text = "Complexity Classes"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/CompClassContainer")
+
+[node name="Class P" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_top = 72.0
+margin_right = 150.0
+margin_bottom = 92.0
+text = "Class P"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/PContainer")
+
+[node name="PTV" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_top = 96.0
+margin_right = 150.0
+margin_bottom = 116.0
+text = "P Time Verification"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/PTVContainer")
+
+[node name="NP" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+margin_top = 120.0
+margin_right = 150.0
+margin_bottom = 140.0
+text = "Class NP"
+script = ExtResource( 2 )
+container_path = NodePath("../../../PageContainer/NPContainer")
+
+[node name="BackButton" type="Button" parent="Control"]
+margin_left = 7.68
+margin_top = 32.2
+margin_right = 137.68
+margin_bottom = 52.2
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Back"
+
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Types" to="Control/CenterContainer/ButtonContainer/Types" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/P and EXP" to="Control/CenterContainer/ButtonContainer/P and EXP" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Comp Classes" to="Control/CenterContainer/ButtonContainer/Comp Classes" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Class P" to="Control/CenterContainer/ButtonContainer/Class P" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/PTV" to="Control/CenterContainer/ButtonContainer/PTV" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonContainer/NP" to="Control/CenterContainer/ButtonContainer/NP" method="_on_Button_pressed"]
