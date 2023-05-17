@@ -257,11 +257,13 @@ margin_bottom = 619.0
 rect_scale = Vector2( 0.52, 0.52 )
 
 [node name="ButtonContainer" type="GridContainer" parent="Control/CenterContainer"]
-margin_top = 227.0
-margin_right = 150.0
-margin_bottom = 367.0
+margin_left = 74.0
+margin_top = 297.0
+margin_right = 74.0
+margin_bottom = 297.0
 
 [node name="Types" type="Button" parent="Control/CenterContainer/ButtonContainer"]
+visible = false
 margin_right = 150.0
 margin_bottom = 20.0
 text = "Types of Problems"
@@ -269,41 +271,41 @@ script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/TypesContainer")
 
 [node name="P and EXP" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_top = 24.0
+visible = false
 margin_right = 150.0
-margin_bottom = 44.0
+margin_bottom = 20.0
 text = "P And EXP Algorithms"
 script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/PAndExpContainer")
 
 [node name="Comp Classes" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_top = 48.0
-margin_right = 150.0
-margin_bottom = 68.0
+visible = false
+margin_right = 136.0
+margin_bottom = 20.0
 text = "Complexity Classes"
 script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/CompClassContainer")
 
 [node name="Class P" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_top = 72.0
-margin_right = 150.0
-margin_bottom = 92.0
+visible = false
+margin_right = 132.0
+margin_bottom = 20.0
 text = "Class P"
 script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/PContainer")
 
 [node name="PTV" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_top = 96.0
-margin_right = 150.0
-margin_bottom = 116.0
+visible = false
+margin_right = 132.0
+margin_bottom = 20.0
 text = "P Time Verification"
 script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/PTVContainer")
 
 [node name="NP" type="Button" parent="Control/CenterContainer/ButtonContainer"]
-margin_top = 120.0
-margin_right = 150.0
-margin_bottom = 140.0
+visible = false
+margin_right = 67.0
+margin_bottom = 20.0
 text = "Class NP"
 script = ExtResource( 2 )
 container_path = NodePath("../../../PageContainer/NPContainer")

@@ -15,9 +15,9 @@ var lesson_3_puzzles_unlocked = []
 var mailbox_levels_unlocked = [1]
 
 # Lesson 2
-var building_powering_levels_unlocked = [] #[1]
-var mechanic_levels_unlocked = [] #[1]
-var santa_claus_levels_unlocked = [] #[1]
+var building_powering_levels_unlocked = [0] #[1]
+var mechanic_levels_unlocked = [0] #[1]
+var santa_claus_levels_unlocked = [0] #[1]
 
 # Lesson 3
 var building_powering_vf_levels_unlocked = []
