@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Glossary/Scroller.png" type="Texture" id=1]
+[ext_resource path="res://Glossary/BackButton.gd" type="Script" id=2]
 [ext_resource path="res://Glossary/PuzzleButton.gd" type="Script" id=3]
 [ext_resource path="res://Glossary/PageContainer.gd" type="Script" id=4]
 
@@ -244,8 +245,11 @@ margin_right = 137.68
 margin_bottom = 52.2
 rect_scale = Vector2( 0.5, 0.5 )
 text = "Back"
+script = ExtResource( 2 )
+main_menu_path = "res://Project Integration/MainMenu.tscn"
 
 [connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Mailbox" to="Control/CenterContainer/ButtonContainer/Mailbox" method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Building" to="Control/CenterContainer/ButtonContainer/Building" method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Mech" to="Control/CenterContainer/ButtonContainer/Mech" method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/ButtonContainer/Santa" to="Control/CenterContainer/ButtonContainer/Santa" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/BackButton" to="Control/BackButton" method="_on_BackButton_pressed"]

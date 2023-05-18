@@ -11,7 +11,7 @@ var id = text
 
 func _ready():
 	container = get_node(container_path)
-	if !mailbox.empty() and (id == "Mailbox" or id == "Types of Problems" or id == "P And EXP Algorithms" or id == "Complexity Classes" or id == "Class P"):
+	if !mailbox.empty() and (id in ["Mailbox", "Types of Problems", "P And EXP Algorithms", "Complexity Classes", "Class P"]):
 		visible = true
 	elif id == "Building Powering" and !building.empty():
 		visible = true

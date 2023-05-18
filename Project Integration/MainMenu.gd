@@ -8,6 +8,7 @@ onready var back_button = get_node("BackButton")
 # Menus
 onready var start_menu_container = get_node("CenterContainer/StartMenu")
 onready var lesson_menu_container = get_node("CenterContainer/LessonMenu")
+onready var glossary_menu_container = get_node("CenterContainer/GlossaryMenu")
 onready var lesson_1_menu_container = get_node("CenterContainer/Lesson1Menu")
 onready var lesson_2_menu_container = get_node("CenterContainer/Lesson2Menu")
 onready var lesson_3_menu_container = get_node("CenterContainer/Lesson3Menu")
@@ -46,6 +47,9 @@ func set_prev_menu():
 			prev_menu_container = null
 			
 		lesson_menu_container:
+			prev_menu_container = start_menu_container
+		
+		glossary_menu_container:
 			prev_menu_container = start_menu_container
 			
 		lesson_1_menu_container:
@@ -90,7 +94,6 @@ func set_focus_on_first_button(var menu_container: Container):
 
 
 func _on_BackButton_pressed():
-	print("Back Button pressed")
 	if prev_menu_container != null:
 		set_menu_container(prev_menu_container)
 
@@ -98,3 +101,7 @@ func _on_BackButton_pressed():
 func _unhandled_input(event):
 	if back_button.visible and Input.is_action_just_pressed("ui_cancel"):
 		_on_BackButton_pressed()
+
+
+func _on_GlossaryButton_pressed():
+	pass # Replace with function body.

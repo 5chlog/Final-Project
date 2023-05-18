@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Project Integration/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Project Integration/StartMenu.gd" type="Script" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Project Integration/LevelButton Scripts/MechanicVF/Level3Button.gd" type="Script" id=27]
 [ext_resource path="res://Project Integration/LevelButton Scripts/BuildingPowering/Level3Button.gd" type="Script" id=28]
 [ext_resource path="res://Project Integration/LevelButton Scripts/BuildingPoweringVF/Level3Button.gd" type="Script" id=29]
+[ext_resource path="res://Project Integration/GlossaryMenu.gd" type="Script" id=30]
 
 [node name="MainMenu" type="Control"]
 script = ExtResource( 1 )
@@ -139,6 +140,39 @@ focus_neighbour_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath("../Lesson2Button")
 text = "Lesson 3"
+flat = true
+
+[node name="GlossaryMenu" type="GridContainer" parent="CenterContainer"]
+visible = false
+margin_left = 289.0
+margin_top = 158.0
+margin_right = 350.0
+margin_bottom = 202.0
+script = ExtResource( 30 )
+theory_level_path = "res://Glossary/Theory.tscn"
+puzzles_level_path = "res://Glossary/Puzzles.tscn"
+
+[node name="TheoryButton" type="Button" parent="CenterContainer/GlossaryMenu"]
+margin_right = 61.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../PuzzleButton")
+focus_next = NodePath("../PuzzleButton")
+focus_previous = NodePath(".")
+text = "Theory"
+flat = true
+
+[node name="PuzzleButton" type="Button" parent="CenterContainer/GlossaryMenu"]
+margin_top = 24.0
+margin_right = 61.0
+margin_bottom = 44.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../TheoryButton")
+focus_neighbour_right = NodePath(".")
+focus_previous = NodePath("../TheoryButton")
+text = "Puzzles"
 flat = true
 
 [node name="Lesson1Menu" type="GridContainer" parent="CenterContainer"]
@@ -615,10 +649,13 @@ icon = ExtResource( 3 )
 flat = true
 
 [connection signal="pressed" from="CenterContainer/StartMenu/StartButton" to="CenterContainer/StartMenu" method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CenterContainer/StartMenu/GlossaryButton" to="CenterContainer/StartMenu" method="_on_GlossaryButton_pressed"]
 [connection signal="pressed" from="CenterContainer/StartMenu/ExitButton" to="CenterContainer/StartMenu" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="CenterContainer/LessonMenu/Lesson1Button" to="CenterContainer/LessonMenu" method="_on_Lesson1Button_pressed"]
 [connection signal="pressed" from="CenterContainer/LessonMenu/Lesson2Button" to="CenterContainer/LessonMenu" method="_on_Lesson2Button_pressed"]
 [connection signal="pressed" from="CenterContainer/LessonMenu/Lesson3Button" to="CenterContainer/LessonMenu" method="_on_Lesson3Button_pressed"]
+[connection signal="pressed" from="CenterContainer/GlossaryMenu/TheoryButton" to="CenterContainer/GlossaryMenu" method="_on_TheoryButton_pressed"]
+[connection signal="pressed" from="CenterContainer/GlossaryMenu/PuzzleButton" to="CenterContainer/GlossaryMenu" method="_on_PuzzlesButton_pressed"]
 [connection signal="pressed" from="CenterContainer/Lesson1Menu/MailboxPuzzleButton" to="CenterContainer/Lesson1Menu" method="_on_MailboxPuzzleButton_pressed"]
 [connection signal="pressed" from="CenterContainer/Lesson2Menu/BuildingPoweringPuzzleButton" to="CenterContainer/Lesson2Menu" method="_on_BuildingPoweringPuzzleButton_pressed"]
 [connection signal="pressed" from="CenterContainer/Lesson2Menu/MechanicPuzzleButton" to="CenterContainer/Lesson2Menu" method="_on_MechanicPuzzleButton_pressed"]
