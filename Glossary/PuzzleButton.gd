@@ -6,19 +6,20 @@ onready var page_container = get_node("../../../PageContainer")
 var building = ProgressData.building_powering_levels_unlocked
 var mechanic = ProgressData.mechanic_levels_unlocked
 var santa = ProgressData.santa_claus_levels_unlocked
+var mailbox = ProgressData.mailbox_levels_unlocked
 var id = text
 
 func _ready():
 	container = get_node(container_path)
-	if id == "Mailbox" or id == "Types of Problems" or id == "P And EXP Algorithms" or id == "Complexity Classes" or id == "Class P":
+	if !mailbox.empty() and (id == "Mailbox" or id == "Types of Problems" or id == "P And EXP Algorithms" or id == "Complexity Classes" or id == "Class P"):
 		visible = true
-	elif id == "Building Powering"  and building[0] == 1:
+	elif id == "Building Powering" and !building.empty():
 		visible = true
-	elif id == "Mechanic" and mechanic[0] == 1:
+	elif id == "Mechanic" and !mechanic.empty():
 		visible = true
-	elif id == "Santa Claus" and santa[0] == 1:
+	elif id == "Santa Claus" and !santa.empty():
 		visible = true
-	elif (id == "P Time Verification" or id == "Class NP") and (mechanic[0] == 1 or building[0] == 1 or santa[0] == 1):
+	elif (id == "P Time Verification" or id == "Class NP") and (!mechanic.empty() or !building.empty() or !santa.empty()):
 		visible = true
 		
 func _on_Button_pressed():
