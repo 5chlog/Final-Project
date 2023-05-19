@@ -4,8 +4,11 @@ export(NodePath) var container_path
 var container = null
 onready var page_container = get_node("../../../PageContainer")
 var building = ProgressData.building_powering_levels_unlocked
+var buildingvf = ProgressData.building_powering_vf_levels_unlocked
 var mechanic = ProgressData.mechanic_levels_unlocked
+var mechanicvf = ProgressData.mechanic_vf_levels_unlocked
 var santa = ProgressData.santa_claus_levels_unlocked
+var santavf = ProgressData.santa_claus_vf_levels_unlocked
 var mailbox = ProgressData.mailbox_levels_unlocked
 var id = text
 
@@ -19,7 +22,9 @@ func _ready():
 		visible = true
 	elif id == "Santa Claus" and !santa.empty():
 		visible = true
-	elif (id == "P Time Verification" or id == "Class NP") and (!mechanic.empty() or !building.empty() or !santa.empty()):
+	elif id == "Class NP" and (!mechanic.empty() or !building.empty() or !santa.empty()):
+		visible = true
+	elif id == "P Time Verification" and (!mechanicvf.empty() or !buildingvf.empty() or !santavf.empty()):
 		visible = true
 		
 func _on_Button_pressed():
