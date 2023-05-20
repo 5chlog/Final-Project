@@ -14,17 +14,19 @@ var id = text
 
 func _ready():
 	container = get_node(container_path)
-	if !mailbox.empty() and (id in ["Mailbox", "Types of Problems", "P And EXP Algorithms", "Complexity Classes", "Class P"]):
+	if !mailbox.empty() and (id in ["Types of Problems", "P And EXP Algorithms", "Complexity Classes"]):
 		visible = true
-	elif id == "Building Powering" and !building.empty():
+	elif id == "Mailbox" and mailbox.size() >= 2:
 		visible = true
-	elif id == "Mechanic" and !mechanic.empty():
+	elif id == "Class P" and (!mechanic.empty() or !building.empty() or !santa.empty()):
 		visible = true
-	elif id == "Santa Claus" and !santa.empty():
+	elif id == "Building Powering" and building.size() >= 2:
 		visible = true
-	elif id == "Class NP" and (!mechanic.empty() or !building.empty() or !santa.empty()):
+	elif id == "Mechanic" and mechanic.size() >= 2:
 		visible = true
-	elif id == "P Time Verification" and (!mechanicvf.empty() or !buildingvf.empty() or !santavf.empty()):
+	elif id == "Santa Claus" and santa.size() >= 2:
+		visible = true
+	elif (id == "Class NP" or id == "P Time Verification") and (buildingvf.size() >= 2 or mechanicvf.size() >= 2 or santavf.size() >= 2):
 		visible = true
 		
 func _on_Button_pressed():
