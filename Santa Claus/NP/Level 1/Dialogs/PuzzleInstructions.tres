@@ -8,7 +8,14 @@ script = ExtResource( 2 )
 dialog_name = "Puzzle Instructions"
 face_images = [ ExtResource( 1 ) ]
 names = [ "Santa Claus" ]
-dialogs = [ "Much appreciated sir.", "You see, the power to the building is out and this is the Backup Power Room.", "The building has mulitple Generators with each Room connected to exactly two Generators.", "This room is where the switches to all the Generators are.", "Each Switch is marked by a number that matches the number on a Generator in the building." ]
+dialogs = [ "Much appreciated.", "I have these gifts here, you
+see... And I wanna give em to
+those children over there.", " But I wanna do it in a way
+that makes them all happy", "Problem is, I don't know if I
+can. ", "Please help me figure out if
+there's a way to assign these
+gifts that no child is left
+unhappy." ]
 name_face_indices = [ 0, 0, 0, 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
