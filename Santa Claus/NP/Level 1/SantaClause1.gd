@@ -199,6 +199,7 @@ func in_puzzle_giveup():
 	
 	start_current_dialog()
 
+
 # Recheck reply to In Puzzle Dialog
 func in_puzzle_recheck():
 	DialogBox.disable_dialog_box()
