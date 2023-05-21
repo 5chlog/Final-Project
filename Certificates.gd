@@ -35,4 +35,30 @@ func clear_parts_list():
 
 func clear_parts_in_level():
 	parts_in_level = []
-	
+
+
+#santa clause certificate data
+#List of Arrays having textures and happiness indicator values
+var gift_textures = []
+var happiness_values = []
+var threshold:int = -1
+
+func add_gift_textures(var gifts):
+	var texture_list = []
+	for gift in gifts:
+		texture_list.append(gift.texture)
+	gift_textures.append(texture_list)
+
+
+func add_happiness_values(happy: int):
+	happiness_values.append(happy)
+
+
+func set_threshold(val: int):
+	threshold = val
+
+
+func clear_santa_certificate():
+	gift_textures = []
+	happiness_values = []
+	threshold = -1

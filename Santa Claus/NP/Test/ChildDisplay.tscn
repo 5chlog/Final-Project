@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://InteractableArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Santa Claus/Sprites/Child_Display.png" type="Texture" id=2]
+[ext_resource path="res://Santa Claus/Sprites/Left_Button.png" type="Texture" id=3]
+[ext_resource path="res://Santa Claus/NP/Test/ChildDisplay.gd" type="Script" id=4]
+[ext_resource path="res://Santa Claus/Sprites/Child4.png" type="Texture" id=5]
+[ext_resource path="res://Santa Claus/Sprites/5x7 Transparent Number Sprite Sheet.png" type="Texture" id=6]
+[ext_resource path="res://Santa Claus/Sprites/Null.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 60, 34 )
+
+[node name="ChildDisplay" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="DisplaySprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="LeftButton" type="Sprite" parent="."]
+position = Vector2( -50, 8 )
+texture = ExtResource( 3 )
+
+[node name="RightButton" type="Sprite" parent="."]
+position = Vector2( 49, 8 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="ChildSprite" type="Sprite" parent="."]
+position = Vector2( -17, 7 )
+texture = ExtResource( 5 )
+hframes = 2
+
+[node name="Gift" type="Sprite" parent="."]
+position = Vector2( 20, 8 )
+texture = ExtResource( 7 )
+
+[node name="FirstDigitSprite" type="Sprite" parent="."]
+position = Vector2( 6, -23 )
+texture = ExtResource( 6 )
+hframes = 10
+
+[node name="SecondDigitSprite" type="Sprite" parent="."]
+position = Vector2( 11, -23 )
+texture = ExtResource( 6 )
+hframes = 11
+
+[node name="InteractableArea" parent="." instance=ExtResource( 1 )]
+enabled = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource( 1 )
