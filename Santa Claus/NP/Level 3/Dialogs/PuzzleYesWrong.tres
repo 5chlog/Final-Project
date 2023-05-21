@@ -9,7 +9,9 @@ script = ExtResource( 1 )
 dialog_name = "Puzzle Yes Wrong"
 face_images = [ ExtResource( 2 ), ExtResource( 3 ) ]
 names = [ "Santa Claus", "Player" ]
-dialogs = [ "I think you missed a room or two there.", "You can go to the Building through the door to the right.", "Could you please go confirm if there is at least one room that did not get power?", "Sure.", "Thank you so much.", "Just go through the door. I will meet you there." ]
+dialogs = [ "I think you didn't consider a few children.", "We can go meet the children through the door to the right.", "Could you check on every
+child if they are happy with
+their gifts.", "Sure.", "Thank you so much.", "Just go through the door. I will meet you there." ]
 name_face_indices = [ 0, 0, 0, 1, 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"

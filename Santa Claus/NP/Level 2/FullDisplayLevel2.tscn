@@ -17,6 +17,20 @@ texture = ExtResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
+[node name="SelectedChild" type="Position2D" parent="."]
+position = Vector2( 0, -26 )
+
+[node name="ChildPositions" type="Node2D" parent="."]
+
+[node name="PChild1" type="Position2D" parent="ChildPositions"]
+position = Vector2( -85, 66 )
+
+[node name="PChild2" type="Position2D" parent="ChildPositions"]
+position = Vector2( 3, 66 )
+
+[node name="PChild3" type="Position2D" parent="ChildPositions"]
+position = Vector2( 91, 66 )
+
 [node name="Children" type="Node2D" parent="."]
 position = Vector2( -238, -90 )
 script = ExtResource( 5 )

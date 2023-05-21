@@ -9,8 +9,13 @@ script = ExtResource( 1 )
 dialog_name = "Puzzle No Wrong"
 face_images = [ ExtResource( 2 ), ExtResource( 3 ) ]
 names = [ "Santa Claus", "Player" ]
-dialogs = [ "But it is possible to power all the rooms!", "When I had the backup system set up, I was shown a demonstration with all the Rooms powered.", "Unfortunately, I seem to have forgotten the combination of the Generators to be powered.", "Let me try turning ON a few of the switches.", "Could you see if any of the rooms did not get power?", "Sure.", "Thank you so much.", "Just go through the door to the right. It leads to the main building.", "I will meet you there." ]
-name_face_indices = [ 0, 0, 0, 0, 0, 1, 0, 0, 0 ]
+dialogs = [ "But it is possible to be fair with every child.", "When I had requested to bring these gifts from my
+minions, I had every gift the children wanted in mind.", "Let me try distributing few of
+the gifts.", "Could you see if every child is
+Happy with theirs gifts.", "Sure.", "Thank you so much.", "Just go through the door to
+the right. It leads to the
+children.", "Will meet you there." ]
+name_face_indices = [ 0, 0, 0, 0, 1, 0, 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
 button_tl_function = "button_TL_function"

@@ -8,7 +8,10 @@ script = ExtResource( 1 )
 dialog_name = "Puzzle Verified Yes"
 face_images = [ ExtResource( 2 ) ]
 names = [ "Santa Claus" ]
-dialogs = [ "I see that all the rooms were powered.", "So I guess we got all the correct switches.", "Thank you for checking the rooms. I appreciate it.", "Go through the door to the right to leave the building.", "Hope to see you again good sir." ]
+dialogs = [ "Nice,
+I see that every child Happy.", "I guess this christmas is
+gonna be a jolly one for the
+children.", "Thank you for help couldnt have don it without you", "Go through the door to the right to leave the premises.", "Hope to see you again." ]
 name_face_indices = [ 0, 0, 0, 0, 0 ]
 button_flag = 0
 button_tl_text = "Option 1"
