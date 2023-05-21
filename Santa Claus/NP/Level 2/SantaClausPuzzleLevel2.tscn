@@ -38,6 +38,7 @@ script = ExtResource( 3 )
 [node name="DoorOut" parent="." instance=ExtResource( 14 )]
 position = Vector2( 107.958, 189 )
 scale = Vector2( -1, 1 )
+target_level_path = "res://Project Integration/MainMenu.tscn"
 
 [node name="DoorVerify" parent="." instance=ExtResource( 14 )]
 position = Vector2( 837.958, 190 )

@@ -17,6 +17,7 @@ scale = Vector2( -1, 1 )
 
 [node name="DoorOut" parent="." instance=ExtResource( 3 )]
 position = Vector2( 456, -32 )
+target_level_path = "res://Project Integration/MainMenu.tscn"
 
 [node name="Children" type="Node2D" parent="."]
 

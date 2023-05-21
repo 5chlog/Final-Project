@@ -141,10 +141,28 @@ func first_dialog_no():
 func in_puzzle_yes():
 	if solved():
 		current_dialog = puzzle_yes_correct
+		if not (3 in ProgressData.santa_claus_levels_unlocked):
+			ProgressData.santa_claus_levels_unlocked.append(3)
+	
 	elif not get_parent().has_solution:
 		current_dialog = puzzle_yes_none
+		ProgressData.level_lost_last[ProgressData.puzzle_types.SantaClausPuzzle] = 2
+		if not (3 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(3)
+		if not (ProgressData.puzzle_types.SantaClausPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.SantaClausPuzzle)
+		if not (2 in ProgressData.santa_claus_vf_levels_unlocked):
+			ProgressData.santa_claus_vf_levels_unlocked.append(2)
+	
 	else:
 		current_dialog = puzzle_yes_wrong
+		ProgressData.level_lost_last[ProgressData.puzzle_types.SantaClausPuzzle] = 2
+		if not (3 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(3)
+		if not (ProgressData.puzzle_types.SantaClausPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.SantaClausPuzzle)
+		if not (2 in ProgressData.santa_claus_vf_levels_unlocked):
+			ProgressData.santa_claus_vf_levels_unlocked.append(2)
 	
 	start_current_dialog()
 
@@ -153,14 +171,33 @@ func in_puzzle_yes():
 func in_puzzle_no():
 	if get_parent().has_solution:
 		current_dialog = puzzle_no_wrong
+		ProgressData.level_lost_last[ProgressData.puzzle_types.SantaClausPuzzle] = 2
+		if not (3 in ProgressData.lessons_unlocked):
+			ProgressData.lessons_unlocked.append(3)
+		if not (ProgressData.puzzle_types.SantaClausPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+			ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.SantaClausPuzzle)
+		if not (2 in ProgressData.santa_claus_vf_levels_unlocked):
+			ProgressData.santa_claus_vf_levels_unlocked.append(2)
+	
 	else:
 		current_dialog = puzzle_no_correct
+		if not (3 in ProgressData.santa_claus_levels_unlocked):
+			ProgressData.santa_claus_levels_unlocked.append(3)
+	
 		
 	start_current_dialog()
 
 # Give Up reply to In Puzzle Dialog
 func in_puzzle_giveup():
 	current_dialog = puzzle_giveup
+	ProgressData.level_lost_last[ProgressData.puzzle_types.SantaClausPuzzle] = 2
+	if not (3 in ProgressData.lessons_unlocked):
+		ProgressData.lessons_unlocked.append(3)
+	if not (ProgressData.puzzle_types.SantaClausPuzzle in ProgressData.lesson_3_puzzles_unlocked):
+		ProgressData.lesson_3_puzzles_unlocked.append(ProgressData.puzzle_types.SantaClausPuzzle)
+	if not (2 in ProgressData.santa_claus_vf_levels_unlocked):
+		ProgressData.santa_claus_vf_levels_unlocked.append(2)
+	
 	start_current_dialog()
 
 # Recheck reply to In Puzzle Dialog
