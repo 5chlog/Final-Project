@@ -34,7 +34,7 @@ position = Vector2( 91, 66 )
 [node name="Children" type="Node2D" parent="."]
 position = Vector2( -238, -90 )
 script = ExtResource( 5 )
-threshold = 8
+threshold = 6
 
 [node name="Child1" parent="Children" instance=ExtResource( 6 )]
 position = Vector2( 153, 155 )
@@ -48,5 +48,5 @@ sprite = ExtResource( 4 )
 
 [node name="Child3" parent="Children" instance=ExtResource( 6 )]
 position = Vector2( 329, 155 )
-child_index = 6
+child_index = 2
 sprite = ExtResource( 7 )
