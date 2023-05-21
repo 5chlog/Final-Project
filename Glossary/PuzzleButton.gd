@@ -26,7 +26,7 @@ func _ready():
 		visible = true
 	elif id == "Santa Claus" and santa.size() >= 2:
 		visible = true
-	elif (id == "Class NP" or id == "P Time Verification") and (buildingvf.size() >= 2 or mechanicvf.size() >= 2 or santavf.size() >= 2):
+	elif (id == "Class NP" or id == "P Time Verification") and (ProgressData.lesson_3_completed):
 		visible = true
 		
 func _on_Button_pressed():
