@@ -23,9 +23,11 @@ func pickup():
 	global_position = player.global_position - Vector2(0, 32)
 	is_picked_up = true
 	get_parent().selected_gift = self
-	
+
+
 func show_gift():
 	visible = true
+
 
 func hide_gift():
 	visible = false

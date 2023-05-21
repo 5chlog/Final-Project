@@ -35,18 +35,6 @@ func _ready():
 	animation.play("Idle")
 
 
-
-func assign_gift_to_child(var gift):
-	#gift.hide_gift()
-	gift.get_parent().remove_child(gift)
-	$Gift.add_child(gift)
-	gift.position = Vector2(0,0)
-	assigned_gift = gift
-	update_threshold()
-	
-	#$Gifts.add_child(gift)
-	#$GiftSlots.
-
 func add_gift(var gift):
 	gift.get_parent().remove_child(gift)
 	$Gifts.add_child(gift)

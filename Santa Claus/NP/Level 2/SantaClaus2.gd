@@ -17,11 +17,10 @@ var to_verification = preload("res://Santa Claus/NP/Level 2/Dialogs/ToVerificati
 var complete: bool = false
 var current_dialog = first_dialog
 #Stores index values of each gift assigned to each child
-var preset_certificate = [1, 2, 3, 4, 5, 0, 7, 6]
+var preset_certificate = [[1, 2], [3, 4], [5]]
 
 onready var animation = $AnimationPlayer
 export(Array, Resource) var dialogs
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,11 +40,10 @@ func solved():
 	var children = get_node("/root/HUD/ExtraHUD").get_children_node()
 	
 	for child in children.get_children():
-		var happiness_value = 0
-		if child.assigned_gift != null :
-			happiness_value = child.assigned_gift.gift_values[child.child_index]
-		if happiness_value < children.threshold:
-			return false
+		var gifts = child.get_node("Gifts").get_children()
+		if gifts != null :
+			if child.happiness < children.threshold:
+				return false
 	
 	return true
 
@@ -55,7 +53,8 @@ func start_current_dialog():
 
 
 func start_level():
-	get_node("../TransportSwitch/InteractableArea").enable()
+	get_node("../SendButton/InteractableArea").enable()
+	get_node("../ReceiveButton/InteractableArea").enable()
 	
 	for slot in get_node("../GiftSlots").get_children():
 		slot.get_node("InteractableArea").enable()
@@ -64,7 +63,8 @@ func start_level():
 
 
 func end_level():
-	get_node("../TransportSwitch/InteractableArea").disable()
+	get_node("../SendButton/InteractableArea").disable()
+	get_node("../ReceiveButton/InteractableArea").disable()
 	
 	for slot in get_node("../GiftSlots").get_children():
 		slot.get_node("InteractableArea").disable()
@@ -79,14 +79,14 @@ func set_certificate_from_level():
 	Certificates.set_threshold(threshold)
 	
 	for child in children.get_children():
-		if child.assigned_gift != null :
-			Certificates.add_gift_textures(child.assigned_gift.texture)
-			var happiness_value  = child.assigned_gift.gift_values[child.child_index]
-			Certificates.add_happiness_values(happiness_value)
+		var gifts = child.get_node("Gifts").get_children()
+		if gifts != null :
+			Certificates.add_gift_textures(gifts)
+			Certificates.add_happiness_values(child.happiness)
 		else:
 			Certificates.add_gift_textures(null)
 			Certificates.add_happiness_values(-1)
-			
+	print( )
 	print(Certificates.gift_textures , "\n" , Certificates.happiness_values , "\n" , Certificates.threshold)
 
 
@@ -96,23 +96,32 @@ func set_certificate_from_preset():
 	preset_certificate.resize(children.get_child_count())
 	Certificates.set_threshold(children.threshold)
 
-	for i in preset_certificate.size():
+	for i in preset_certificate.size() :
 		var found = false
-		for gift in gifts.get_children() :
-			if gift.gift_index == preset_certificate[i] :
-				Certificates.add_gift_textures(gift.texture)
-				Certificates.add_happiness_values(gift.gift_values[i])
-				found = true
-		if found :
-			continue
-		for child in children.get_children() :
-			if child.assigned_gift != null :
-				if  child.assigned_gift.gift_index == preset_certificate[i] :
-					Certificates.add_gift_textures(child.assigned_gift.texture)
-					Certificates.add_happiness_values(child.assigned_gift.gift_values[i]) 
-					found = true
-		if !found:
-			print("You messed up the preset certificate")
+		var gift_list = []
+		var happiness = 0
+		for gift_i in preset_certificate[i] : 
+			if gifts.get_children() != null :
+				for gift in gifts.get_children() :
+					if gift.gift_index == gift_i :
+						gift_list.append(gift)
+						happiness += gift.gift_values[i]
+						found = true
+			if found :
+				continue
+			for child in children.get_children() :
+				var child_gifts = child.get_node("Gifts").get_children()
+				if child_gifts != null :
+					for gift in child_gifts :
+						if gift.gift_index == gift_i :
+							gift_list.append(gift)
+							happiness += gift.gift_values[i]
+							found = true
+			if !found:
+				print("You messed up the preset certificate")
+		Certificates.add_gift_textures(gift_list)
+		Certificates.add_happiness_values(happiness)
+		
 	print(Certificates.gift_textures , "\n" , Certificates.happiness_values , "\n" , Certificates.threshold)
 
 

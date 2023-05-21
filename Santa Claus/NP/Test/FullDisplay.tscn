@@ -24,22 +24,22 @@ position = Vector2( 0, -27 )
 [node name="ChildPositions" type="Node2D" parent="."]
 
 [node name="PChild1" type="Position2D" parent="ChildPositions"]
-position = Vector2( -106, 65 )
+position = Vector2( -118, 65 )
 
 [node name="PChild2" type="Position2D" parent="ChildPositions"]
-position = Vector2( -50, 65 )
+position = Vector2( -62, 65 )
 
 [node name="PChild3" type="Position2D" parent="ChildPositions"]
-position = Vector2( 6, 65 )
+position = Vector2( -6, 65 )
 
 [node name="PChild4" type="Position2D" parent="ChildPositions"]
-position = Vector2( 62, 65 )
+position = Vector2( 50, 65 )
 
 [node name="PChild5" type="Position2D" parent="ChildPositions"]
-position = Vector2( 118, 65 )
+position = Vector2( 106, 65 )
 
 [node name="Children" type="Node2D" parent="."]
-position = Vector2( -238, -90 )
+position = Vector2( -241, -90 )
 script = ExtResource( 5 )
 threshold = 6
 

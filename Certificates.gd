@@ -43,8 +43,11 @@ var gift_textures = []
 var happiness_values = []
 var threshold:int = -1
 
-func add_gift_textures(gift_sprite: Texture):
-	gift_textures.append(gift_sprite)
+func add_gift_textures(var gifts):
+	var texture_list = []
+	for gift in gifts:
+		texture_list.append(gift.texture)
+	gift_textures.append(texture_list)
 
 
 func add_happiness_values(happy: int):

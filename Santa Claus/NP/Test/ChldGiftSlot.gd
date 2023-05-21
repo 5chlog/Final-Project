@@ -30,6 +30,7 @@ func set_slotted_gift_value():
 func place_gift(var gift):
 	placed_gift = gift
 	placed_gift.global_position = $Gift.global_position
+	#$Gift.add_child(placed_gift)
 	gift.is_picked_up = false
 	set_slotted_gift_value()
 

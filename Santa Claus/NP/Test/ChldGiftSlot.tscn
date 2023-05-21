@@ -15,7 +15,7 @@ position = Vector2( 0, -1 )
 texture = ExtResource( 3 )
 
 [node name="Gift" type="Position2D" parent="."]
-position = Vector2( 0, -1 )
+position = Vector2( 0, -3 )
 
 [node name="FirstDigitSprite" type="Sprite" parent="."]
 position = Vector2( -2.58286, -20.9583 )

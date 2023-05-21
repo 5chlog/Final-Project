@@ -15,11 +15,11 @@ func interact():
 	
 	child = child_display.children[child_display.child_index]
 	
-	
 	if platform.placed_gift != null:
 		if child.get_node("Gifts").get_child_count() < child.get_node("GiftSlots").get_child_count() :
 			child.add_gift(platform.placed_gift)
 			platform.remove_gift()
+			child_display.reset_gift_display_and_selector()
 			child_display.update_gifts_list()
 			child_display.set_display_gift()
 	
