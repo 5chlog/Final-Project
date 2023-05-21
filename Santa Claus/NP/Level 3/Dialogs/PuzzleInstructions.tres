@@ -10,7 +10,7 @@ face_images = [ ExtResource( 1 ) ]
 names = [ "Santa Claus" ]
 dialogs = [ "Much appreciated.", "I have these gifts here, you
 see... And I wanna give em to
-those children over there.", " But I wanna do it in a way
+those children over there.", "But I wanna do it in a way
 that makes them all happy", "Problem is, I don't know if I
 can. ", "Please help me figure out if
 there's a way to assign these
