@@ -17,7 +17,7 @@ var to_verification = preload("res://Santa Claus/NP/Level 2/Dialogs/ToVerificati
 var complete: bool = false
 var current_dialog = first_dialog
 #Stores index values of each gift assigned to each child
-var preset_certificate = [[1, 2], [3, 4], [5]]
+var preset_certificate = [[1], [2 ,3], [5,4]]
 
 onready var animation = $AnimationPlayer
 export(Array, Resource) var dialogs

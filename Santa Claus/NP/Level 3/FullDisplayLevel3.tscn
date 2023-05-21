@@ -21,7 +21,7 @@ current = true
 [node name="Children" type="Node2D" parent="."]
 position = Vector2( -238, -90 )
 script = ExtResource( 5 )
-threshold = 8
+threshold = 7
 
 [node name="Child1" parent="Children" instance=ExtResource( 6 )]
 position = Vector2( 129, 155 )

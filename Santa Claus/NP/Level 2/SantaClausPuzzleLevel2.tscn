@@ -60,33 +60,33 @@ script = ExtResource( 2 )
 position = Vector2( 446.958, 209 )
 texture = ExtResource( 6 )
 gift_index = 0
-gift_values = [ 23, 2, 1 ]
+gift_values = [ 5, 2, 1 ]
 
 [node name="Gift2" parent="Gifts" instance=ExtResource( 13 )]
 position = Vector2( 487.958, 206 )
 sprite = ExtResource( 9 )
 gift_index = 1
-gift_values = [ 1, 42, 45 ]
+gift_values = [ 1, 3, 1 ]
 
 [node name="Gift3" parent="Gifts" instance=ExtResource( 13 )]
 position = Vector2( 528.958, 208 )
 sprite = ExtResource( 4 )
 gift_index = 2
-gift_values = [ 6, 5, 6 ]
+gift_values = [ 6, 5, 4 ]
 
 [node name="Gift4" parent="Gifts" instance=ExtResource( 13 )]
 position = Vector2( 571.958, 209 )
 texture = ExtResource( 8 )
 sprite = ExtResource( 8 )
 gift_index = 3
-gift_values = [ 23, 2, 1 ]
+gift_values = [ 1, 2, 5 ]
 
 [node name="Gift5" parent="Gifts" instance=ExtResource( 13 )]
 position = Vector2( 608.958, 209 )
 texture = ExtResource( 5 )
 sprite = ExtResource( 5 )
 gift_index = 4
-gift_values = [ 4, 22, 22 ]
+gift_values = [ 4, 5, 7 ]
 
 [node name="GiftSlots" type="Node2D" parent="."]
 position = Vector2( -112, 0 )

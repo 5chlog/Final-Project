@@ -19,14 +19,14 @@ current = true
 [node name="Children" type="Node2D" parent="."]
 position = Vector2( -238, -90 )
 script = ExtResource( 5 )
-threshold = 8
+threshold = 5
 
-[node name="Child2" parent="Children" instance=ExtResource( 6 )]
+[node name="Child1" parent="Children" instance=ExtResource( 6 )]
 position = Vector2( 188, 155 )
-child_index = 1
+child_index = 0
 sprite = ExtResource( 3 )
 
-[node name="Child3" parent="Children" instance=ExtResource( 6 )]
+[node name="Child2" parent="Children" instance=ExtResource( 6 )]
 position = Vector2( 288, 155 )
-child_index = 2
+child_index = 1
 sprite = ExtResource( 4 )

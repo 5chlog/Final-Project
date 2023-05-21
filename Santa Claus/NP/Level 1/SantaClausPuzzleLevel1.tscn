@@ -58,19 +58,19 @@ script = ExtResource( 2 )
 position = Vector2( 446.958, 209 )
 texture = ExtResource( 4 )
 gift_index = 0
-gift_values = [ 23, 2 ]
+gift_values = [ 5, 2 ]
 
 [node name="Gift2" parent="Gifts" instance=ExtResource( 12 )]
 position = Vector2( 487.958, 206 )
 sprite = ExtResource( 6 )
 gift_index = 1
-gift_values = [ 1, 42 ]
+gift_values = [ 1, 3 ]
 
 [node name="Gift3" parent="Gifts" instance=ExtResource( 12 )]
 position = Vector2( 528.958, 208 )
 sprite = ExtResource( 3 )
 gift_index = 2
-gift_values = [ 6, 5 ]
+gift_values = [ 7, 4 ]
 
 [node name="GiftSlots" type="Node2D" parent="."]
 position = Vector2( -112, 0 )
