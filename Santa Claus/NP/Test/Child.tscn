@@ -84,9 +84,6 @@ anims/RESET = SubResource( 3 )
 position = Vector2( 0, 3 )
 shape = SubResource( 4 )
 
-[node name="Gift" type="Position2D" parent="."]
-position = Vector2( 31, 4 )
-
 [node name="Gifts" type="Node2D" parent="."]
 
 [node name="GiftSlots" type="Node2D" parent="."]
