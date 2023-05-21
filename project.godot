@@ -104,7 +104,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Test Side-Scroller 1"
+config/name="Play Through Complexity Classes P and NP"
 run/main_scene="res://Project Integration/MainMenu.tscn"
 config/icon="res://icon.png"
 
