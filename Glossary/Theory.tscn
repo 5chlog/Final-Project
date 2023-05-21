@@ -219,7 +219,7 @@ margin_right = 281.0
 margin_bottom = 292.0
 text = "Polynomial Time Verification
 
-Given a set of value inputs, if we are able to determine whether or not these values are a valid solution to a particular problem in polynomial-time, then that problem is said to be polynomial-time verifiable."
+A problem is said to be polynomial-time verifiable if there exists a polynomial-time algorithm that certifies the authenticity of a solution if one is provided. The solution that is provided for authenticity  verification is known as a certificate."
 autowrap = true
 
 [node name="LabelColumn2" type="Label" parent="Control/PageContainer/PTVContainer"]

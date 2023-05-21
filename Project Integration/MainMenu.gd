@@ -101,7 +101,3 @@ func _on_BackButton_pressed():
 func _unhandled_input(event):
 	if back_button.visible and Input.is_action_just_pressed("ui_cancel"):
 		_on_BackButton_pressed()
-
-
-func _on_GlossaryButton_pressed():
-	pass # Replace with function body.

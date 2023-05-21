@@ -124,7 +124,9 @@ autowrap = true
 margin_left = 283.0
 margin_right = 557.0
 margin_bottom = 293.0
-text = "Your objective is to search all mailboxes and report back to the postman and let him know whether or not such a golden envelope exists, and if so, in which mailbox it is located."
+text = "Your objective is to search all mailboxes and report back to the postman and let him know whether or not such a golden envelope exists, and if so, in which mailbox it is located.
+
+The puzzle is modelled on the problem of Searching an Unordered List."
 autowrap = true
 
 [node name="BuildingContainer" type="Control" parent="Control/PageContainer"]
@@ -146,7 +148,9 @@ autowrap = true
 margin_left = 283.0
 margin_right = 557.0
 margin_bottom = 293.0
-text = "It is up to you to determine whether or not a combination of generators exists such that the whole building is powered, and report back to the building owner."
+text = "It is up to you to determine whether or not a combination of generators exists such that the whole building is powered, and report back to the building owner.
+
+The puzzle is modelled on the Vertex Cover problem."
 autowrap = true
 
 [node name="MechanicContainer" type="Control" parent="Control/PageContainer"]
@@ -168,7 +172,9 @@ autowrap = true
 margin_left = 283.0
 margin_right = 557.0
 margin_bottom = 293.0
-text = "Your goal is to determine whether you can select at maximum, a certain number of machine objects, such that you have at least one of each required machine part, and report back to the mechanic."
+text = "Your goal is to determine whether you can select at maximum, a certain number of machine objects, such that you have at least one of each required machine part, and report back to the mechanic.
+
+The puzzle is modelled on the Set Cover problem."
 autowrap = true
 
 [node name="SantaContainer" type="Control" parent="Control/PageContainer"]
@@ -190,7 +196,9 @@ autowrap = true
 margin_left = 283.0
 margin_right = 557.0
 margin_bottom = 293.0
-text = "Your goal is to determine whether the gifts can in fact, be distributed such that each child achieves this threshold of happiness, and report back to Santa."
+text = "Your goal is to determine whether the gifts can in fact, be distributed such that each child achieves this threshold of happiness, and report back to Santa.
+
+The puzzle is modelled on the Santa Claus problem."
 autowrap = true
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
